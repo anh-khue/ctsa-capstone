@@ -1,2 +1,2 @@
-# ctsa-capstone
-Career Trend Suggestions - CTSA Capstone Project
+# Career Trend Suggestions
+CTSA Capstone Project
