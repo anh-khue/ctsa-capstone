@@ -1,129 +1,52 @@
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (6, '.NET');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (94, '.Net Core');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (75, 'Agile');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (111, 'AI');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (35, 'Android');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (19, 'Angular');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (83, 'AngularJS');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (27, 'Apache Kafka');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (34, 'Apache Spark');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (108, 'Apache Velocity');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (247, 'ASP');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (51, 'ASP.NET');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (93, 'ASP.NET MVC');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (107, 'Atlassian');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (89, 'Atomic');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (118, 'Automation Testing');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (67, 'AWS');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (92, 'Azure');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (42, 'Back-end');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (55, 'BDD');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (120, 'Big Data');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (129, 'Blackbox Testing');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (110, 'Blockchain');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (78, 'Bootstrap');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (69, 'C');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (49, 'C#');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (50, 'C++');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (254, 'C/C++');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (130, 'CD');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (115, 'CI');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (253, 'CI/CD');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (125, 'Cloud');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (68, 'Cloud Server');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (3, 'CMMI');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (100, 'CMS');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (88, 'Concurrent');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (128, 'CorelDraw');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (2, 'CRM');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (22, 'CSS');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (103, 'DDD');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (47, 'Design Patterns');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (119, 'Distributed');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (31, 'Docker');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (104, 'Drupal');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (33, 'Elasticsearch');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (70, 'Embedded');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (38, 'English');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (90, 'Entity Framework');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (1, 'ERP');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (86, 'Front-end');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (109, 'Full-Stack');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (30, 'Git');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (106, 'Github');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (82, 'Google Cloud');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (45, 'Hibernate');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (20, 'HTML');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (252, 'IELTS');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (123, 'Illustrator');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (39, 'Japanese');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (12, 'Java');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (251, 'Java 8
-');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (61, 'Java EE');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (21, 'JavaScript');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (105, 'Joomla');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (64, 'JPA');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (52, 'Jquery');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (127, 'JSP');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (248, 'Kotlin');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (81, 'Laravel');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (56, 'Linux');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (99, 'Magento');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (121, 'Manual Testing');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (29, 'Maven');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (32, 'Mesosphere');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (28, 'Microservices');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (16, 'Mobile');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (60, 'MongoDB');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (87, 'Multi-thread');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (66, 'MVC');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (10, 'MySQL');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (57, 'NGINX');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (102, 'Node.js');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (26, 'NoSQL');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (36, 'Objective-C');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (65, 'OOP');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (72, 'OpenGL');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (9, 'Oracle');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (63, 'ORM');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (116, 'Perl');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (74, 'Photoshop');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (7, 'PHP');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (5, 'PMI');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (4, 'PMP');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (124, 'Professional');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (58, 'Python');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (250, 'React Native');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (114, 'ReactJS');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (43, 'Redis');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (79, 'Redmine');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (62, 'Relational Databases');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (46, 'RESTful API');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (13, 'Ruby');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (59, 'Ruby on Rails');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (85, 'SASS');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (76, 'Scrum');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (126, 'Software Architecture');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (23, 'Spring');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (24, 'Spring Boot');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (8, 'SQL Server');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (15, 'SSL');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (112, 'Stored Procedures');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (37, 'Swift');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (48, 'TDD');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (44, 'TOEFL iBT');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (113, 'Trigger');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (98, 'Ubuntu');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (132, 'UI');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (40, 'UI/UX');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (131, 'UX');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (96, 'Vue.js');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (53, 'WCF');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (54, 'Web API');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (122, 'Wireframe');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (101, 'WordPress');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (91, 'WPF');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (71, 'XML');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (97, 'Yii');
-INSERT INTO ctsa_recruitment_dataset.skill (id, name) VALUES (80, 'Zend');
+-- MySQL dump 10.13  Distrib 8.0.12, for Win64 (x86_64)
+--
+-- Host: localhost    Database: ctsa_recruitment_dataset
+-- ------------------------------------------------------
+-- Server version	8.0.12
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+ SET NAMES utf8 ;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `skill`
+--
+
+DROP TABLE IF EXISTS `skill`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `skill` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=255 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `skill`
+--
+
+LOCK TABLES `skill` WRITE;
+/*!40000 ALTER TABLE `skill` DISABLE KEYS */;
+INSERT INTO `skill` VALUES (6,'.NET'),(94,'.Net Core'),(75,'Agile'),(111,'AI'),(35,'Android'),(19,'Angular'),(83,'AngularJS'),(27,'Apache Kafka'),(34,'Apache Spark'),(108,'Apache Velocity'),(247,'ASP'),(51,'ASP.NET'),(93,'ASP.NET MVC'),(107,'Atlassian'),(89,'Atomic'),(118,'Automation Testing'),(67,'AWS'),(92,'Azure'),(42,'Back-end'),(55,'BDD'),(120,'Big Data'),(129,'Blackbox Testing'),(110,'Blockchain'),(78,'Bootstrap'),(69,'C'),(49,'C#'),(50,'C++'),(254,'C/C++'),(130,'CD'),(115,'CI'),(253,'CI/CD'),(125,'Cloud'),(68,'Cloud Server'),(3,'CMMI'),(100,'CMS'),(88,'Concurrent'),(128,'CorelDraw'),(2,'CRM'),(22,'CSS'),(103,'DDD'),(47,'Design Patterns'),(119,'Distributed'),(31,'Docker'),(104,'Drupal'),(33,'Elasticsearch'),(70,'Embedded'),(38,'English'),(90,'Entity Framework'),(1,'ERP'),(86,'Front-end'),(109,'Full-Stack'),(30,'Git'),(106,'Github'),(82,'Google Cloud'),(45,'Hibernate'),(20,'HTML'),(252,'IELTS'),(123,'Illustrator'),(39,'Japanese'),(12,'Java'),(251,'Java 8\r\n'),(61,'Java EE'),(21,'JavaScript'),(105,'Joomla'),(64,'JPA'),(52,'Jquery'),(127,'JSP'),(248,'Kotlin'),(81,'Laravel'),(56,'Linux'),(99,'Magento'),(121,'Manual Testing'),(29,'Maven'),(32,'Mesosphere'),(28,'Microservices'),(16,'Mobile'),(60,'MongoDB'),(87,'Multi-thread'),(66,'MVC'),(10,'MySQL'),(57,'NGINX'),(102,'Node.js'),(26,'NoSQL'),(36,'Objective-C'),(65,'OOP'),(72,'OpenGL'),(9,'Oracle'),(63,'ORM'),(116,'Perl'),(74,'Photoshop'),(7,'PHP'),(5,'PMI'),(4,'PMP'),(124,'Professional'),(58,'Python'),(250,'React Native'),(114,'ReactJS'),(43,'Redis'),(79,'Redmine'),(62,'Relational Databases'),(46,'RESTful API'),(13,'Ruby'),(59,'Ruby on Rails'),(85,'SASS'),(76,'Scrum'),(126,'Software Architecture'),(23,'Spring'),(24,'Spring Boot'),(8,'SQL Server'),(15,'SSL'),(112,'Stored Procedures'),(37,'Swift'),(48,'TDD'),(44,'TOEFL iBT'),(113,'Trigger'),(98,'Ubuntu'),(132,'UI'),(40,'UI/UX'),(131,'UX'),(96,'Vue.js'),(53,'WCF'),(54,'Web API'),(122,'Wireframe'),(101,'WordPress'),(91,'WPF'),(71,'XML'),(97,'Yii'),(80,'Zend');
+/*!40000 ALTER TABLE `skill` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-09-18 18:59:38
