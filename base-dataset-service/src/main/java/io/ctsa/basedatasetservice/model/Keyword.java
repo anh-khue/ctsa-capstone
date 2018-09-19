@@ -1,9 +1,6 @@
 package io.ctsa.basedatasetservice.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +11,8 @@ import java.util.Objects;
 @Entity
 @Data
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Keyword {
 
     @Id
@@ -24,11 +22,8 @@ public class Keyword {
     private String word;
     @NonNull
     private boolean isSynonym;
-    @NonNull
     private Integer mainKeywordId;
-    @NonNull
     private Integer positionId;
-    @NonNull
     private Integer skillId;
     @NonNull
     private boolean pushedToElasticsearch;
