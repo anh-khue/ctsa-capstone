@@ -39,8 +39,8 @@ public class KeywordService {
         }
     }
 
-    private void insertKeyword(String word, Integer mainKeywordId,
-                               Integer positionId, Integer skillId)
+    void insertKeyword(String word, Integer mainKeywordId,
+                       Integer positionId, Integer skillId)
             throws Exception {
         try {
             boolean isSynonym = mainKeywordId != null;
@@ -48,8 +48,8 @@ public class KeywordService {
                                      .word(word)
                                      .isSynonym(isSynonym)
                                      .mainKeywordId(mainKeywordId)
-                                     .positionId(null)
-                                     .skillId(null)
+                                     .positionId(positionId)
+                                     .skillId(skillId)
                                      .pushedToElasticsearch(false)
                                      .build();
             keywordRepository.save(keyword);
