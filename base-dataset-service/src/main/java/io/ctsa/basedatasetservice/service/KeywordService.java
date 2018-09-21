@@ -1,10 +1,10 @@
 package io.ctsa.basedatasetservice.service;
 
+import io.ctsa.basedatasetservice.client.ElasticsearchWebClient;
 import io.ctsa.basedatasetservice.model.Keyword;
 import io.ctsa.basedatasetservice.repository.KeywordRepository;
 import org.springframework.stereotype.Service;
 
-import javax.validation.ConstraintViolationException;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -14,8 +14,12 @@ public class KeywordService {
 
     private final KeywordRepository keywordRepository;
 
-    public KeywordService(KeywordRepository keywordRepository) {
+    private final ElasticsearchWebClient elasticsearchWebClient;
+
+    public KeywordService(KeywordRepository keywordRepository,
+                          ElasticsearchWebClient elasticsearchWebClient) {
         this.keywordRepository = keywordRepository;
+        this.elasticsearchWebClient = elasticsearchWebClient;
     }
 
     public Map<Keyword, List<String>> getKeywordsMap() {
@@ -56,5 +60,16 @@ public class KeywordService {
         } catch (Exception e) {
             throw new Exception(e);
         }
+    }
+
+    public void pushToElasticsearch() {
+        List<Keyword> keywordsToPush = keywordRepository.findByPushedToElasticsearch(false);
+
+        elasticsearchWebClient.pushKeywords(keywordsToPush);
+
+//        keywordsToPush.forEach(keyword -> {
+//            keyword.setPushedToElasticsearch(true);
+//            keywordRepository.save(keyword);
+//        });
     }
 }

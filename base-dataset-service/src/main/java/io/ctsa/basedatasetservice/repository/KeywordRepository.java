@@ -10,4 +10,6 @@ public interface KeywordRepository extends JpaRepository<Keyword, Integer> {
     List<Keyword> findByIsSynonym(boolean isSynonym);
 
     List<Keyword> findByMainKeywordId(int id);
+
+    List<Keyword> findByPushedToElasticsearch(boolean pushedToElasticsearch);
 }
