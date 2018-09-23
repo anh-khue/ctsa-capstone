@@ -1,9 +1,18 @@
 body {
-  background-color: #e9e9e9
+  background-color: #e9e9e9;
+  margin-top: 2%;
+}
+.row{
+  margin-top:15px;
 }
 
 .listjob{
-  background-color: white
+  background-color: white;
+  padding-top: 15px;
+}
+.jobdetail{
+  background-color: white;
+  padding-top:15px;
 }
 
 .stylish-panel {
@@ -35,4 +44,31 @@ body {
 
 #address {
   padding-top: 30px
+}
+a{
+ color: #1594a8;
+}
+a:hover{
+  text-decoration: none;
+  
+}
+.gear-icon:before {
+   content: "\2605"; 
+   margin-right: 6px;
+}
+.group-icon:before{
+  content: "\2666"; 
+   margin-right: 6px;
+}
+.country-icon:before{
+  content: "\2756"; 
+  /* &#9734; */
+  margin-right: 6px;
+}
+.working-date::before{
+  content: "\2665"; 
+  margin-right: 6px;
+}
+.img-border{
+  margin:50px;
 }

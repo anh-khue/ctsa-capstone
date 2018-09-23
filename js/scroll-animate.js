@@ -1,15 +1,20 @@
 $(function () {
     var offset = $("#sidebar").offset();
-    var topPadding = 15;
+    var topPadding = 50;
+    stopPosition = $('#morejob').offset().top - $("#sidebar").outerHeight();
     $(window).scroll(function () {
-        if ($(window).scrollTop() > offset.top) {
+        console.log(stopPosition);
+        if ($(window).scrollTop() < stopPosition) {
             $("#sidebar").stop().animate({
                 marginTop: $(window).scrollTop() - offset.top + topPadding
             });
-        } else {
+            
+        } 
+        else if($(window).scrollTop() > stopPosition){
             $("#sidebar").stop().animate({
-                marginTop: 0
+                marginTop: 50
             });
         };
     });
 });
+
