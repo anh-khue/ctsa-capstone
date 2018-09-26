@@ -67,9 +67,9 @@ public class KeywordService {
 
         elasticsearchWebClient.pushKeywords(keywordsToPush);
 
-//        keywordsToPush.forEach(keyword -> {
-//            keyword.setPushedToElasticsearch(true);
-//            keywordRepository.save(keyword);
-//        });
+        keywordsToPush.forEach(keyword -> {
+            keyword.setPushedToElasticsearch(true);
+            keywordRepository.save(keyword);
+        });
     }
 }
