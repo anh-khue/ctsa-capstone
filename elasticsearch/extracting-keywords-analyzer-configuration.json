@@ -1,12 +1,12 @@
 {
     "settings": {
         "analysis": {
-            "char_filter": {
-                "hyphen_mapping": {
-                    "type": "mapping",
-                    "mappings": [
-                        "-=>"
-                    ]
+            "filter": {
+                "filter_shingle": {
+                    "type": "shingle",
+                    "max_shingle_size": 10,
+                    "min_shingle_size": 2,
+                    "output_unigrams": "true"
                 }
             },
             "analyzer": {
@@ -16,28 +16,22 @@
                     "filter": [
                         "asciifolding",
                         "lowercase"
-                    ],
-                    "char_filter": [
-                        "hyphen_mapping"
                     ]
                 },
                 "ctsa_analyzer_shingle": {
                     "type": "custom",
-                    "tokenizer": "standard",
+                    "tokenizer": "whitespace",
                     "filter": [
                         "asciifolding",
                         "lowercase",
-                        "shingle"
-                    ],
-                    "char_filter": [
-                        "hyphen_mapping"
+                        "filter_shingle"
                     ]
                 }
             }
         }
     },
     "mappings": {
-        "ctsa_type": {
+        "ctsa_keywords": {
             "properties": {
                 "keyword": {
                     "type": "text",
