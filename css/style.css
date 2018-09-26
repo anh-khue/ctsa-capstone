@@ -1,7 +1,7 @@
-body {
+/* body {
   background-color: #e9e9e9;
   margin-top: 2%;
-}
+} */
 .row{
   margin-top:15px;
 }
@@ -32,10 +32,10 @@ body {
 }
 
 .stylish-panel:hover {
-  margin-top: -5px;
+ border: 1px solid aqua;
   /* border: 1px solid #5384cb; */
   /* box-shadow: 0 .5rem 1rem rgba(83, 132, 203, .15); */
-  box-shadow: 0 1rem 3rem rgba(60, 74, 165, .175) !important;
+  box-shadow: 0 1rem 3rem rgba(60, 74, 165, .175) ;
   
   
   transition: 0.3s;
