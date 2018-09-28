@@ -5,6 +5,7 @@ import io.ctsa.basedatasetservice.repository.PositionRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
 
 @Service
 public class PositionService {
@@ -28,5 +29,9 @@ public class PositionService {
         keywordService.insertKeyword(position.getName()
                                              .toLowerCase(), null,
                                      position.getId(), null);
+    }
+
+    public Optional<Position> findById(int id) {
+        return positionRepository.findById(id);
     }
 }

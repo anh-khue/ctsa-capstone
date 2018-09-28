@@ -39,8 +39,6 @@ public class ElasticsearchWebClient {
     private void pushKeyword(int id, String keyword) {
         String requestBody = createPushRequestBody(id, keyword);
 
-        System.out.println(keywordUri + "/" + id);
-
         String response = elasticsearchClient().post()
                                                .uri(keywordUri + "/" + id)
                                                .body(BodyInserters.fromObject(requestBody))

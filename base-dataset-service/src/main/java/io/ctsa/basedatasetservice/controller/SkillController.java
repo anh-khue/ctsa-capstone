@@ -1,14 +1,13 @@
 package io.ctsa.basedatasetservice.controller;
 
+import io.ctsa.basedatasetservice.exception.NotFoundInDatasetException;
 import io.ctsa.basedatasetservice.model.Skill;
 import io.ctsa.basedatasetservice.service.SkillService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import static org.springframework.http.HttpStatus.CONFLICT;
+import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.HttpStatus.OK;
 
 @RestController
@@ -30,6 +29,17 @@ public class SkillController {
         } catch (Exception e) {
             return ResponseEntity.status(CONFLICT)
                                  .body("Something wrong happened.");
+        }
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity getById(@PathVariable String id) {
+        try {
+            return ResponseEntity.status(OK)
+                                 .body(skillService.findById(Integer.parseInt(id))
+                                                   .orElseThrow(NotFoundInDatasetException::new));
+        } catch (NotFoundInDatasetException e) {
+            return ResponseEntity.status(NOT_FOUND).build();
         }
     }
 }

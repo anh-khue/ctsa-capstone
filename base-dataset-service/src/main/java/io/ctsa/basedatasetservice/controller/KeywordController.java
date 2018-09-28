@@ -1,5 +1,6 @@
 package io.ctsa.basedatasetservice.controller;
 
+import io.ctsa.basedatasetservice.exception.NotFoundInDatasetException;
 import io.ctsa.basedatasetservice.service.KeywordService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,8 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static org.springframework.http.HttpStatus.CONFLICT;
-import static org.springframework.http.HttpStatus.OK;
+import static org.springframework.http.HttpStatus.*;
 
 @RestController
 @RequestMapping("/keywords")
@@ -37,6 +37,28 @@ public class KeywordController {
         } catch (Exception e) {
             return ResponseEntity.status(CONFLICT)
                                  .body("Keyword already existed.");
+        }
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity getById(@PathVariable String id) {
+        try {
+            return ResponseEntity.status(OK)
+                                 .body(keywordService.findById(Integer.parseInt(id))
+                                                     .orElseThrow(NotFoundInDatasetException::new));
+        } catch (NotFoundInDatasetException e) {
+            return ResponseEntity.status(NOT_FOUND).build();
+        }
+    }
+
+    @PostMapping("/word")
+    public ResponseEntity getByWord(@RequestBody String word) {
+        try {
+            return ResponseEntity.status(OK)
+                                 .body(keywordService.findByWord(word)
+                                                     .orElseThrow(NotFoundInDatasetException::new));
+        } catch (NotFoundInDatasetException e) {
+            return ResponseEntity.status(NOT_FOUND).build();
         }
     }
 }

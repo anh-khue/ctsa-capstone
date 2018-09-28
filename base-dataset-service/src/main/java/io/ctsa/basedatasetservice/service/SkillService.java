@@ -5,6 +5,7 @@ import io.ctsa.basedatasetservice.repository.SkillRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
 
 @Service
 public class SkillService {
@@ -27,5 +28,9 @@ public class SkillService {
         keywordService.insertKeyword(skill.getName()
                                           .toLowerCase(), null,
                                      null, skill.getId());
+    }
+
+    public Optional<Skill> findById(int id) {
+        return skillRepository.findById(id);
     }
 }
