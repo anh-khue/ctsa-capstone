@@ -3,6 +3,7 @@ package io.anhkhue.ctsa.vietnamworksscraper.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.util.Objects;
 
 @Entity
@@ -16,21 +17,13 @@ public class RecruitmentFact {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NonNull
-    private int day;
+    private Date startDate;
     @NonNull
-    private int month;
-    @NonNull
-    private int year;
+    private Date endDate;
     @NonNull
     private int positionRequiresSkillId;
     @NonNull
     private int count;
-    @NonNull
-    private int totalPosition;
-    @NonNull
-    private int shortestDuration;
-    @NonNull
-    private int longestDuration;
 
     @Override
     public boolean equals(Object o) {
@@ -38,18 +31,14 @@ public class RecruitmentFact {
         if (o == null || getClass() != o.getClass()) return false;
         RecruitmentFact that = (RecruitmentFact) o;
         return id == that.id &&
-                day == that.day &&
-                month == that.month &&
-                year == that.year &&
+                startDate == that.startDate &&
+                endDate == that.endDate &&
                 positionRequiresSkillId == that.positionRequiresSkillId &&
-                count == that.count &&
-                totalPosition == that.totalPosition &&
-                shortestDuration == that.shortestDuration &&
-                longestDuration == that.longestDuration;
+                count == that.count;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, day, month, year, positionRequiresSkillId, count, totalPosition, shortestDuration, longestDuration);
+        return Objects.hash(id, startDate, endDate, positionRequiresSkillId, count);
     }
 }

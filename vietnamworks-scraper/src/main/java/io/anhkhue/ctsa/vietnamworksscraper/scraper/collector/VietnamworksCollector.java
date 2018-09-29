@@ -3,7 +3,7 @@ package io.anhkhue.ctsa.vietnamworksscraper.scraper.collector;
 import io.anhkhue.ctsa.vietnamworksscraper.model.Position;
 import io.anhkhue.ctsa.vietnamworksscraper.model.Skill;
 import io.anhkhue.ctsa.vietnamworksscraper.scraper.converter.CtsaConverter;
-import io.anhkhue.ctsa.vietnamworksscraper.scraper.extractor.CtsaExtractor;
+import io.anhkhue.ctsa.vietnamworksscraper.scraper.datacleaner.DataCleaner;
 import io.anhkhue.ctsa.vietnamworksscraper.communicator.elasticsearch.ElasticsearchExtractor;
 import io.anhkhue.ctsa.vietnamworksscraper.exception.NoKeywordFoundException;
 import lombok.extern.slf4j.Slf4j;
@@ -37,12 +37,12 @@ public class VietnamworksCollector implements Collector {
 
     private final ElasticsearchExtractor elasticsearchExtractor;
 
-    private final CtsaExtractor ctsaExtractor;
+    private final DataCleaner dataCleaner;
 
     public VietnamworksCollector(ElasticsearchExtractor elasticsearchExtractor,
-                                 CtsaExtractor ctsaExtractor) {
+                                 DataCleaner dataCleaner) {
         this.elasticsearchExtractor = elasticsearchExtractor;
-        this.ctsaExtractor = ctsaExtractor;
+        this.dataCleaner = dataCleaner;
     }
 
     private void openDriver(String url) {
@@ -57,18 +57,27 @@ public class VietnamworksCollector implements Collector {
         }
     }
 
+    @Override
     public List<CollectedDataModel> collectData() {
         List<String> detailUrls = getDetailUrls();
 
         List<CollectedDataModel> collectedData = new ArrayList<>();
 
-        detailUrls.forEach(url -> {
+        /*detailUrls.forEach(url -> {
             try {
                 collectedData.add(retrieveDetail(url));
             } catch (NoKeywordFoundException e) {
                 log.info("Skipped 1 link");
             }
-        });
+        });*/
+
+        for (int i = 0; i < 5; i++) {
+            try {
+                collectedData.add(retrieveDetail(detailUrls.get(i)));
+            } catch (NoKeywordFoundException e) {
+                log.info("Skipped 1 link");
+            }
+        }
 
         return collectedData;
     }
@@ -98,7 +107,7 @@ public class VietnamworksCollector implements Collector {
 
             String requiredSkills = getRequiredSkills(tabPanels);
 
-            Set<Skill> skillsSet = new HashSet<>(ctsaExtractor.extractSkills(
+            Set<Skill> skillsSet = new HashSet<>(dataCleaner.extractSkills(
                     elasticsearchExtractor.extractKeywords(requiredSkills)));
             skillsSet.forEach(skill -> System.out.println(skill.getName()));
 
@@ -135,8 +144,8 @@ public class VietnamworksCollector implements Collector {
                                  .getText()
                                  .toLowerCase();
 
-            return ctsaExtractor.extractPositions(elasticsearchExtractor.extractKeywords(title))
-                                .get(0);
+            return dataCleaner.extractPositions(elasticsearchExtractor.extractKeywords(title))
+                              .get(0);
         } catch (IndexOutOfBoundsException e) {
             throw new NoKeywordFoundException();
         }
@@ -162,4 +171,5 @@ public class VietnamworksCollector implements Collector {
 
         return skillsBuilder.toString();
     }
+
 }

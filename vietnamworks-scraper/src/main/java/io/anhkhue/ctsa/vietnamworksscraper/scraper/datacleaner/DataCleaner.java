@@ -1,4 +1,4 @@
-package io.anhkhue.ctsa.vietnamworksscraper.scraper.extractor;
+package io.anhkhue.ctsa.vietnamworksscraper.scraper.datacleaner;
 
 import io.anhkhue.ctsa.vietnamworksscraper.communicator.basedataset.BaseDatasetWebClient;
 import io.anhkhue.ctsa.vietnamworksscraper.model.Keyword;
@@ -13,11 +13,11 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Component
-public class CtsaExtractor {
+public class DataCleaner {
 
     private final BaseDatasetWebClient baseDatasetWebClient;
 
-    public CtsaExtractor(BaseDatasetWebClient baseDatasetWebClient) {
+    public DataCleaner(BaseDatasetWebClient baseDatasetWebClient) {
         this.baseDatasetWebClient = baseDatasetWebClient;
     }
 

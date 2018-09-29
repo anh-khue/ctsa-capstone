@@ -19,8 +19,6 @@ public class PositionRequiresSkill {
     private int positionId;
     @NonNull
     private int skillId;
-    @NonNull
-    private int appearanceCount;
 
     @Override
     public boolean equals(Object o) {
@@ -29,12 +27,11 @@ public class PositionRequiresSkill {
         PositionRequiresSkill that = (PositionRequiresSkill) o;
         return id == that.id &&
                 positionId == that.positionId &&
-                skillId == that.skillId &&
-                appearanceCount == that.appearanceCount;
+                skillId == that.skillId;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, positionId, skillId, appearanceCount);
+        return Objects.hash(id, positionId, skillId);
     }
 }
