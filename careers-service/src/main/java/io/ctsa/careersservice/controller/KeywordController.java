@@ -1,7 +1,7 @@
-package io.ctsa.basedatasetservice.controller;
+package io.ctsa.careersservice.controller;
 
-import io.ctsa.basedatasetservice.exception.NotFoundInDatasetException;
-import io.ctsa.basedatasetservice.service.KeywordService;
+import io.ctsa.careersservice.exception.NotFoundInDatasetException;
+import io.ctsa.careersservice.service.KeywordService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
