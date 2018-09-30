@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Trang chủ</title>
+    <title>Thống kê</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href=".\css\style.css">
 
@@ -19,10 +19,10 @@
     <script src="./node_modules/chart.js/samples/utils.js"></script>
 
 </head>
-    <body id="home">
+    <body>
     <!-- Header -->
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height: 50px">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" height="50">
         <a class="navbar-brand" href=".\index.html">
             <img src="./images/logo-ctsa.png" width="90" height="30" class="d-inline-block align-top" alt="CTSA logo">
         </a>
@@ -30,7 +30,7 @@
 
         <div class="collapse navbar-collapse  justify-content-center  " id="navbarSupportedContent">
             <a class="mx-5" href="#">Tuyển Dụng</a>
-            <a class="mx-5" href=".\graph.html">Thống Kê</a>
+            <a class="mx-5" href="#">Thống Kê</a>
             <a class="mx-5" href="#">Tuyển Dụng</a>
             <a class="mx-5" href="#">Thống Kê</a>
 
@@ -40,71 +40,26 @@
         </span>
     </nav>
     <!-- End of Header -->
-
-    <!-- Content DIV -->
-    <div class="fluid-container">
-        <div class="row justify-content-between" >
-            <!-- Company summary detail div -->
-            <div class="col-md-4 "style="height: 900px; padding-left: 5%" >
-                <a href="#">
-                    <img  alt="Ranking Image" src=".\images\pencil-with-card.png" style="height: 100%" >
-                </a>
-            </div>
-            <div class="col-md-5 pl-5" style="padding-top:10%">
-                <h3>Hãy cho chúng tôi biết thêm về bạn</h3>
-                <div class="role  ">
-                    <b>Bạn đang làm về chuyên ngành gì?</b><br />
-                    <button class="btn btn-outline-dark my-2 mx-1">Developer</button>
-                    <button class="btn btn-outline-dark my-2 mx-1">Tester</button>
-                    <button class="btn btn-outline-dark my-2 mx-1">Desginer</button>
-                    <button class="btn btn-outline-dark my-2 mx-1">Engineer</button>
-                    <button class="btn btn-outline-dark my-2 mx-1">Project Manager</button>
-                    <button class="btn btn-outline-dark my-2 mx-1">English</button>
-                    <button class="btn btn-outline-dark my-2 mx-1">Japanese</button>
-                    <button class="btn btn-outline-dark my-2 mx-1">Other</button>
-                </div>
+    <div class="container">
+        <div class="row" >
+            <div class="col-md-12">
+            
+            
 
 
 
                 <!-- Charts -->
-                <!-- <canvas id="bar-chart-horizontal "></canvas> -->
-
+                <canvas id="bar-chart-horizontal "></canvas>
             </div>
+           
 
 
         </div>
-        <!-- <hr> -->
-        <!-- Search bar -->
-        <!-- <div class="row justify-content-center ">
-            <div class="col-md-5">
-                <div class="input-group ">
-                    <div class="input-group-btn search-panel">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                Filter
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <input type="text" class="form-control" name="x" placeholder="Search term...">
-                    <span class="input-group-btn text-center">
-                        <button class="btn btn-default">
-                            <span class="fa fa-search"></span>
-                        </button>
-                    </span>
-                </div>
-            </div>
-        </div> -->
+        
 
     </div>
 
-    <!-- <script>
+    <script>
         new Chart(document.getElementById("bar-chart-horizontal "), {
             type: 'horizontalBar',
             data: {
@@ -190,7 +145,7 @@
             });
 
         }
-    </script> -->
+    </script>
 
 </body>
 
