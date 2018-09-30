@@ -80,3 +80,7 @@ a:hover{
 .img-border{
   margin:50px;
 }
+.hideaway{
+  display: none;
+  transition: 0.3s;
+}

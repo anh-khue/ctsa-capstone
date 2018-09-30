@@ -19,7 +19,8 @@
     <script src="./node_modules/chart.js/samples/utils.js"></script>
 
 </head>
-    <body id="home">
+
+<body id="home">
     <!-- Header -->
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height: 50px">
@@ -43,25 +44,48 @@
 
     <!-- Content DIV -->
     <div class="fluid-container">
-        <div class="row justify-content-between" >
+        <div class="row justify-content-between">
             <!-- Company summary detail div -->
-            <div class="col-md-4 "style="height: 900px; padding-left: 5%" >
+            <div class="col-md-4 " style="height: 900px; padding-left: 5%">
                 <a href="#">
-                    <img  alt="Ranking Image" src=".\images\pencil-withcard-withoutbottom.png" style="height: 100%" >
+                    <img alt="Ranking Image" src=".\images\pencil-withcard-withoutbottom.png" style="height: 100%">
                 </a>
             </div>
             <div class="col-md-5 pl-5" style="padding-top:10%">
                 <h3>Hãy cho chúng tôi biết thêm về bạn</h3>
-                <div class="role  ">
-                    <b>Bạn đang làm về chuyên ngành gì?</b><br />
-                    <button class="btn btn-outline-dark my-2 mx-1">Developer</button>
-                    <button class="btn btn-outline-dark my-2 mx-1">Tester</button>
-                    <button class="btn btn-outline-dark my-2 mx-1">Desginer</button>
-                    <button class="btn btn-outline-dark my-2 mx-1">Engineer</button>
-                    <button class="btn btn-outline-dark my-2 mx-1">Project Manager</button>
-                    <button class="btn btn-outline-dark my-2 mx-1">English</button>
-                    <button class="btn btn-outline-dark my-2 mx-1">Japanese</button>
-                    <button class="btn btn-outline-dark my-2 mx-1">Other</button>
+
+                <b class="head1">Bạn đang làm về chuyên ngành gì?</b><br />
+                <div class="role1">
+                    <button class="btn btn-outline-dark my-2 mx-1 role1">Developer</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role1">Tester</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role1">Desginer</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role1">Engineer</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role1">Project Manager</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role1">English</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role1">Japanese</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role1">Other</button>
+                </div>
+                <b class="head2">lorem ipsum asdasdasdasdasdasdasdasda</b><br />
+                <div class="role2 hideaway">
+                    <button class="btn btn-outline-dark my-2 mx-1 role2">Developer</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role2">Tester</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role2">Desginer</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role2">Engineer</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role2">Project Manager</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role2">English</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role2">Japanese</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role2">Other</button>
+                </div>
+                <b class="head3">123345678</b><br />
+                <div class="role3 hideaway">
+                    <button class="btn btn-outline-dark my-2 mx-1 role3">Developer</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role3">Tester</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role3">Desginer</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role3">Engineer</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role3">Project Manager</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role3">English</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role3">Japanese</button>
+                    <button class="btn btn-outline-dark my-2 mx-1 role3">Other</button>
                 </div>
 
 
@@ -73,125 +97,32 @@
 
 
         </div>
-        <!-- <hr> -->
-        <!-- Search bar -->
-        <!-- <div class="row justify-content-center ">
-            <div class="col-md-5">
-                <div class="input-group ">
-                    <div class="input-group-btn search-panel">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                Filter
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <input type="text" class="form-control" name="x" placeholder="Search term...">
-                    <span class="input-group-btn text-center">
-                        <button class="btn btn-default">
-                            <span class="fa fa-search"></span>
-                        </button>
-                    </span>
-                </div>
-            </div>
-        </div> -->
-
     </div>
-
-    <!-- <script>
-        new Chart(document.getElementById("bar-chart-horizontal "), {
-            type: 'horizontalBar',
-            data: {
-                labels: ["Africa ", "Asia ", "Europe ", "Latin America ", "North America "],
-                datasets: [
-                    {
-                        label: "Population (millions) ",
-                        backgroundColor: ["#3e95cd ", "#8e5ea2 ", "#3cba9f ", "#e8c3b9 ", "#c45850 "],
-                        data: [2478, 5267, 734, 784, 433]
-                    }
-                ]
-            },
-            options: {
-                legend: { display: false },
-                title: {
-                    display: true,
-                    text: 'Predicted world population (millions) in 2050'
-                }
-            }
+    <script>
+        $(".role1").click(function () {
+            // $(".role1").addClass("hideaway");
+            $(".role1").hide(500);
+            $(".role2").show(500);
+            $(".role3").hide(500)
+        });
+        $(".role2").click(function () {
+            $(".role1").hide(500);
+            $(".role2").hide(500);
+           
+            $(".role3").show(500);
+        });
+        $(".head1").click(function () {
+            $(".role1").show(500);
+            $(".role2").hide(500);
+            $(".role3").hide(500)
+          
+        });
+        $(".head2").click(function () {
+            $(".role1").hide(500);
+            $(".role2").show(500);
+            $(".role3").hide(500)
         });
     </script>
-
-    <script>
-        var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        var color = Chart.helpers.color;
-        var horizontalBarChartData = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [{
-                label: 'Dataset 1',
-                backgroundColor: color(window.chartColors.yellow).alpha(0.5).rgbString(),
-                borderColor: window.chartColors.yellow,
-                borderWidth: 1,
-                data: [
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor()
-                ]
-            }, {
-                label: 'Dataset 2',
-                backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
-                borderColor: window.chartColors.blue,
-                data: [
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor()
-                ]
-            }]
-
-        };
-
-        // Chart.defaults.scale.gridLines.display = false;
-
-        window.onload = function () {
-            // var ctx = document.getElementById('canvas').getContext('2d');
-            window.myHorizontalBar = new Chart(ctx, {
-                type: 'horizontalBar',
-                data: horizontalBarChartData,
-                options: {
-                    // Elements options apply to all of the options unless overridden in a dataset
-                    // In this case, we are setting the border of each horizontal bar to be 2px wide
-                    elements: {
-                        rectangle: {
-                            borderWidth: 2,
-                        }
-                    },
-                    responsive: true,
-                    legend: {
-                        position: 'right',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Chart.js Horizontal Bar Chart'
-                    }
-                }
-            });
-
-        }
-    </script> -->
-
 </body>
 
 </html>
