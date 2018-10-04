@@ -2,21 +2,28 @@
   background-color: #e9e9e9;
   margin-top: 2%;
 } */
-#home{
+
+* {
+  font-family:Arial, Helvetica, sans-serif
+}
+
+#home {
   background: url("../images/background-ctsa.png") fixed no-repeat center;
   background-size: 100% 100%;
 }
-.row{
-  margin-top:15px;
+
+.row {
+  margin-top: 15px;
 }
 
-.listjob{
+.listjob {
   background-color: white;
   padding-top: 15px;
 }
-.jobdetail{
+
+.jobdetail {
   background-color: white;
-  padding-top:15px;
+  padding-top: 15px;
 }
 
 .stylish-panel {
@@ -36,12 +43,10 @@
 }
 
 .stylish-panel:hover {
- border: 1px solid aqua;
+  border: 1px solid aqua;
   /* border: 1px solid #5384cb; */
   /* box-shadow: 0 .5rem 1rem rgba(83, 132, 203, .15); */
-  box-shadow: 0 1rem 3rem rgba(60, 74, 165, .175) ;
-  
-  
+  box-shadow: 0 1rem 3rem rgba(60, 74, 165, .175);
   transition: 0.3s;
   background-color: white
 }
@@ -49,54 +54,56 @@
 #address {
   padding-top: 30px
 }
-a{
-  color:white !important;
+
+a {
+  color: white !important;
 }
-a:hover{
+
+a:hover {
   text-decoration: none !important;
-  
 }
-.icon-background{
- color: white;
+
+.icon-background {
+  color: white;
 }
 
 .gear-icon:before {
-   content: "\2605"; 
-   margin-right: 6px;
+  content: "\2605";
+  margin-right: 6px;
 }
-.group-icon:before{
-  content: "\2666"; 
-   margin-right: 6px;
+
+.group-icon:before {
+  content: "\2666";
+  margin-right: 6px;
 }
-.country-icon:before{
-  content: "\2756"; 
+
+.country-icon:before {
+  content: "\2756";
   /* &#9734; */
   margin-right: 6px;
 }
-.working-date::before{
-  content: "\2665"; 
+
+.working-date::before {
+  content: "\2665";
   margin-right: 6px;
 }
-.img-border{
-  margin:50px;
+
+.img-border {
+  margin: 50px;
 }
-.hideaway{
+
+.hideaway {
   display: none;
-  
 }
-.forminput{
-  color: rgba(49, 50, 53, 0.836);
-  padding-top:10%;
+
+.forminput {
+  color: rgba(49, 50, 53, 0.76);
+  padding-top: 10%;
 }
-#pencil-image{
+
+#pencil-image {
   max-width: 100%;
   height: auto;
-  width: auto\9; /* ie8 */
-}
-html, body, {
-  position: fixed;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
+  width: auto\9;
+  /* ie8 */
 }
