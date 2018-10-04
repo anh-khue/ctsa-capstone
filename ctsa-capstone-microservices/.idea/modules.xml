@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/careers-service/careers-service.iml" filepath="$PROJECT_DIR$/careers-service/careers-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-service/config-service.iml" filepath="$PROJECT_DIR$/config-service/config-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/elasticsearch-service/elasticsearch-service.iml" filepath="$PROJECT_DIR$/elasticsearch-service/elasticsearch-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-service/eureka-service.iml" filepath="$PROJECT_DIR$/eureka-service/eureka-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vietnamworks-scraper/vietnamworks-scraper.iml" filepath="$PROJECT_DIR$/vietnamworks-scraper/vietnamworks-scraper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/warehouse-service/warehouse-service.iml" filepath="$PROJECT_DIR$/warehouse-service/warehouse-service.iml" />
+    </modules>
+  </component>
+</project>

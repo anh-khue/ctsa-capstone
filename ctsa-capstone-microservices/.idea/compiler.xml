@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="careers-service" />
+        <module name="config-service" />
+        <module name="elasticsearch-service" />
+        <module name="eureka-service" />
+        <module name="vietnamworks-scraper" />
+        <module name="warehouse-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="careers-service" target="1.8" />
+      <module name="config-service" target="1.8" />
+      <module name="elasticsearch-service" target="1.8" />
+      <module name="eureka-service" target="1.8" />
+      <module name="vietnamworks-scraper" target="1.8" />
+      <module name="warehouse-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
