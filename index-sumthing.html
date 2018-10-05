@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trianle Box</title>
+    <style>
+        #triangle {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 100px;
+            border-top-color: blue;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            border-right-color: blue;
+        }
+        
+        #square {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 100px;
+            border-top-color: blue;
+            border-bottom-color: blue;
+            border-left-color: blue;
+            border-right-color: blue;
+        }
+       
+        #arrow {
+            position: relative;
+            top: 100px;
+            left: 200px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 100px;
+            border-top-color: blue;
+            border-bottom-color: blue;
+            border-left-color: blue;
+            border-right-color: blue;
+        }
+        
+        #arrow::before {
+            content: '';
+            position: absolute;
+            right: -100px;
+            bottom: 100px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 100px;
+            border-top-color: transparent;
+            border-bottom-color: blue;
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="triangle"></div>
+    <!-- <div id="square"></div> -->
+
+    <!-- <div id="arrow"></div> -->
+</body>
+</html>
