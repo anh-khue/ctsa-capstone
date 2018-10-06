@@ -26,7 +26,7 @@ public class KeywordController {
     @GetMapping
     public ResponseEntity getKeywordsMap() {
         return ResponseEntity.status(OK)
-                             .body(keywordService.getKeywordsMap());
+                             .body(keywordService.getKeywords());
     }
 
     @PostMapping
