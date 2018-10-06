@@ -31,6 +31,7 @@
     margin-left: -79px;
     margin-top: 72px;
   }
+
   #triangle2 {
     width: 0;
     height: 0;
@@ -40,29 +41,36 @@
     border-bottom-color: transparent;
     border-left-color: #e27e21;
     border-right-color: transparent;
-    margin-left: 1125px;
+    margin-left: 1520px;
     margin-top: 32px;
-    
+
   }
+
   #skill {
     background: url("./images/background-ctsa.png");
     background-position-x: 80%;
     left: -80px;
-    top: 70px;
-
+    top: 72px;
+    height: 150px;
+    border-radius: 0px 90px 90px 0px;
+    /* box-shadow: grey 0 5px 5px 1px; */
 
   }
+
   #position {
     background: url("./images/background-ctsa - inverse.png");
     background-position-x: 50%;
-    left:450px;
-    top: 30px;
-
+    left: 453px;
+    top: 32px;
+    height: 150px;
+    border-radius: 90px 0px 0px 90px;
+    /* box-shadow: grey 0 5px 5px 1px; */
+    text-align: right;
 
   }
 
   body {
-    background-color: #ffb751;
+    /* background-color: #ffffffd5; */
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -84,20 +92,20 @@
   }
 
   a {
-    color: black;
+    color: rgb(214, 213, 213);
     padding: 5px;
   }
 
   .tabactive {
-    background-color: white !important;
-    color: black;
+    background-color: #0a90b5 !important;
+    /* color: rgb(226, 220, 220) ; */
   }
 
   .tab:before {
     height: 50px;
     width: 70px;
     border-radius: 10px 10px 0px 0px;
-    background-color: white;
+    background-color: #0a90b5;
     content: "";
     position: absolute;
     left: 104px;
@@ -108,7 +116,7 @@
   }
 
   .tab:nth-of-type(2) {
-    background-color: #555;
+    background-color: #075166;
     top: 25px;
     left: 30px;
     z-index: 1;
@@ -116,7 +124,7 @@
   }
 
   .tab:nth-of-type(2):before {
-    background-color: #555;
+    background-color: #075166;
   }
 
   .tab:nth-of-type(2):hover,
@@ -126,7 +134,7 @@
   }
 
   .tab:nth-of-type(3) {
-    background-color: #555;
+    background-color: #075166;
     top: 25px;
     left: 60px;
     z-index: 2;
@@ -134,7 +142,7 @@
   }
 
   .tab:nth-of-type(3):before {
-    background-color: #555;
+    background-color: #075166;
   }
 
   .tab:nth-of-type(3):hover,
@@ -146,16 +154,41 @@
 
 
   #content {
-    background-color: #e2dede;
+    background-color: #0a90b5;
     height: 550px;
-    border-radius: 0px 20px 0px 0px;
-
+    border-radius: 0px 20px 20px 20px;
+    height: calc(100vh - 200px);
     top: 10px;
+
+    /* height:100vh; */
+
+  }
+
+  
+  #icon1 {
+    margin-right:20px;
+  }
+
+  #icon1>div>img {
+    height: 110px;
+    width: 110px;
+    /* border: 3px solid rgba(175, 174, 174, 0.781); */
+    border-radius: 50%;
 
 
   }
 
- 
+  #icon2>img {
+    height: 110px;
+    width: 110px;
+    /* border: 3px solid rgba(175, 174, 174, 0.781); */
+    border-radius: 50%;
+    /* margin-top:5px; */
+    margin-left: 20px;
+  }
+  .container-fluid{
+width: 80vw !important;
+  }
 </style>
 
 <body>
@@ -181,7 +214,7 @@
   <!-- End of Header -->
 
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <ul class="nav col-md-12" id="myTab" role="tablist">
         <li class="nav-item tab tabactive">
@@ -199,29 +232,68 @@
       </ul>
     </div>
     <div class="row">
-      <div id="content" class="tab-content col-md-12" id="myTabContent">
+      <div id="content" class="tab-content col-md-12">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <div id="skill" class="col-md-8" style="height:150px;border-radius: 0px 90px 90px 0px;box-shadow: grey 0 5px 5px 1px;">
-            <span style="color: white; font-size: 45px; left:20px">&nbsp;&nbsp;Top 3</span><br>
-            <span style="color: white; font-size: 45px">Kỹ năng</span>
+
+          <div id="skill" class="col-md-9">
+            <div class="row justify-content-between">
+              <div class="col-md-3 my-auto text-center">
+                <span style="color: white; font-size: 35px;">Top</span><br>
+                <span style="color: white; font-size: 35px">Kỹ năng</span>
+              </div>
+              <div class="col-md-7 row justify-content-around" id="icon1">
+
+                <div class="col-md-4 text-center">
+                  <img src="./images/skill1.png" alt="Skill"><span>text</span>
+
+                </div>
+                <div class="col-md-4 text-center">
+                  <img src="./images/skill2.png" alt="Skill">text
+                </div>
+
+
+                <div class="col-md-4 text-center">
+                  <img src="./images/spring.svg" alt="Skill">text
+                </div>
+              </div>
+
+            </div>
+
 
           </div>
           <div id="triangle"></div>
-          <div id="position" class="col-md-8" style="height:150px;border-radius: 90px 0px 0px 90px;box-shadow: grey 0 5px 5px 1px; text-align: right;">
-              <span style="color: white; font-size: 45px; left:20px">Top 3&nbsp;&nbsp;</span><br>
-              <span style="color: white; font-size: 45px">Vị trí&nbsp;&nbsp;&nbsp;</span>
-  
+          <div id="position" class="col-md-9">
+            <div class="row justify-content-between" id="position">
+
+              <div class="col-md-7 row justify-content-around" id="icon2">
+
+                <img src="./images/job2.png" alt="Job">
+
+
+                <img src="./images/job1.png" alt="Job">
+
+
+
+
+                <img src="./images/job.png" alt="Job">
+              </div>
+
+              <div class="col-md-3 my-auto text-center">
+                <span style="color: white; font-size: 35px;">Top</span><br>
+                <span style="color: white; font-size: 35px">Vị trí</span>
+              </div>
+
             </div>
-            <div id="triangle2"></div>
+
+          </div>
+          <div id="triangle2"></div>
+
         </div>
-
-        
-
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">bbb</div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">ccc</div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">bbb</div>
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">ccc</div>
+        </div>
       </div>
     </div>
-  </div>
 
 </body>
 
