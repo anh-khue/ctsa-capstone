@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Thống kê 1</title>
+  <title>Thống kê</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href=".\css\tab.css">
 
@@ -24,10 +24,12 @@
     height: 0;
     border-style: solid;
     border-width: 32px;
-    border-top-color: #e27e21;
+    /* border-top-color: #e27e21; */
+    border-top-color: #be1600;
     border-bottom-color: transparent;
     border-left-color: transparent;
-    border-right-color: #e27e21;
+    border-right-color: #be1600;
+    /* border-right-color: #e27e21; */
     margin-left: -79px;
     margin-top: 72px;
   }
@@ -37,9 +39,9 @@
     height: 0;
     border-style: solid;
     border-width: 32px;
-    border-top-color: #e27e21;
+    border-top-color: #be1600;
     border-bottom-color: transparent;
-    border-left-color: #e27e21;
+    border-left-color: #be1600;
     border-right-color: transparent;
     margin-left: 1520px;
     margin-top: 32px;
@@ -47,8 +49,11 @@
   }
 
   #skill {
-    background: url("./images/background-ctsa.png");
+    /* background: url("./images/background-ctsa.png"); */
     background-position-x: 80%;
+    /* background: url("./images/violet-banner.jpg"); */
+    background: url("./images/orange-banner.jpg") no-repeat;
+    background-color: white;
     left: -80px;
     top: 72px;
     height: 150px;
@@ -58,8 +63,11 @@
   }
 
   #position {
-    background: url("./images/background-ctsa - inverse.png");
-    background-position-x: 50%;
+    /* background: url("./images/background-ctsa - inverse.png"); */
+    background: url("./images/orange-banner-flip.jpg") no-repeat;
+    /* background: url("./images/orange-background.jpg"); */
+    background-position-x: 100%;
+    background-color: white;
     left: 453px;
     top: 32px;
     height: 150px;
@@ -97,15 +105,22 @@
   }
 
   .tabactive {
-    background-color: #0a90b5 !important;
+    background-color: whitesmoke !important;
+    box-shadow: black 0 5px 10px 0;
     /* color: rgb(226, 220, 220) ; */
+  }
+
+  .tabactive > a {
+    color: #161616;
+    font-size: 1.4em;
+    font-weight: bold;
   }
 
   .tab:before {
     height: 50px;
     width: 70px;
     border-radius: 10px 10px 0px 0px;
-    background-color: #0a90b5;
+    background-color: whitesmoke;
     content: "";
     position: absolute;
     left: 104px;
@@ -154,7 +169,7 @@
 
 
   #content {
-    background-color: #0a90b5;
+    /* background-color: #0a90b5; */
     height: 550px;
     border-radius: 0px 20px 20px 20px;
     height: calc(100vh - 200px);
@@ -164,9 +179,9 @@
 
   }
 
-  
+
   #icon1 {
-    margin-right:20px;
+    margin-right: 20px;
   }
 
   #icon1>div>img {
@@ -186,8 +201,24 @@
     /* margin-top:5px; */
     margin-left: 20px;
   }
-  .container-fluid{
-width: 80vw !important;
+
+  .container-fluid {
+    width: 80vw !important;
+  }
+
+  .folder {
+    background: url("./images/world-map.png") no-repeat;
+    background-size: 95% 95%;
+    background-color: whitesmoke;
+    /* background-attachment: fixed; */
+    /* background-position: center;  */
+    background-position-y: 20%;
+    box-shadow: black 0 5px 10px 0;
+    z-index: 20;
+  }
+
+  .top-3 {
+    box-shadow: gray 0 5px 8px 0;
   }
 </style>
 
@@ -232,10 +263,10 @@ width: 80vw !important;
       </ul>
     </div>
     <div class="row">
-      <div id="content" class="tab-content col-md-12">
+      <div id="content" class="tab-content col-md-12 folder">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-          <div id="skill" class="col-md-9">
+          <div id="skill" class="col-md-9 top-3">
             <div class="row justify-content-between">
               <div class="col-md-3 my-auto text-center">
                 <span style="color: white; font-size: 35px;">Top</span><br>
@@ -262,7 +293,7 @@ width: 80vw !important;
 
           </div>
           <div id="triangle"></div>
-          <div id="position" class="col-md-9">
+          <div id="position" class="col-md-9 top-3">
             <div class="row justify-content-between" id="position">
 
               <div class="col-md-7 row justify-content-around" id="icon2">
@@ -289,11 +320,11 @@ width: 80vw !important;
           <div id="triangle2"></div>
 
         </div>
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">bbb</div>
-          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">ccc</div>
-        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">bbb</div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">ccc</div>
       </div>
     </div>
+  </div>
 
 </body>
 
