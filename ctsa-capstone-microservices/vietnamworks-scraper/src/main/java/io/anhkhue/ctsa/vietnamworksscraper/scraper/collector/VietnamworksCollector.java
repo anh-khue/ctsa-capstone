@@ -8,6 +8,7 @@ import io.anhkhue.ctsa.vietnamworksscraper.model.Skill;
 import io.anhkhue.ctsa.vietnamworksscraper.repository.LinkRepository;
 import io.anhkhue.ctsa.vietnamworksscraper.scraper.converter.CtsaConverter;
 import io.anhkhue.ctsa.vietnamworksscraper.scraper.datacleaner.DataCleaner;
+import io.anhkhue.ctsa.vietnamworksscraper.scraper.persistence.DataPersistence;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -15,8 +16,6 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -50,12 +49,16 @@ public class VietnamworksCollector implements Collector {
 
     private final LinkRepository linkRepository;
 
+    private final DataPersistence dataPersistence;
+
     public VietnamworksCollector(ElasticsearchWebClient elasticsearchWebClient,
                                  DataCleaner dataCleaner,
-                                 LinkRepository linkRepository) {
+                                 LinkRepository linkRepository,
+                                 DataPersistence dataPersistence) {
         this.elasticsearchWebClient = elasticsearchWebClient;
         this.dataCleaner = dataCleaner;
         this.linkRepository = linkRepository;
+        this.dataPersistence = dataPersistence;
     }
 
     private void openDriver(String url) {
@@ -93,7 +96,11 @@ public class VietnamworksCollector implements Collector {
 
         for (Link link : detailUrls) {
             try {
-                collectedData.add(retrieveDetail(link.getUrl()));
+                CollectedDataModel dataModel = retrieveDetail(link.getUrl());
+                if (dataModel != null && !dataModel.getSkills().isEmpty()) {
+                    dataPersistence.persist(dataModel);
+                }
+                collectedData.add(dataModel);
                 link.setCrawled(true);
                 linkRepository.save(link);
             } catch (NoKeywordFoundException e) {
@@ -104,7 +111,7 @@ public class VietnamworksCollector implements Collector {
         // For testing
         /*for (int i = 0; i < 3; i++) {
             try {
-                collectedData.add(retrieveDetail(detailUrls.get(i)));
+                collectedData.add(retrieveDetail(detailUrls.get(i).getUrl()));
             } catch (NoKeywordFoundException e) {
                 log.info("Skipped 1 link");
             }

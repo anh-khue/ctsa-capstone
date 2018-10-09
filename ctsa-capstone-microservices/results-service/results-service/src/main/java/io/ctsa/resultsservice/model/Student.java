@@ -13,6 +13,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @RequiredArgsConstructor
 public class Student {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

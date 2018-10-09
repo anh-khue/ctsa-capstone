@@ -2,10 +2,8 @@ package io.ctsa.careersservice.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -27,6 +25,8 @@ public class Keyword {
     private Integer skillId;
     @NonNull
     private boolean pushedToElasticsearch;
+    @Transient
+    private List<String> synonyms;
 
     @Override
     public boolean equals(Object o) {

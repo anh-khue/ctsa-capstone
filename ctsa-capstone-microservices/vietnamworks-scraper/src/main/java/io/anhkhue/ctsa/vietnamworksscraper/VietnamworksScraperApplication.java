@@ -10,6 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class VietnamworksScraperApplication {
@@ -24,14 +26,9 @@ public class VietnamworksScraperApplication {
                              DataPersistence dataPersistence) {
         return args -> {
             List<CollectedDataModel> collectedData = vietnamworksCollector.collectData();
+            System.out.println(collectedData.size());
 
-            /*collectedData.forEach(data -> {
-                System.out.println(data.getPostedDate());
-                System.out.println(data.getPosition());
-                data.getSkills().forEach(System.out::println);
-            });*/
-
-            collectedData.forEach(dataPersistence::persist);
+//            collectedData.forEach(dataPersistence::persist);
         };
     }
 }

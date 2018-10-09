@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/elasticsearch-service/pom.xml" />
         <option value="$PROJECT_DIR$/warehouse-service/pom.xml" />
         <option value="$PROJECT_DIR$/vietnamworks-scraper/pom.xml" />
+        <option value="$PROJECT_DIR$/results-service/results-service/pom.xml" />
       </list>
     </option>
   </component>
