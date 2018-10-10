@@ -1,129 +1,282 @@
-* { margin: 0; padding: 0; }
-body { font: 14px Georgia, serif; background: #222;  }
+  #triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 32px;
+    /* border-top-color: #e27e21; */
+    border-top-color: #be1600;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: #be1600;
+    /* border-right-color: #e27e21; */
+    margin-left: -79px;
+    margin-top: 72px;
+  }
 
-h1 { 
-	width: 660px; 
-	margin: 0 auto;
-	padding: 20px 0;
-	color: #222;
-}
+  #triangle2 {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 32px;
+    border-top-color: #be1600;
+    border-bottom-color: transparent;
+    border-left-color: #be1600;
+    border-right-color: transparent;
+    margin-left: 1520px;
+    margin-top: 32px;
 
-.group:before,
-.group:after {
+  }
+
+  #triangle3 {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 75px;
+    /* border-top-color: #e27e21; */
+    border-top-color: #fdb03e;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    /* border-right-color: #e27e21; */
+
+  }
+
+  #triangle4 {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 75px;
+    /* border-top-color: #e27e21; */
+    border-top-color: #fe6f20;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    /* border-right-color: #e27e21; */
+
+  }
+
+  #triangle5 {
+
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 125px;
+    /* border-top-color: #e27e21; */
+    border-top-color: #fdb03e;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+
+    background: url("../images/banner-middle.png") no-repeat center;
+    background-size: 100% 100%;
+
+
+  }
+
+  #skill {
+    /* background: url("./images/background-ctsa.png"); */
+    background-position-x: 80%;
+    /* background: url("./images/violet-banner.jpg"); */
+    background: url("../images/orange-banner.jpg") no-repeat;
+    background-color: white;
+    left: -80px;
+    top: 72px;
+    height: 150px;
+    border-radius: 0px 90px 90px 0px;
+    /* box-shadow: grey 0 5px 5px 1px; */
+
+  }
+
+  #position {
+    /* background: url("./images/background-ctsa - inverse.png"); */
+    background: url("../images/orange-banner-flip.jpg") no-repeat;
+    /* background: url("./images/orange-background.jpg"); */
+    background-position-x: 100%;
+    background-color: white;
+    left: 453px;
+    top: 32px;
+    height: 150px;
+    border-radius: 90px 0px 0px 90px;
+    /* box-shadow: grey 0 5px 5px 1px; */
+    text-align: right;
+
+  }
+
+  
+
+  .tab {
+    height: 50px;
+    width: 150px;
+    border-radius: 15px 15px 0px 0px;
+    background-color: #FFF;
+    position: relative;
+    top: 25px;
+    background-color: #075166;
+
+    display: inline-block;
+    z-index: 2;
+    color: #EEE;
+  }
+  .tab:before {
+    height: 50px;
+    width: 70px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #075166;
     content: "";
-    display: table;
-}
-.group:after {
-    clear: both;
-}
-.group {
-    zoom: 1;
-}
+    position: absolute;
+    left: 104px;
+    top: 0px;
+    -webkit-transform: skewX(40deg);
+    transform: skewX(40deg);
+    z-index: -1;
+  }
 
-#content { 
-    /* background: white;  */
+
+  #myTab>li>a {
+    color: rgb(214, 213, 213);
+    padding: 10px;
+    font-size: 1.4em;
+  }
+
+  .tabactive {
+    background-color: whitesmoke !important;
+    box-shadow: black 0 5px 10px 0;
+    /* color: rgb(226, 220, 220) ; */
+  }
+
+  .tabactive>a {
+    color: #161616 !important;
+    font-size: 1.4em;
+    font-weight: bold;
+  }
+
+  
+  .tabactive:before {
+    height: 50px;
+    width: 70px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: whitesmoke;
+    content: "";
+    position: absolute;
+    left: 104px;
+    top: 0px;
+    -webkit-transform: skewX(40deg);
+    transform: skewX(40deg);
+    z-index: -1;
+  }
+
+  .tab:nth-of-type(2) {
+
+
+    left: 30px;
+    z-index: 1;
+
+  }
+
+
+
+  /* .tab:nth-of-type(2):hover,
+  .tab:nth-of-type(2):hover:before {
+    background-color: #159;
+    transition: 0.3s ease-out;
+  } */
+
+  .tab:nth-of-type(3) {
+
+
+    left: 60px;
+    z-index: 0;
+
+  }
+
+
+
+  /* .tab:nth-of-type(3):hover,
+  .tab:nth-of-type(3):hover:before {
+    background-color: #159;
+    transition: 0.3s ease-out;
+  } */
+
+
+
+  #content {
+    /* background-color: #0a90b5; */
+    /* height: 550px; */
+    border-radius: 0px 20px 20px 20px;
+    height: calc(100vh - 200px);
+    top: 10px;
     min-height: 700px; 
-}
+    /* height:100vh; */
 
-.tabs { 
-    list-style: none; 
-    margin: 60px auto 0; 
-    width: 660px;
-}
-    .tabs li { 
-      /* Makes a horizontal row */
-        float: left; 
-        
-        /* So the psueudo elements can be
-           abs. positioned inside */
-        position: relative; 
-    }
-    .tabs a { 
-      /* Make them block level
-         and only as wide as they need */
-      float: left; 
-      padding: 10px 40px; 
-      text-decoration: none;
-      
-      /* Default colors */ 
-      color: black;
-      background: #ddc385; 
-      
-      /* Only round the top corners */
-      -webkit-border-top-left-radius: 15px;
-      -webkit-border-top-right-radius: 15px;
-      -moz-border-radius-topleft: 15px;
-      -moz-border-radius-topright: 15px;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px; 
-    }
-    .tabs .active {
-      /* Highest, active tab is on top */
-      z-index: 3;
-    }
-    .tabs .active a { 
-      /* Colors when tab is active */
-      background: white; 
-      color: black; 
-    }
-    .tabs li:before, .tabs li:after, 
-    .tabs li a:before, .tabs li a:after {
-      /* All pseudo elements are 
-         abs. positioned and on bottom */
-      position: absolute;
-      bottom: 0;
-    }
-    /* Only the first, last, and active
-       tabs need pseudo elements at all */
-    .tabs li:last-child:after,   .tabs li:last-child a:after,
-    .tabs li:first-child:before, .tabs li:first-child a:before,
-    .tabs .active:after,   .tabs .active:before, 
-    .tabs .active a:after, .tabs .active a:before {
-      content: "";
-    }
-    .tabs .active:before, .tabs .active:after {
-      background: white; 
-      
-      /* Squares below circles */
-      z-index: 1;
-    }
-    /* Squares */
-    .tabs li:before, .tabs li:after {
-      background: #ddc385;
-      width: 10px;
-      height: 10px;
-    }
-    .tabs li:before {
-      left: -10px;      
-    }
-    .tabs li:after { 
-      right: -10px;
-    }
-    /* Circles */
-    .tabs li a:after, .tabs li a:before {
-      width: 20px; 
-      height: 20px;
-      /* Circles are circular */
-      -webkit-border-radius: 10px;
-      -moz-border-radius:    10px;
-      border-radius:         10px;
-      background: #222;
-      
-      /* Circles over squares */
-      z-index: 2;
-    }
-    .tabs .active a:after, .tabs .active a:before {
-      background: #ddc385;
-    }
-    /* First and last tabs have different
-       outside color needs */
-    .tabs li:first-child.active a:before,
-    .tabs li:last-child.active a:after {
-      background: #222;
-    }
-    .tabs li a:before {
-      left: -20px;
-    }
-    .tabs li a:after {
-      right: -20px;
-    }
+  }
+
+
+  #icon1 {
+    margin-right: 20px;
+  }
+
+  #icon1>div>img {
+    height: 110px;
+    width: 110px;
+    /* border: 3px solid rgba(175, 174, 174, 0.781); */
+    border-radius: 50%;
+
+
+  }
+
+  #icon2 {
+    margin-left: 20px;
+  }
+
+  #icon2>div>img {
+    height: 110px;
+    width: 110px;
+    /* border: 3px solid rgba(175, 174, 174, 0.781); */
+    border-radius: 50%;
+    /* margin-top:5px; */
+    /* margin-left: 20px; */
+  }
+
+  .container-fluid {
+    width: 80vw !important;
+  }
+
+  .folder {
+    background: url("../images/world-map.png") no-repeat;
+    background-size: 95% 95%;
+    background-color: whitesmoke;
+    /* background-attachment: fixed; */
+    /* background-position: center;  */
+    background-position-y: 20%;
+    box-shadow: black 0 5px 10px 0;
+    z-index: 20;
+  }
+
+  .top-3 {
+    box-shadow: gray 0 5px 8px 0;
+  }
+
+  #recruit>div>div>div>span {
+    /* color: rgb(235, 226, 226); */
+
+  }
+
+  .banner {
+    background: url("../images/banner-alternative.png") no-repeat center;
+    background-size: 450px 100%;
+    
+
+
+  }
+
+  .statistic1 {
+    background: url("../images/statistic1.png") no-repeat center;
+    background-size: 100% 100%;
+
+  }
+
+  .statistic2 {
+    background: url("../images/statistic2.png") no-repeat center;
+    background-size: 100% 100%;
+
+  }

@@ -4,8 +4,8 @@
 } */
 
 html {
-  font-family: 'Muli', sans-serif;
-  /* font-family: 'Open Sans', sans-serif; */
+  /* font-family: 'Muli', sans-serif !important; */
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 #homebody {
@@ -100,7 +100,7 @@ a:hover {
 
 .forminput {
   color: rgba(49, 50, 53, 0.76);
-  padding-top: 10%;
+  /* padding-top: 10%; */
 }
 
 #pencil-image {
