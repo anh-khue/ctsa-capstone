@@ -20,9 +20,7 @@ public class Recruitment {
     private String source;
     @NonNull
     private String link;
-    @NonNull
     private int positionId;
-    @NonNull
     private int number;
 
     @Override

@@ -17,6 +17,7 @@ public class ElasticsearchWebClient {
         webClient = elasticsearchCommunicator.client();
     }
 
+    @SuppressWarnings("unchecked")
     public List<String> extractKeywords(String content) {
         String response = webClient.post()
                                    .uri("/elasticsearch/_extract/keywords/json")

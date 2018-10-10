@@ -19,6 +19,5 @@ public class Link {
     private int id;
     @NonNull
     private String url;
-    @NonNull
     private boolean isCrawled;
 }

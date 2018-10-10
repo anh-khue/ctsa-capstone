@@ -11,9 +11,7 @@ import java.util.Objects;
 public class RequiredSkill {
 
     private int id;
-    @NonNull
     private int recruitmentId;
-    @NonNull
     private int skillId;
 
     @Override

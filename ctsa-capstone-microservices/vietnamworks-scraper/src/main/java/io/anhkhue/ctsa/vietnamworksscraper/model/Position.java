@@ -1,9 +1,6 @@
 package io.anhkhue.ctsa.vietnamworksscraper.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Objects;
 
@@ -14,6 +11,7 @@ import java.util.Objects;
 public class Position {
 
     private int id;
+    @NonNull
     private String name;
 
     @Override

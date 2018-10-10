@@ -13,12 +13,10 @@ public class Keyword {
     private int id;
     @NonNull
     private String word;
-    @NonNull
     private boolean isSynonym;
     private Integer mainKeywordId;
     private Integer positionId;
     private Integer skillId;
-    @NonNull
     private boolean pushedToElasticsearch;
 
     @Override

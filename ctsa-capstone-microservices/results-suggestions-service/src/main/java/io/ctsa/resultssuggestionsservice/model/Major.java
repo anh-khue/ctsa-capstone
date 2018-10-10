@@ -1,9 +1,6 @@
-package io.ctsa.resultsservice.model;
+package io.ctsa.resultssuggestionsservice.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -11,7 +8,8 @@ import java.util.Objects;
 @Entity
 @Data
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Major {
 
     @Id
@@ -19,7 +17,6 @@ public class Major {
     private int id;
     @NonNull
     private String name;
-    @NonNull
     private int businessFieldId;
 
     @Override
@@ -34,7 +31,6 @@ public class Major {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(id, name, businessFieldId);
     }
 }

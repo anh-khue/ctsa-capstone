@@ -1,12 +1,12 @@
-package io.ctsa.resultsservice;
+package io.ctsa.resultssuggestionsservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ResultsServiceApplication {
+public class ResultsSuggestionsServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ResultsServiceApplication.class, args);
+		SpringApplication.run(ResultsSuggestionsServiceApplication.class, args);
 	}
 }

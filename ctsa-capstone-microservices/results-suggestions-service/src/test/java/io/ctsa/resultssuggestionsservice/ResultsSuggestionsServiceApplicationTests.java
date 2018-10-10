@@ -1,4 +1,4 @@
-package io.ctsa.resultsservice;
+package io.ctsa.resultssuggestionsservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ResultsServiceApplicationTests {
+public class ResultsSuggestionsServiceApplicationTests {
 
 	@Test
 	public void contextLoads() {
