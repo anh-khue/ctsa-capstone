@@ -11,7 +11,6 @@ import java.util.Objects;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class MajorCentroid {
@@ -20,7 +19,8 @@ public class MajorCentroid {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int majorId;
-    private int characteristic;
+    private double characteristic;
+    private Double highSchoolAverage;
     private int entranceExamResultCentroidId;
 
     // Object Relational Mapping
@@ -32,6 +32,12 @@ public class MajorCentroid {
     private List<HighSchoolTopResultCentroid> highSchoolTopResultCentroids;
     @Transient
     private List<MajorCentroidWithHobby> majorCentroidWithHobbies;
+
+    public MajorCentroid(MajorResult majorResult) {
+        this.majorId = majorResult.getId();
+        this.characteristic = majorResult.getCharacteristic();
+        this.highSchoolAverage = majorResult.getHighSchoolAverage();
+    }
 
     public int getId() {
         return id;
@@ -49,12 +55,20 @@ public class MajorCentroid {
         this.majorId = majorId;
     }
 
-    public int getCharacteristic() {
+    public double getCharacteristic() {
         return characteristic;
     }
 
     public void setCharacteristic(int characteristic) {
         this.characteristic = characteristic;
+    }
+
+    public Double getHighSchoolAverage() {
+        return highSchoolAverage;
+    }
+
+    public void setHighSchoolAverage(Double highSchoolAverage) {
+        this.highSchoolAverage = highSchoolAverage;
     }
 
     public int getEntranceExamResultCentroidId() {

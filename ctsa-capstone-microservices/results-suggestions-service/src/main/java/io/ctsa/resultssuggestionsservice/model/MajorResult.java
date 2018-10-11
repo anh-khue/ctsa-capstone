@@ -20,8 +20,9 @@ public class MajorResult {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private Integer personId;
-    private int characteristic;
+    private double characteristic;
     private Integer entranceExamResultId;
+    private Double highSchoolAverage;
     private int majorId;
 
     // Object Relational Mapping
@@ -52,12 +53,20 @@ public class MajorResult {
         this.personId = personId;
     }
 
-    public int getCharacteristic() {
+    public double getCharacteristic() {
         return characteristic;
     }
 
-    public void setCharacteristic(int characteristic) {
+    public void setCharacteristic(double characteristic) {
         this.characteristic = characteristic;
+    }
+
+    public Double getHighSchoolAverage() {
+        return highSchoolAverage;
+    }
+
+    public void setHighSchoolAverage(Double highSchoolAverage) {
+        this.highSchoolAverage = highSchoolAverage;
     }
 
     public Integer getEntranceExamResultId() {

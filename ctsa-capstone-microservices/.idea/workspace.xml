@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99154fe8-6e12-4fb6-98b9-7e6c8e295d0b" name="Default Changelist" comment="Create functions for identifying centroids.">
+    <list default="true" id="99154fe8-6e12-4fb6-98b9-7e6c8e295d0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/e03f593b-3040-44ab-9c27-74c3d2255d1c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e03f593b-3040-44ab-9c27-74c3d2255d1c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/ResultsSuggestionsServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/ResultsSuggestionsServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/EntranceExamResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/EntranceExamResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/EntranceExamResultCentroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/EntranceExamResultCentroid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolSubject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolTopResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolTopResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolTopResultCentroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolTopResultCentroid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/MajorCentroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/MajorCentroid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/MajorResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/MajorResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/EntranceExamResultRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/EntranceExamResultRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/HighSchoolTopResultRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/HighSchoolTopResultRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/service/MajorResultService.java" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/service/MajorResultService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/MajorResultRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/MajorResultRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/cluster/MajorCluster.kt" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/cluster/MajorCluster.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/PupilSimilarity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/PupilSimilarity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/StudentSimilarity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/StudentSimilarity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/EuclideanDistance.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/PupilSimilarity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/Similarity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/StudentSimilarity.kt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/eureka-service/target/" />
     <ignored path="$PROJECT_DIR$/config-service/target/" />
@@ -108,7 +101,7 @@
     <session id="1741446232">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.29" value="1" />
@@ -116,24 +109,25 @@
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.36" value="3" />
           <entry key="project.open.time.65" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="3" />
-          <entry key="java" value="194" />
-          <entry key="kt" value="25" />
+          <entry key="java" value="221" />
+          <entry key="kt" value="26" />
           <entry key="properties" value="1" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4369" />
-          <entry key="Kotlin" value="4577" />
-          <entry key="PLAIN_TEXT" value="346" />
+          <entry key="JAVA" value="6078" />
+          <entry key="Kotlin" value="4803" />
+          <entry key="PLAIN_TEXT" value="420" />
           <entry key="Properties" value="30" />
           <entry key="XML" value="26" />
         </counts>
@@ -143,18 +137,18 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="java" value="4369" />
-          <entry key="kt" value="4577" />
+          <entry key="java" value="6078" />
+          <entry key="kt" value="4803" />
           <entry key="properties" value="30" />
-          <entry key="txt" value="345" />
+          <entry key="txt" value="419" />
           <entry key="xml" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="3" />
-          <entry key="JAVA" value="194" />
-          <entry key="Kotlin" value="25" />
+          <entry key="JAVA" value="221" />
+          <entry key="Kotlin" value="26" />
           <entry key="Properties" value="1" />
           <entry key="XML" value="4" />
         </counts>
@@ -164,32 +158,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/controller/SuggestedMajorController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/service/SuggestedMajorService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#412#413#0" expanded="true" />
+                <element signature="e#466#467#0" expanded="true" />
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#564#565#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/cluster/MajorCluster.kt">
+        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/recommendation/PupilSuggestion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-              <folding>
-                <element signature="e#62#603#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/HighSchoolTopResultRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="23" column="74" lean-forward="true" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/EntranceExamResultRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="61" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+            <state relative-caret-position="669">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -198,172 +199,48 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/EntranceExamResultCentroid.java">
+        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/HighSchoolTopResultCentroidRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+            <state relative-caret-position="132">
+              <caret line="9" column="59" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/MajorResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="616">
+              <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#657#658#0" expanded="true" />
-                <element signature="e#682#683#0" expanded="true" />
-                <element signature="e#715#716#0" expanded="true" />
-                <element signature="e#743#744#0" expanded="true" />
-                <element signature="e#774#775#0" expanded="true" />
-                <element signature="e#801#802#0" expanded="true" />
-                <element signature="e#841#842#0" expanded="true" />
-                <element signature="e#873#874#0" expanded="true" />
-                <element signature="e#910#911#0" expanded="true" />
-                <element signature="e#943#944#0" expanded="true" />
-                <element signature="e#995#996#0" expanded="true" />
-                <element signature="e#1039#1040#0" expanded="true" />
-                <element signature="e#1073#1074#0" expanded="true" />
-                <element signature="e#1103#1104#0" expanded="true" />
-                <element signature="e#1149#1150#0" expanded="true" />
-                <element signature="e#1187#1188#0" expanded="true" />
-                <element signature="e#1221#1222#0" expanded="true" />
-                <element signature="e#1251#1252#0" expanded="true" />
-                <element signature="e#1297#1298#0" expanded="true" />
-                <element signature="e#1335#1336#0" expanded="true" />
-                <element signature="e#1371#1372#0" expanded="true" />
-                <element signature="e#1403#1404#0" expanded="true" />
-                <element signature="e#1453#1454#0" expanded="true" />
-                <element signature="e#1495#1496#0" expanded="true" />
-                <element signature="e#1529#1530#0" expanded="true" />
-                <element signature="e#1559#1560#0" expanded="true" />
-                <element signature="e#1605#1606#0" expanded="true" />
-                <element signature="e#1643#1644#0" expanded="true" />
-                <element signature="e#1677#1678#0" expanded="true" />
-                <element signature="e#1707#1708#0" expanded="true" />
-                <element signature="e#1753#1754#0" expanded="true" />
-                <element signature="e#1791#1792#0" expanded="true" />
-                <element signature="e#1827#1828#0" expanded="true" />
-                <element signature="e#1859#1860#0" expanded="true" />
-                <element signature="e#1909#1910#0" expanded="true" />
-                <element signature="e#1951#1952#0" expanded="true" />
+                <element signature="e#1418#1419#0" expanded="true" />
+                <element signature="e#1458#1459#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/EntranceExamResult.java">
+        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/SuggestedMajor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="264">
+              <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#649#650#0" expanded="true" />
-                <element signature="e#674#675#0" expanded="true" />
-                <element signature="e#707#708#0" expanded="true" />
-                <element signature="e#735#736#0" expanded="true" />
-                <element signature="e#766#767#0" expanded="true" />
-                <element signature="e#793#794#0" expanded="true" />
-                <element signature="e#833#834#0" expanded="true" />
-                <element signature="e#865#866#0" expanded="true" />
-                <element signature="e#902#903#0" expanded="true" />
-                <element signature="e#935#936#0" expanded="true" />
-                <element signature="e#987#988#0" expanded="true" />
                 <element signature="e#1031#1032#0" expanded="true" />
-                <element signature="e#1065#1066#0" expanded="true" />
-                <element signature="e#1095#1096#0" expanded="true" />
-                <element signature="e#1141#1142#0" expanded="true" />
-                <element signature="e#1179#1180#0" expanded="true" />
-                <element signature="e#1213#1214#0" expanded="true" />
-                <element signature="e#1243#1244#0" expanded="true" />
-                <element signature="e#1289#1290#0" expanded="true" />
-                <element signature="e#1327#1328#0" expanded="true" />
-                <element signature="e#1363#1364#0" expanded="true" />
-                <element signature="e#1395#1396#0" expanded="true" />
-                <element signature="e#1445#1446#0" expanded="true" />
-                <element signature="e#1487#1488#0" expanded="true" />
-                <element signature="e#1521#1522#0" expanded="true" />
-                <element signature="e#1551#1552#0" expanded="true" />
-                <element signature="e#1597#1598#0" expanded="true" />
-                <element signature="e#1635#1636#0" expanded="true" />
-                <element signature="e#1669#1670#0" expanded="true" />
-                <element signature="e#1699#1700#0" expanded="true" />
-                <element signature="e#1745#1746#0" expanded="true" />
-                <element signature="e#1783#1784#0" expanded="true" />
-                <element signature="e#1819#1820#0" expanded="true" />
-                <element signature="e#1851#1852#0" expanded="true" />
-                <element signature="e#1901#1902#0" expanded="true" />
-                <element signature="e#1943#1944#0" expanded="true" />
+                <element signature="e#1073#1074#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolTopResult.java">
+        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/MajorCentroid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1210">
-              <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
-              <folding>
-                <element signature="e#529#530#0" expanded="true" />
-                <element signature="e#554#555#0" expanded="true" />
-                <element signature="e#587#588#0" expanded="true" />
-                <element signature="e#615#616#0" expanded="true" />
-                <element signature="e#652#653#0" expanded="true" />
-                <element signature="e#688#689#0" expanded="true" />
-                <element signature="e#743#744#0" expanded="true" />
-                <element signature="e#793#794#0" expanded="true" />
-                <element signature="e#826#827#0" expanded="true" />
-                <element signature="e#858#859#0" expanded="true" />
-                <element signature="e#905#906#0" expanded="true" />
-                <element signature="e#947#948#0" expanded="true" />
-                <element signature="e#978#979#0" expanded="true" />
-                <element signature="e#1005#1006#0" expanded="true" />
-                <element signature="e#1045#1046#0" expanded="true" />
-                <element signature="e#1077#1078#0" expanded="true" />
-                <element signature="e#1107#1108#0" expanded="true" />
-                <element signature="e#1136#1137#0" expanded="true" />
-                <element signature="e#1177#1178#0" expanded="true" />
-                <element signature="e#1213#1214#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolTopResultCentroid.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+            <state relative-caret-position="319">
+              <caret line="31" column="75" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="31" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#542#543#0" expanded="true" />
-                <element signature="e#567#568#0" expanded="true" />
-                <element signature="e#600#601#0" expanded="true" />
-                <element signature="e#628#629#0" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
-                <element signature="e#705#706#0" expanded="true" />
-                <element signature="e#764#765#0" expanded="true" />
-                <element signature="e#818#819#0" expanded="true" />
-                <element signature="e#851#852#0" expanded="true" />
-                <element signature="e#883#884#0" expanded="true" />
-                <element signature="e#930#931#0" expanded="true" />
-                <element signature="e#972#973#0" expanded="true" />
-                <element signature="e#1003#1004#0" expanded="true" />
-                <element signature="e#1030#1031#0" expanded="true" />
-                <element signature="e#1070#1071#0" expanded="true" />
-                <element signature="e#1102#1103#0" expanded="true" />
-                <element signature="e#1135#1136#0" expanded="true" />
-                <element signature="e#1164#1165#0" expanded="true" />
-                <element signature="e#1208#1209#0" expanded="true" />
-                <element signature="e#1244#1245#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/service/MajorResultService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-              <folding>
-                <element signature="e#2472#2473#0" expanded="true" />
-                <element signature="e#2538#2539#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -372,8 +249,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/ResultsSuggestionsServiceApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="23" column="62" lean-forward="true" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
+            <state relative-caret-position="55">
+              <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolTopInput.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-22">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding>
+                <element signature="e#461#462#0" expanded="true" />
+                <element signature="e#500#501#0" expanded="true" />
+                <element signature="e#561#562#0" expanded="true" />
+                <element signature="e#617#618#0" expanded="true" />
+                <element signature="e#650#651#0" expanded="true" />
+                <element signature="e#682#683#0" expanded="true" />
+                <element signature="e#729#730#0" expanded="true" />
+                <element signature="e#771#772#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -403,18 +299,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/Person.java" />
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/MajorResultWithHobby.java" />
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/MajorResult.java" />
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/MajorCentroidWithHobby.java" />
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/MajorCentroidWithHobbyRepository.java" />
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/MajorCentroid.java" />
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/Major.java" />
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/Hobby.java" />
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/HighSchoolTopResultCentroid.java" />
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/HighSchoolTopResult.java" />
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/HighSchoolSubject.java" />
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/HighSchoolSubjectRepository.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/AcademicType.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/AcademicType.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/EntranceExamResult.java" />
@@ -430,7 +314,6 @@
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/exception/MajorCentroidNotFoundException.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/service/MajorCentroidService.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/exception/MajorResultNotFoundException.java" />
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/MajorResultRepository.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/service/MajorResultService.kt" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/cluster/MajorCluster.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/cluster/MajorKCluster.java" />
@@ -440,8 +323,6 @@
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/service/HighSchoolTopResultsCentroidService.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/PupilSimilarity.kt" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/StudentSimilarity.kt" />
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/MajorCentroid.java" />
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/MajorResult.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/EntranceExamResult.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/results-suggestions-service/pom.xml" />
@@ -449,11 +330,26 @@
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolSubject.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/EntranceExamResultRepository.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/EntranceExamResultCentroid.java" />
-        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/ResultsSuggestionsServiceApplication.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolTopResult.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolTopResultCentroid.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/HighSchoolTopResultRepository.java" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/MajorResult.java" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/MajorCentroid.java" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/MajorResultRepository.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/cluster/MajorCluster.kt" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/HighSchoolTopInput.java" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/EntranceExamInput.java" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/EntranceExamInput.java" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/SuggestedMajor.java" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/SuggestedMajorRepository.java" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolTopInput.java" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/controller/HighSchoolTopInputController.java" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/controller/SuggestedMajorController.java" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/service/HighSchoolTopInputService.java" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/service/SuggestedMajorService.java" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/ResultsSuggestionsServiceApplication.java" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/SuggestedMajor.java" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/recommendation/PupilSuggestion.java" />
       </list>
     </option>
   </component>
@@ -489,6 +385,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -529,6 +427,24 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="resultssuggestionsservice" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ctsa-capstone-microservices" type="b2602c69:ProjectViewProjectNode" />
+              <item name="results-suggestions-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="resultssuggestionsservice" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ctsa-capstone-microservices" type="b2602c69:ProjectViewProjectNode" />
+              <item name="results-suggestions-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="resultssuggestionsservice" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -539,6 +455,15 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="resultssuggestionsservice" type="462c0819:PsiDirectoryNode" />
               <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ctsa-capstone-microservices" type="b2602c69:ProjectViewProjectNode" />
+              <item name="results-suggestions-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="resultssuggestionsservice" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ctsa-capstone-microservices" type="b2602c69:ProjectViewProjectNode" />
@@ -564,24 +489,12 @@
               <item name="results-suggestions-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="resultssuggestionsservice" type="462c0819:PsiDirectoryNode" />
-              <item name="suggestion" type="462c0819:PsiDirectoryNode" />
-              <item name="similarity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ctsa-capstone-microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="results-suggestions-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -593,7 +506,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539254958813" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539266953238" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/results-suggestions-service/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -605,6 +518,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Kotlin" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity" />
+      <recent name="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/euclideandistance" />
+    </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="io.ctsa.resultssuggestionsservice.model" />
+      <recent name="io.ctsa.resultssuggestions.model" />
+      <recent name="io.ctsa.resultssuggestions" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="io.ctsa.resultssuggestionsservice.exception" />
       <recent name="io.ctsa.resultssuggestionsservice.service" />
@@ -612,14 +534,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository" />
       <recent name="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice" />
-    </key>
-    <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="io.ctsa.resultssuggestions.model" />
-      <recent name="io.ctsa.resultssuggestions" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity" />
-      <recent name="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/euclideandistance" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -739,7 +653,8 @@
       <workItem from="1539164079681" duration="2090000" />
       <workItem from="1539176208953" duration="5808000" />
       <workItem from="1539224878687" duration="9687000" />
-      <workItem from="1539242537947" duration="9751000" />
+      <workItem from="1539242537947" duration="10361000" />
+      <workItem from="1539257748665" duration="8140000" />
     </task>
     <task id="LOCAL-00001" summary="Remove unnecessary @NonNull annotations in models. Create results-suggestions-service in replacement for students-results-service.">
       <created>1539141464571</created>
@@ -762,17 +677,24 @@
       <option name="project" value="LOCAL" />
       <updated>1539242998458</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Identify centroids for clusters using native queries.">
+      <created>1539255390556</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1539255390556</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67851000" />
+    <option name="totallyTimeSpent" value="76601000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1920" height="1052" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.21367522" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8219327" visible="true" weight="0.26923078" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -780,7 +702,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info id="Persistence" order="8" sideWeight="0.50162864" side_tool="true" weight="0.28846154" />
+      <window_info id="Persistence" order="8" sideWeight="0.17806731" side_tool="true" weight="0.26923078" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -789,13 +711,13 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32790446" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946582" weight="0.32790446" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005342" side_tool="true" weight="0.32790446" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32899022" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run Dashboard" order="14" weight="0.61780673" />
+      <window_info anchor="bottom" id="Database Changes" order="12" sideWeight="0.49946582" weight="0.32899022" />
+      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49946582" weight="0.32899022" />
+      <window_info anchor="bottom" id="Run Dashboard" order="14" weight="0.50705755" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32899022" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -818,57 +740,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Remove unnecessary @NonNull annotations in models. Create results-suggestions-service in replacement for students-results-service." />
     <MESSAGE value="Create functions for identifying centroids." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create functions for identifying centroids." />
+    <MESSAGE value="Identify centroids for clusters using native queries." />
+    <option name="LAST_COMMIT_MESSAGE" value="Identify centroids for clusters using native queries." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/cluster/CusterIdentifier.kt" />
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/exception/MajorNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="53" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/EuclideanDistance.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/SuggestedResult.java" />
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/SuggestedResultRepository.java" />
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/Hobby.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/Major.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/MajorCentroidWithHobby.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/AcademicType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -968,20 +843,6 @@
     <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/exception/MajorResultNotFoundException.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/MajorResultRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/HighSchoolTopResultCentroidRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/cluster/MajorKCluster.java" />
     <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/EntranceExamResultCentroidRepository.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1011,90 +872,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/PupilSimilarity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/StudentSimilarity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
           <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/MajorCentroid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#896#897#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
-            <element signature="e#957#958#0" expanded="true" />
-            <element signature="e#988#989#0" expanded="true" />
-            <element signature="e#1018#1019#0" expanded="true" />
-            <element signature="e#1061#1062#0" expanded="true" />
-            <element signature="e#1099#1100#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
-            <element signature="e#1174#1175#0" expanded="true" />
-            <element signature="e#1231#1232#0" expanded="true" />
-            <element signature="e#1283#1284#0" expanded="true" />
-            <element signature="e#1335#1336#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
-            <element signature="e#1582#1583#0" expanded="true" />
-            <element signature="e#1610#1611#0" expanded="true" />
-            <element signature="e#1651#1652#0" expanded="true" />
-            <element signature="e#1685#1686#0" expanded="true" />
-            <element signature="e#1758#1759#0" expanded="true" />
-            <element signature="e#1807#1808#0" expanded="true" />
-            <element signature="e#2069#2070#0" expanded="true" />
-            <element signature="e#2120#2121#0" expanded="true" />
-            <element signature="e#2388#2389#0" expanded="true" />
-            <element signature="e#2435#2436#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/MajorResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-          <folding>
-            <element signature="e#926#927#0" expanded="true" />
-            <element signature="e#959#960#0" expanded="true" />
-            <element signature="e#987#988#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#1054#1055#0" expanded="true" />
-            <element signature="e#1103#1104#0" expanded="true" />
-            <element signature="e#1143#1144#0" expanded="true" />
-            <element signature="e#1181#1182#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1275#1276#0" expanded="true" />
-            <element signature="e#1327#1328#0" expanded="true" />
-            <element signature="e#1375#1376#0" expanded="true" />
-            <element signature="e#1418#1419#0" expanded="true" />
-            <element signature="e#1586#1587#0" expanded="true" />
-            <element signature="e#1616#1617#0" expanded="true" />
-            <element signature="e#1659#1660#0" expanded="true" />
-            <element signature="e#1697#1698#0" expanded="true" />
-            <element signature="e#1730#1731#0" expanded="true" />
-            <element signature="e#1759#1760#0" expanded="true" />
-            <element signature="e#1803#1804#0" expanded="true" />
-            <element signature="e#1839#1840#0" expanded="true" />
-            <element signature="e#1896#1897#0" expanded="true" />
-            <element signature="e#1937#1938#0" expanded="true" />
-            <element signature="e#2108#2109#0" expanded="true" />
-            <element signature="e#2136#2137#0" expanded="true" />
-            <element signature="e#2177#2178#0" expanded="true" />
-            <element signature="e#2211#2212#0" expanded="true" />
-            <element signature="e#2277#2278#0" expanded="true" />
-            <element signature="e#2320#2321#0" expanded="true" />
-            <element signature="e#2544#2545#0" expanded="true" />
-            <element signature="e#2589#2590#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1147,20 +928,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/service/MajorResultService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.2.71/kotlin-stdlib-common-1.2.71-sources.jar!/generated/_Collections.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+        <state relative-caret-position="107">
+          <caret line="1490" selection-start-line="1490" selection-end-line="1490" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.9.RELEASE/spring-aop-5.0.9.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="147" selection-start-line="147" selection-end-line="147" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/HighSchoolTopResultRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="74" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/EntranceExamResultRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="9" column="61" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
           <folding>
-            <element signature="e#2472#2473#0" expanded="true" />
-            <element signature="e#2538#2539#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/EntranceExamResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="198">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1204,85 +1005,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.2.71/kotlin-stdlib-common-1.2.71-sources.jar!/generated/_Collections.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="1490" selection-start-line="1490" selection-end-line="1490" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolTopResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1210">
+        <state relative-caret-position="814">
           <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
-          <folding>
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#587#588#0" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#652#653#0" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#793#794#0" expanded="true" />
-            <element signature="e#826#827#0" expanded="true" />
-            <element signature="e#858#859#0" expanded="true" />
-            <element signature="e#905#906#0" expanded="true" />
-            <element signature="e#947#948#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
-            <element signature="e#1005#1006#0" expanded="true" />
-            <element signature="e#1045#1046#0" expanded="true" />
-            <element signature="e#1077#1078#0" expanded="true" />
-            <element signature="e#1107#1108#0" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
-            <element signature="e#1177#1178#0" expanded="true" />
-            <element signature="e#1213#1214#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolTopResultCentroid.java">
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/service/MajorResultService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+        <state relative-caret-position="946">
+          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#764#765#0" expanded="true" />
-            <element signature="e#818#819#0" expanded="true" />
-            <element signature="e#851#852#0" expanded="true" />
-            <element signature="e#883#884#0" expanded="true" />
-            <element signature="e#930#931#0" expanded="true" />
-            <element signature="e#972#973#0" expanded="true" />
-            <element signature="e#1003#1004#0" expanded="true" />
-            <element signature="e#1030#1031#0" expanded="true" />
-            <element signature="e#1070#1071#0" expanded="true" />
-            <element signature="e#1102#1103#0" expanded="true" />
-            <element signature="e#1135#1136#0" expanded="true" />
-            <element signature="e#1164#1165#0" expanded="true" />
-            <element signature="e#1208#1209#0" expanded="true" />
-            <element signature="e#1244#1245#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.9.RELEASE/spring-aop-5.0.9.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="147" selection-start-line="147" selection-end-line="147" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/EntranceExamResultRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="61" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2472#2473#0" expanded="true" />
+            <element signature="e#2538#2539#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1290,69 +1026,182 @@
     <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/EntranceExamResultCentroid.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
-          <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+          <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-            <element signature="e#715#716#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#801#802#0" expanded="true" />
-            <element signature="e#841#842#0" expanded="true" />
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#943#944#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1039#1040#0" expanded="true" />
-            <element signature="e#1073#1074#0" expanded="true" />
-            <element signature="e#1103#1104#0" expanded="true" />
-            <element signature="e#1149#1150#0" expanded="true" />
-            <element signature="e#1187#1188#0" expanded="true" />
-            <element signature="e#1221#1222#0" expanded="true" />
-            <element signature="e#1251#1252#0" expanded="true" />
             <element signature="e#1297#1298#0" expanded="true" />
-            <element signature="e#1335#1336#0" expanded="true" />
-            <element signature="e#1371#1372#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1453#1454#0" expanded="true" />
-            <element signature="e#1495#1496#0" expanded="true" />
-            <element signature="e#1529#1530#0" expanded="true" />
-            <element signature="e#1559#1560#0" expanded="true" />
-            <element signature="e#1605#1606#0" expanded="true" />
-            <element signature="e#1643#1644#0" expanded="true" />
-            <element signature="e#1677#1678#0" expanded="true" />
-            <element signature="e#1707#1708#0" expanded="true" />
-            <element signature="e#1753#1754#0" expanded="true" />
-            <element signature="e#1791#1792#0" expanded="true" />
-            <element signature="e#1827#1828#0" expanded="true" />
-            <element signature="e#1859#1860#0" expanded="true" />
-            <element signature="e#1909#1910#0" expanded="true" />
-            <element signature="e#1951#1952#0" expanded="true" />
+            <element signature="e#1324#1325#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/HighSchoolTopResultRepository.java">
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolTopResultCentroid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="74" lean-forward="true" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/ResultsSuggestionsServiceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="23" column="62" lean-forward="true" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
+        <state relative-caret-position="244">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/cluster/MajorCluster.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        <state relative-caret-position="556">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
           <folding>
-            <element signature="e#62#603#0" expanded="true" />
+            <element signature="e#62#412#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/EntranceExamInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/HighSchoolTopInputRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="95" selection-start-line="5" selection-start-column="95" selection-end-line="5" selection-end-column="95" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/EntranceExamInputRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/MajorResultRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/SuggestedMajorRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/MajorCentroid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="31" column="75" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="31" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/MajorResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+          <folding>
+            <element signature="e#1418#1419#0" expanded="true" />
+            <element signature="e#1458#1459#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/similarity/PupilSimilarity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/controller/SuggestedMajorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/service/SuggestedMajorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#466#467#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#564#565#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/ResultsSuggestionsServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/HighSchoolTopInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#561#562#0" expanded="true" />
+            <element signature="e#617#618#0" expanded="true" />
+            <element signature="e#650#651#0" expanded="true" />
+            <element signature="e#682#683#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+            <element signature="e#771#772#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/model/SuggestedMajor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1031#1032#0" expanded="true" />
+            <element signature="e#1073#1074#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/repository/HighSchoolTopResultCentroidRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="9" column="59" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/suggestion/recommendation/PupilSuggestion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="669">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
