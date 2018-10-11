@@ -1,7 +1,6 @@
 package io.ctsa.resultssuggestionsservice.model;
 
 import lombok.*;
-import org.hibernate.annotations.NaturalIdCache;
 
 import javax.persistence.*;
 import java.util.Objects;

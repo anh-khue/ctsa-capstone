@@ -1,34 +1,22 @@
 package io.ctsa.resultssuggestionsservice.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "academic_type", schema = "ctsa_results_suggestions_db", catalog = "")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class AcademicType {
 
-    private int id;
-    private String name;
-
     @Id
-    @Column(name = "id")
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @Basic
-    @Column(name = "name")
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @NonNull
+    private String name;
 
     @Override
     public boolean equals(Object o) {
