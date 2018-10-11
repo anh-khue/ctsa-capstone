@@ -36,6 +36,86 @@ public class MajorResult {
     @Transient
     private List<MajorResultWithHobby> majorResultWithHobbies;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Integer getPersonId() {
+        return personId;
+    }
+
+    public void setPersonId(Integer personId) {
+        this.personId = personId;
+    }
+
+    public int getCharacteristic() {
+        return characteristic;
+    }
+
+    public void setCharacteristic(int characteristic) {
+        this.characteristic = characteristic;
+    }
+
+    public Integer getEntranceExamResultId() {
+        return entranceExamResultId;
+    }
+
+    public void setEntranceExamResultId(Integer entranceExamResultId) {
+        this.entranceExamResultId = entranceExamResultId;
+    }
+
+    public int getMajorId() {
+        return majorId;
+    }
+
+    public void setMajorId(int majorId) {
+        this.majorId = majorId;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public EntranceExamResult getEntranceExamResult() {
+        return entranceExamResult;
+    }
+
+    public void setEntranceExamResult(EntranceExamResult entranceExamResult) {
+        this.entranceExamResult = entranceExamResult;
+    }
+
+    public Major getMajor() {
+        return major;
+    }
+
+    public void setMajor(Major major) {
+        this.major = major;
+    }
+
+    public List<HighSchoolTopResult> getHighSchoolTopResults() {
+        return highSchoolTopResults;
+    }
+
+    public void setHighSchoolTopResults(List<HighSchoolTopResult> highSchoolTopResults) {
+        this.highSchoolTopResults = highSchoolTopResults;
+    }
+
+    public List<MajorResultWithHobby> getMajorResultWithHobbies() {
+        return majorResultWithHobbies;
+    }
+
+    public void setMajorResultWithHobbies(List<MajorResultWithHobby> majorResultWithHobbies) {
+        this.majorResultWithHobbies = majorResultWithHobbies;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

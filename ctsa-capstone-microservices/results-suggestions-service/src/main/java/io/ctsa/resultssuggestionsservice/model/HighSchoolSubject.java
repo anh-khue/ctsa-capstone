@@ -19,7 +19,22 @@ public class HighSchoolSubject {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private int weight;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -27,12 +42,11 @@ public class HighSchoolSubject {
         if (o == null || getClass() != o.getClass()) return false;
         HighSchoolSubject that = (HighSchoolSubject) o;
         return id == that.id &&
-                weight == that.weight &&
                 Objects.equals(name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, weight);
+        return Objects.hash(id, name);
     }
 }

@@ -10,7 +10,6 @@ import java.util.Objects;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class EntranceExamResultCentroid {
@@ -26,6 +25,89 @@ public class EntranceExamResultCentroid {
     private Double biology;
     private Double history;
     private Double geography;
+
+    public EntranceExamResultCentroid(EntranceExamResult entranceExamResult) {
+        this.math = entranceExamResult.getMath();
+        this.literature = entranceExamResult.getLiterature();
+        this.english = entranceExamResult.getEnglish();
+        this.physics = entranceExamResult.getPhysics();
+        this.chemistry = entranceExamResult.getChemistry();
+        this.biology = entranceExamResult.getBiology();
+        this.history = entranceExamResult.getHistory();
+        this.geography = entranceExamResult.getGeography();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public double getMath() {
+        return math;
+    }
+
+    public void setMath(double math) {
+        this.math = math;
+    }
+
+    public double getLiterature() {
+        return literature;
+    }
+
+    public void setLiterature(double literature) {
+        this.literature = literature;
+    }
+
+    public double getEnglish() {
+        return english;
+    }
+
+    public void setEnglish(double english) {
+        this.english = english;
+    }
+
+    public Double getPhysics() {
+        return physics;
+    }
+
+    public void setPhysics(Double physics) {
+        this.physics = physics;
+    }
+
+    public Double getChemistry() {
+        return chemistry;
+    }
+
+    public void setChemistry(Double chemistry) {
+        this.chemistry = chemistry;
+    }
+
+    public Double getBiology() {
+        return biology;
+    }
+
+    public void setBiology(Double biology) {
+        this.biology = biology;
+    }
+
+    public Double getHistory() {
+        return history;
+    }
+
+    public void setHistory(Double history) {
+        this.history = history;
+    }
+
+    public Double getGeography() {
+        return geography;
+    }
+
+    public void setGeography(Double geography) {
+        this.geography = geography;
+    }
 
     @Override
     public boolean equals(Object o) {

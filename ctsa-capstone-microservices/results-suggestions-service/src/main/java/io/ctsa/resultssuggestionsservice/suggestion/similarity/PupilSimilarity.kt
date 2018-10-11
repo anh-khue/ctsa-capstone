@@ -1,16 +1,18 @@
 package io.ctsa.resultssuggestionsservice.suggestion.similarity
 
+import io.ctsa.resultssuggestionsservice.model.MajorResult
 import org.springframework.stereotype.Service
 import java.lang.Math.pow
 
 @Service
-public open class PupilSimilarity : EuclideanDistance<SuggestedResult> {
+open class PupilSimilarity : EuclideanDistance<MajorResult> {
 
-    override fun score(item1: SuggestedResult, item2: SuggestedResult): Double {
-        return 1 / (1 + sumSquaredDistance(item1, item2))
+    override fun score(item1: MajorResult, item2: MajorResult): Double {
+//        return 1 / (1 + sumSquaredDistance(item1, item2))
+        return 0.0
     }
 
-    protected fun sumSquaredDistance(result1: SuggestedResult, result2: SuggestedResult): Double {
+    /*protected fun sumSquaredDistance(result1: MajorResult, result2: MajorResult): Double {
         var squaredDistance = pow(result1.characteristic.toDouble() - result2.characteristic.toDouble(), 2.0)
 
         squaredDistance += scoreHighSchoolResults(result1.highSchoolResults, result2.highSchoolResults)
@@ -45,5 +47,5 @@ public open class PupilSimilarity : EuclideanDistance<SuggestedResult> {
         }
 
         return squaredDistance;
-    }
+    }*/
 }

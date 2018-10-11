@@ -27,6 +27,78 @@ public class EntranceExamResult {
     private Double history;
     private Double geography;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public double getMath() {
+        return math;
+    }
+
+    public void setMath(double math) {
+        this.math = math;
+    }
+
+    public double getLiterature() {
+        return literature;
+    }
+
+    public void setLiterature(double literature) {
+        this.literature = literature;
+    }
+
+    public double getEnglish() {
+        return english;
+    }
+
+    public void setEnglish(double english) {
+        this.english = english;
+    }
+
+    public Double getPhysics() {
+        return physics;
+    }
+
+    public void setPhysics(Double physics) {
+        this.physics = physics;
+    }
+
+    public Double getChemistry() {
+        return chemistry;
+    }
+
+    public void setChemistry(Double chemistry) {
+        this.chemistry = chemistry;
+    }
+
+    public Double getBiology() {
+        return biology;
+    }
+
+    public void setBiology(Double biology) {
+        this.biology = biology;
+    }
+
+    public Double getHistory() {
+        return history;
+    }
+
+    public void setHistory(Double history) {
+        this.history = history;
+    }
+
+    public Double getGeography() {
+        return geography;
+    }
+
+    public void setGeography(Double geography) {
+        this.geography = geography;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

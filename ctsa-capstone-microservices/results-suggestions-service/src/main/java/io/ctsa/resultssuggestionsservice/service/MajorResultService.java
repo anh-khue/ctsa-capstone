@@ -55,8 +55,10 @@ public class MajorResultService {
     }
 
     private MajorResult getSingleOrm(MajorResult majorResult) {
-        majorResult.setPerson(personRepository.findById(majorResult.getPersonId())
-                                              .orElse(null));
+        if (majorResult.getPersonId() != null) {
+            majorResult.setPerson(personRepository.findById(majorResult.getPersonId())
+                                                  .orElse(null));
+        }
         majorResult.setEntranceExamResult(entranceExamResultRepository.findById(majorResult.getEntranceExamResultId())
                                                                       .orElse(new EntranceExamResult()));
         majorResult.setMajor(majorRepository.findById(majorResult.getMajorId())

@@ -21,7 +21,47 @@ public class HighSchoolTopResult {
     private int majorResultId;
     private int subjectId;
     private double mark;
-    private int weight;
+    private double weight;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getMajorResultId() {
+        return majorResultId;
+    }
+
+    public void setMajorResultId(int majorResultId) {
+        this.majorResultId = majorResultId;
+    }
+
+    public int getSubjectId() {
+        return subjectId;
+    }
+
+    public void setSubjectId(int subjectId) {
+        this.subjectId = subjectId;
+    }
+
+    public double getMark() {
+        return mark;
+    }
+
+    public void setMark(double mark) {
+        this.mark = mark;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
 
     @Override
     public boolean equals(Object o) {

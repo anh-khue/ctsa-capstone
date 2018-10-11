@@ -1116,47 +1116,47 @@
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <column id="282" parent="245" name="weight">
-      <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="283" parent="245" name="PRIMARY">
+    <key id="282" parent="245" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="284" parent="246" name="id">
+    <column id="283" parent="246" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="246" name="suggested_result_id">
+    <column id="284" parent="246" name="major_result_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="246" name="subject_id">
+    <column id="285" parent="246" name="subject_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="287" parent="246" name="mark">
+    <column id="286" parent="246" name="mark">
       <Position>4</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="288" parent="246" name="suggested_result_id">
-      <ColNames>suggested_result_id</ColNames>
+    <column id="287" parent="246" name="weight">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="288" parent="246" name="major_result_id">
+      <ColNames>major_result_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="289" parent="246" name="subject">
+    <index id="289" parent="246" name="subject_id">
       <ColNames>subject_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1166,7 +1166,7 @@
       <Primary>1</Primary>
     </key>
     <foreign-key id="291" parent="246" name="high_school_top_result_ibfk_1">
-      <ColNames>suggested_result_id</ColNames>
+      <ColNames>major_result_id</ColNames>
       <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
       <RefTableName>major_result</RefTableName>
       <RefColNames>id</RefColNames>
@@ -1472,7 +1472,7 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="346" parent="253" name="suggested_result_id">
+    <column id="346" parent="253" name="major_result_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1490,8 +1490,8 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="349" parent="253" name="suggested_result_id">
-      <ColNames>suggested_result_id</ColNames>
+    <index id="349" parent="253" name="major_result_id">
+      <ColNames>major_result_id</ColNames>
       <Type>btree</Type>
     </index>
     <index id="350" parent="253" name="hobby_id">
@@ -1504,7 +1504,7 @@
       <Primary>1</Primary>
     </key>
     <foreign-key id="352" parent="253" name="major_result_with_hobby_ibfk_1">
-      <ColNames>suggested_result_id</ColNames>
+      <ColNames>major_result_id</ColNames>
       <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
       <RefTableName>major_result</RefTableName>
       <RefColNames>id</RefColNames>

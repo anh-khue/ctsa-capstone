@@ -33,6 +33,70 @@ public class MajorCentroid {
     @Transient
     private List<MajorCentroidWithHobby> majorCentroidWithHobbies;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getMajorId() {
+        return majorId;
+    }
+
+    public void setMajorId(int majorId) {
+        this.majorId = majorId;
+    }
+
+    public int getCharacteristic() {
+        return characteristic;
+    }
+
+    public void setCharacteristic(int characteristic) {
+        this.characteristic = characteristic;
+    }
+
+    public int getEntranceExamResultCentroidId() {
+        return entranceExamResultCentroidId;
+    }
+
+    public void setEntranceExamResultCentroidId(int entranceExamResultCentroidId) {
+        this.entranceExamResultCentroidId = entranceExamResultCentroidId;
+    }
+
+    public Major getMajor() {
+        return major;
+    }
+
+    public void setMajor(Major major) {
+        this.major = major;
+    }
+
+    public EntranceExamResultCentroid getEntranceExamResultCentroid() {
+        return entranceExamResultCentroid;
+    }
+
+    public void setEntranceExamResultCentroid(EntranceExamResultCentroid entranceExamResultCentroid) {
+        this.entranceExamResultCentroid = entranceExamResultCentroid;
+    }
+
+    public List<HighSchoolTopResultCentroid> getHighSchoolTopResultCentroids() {
+        return highSchoolTopResultCentroids;
+    }
+
+    public void setHighSchoolTopResultCentroids(List<HighSchoolTopResultCentroid> highSchoolTopResultCentroids) {
+        this.highSchoolTopResultCentroids = highSchoolTopResultCentroids;
+    }
+
+    public List<MajorCentroidWithHobby> getMajorCentroidWithHobbies() {
+        return majorCentroidWithHobbies;
+    }
+
+    public void setMajorCentroidWithHobbies(List<MajorCentroidWithHobby> majorCentroidWithHobbies) {
+        this.majorCentroidWithHobbies = majorCentroidWithHobbies;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -10,7 +10,6 @@ import java.util.Objects;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class HighSchoolTopResultCentroid {
@@ -22,6 +21,52 @@ public class HighSchoolTopResultCentroid {
     private int subjectId;
     private double mark;
     private double weight;
+
+    public HighSchoolTopResultCentroid(HighSchoolTopResult topResult) {
+        this.subjectId = topResult.getSubjectId();
+        this.mark = topResult.getMark();
+        this.weight = topResult.getWeight();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getMajorCentroidId() {
+        return majorCentroidId;
+    }
+
+    public void setMajorCentroidId(int majorCentroidId) {
+        this.majorCentroidId = majorCentroidId;
+    }
+
+    public int getSubjectId() {
+        return subjectId;
+    }
+
+    public void setSubjectId(int subjectId) {
+        this.subjectId = subjectId;
+    }
+
+    public double getMark() {
+        return mark;
+    }
+
+    public void setMark(double mark) {
+        this.mark = mark;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
 
     @Override
     public boolean equals(Object o) {

@@ -6,7 +6,7 @@ import java.lang.Math.pow
 @Service
 class StudentSimilarity : PupilSimilarity() {
 
-    companion object {
+    /*companion object {
         const val PHYSICS_CHEMISTRY = 2
         const val CHEMISTRY_BIOLOGY = 2
         const val PHYSICS_BIOLOGY = 3
@@ -60,5 +60,5 @@ class StudentSimilarity : PupilSimilarity() {
         }
 
         return squareDistance
-    }
+    }*/
 }
