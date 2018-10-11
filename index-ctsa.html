@@ -86,14 +86,34 @@
                         </span>- 3 môn bạn tự tin nhất là gì?
                     </span><br>
                     <div class="role1 hideaway mx-4 pl-4 my-2" style="border-left-style: dashed; border-width:3px;">
-                        <button id="role1" value="1" class="btn btn-outline-dark my-2 mx-1 rolebtn">Developer</button>
-                        <button id="role2" value="2" class="btn btn-outline-dark my-2 mx-1 rolebtn">Tester</button>
-                        <button id="role3" value="3" class="btn btn-outline-dark my-2 mx-1 rolebtn">Desginer</button>
-                        <button id="role4" class="btn btn-outline-dark my-2 mx-1 rolebtn">Engineer</button>
-                        <button id="role5" class="btn btn-outline-dark my-2 mx-1 rolebtn">Project Manager</button>
-                        <button id="role6" class="btn btn-outline-dark my-2 mx-1 rolebtn">English</button>
-                        <button id="role7" class="btn btn-outline-dark my-2 mx-1 rolebtn">Japanese</button>
-                        <button id="role8" class="btn btn-outline-dark my-2 mx-1 rolebtn">Other</button>
+                        <div id="chooseRole">
+                            <button id="" value="Developer" class="btn btn-outline-dark my-2 mx-1 rolebtn">Developer</button>
+                            <button id="" value="Tester" class="btn btn-outline-dark my-2 mx-1 rolebtn">Tester</button>
+                            <button id="" value="Desginer" class="btn btn-outline-dark my-2 mx-1 rolebtn">Desginer</button>
+                            <button id="" value="Engineer" class="btn btn-outline-dark my-2 mx-1 rolebtn">Engineer</button>
+                            <button id="" value="Project Manager" class="btn btn-outline-dark my-2 mx-1 rolebtn">Project
+                                Manager</button>
+                            <button id="" value="English" class="btn btn-outline-dark my-2 mx-1 rolebtn">English</button>
+                            <button id="" value="Japanese" class="btn btn-outline-dark my-2 mx-1 rolebtn">Japanese</button>
+                            <!-- <button id="role8" value="Other"class="btn btn-outline-dark my-2 mx-1 rolebtn">Other</button> -->
+                        </div>
+                        <div id="input" class="hideaway">
+                            <div class="row mx-2">
+                                <button id="input0" value="" class="btn btn-outline-dark my-2 mx-1"></button>
+                                <input type="text" class="form-control my-2 mx-1" id="score1" placeholder="Điểm của bạn..."
+                                    onkeypress="inputPress(event)" style="width: 300px">
+                            </div>
+                            <div class="row mx-2">
+                                <button id="input1" value="" class="btn btn-outline-dark my-2 mx-1"></button>
+                                <input type="text" class="form-control my-2 mx-1" id="score2" placeholder="Điểm của bạn..."
+                                    onkeypress="inputPress(event)" style="width: 300px">
+                            </div>
+                            <div class="row mx-2">
+                                <button id="input2" value="" class="btn btn-outline-dark my-2 mx-1"></button>
+                                <input type="text" class="form-control my-2 mx-1" id="score3" placeholder="Điểm của bạn..."
+                                    onkeypress="inputPress(event)" style="width: 300px">
+                            </div>
+                        </div>
                     </div>
                     <span style="font-size: 24px" class="head2">
                         <span class="fa-stack">
@@ -104,7 +124,7 @@
                         </span>- Điểm trung bình tổng hiện tại?</span><br>
                     <div class="hideaway role2 mx-4 pl-4 my-2" style="border-left-style: dashed; border-width:3px">
 
-                        <input type="text" class="form-control my-2 mx-1" id="score" placeholder="Điểm trung bình của bạn..."
+                        <input type="text" class="form-control my-2 mx-1" id="scoreavg" placeholder="Điểm trung bình của bạn..."
                             onkeypress="clickPress(event)" style="width: 300px">
 
                     </div>
@@ -144,16 +164,28 @@
 
             $(this).addClass("selected");
             i.push($(this).val());
-            console.log(i);
-            if (count >2) {
-                $(".role1").slideUp(600);
-                $(".role2").slideDown(600);
-                $(".role3").slideUp(600);
-                $("#comfirm").hide(600);
+            if (count > 2) {
+                $("#chooseRole").slideUp(600);
+                $("#input").slideDown(600);
+                for (var x = 0 in i) {
+                    var element = document.getElementById("input" + x);
+                    element.innerText = i[x];
+                    // var btn = document.createElement("BUTTON");
+                    // var input = document.createElement("input");
+                    // var t = document.createTextNode(i[x]);
+                    // btn.appendChild(t);
+                    // var element = document.getElementById("input");
+                    // element.appendChild(btn);
+                    // element.appendChild(input);
+
+                }
             }
         });
 
-
+        // $(".role1").slideUp(600);
+        //                 $(".role2").slideDown(600);
+        //                 $(".role3").slideUp(600);
+        //                 $("#comfirm").hide(600);
 
         // $(".role1").click(function () {
         //     $("role1").animate({
@@ -215,6 +247,20 @@
                 $("#comfirm").hide(600);
             }
         }
+        function inputPress(event) {
+            console.log(document.getElementById("score1").value);
+            if (event.keyCode == 13 
+            && document.getElementById("score1").value !=""
+            && document.getElementById("score2").value !=""
+            && document.getElementById("score3").value !=""
+            ) {
+                $(".role1").slideUp(600);
+                $(".role2").slideDown(600);
+                $(".role3").slideUp(600);
+                $("#comfirm").hide(600);
+            }
+        }
+        
     </script>
     <!-- <script>
         window.onresize = function () {
