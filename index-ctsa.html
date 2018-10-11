@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet"> -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -83,17 +83,17 @@
                             <span class="fa-stack-1x" style="font-size: 20px;color:rgb(243, 243, 243);">
                                 1
                             </span>
-                        </span>- Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+                        </span>- 3 môn bạn tự tin nhất là gì?
                     </span><br>
                     <div class="role1 hideaway mx-4 pl-4 my-2" style="border-left-style: dashed; border-width:3px;">
-                        <button class="btn btn-outline-dark my-2 mx-1 role1">Developer</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role1">Tester</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role1">Desginer</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role1">Engineer</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role1">Project Manager</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role1">English</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role1">Japanese</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role1">Other</button>
+                        <button id="role1" value="1" class="btn btn-outline-dark my-2 mx-1 rolebtn">Developer</button>
+                        <button id="role2" value="2" class="btn btn-outline-dark my-2 mx-1 rolebtn">Tester</button>
+                        <button id="role3" value="3" class="btn btn-outline-dark my-2 mx-1 rolebtn">Desginer</button>
+                        <button id="role4" class="btn btn-outline-dark my-2 mx-1 rolebtn">Engineer</button>
+                        <button id="role5" class="btn btn-outline-dark my-2 mx-1 rolebtn">Project Manager</button>
+                        <button id="role6" class="btn btn-outline-dark my-2 mx-1 rolebtn">English</button>
+                        <button id="role7" class="btn btn-outline-dark my-2 mx-1 rolebtn">Japanese</button>
+                        <button id="role8" class="btn btn-outline-dark my-2 mx-1 rolebtn">Other</button>
                     </div>
                     <span style="font-size: 24px" class="head2">
                         <span class="fa-stack">
@@ -101,16 +101,12 @@
                             <span class="fa-stack-1x" style="font-size: 20px;color:rgb(243, 243, 243);">
                                 2
                             </span>
-                        </span>- Vivamus lobortis mi. Fusce ornare eros eu feugiat tempor?</span><br />
-                    <div class="role2 hideaway mx-4 pl-4 my-2" style="border-left-style: dashed; border-width:3px">
-                        <button class="btn btn-outline-dark my-2 mx-1 role2">Developer</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role2">Tester</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role2">Desginer</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role2">Engineer</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role2">Project Manager</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role2">English</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role2">Japanese</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role2">Other</button>
+                        </span>- Điểm trung bình tổng hiện tại?</span><br>
+                    <div class="hideaway role2 mx-4 pl-4 my-2" style="border-left-style: dashed; border-width:3px">
+
+                        <input type="text" class="form-control my-2 mx-1" id="score" placeholder="Điểm trung bình của bạn..."
+                            onkeypress="clickPress(event)" style="width: 300px">
+
                     </div>
                     <span style="font-size: 24px" class="head3">
                         <span class="fa-stack">
@@ -118,18 +114,14 @@
                             <span class="fa-stack-1x" style="font-size: 20px;color:rgb(243, 243, 243);">
                                 3
                             </span>
-                        </span>- Nulla aliquam euismod dui sit amet finibus?</span><br>
+                        </span>- Bạn là người hướng ngoại hay hướng nội?</span><br>
                     <div class="role3 hideaway mx-4 pl-4 my-2">
-                        <button class="btn btn-outline-dark my-2 mx-1 role3">Developer</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role3">Tester</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role3">Desginer</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role3">Engineer</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role3">Project Manager</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role3">English</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role3">Japanese</button>
-                        <button class="btn btn-outline-dark my-2 mx-1 role3">Other</button>
+                        <div class="row">
+                            <button class="btn btn-outline-dark btn-lg btn-block col-md-5 my-2 mx-1 ">Hướng nội</button>
+                            <button class="btn btn-outline-dark btn-lg btn-block col-md-5 my-2 mx-1 ">Hướng ngoại</button>
+                        </div>
                     </div>
-                    <div id="comfirm" class="hideaway text-center"> <button class="btn btn-info btn-lg my-3 " style="background-color:#ff6414; border: none;">Confirm</button></div>
+                    <div id="comfirm" class="hideaway text-center"> <button class="btn btn-info btn-lg my-3 " style="background-color:#ff6414; border: none;">Gửi</button></div>
 
                 </div>
 
@@ -142,12 +134,23 @@
         </div>
     </div>
     <script>
-        $(".role1").click(function () {
+        var count = 0;
+        console.log(count);
+        var i = [];
+        $(".rolebtn").click(function () {
+            count++;
 
-            $(".role1").slideUp(600);
-            $(".role2").slideDown(600);
-            $(".role3").slideUp(600);
-            $("#comfirm").hide(600);
+
+
+            $(this).addClass("selected");
+            i.push($(this).val());
+            console.log(i);
+            if (count >2) {
+                $(".role1").slideUp(600);
+                $(".role2").slideDown(600);
+                $(".role3").slideUp(600);
+                $("#comfirm").hide(600);
+            }
         });
 
 
@@ -159,12 +162,12 @@
         //         height: "toggle"
         //     });
         // });
-        $(".role2").click(function () {
-            $(".role1").slideUp(600);
-            $(".role2").slideUp(600);
-            $(".role3").slideDown(600);
-            $("#comfirm").hide(600);
-        });
+        // $(".role2").click(function () {
+        //     $(".role1").slideUp(600);
+        //     $(".role2").slideUp(600);
+        //     $(".role3").slideDown(600);
+        //     $("#comfirm").hide(600);
+        // });
         $(".role3").click(function () {
             $(".role1").slideUp(600);
             $(".role2").slideUp(600);
@@ -193,6 +196,7 @@
         $("#student").click(function () {
             $("#choose").hide(600);
             $("#askform").show(600);
+            $(".role1").slideDown(600);
 
 
         });
@@ -200,10 +204,17 @@
         $("#college").click(function () {
             $("#choose").hide(600);
             $("#askform").show(600);
-
+            $(".role1").slideDown(600);
 
         });
-
+        function clickPress(event) {
+            if (event.keyCode == 13) {
+                $(".role1").slideUp(600);
+                $(".role2").slideUp(600);
+                $(".role3").slideDown(600);
+                $("#comfirm").hide(600);
+            }
+        }
     </script>
     <!-- <script>
         window.onresize = function () {

@@ -95,7 +95,7 @@ a:hover {
 }
 
 .hideaway {
-  display: none;
+  display: none ;
 }
 
 .forminput {
@@ -108,4 +108,9 @@ a:hover {
   height: auto;
   width: auto\9;
   /* ie8 */
+}
+.selected{
+  background-color: #ff6215 !important;
+  color:white !important;
+  border:none !important;
 }
