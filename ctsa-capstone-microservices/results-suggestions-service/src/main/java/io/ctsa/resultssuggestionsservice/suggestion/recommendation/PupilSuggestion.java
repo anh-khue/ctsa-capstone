@@ -7,9 +7,7 @@ import io.ctsa.resultssuggestionsservice.repository.MajorRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import static java.lang.Math.*;
@@ -33,20 +31,6 @@ public class PupilSuggestion {
 
     public List<MajorSuggestion> suggest(SuggestedMajor input) {
 
-//        Map<MajorCentroid, Double> scoreMap = new HashMap<>();
-//        for (MajorCentroid centroid : centroids) {
-//            double score = score(input, centroid);
-//            scoreMap.put(centroid, score);
-//        }
-
-//        Map.Entry<MajorCentroid, Double> min = null;
-//        for (Map.Entry<MajorCentroid, Double> entry : scoreMap.entrySet()) {
-//            if (min == null || min.getValue() > entry.getValue()) {
-//                min = entry;
-//            }
-//        }
-
-//        return min != null ? min.getKey().getMajorId() : null;
         return majorCentroidRepository.findAll()
                 .stream()
                 .map(majorCentroid -> {
