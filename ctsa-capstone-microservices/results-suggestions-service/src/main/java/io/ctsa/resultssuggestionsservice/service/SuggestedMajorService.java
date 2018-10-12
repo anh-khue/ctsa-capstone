@@ -12,8 +12,4 @@ public class SuggestedMajorService {
     public SuggestedMajorService(PupilSuggestion pupilSuggestion) {
         this.pupilSuggestion = pupilSuggestion;
     }
-
-    public Integer suggest(SuggestedMajor input) {
-       return pupilSuggestion.suggest(input);
-    }
 }

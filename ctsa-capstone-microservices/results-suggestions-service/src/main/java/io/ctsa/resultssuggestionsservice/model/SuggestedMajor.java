@@ -72,10 +72,12 @@ public class SuggestedMajor {
         return Objects.hash(id, characteristic, highSchoolAverage);
     }
 
+    @Transient
     public EntranceExamInput getEntranceExamInput() {
         return entranceExamInput;
     }
 
+    @Transient
     public void setEntranceExamInput(EntranceExamInput entranceExamInput) {
         this.entranceExamInput = entranceExamInput;
     }
