@@ -12,6 +12,9 @@ public class SuggestedMajor {
     private Double highSchoolAverage;
 
     @Transient
+    private EntranceExamInput entranceExamInput;
+
+    @Transient
     private List<HighSchoolTopInput> highSchoolTopInputs;
 
     @Id
@@ -67,5 +70,13 @@ public class SuggestedMajor {
     @Override
     public int hashCode() {
         return Objects.hash(id, characteristic, highSchoolAverage);
+    }
+
+    public EntranceExamInput getEntranceExamInput() {
+        return entranceExamInput;
+    }
+
+    public void setEntranceExamInput(EntranceExamInput entranceExamInput) {
+        this.entranceExamInput = entranceExamInput;
     }
 }
