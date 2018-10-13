@@ -1,0 +1,44 @@
+{
+    "settings": {
+        "analysis": {
+            "filter": {
+                "filter_shingle": {
+                    "type": "shingle",
+                    "max_shingle_size": 10,
+                    "min_shingle_size": 2,
+                    "output_unigrams": "true"
+                }
+            },
+            "analyzer": {
+                "ctsa_analyzer_keyword": {
+                    "type": "custom",
+                    "tokenizer": "keyword",
+                    "filter": [
+                        "asciifolding",
+                        "lowercase"
+                    ]
+                },
+                "ctsa_analyzer_shingle": {
+                    "type": "custom",
+                    "tokenizer": "whitespace",
+                    "filter": [
+                        "asciifolding",
+                        "lowercase",
+                        "filter_shingle"
+                    ]
+                }
+            }
+        }
+    },
+    "mappings": {
+        "ctsa_keywords": {
+            "properties": {
+                "keyword": {
+                    "type": "text",
+                    "analyzer": "ctsa_analyzer_keyword",
+                    "search_analyzer": "ctsa_analyzer_shingle"
+                }
+            }
+        }
+    }
+}
