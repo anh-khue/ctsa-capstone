@@ -161,18 +161,18 @@
                             </span>
                         </span>- Bạn là người hướng ngoại hay hướng nội?</span><br>
                     <div class="role3 hideaway mx-4 pl-4 my-2">
-                        <div class="row">
+                        <div class="row justify-content-center">
                             <button value="1"
-                                    class="characteristic btn btn-outline-dark btn-lg btn-block col-md-5 my-2 mx-1"
+                                    class="characteristic btn btn-outline-dark btn-lg btn-block col-md-4 my-2 mx-2"
                                     onclick="retrieveCharacteristic(this)"
-                                    onmouseover="mouseOverLeft()"
+                                    onmouseover="mouseOverIntrovert()"
                                     onmouseout="mouseOut()">
                                 Hướng nội
                             </button>
                             <button value="2"
-                                    class="characteristic btn btn-outline-dark btn-lg btn-block col-md-5 my-2 mx-1"
+                                    class="characteristic btn btn-outline-dark btn-lg btn-block col-md-4 my-2 mx-2"
                                     onclick="retrieveCharacteristic(this)"
-                                    onmouseover="mouseOverRight()"
+                                    onmouseover="mouseOverExtrovert()"
                                     onmouseout="mouseOut()">
                                 Hướng ngoại
                             </button>
@@ -181,7 +181,7 @@
                         </div>
                     </div>
                     <div id="confirm"
-                         class="hideaway text-center">
+                         class="hideaway text-center pl-3">
                         <button class="btn btn-info btn-lg my-3 "
                                 style="background-color:#ff6414; border: none"
                                 onclick="sendInputForSuggestion()">
@@ -364,12 +364,12 @@
             $(".role3").slideDown(600);
             $("#confirm").hide(600);
         });
-        function mouseOverLeft() {
+        function mouseOverIntrovert() {
             document.getElementById("description").innerHTML = "*<b>Hướng nội</b>: Khuynh "
                 + "hướng quan tâm đến cuộc sống tinh thần của bản thân người đó, có xu hướng mở rộng khi"
                 + "suy nghĩ và suy nhược khi phải giao tiếp với những người khác.";
         }
-        function mouseOverRight() {
+        function mouseOverExtrovert() {
             document.getElementById("description").innerHTML = "*<b>Hướng ngoại</b>: Những "
                 + "hành động, trạng thái hay thói quen chủ yếu quan tâm tới việc làm vừa lòng những"
                 + " người khác, có xu hướng thích thú khi tương tác, giao tiếp với con người và nói "
