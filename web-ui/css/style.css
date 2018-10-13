@@ -114,3 +114,8 @@ a:hover {
   color:white !important;
   border:none !important;
 }
+input{
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 6px;
+}
