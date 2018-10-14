@@ -3,28 +3,18 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible"
-          content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Kết quả</title>
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
-    <link rel="stylesheet"
-          href=".\css\tab.css">
-    <link rel="stylesheet"
-          href=".\css\result.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href=".\css\tab.css">
+    <link rel="stylesheet" href=".\css\result.css">
     <!-- Bootstrap -->
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans"
-          rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-          rel="stylesheet">
-    <link rel="stylesheet"
-          href=".\css\style.css">
-    <link rel="stylesheet"
-          href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet"
-          href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href=".\css\style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -37,62 +27,43 @@
 <body>
     <!-- Header -->
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark"
-         style="height: 45px">
-        <a class="navbar-brand"
-           href=".\index-ctsa.html">
-            <img src="./images/logoctsa.png"
-                 width="90"
-                 height="30"
-                 class="d-inline-block align-top"
-                 alt="CTSA logo">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height: 45px">
+        <a class="navbar-brand" href=".\index-ctsa.html">
+            <img src="./images/logoctsa.png" width="90" height="30" class="d-inline-block align-top" alt="CTSA logo">
         </a>
 
 
-        <div class="collapse navbar-collapse justify-content-center menu "
-             id="navbarSupportedContent">
-            <a class="mx-5"
-               href="#">Tuyển Dụng</a>
-            <a class="mx-5"
-               href=".\graph.html">Thống Kê</a>
-            <a class="mx-5"
-               href="#">Tuyển Dụng</a>
-            <a class="mx-5"
-               href="#">Thống Kê</a>
+        <div class="collapse navbar-collapse justify-content-center menu " id="navbarSupportedContent">
+            <a class="mx-5" href="#">Tuyển Dụng</a>
+            <a class="mx-5" href=".\graph.html">Thống Kê</a>
+            <a class="mx-5" href="#">Tuyển Dụng</a>
+            <a class="mx-5" href="#">Thống Kê</a>
 
         </div>
         <span class="fa-stack">
-            <i class="	fa fa-user-circle-o fa-stack-1x"
-               style="font-size:36px; color:white"></i>
+            <i class="	fa fa-user-circle-o fa-stack-1x" style="font-size:36px; color:white"></i>
         </span>
     </nav>
     <!-- End of Header -->
     <div class="container">
-        <div id="content-result"
-             class="tab-content col-md-12 folder">
+        <div id="content-result" class="tab-content col-md-12 folder">
             <div class="text-center pt-5">
                 <h2>Chào bạn!</h2>
                 <h4>Đây là các ngành nghề phù hợp dựa theo thông tin bạn cung cấp.</h4>
 
                 <!-- Button trigger modal -->
-                <button type="button"
-                        class="btn btn-dark"
-                        data-toggle="modal"
-                        data-target="#exampleModal">
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
                     Nhập chi tiết
                 </button>
             </div>
             <div class="row justify-content-around">
-                <div id="suggest2"
-                     class="col-md-3 text-center result">
+                <div id="suggest2" class="col-md-3 text-center result">
 
                 </div>
-                <div id="suggest1"
-                     class="col-md-3 text-center result">
+                <div id="suggest1" class="col-md-3 text-center result">
 
                 </div>
-                <div id="suggest3"
-                     class="col-md-3 text-center result">
+                <div id="suggest3" class="col-md-3 text-center result">
 
                 </div>
             </div>
@@ -100,45 +71,32 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade"
-         id="exampleModal"
-         tabindex="-1"
-         role="dialog"
-         aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg"
-             role="document">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title"
-                        id="exampleModalLabel">Hãy nhập điểm của bạn</h5>
-                    <button type="button"
-                            class="close"
-                            data-dismiss="modal"
-                            aria-label="Close">
+                    <h5 class="modal-title" id="exampleModalLabel">Hãy nhập điểm của bạn</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <p>
-                        <label for="amount">Toán học:</label>
-                        <section class="range-slider">
-                            <span class="rangeValues"></span><br>
-                            <input value="5"
-                                   min="0"
-                                   max="10"
-                                   step="0.1"
-                                   type="range">
-                            <input value="10"
-                                   min="0"
-                                   max="10"
-                                   step="0.1"
-                                   type="range">
-                        </section>
-                        <span>
-                            Ngữ Văn
-                        </span>
-                        <span id="literScore"
+                <div class="row modal-body justify-content-between">
+                    <div class="col-md-6 pl-4" style="border-right: 1px solid grey">
+                        <div>
+                            <span>Toán học:</span>
+                            <input class="rangeValues"></input>
+                            <section style="padding-bottom:20px" class="range-slider">
+                                <input value="5" min="0" max="10" step="0.1" type="range">
+                                <input value="10" min="0" max="10" step="0.1" type="range">
+                            </section>
+                        </div>
+                        <hr>
+                        <div>
+                            <span>
+                                Ngữ Văn:
+                            </span>
+                            <!-- <span id="literScore"
                               style="color:red; font-size:1.2em"></span>
                         <span>điểm</span>
                         <br>
@@ -150,12 +108,19 @@
                                    step="0.1"
                                    class="slider"
                                    id="literRange">
+                        </div> -->
+                            <input class="rangeValues"></input>
+                            <section style="padding-bottom:20px" class="range-slider">
+                                <input value="5" min="0" max="10" step="0.1" type="range">
+                                <input value="10" min="0" max="10" step="0.1" type="range">
+                            </section>
                         </div>
-
-                        <span>
-                            Anh Văn
-                        </span>
-                        <span id="englishScore"
+                        <hr>
+                        <div>
+                            <span>
+                                Anh Văn:
+                            </span>
+                            <!-- <span id="englishScore"
                               style="color:red; font-size:1.2em"></span>
                         <span>điểm</span><br>
                         <div class="slidecontainer">
@@ -166,16 +131,98 @@
                                    step="0.1"
                                    class="slider"
                                    id="englishRange">
+                        </div> -->
+                            <input class="rangeValues"></input>
+                            <section style="padding-bottom:20px" class="range-slider">
+                                <input value="5" min="0" max="10" step="0.1" type="range">
+                                <input value="10" min="0" max="10" step="0.1" type="range">
+                            </section>
                         </div>
+                        <hr>
+                        <div>
+                            <span>
+                                Vật lý:
+                            </span>
+                            <input class="rangeValues"></input>
+                            <section style="padding-bottom:20px" class="range-slider">
+                                <input value="5" min="0" max="10" step="0.1" type="range">
+                                <input value="10" min="0" max="10" step="0.1" type="range">
+                            </section>
+                        </div>
+                    </div>
 
-
+                    <div class="col-md-6 pl-4">
+                        <div>
+                            <span>Hóa:</span>
+                            <input class="rangeValues"></input>
+                            <section style="padding-bottom:20px" class="range-slider">
+                                <input value="5" min="0" max="10" step="0.1" type="range">
+                                <input value="10" min="0" max="10" step="0.1" type="range">
+                            </section>
+                        </div>
+                        <hr>
+                        <div>
+                            <span>
+                                Sinh:
+                            </span>
+                            <!-- <span id="literScore"
+                              style="color:red; font-size:1.2em"></span>
+                        <span>điểm</span>
+                        <br>
+                        <div class="slidecontainer">
+                            <input type="range"
+                                   min="1"
+                                   max="10"
+                                   value="5"
+                                   step="0.1"
+                                   class="slider"
+                                   id="literRange">
+                        </div> -->
+                            <input class="rangeValues"></input>
+                            <section style="padding-bottom:20px" class="range-slider">
+                                <input value="5" min="0" max="10" step="0.1" type="range">
+                                <input value="10" min="0" max="10" step="0.1" type="range">
+                            </section>
+                        </div>
+                        <hr>
+                        <div>
+                            <span>
+                                Sử:
+                            </span>
+                            <!-- <span id="englishScore"
+                              style="color:red; font-size:1.2em"></span>
+                        <span>điểm</span><br>
+                        <div class="slidecontainer">
+                            <input type="range"
+                                   min="1"
+                                   max="10"
+                                   value="5"
+                                   step="0.1"
+                                   class="slider"
+                                   id="englishRange">
+                        </div> -->
+                            <input class="rangeValues"></input>
+                            <section style="padding-bottom:20px" class="range-slider">
+                                <input value="5" min="0" max="10" step="0.1" type="range">
+                                <input value="10" min="0" max="10" step="0.1" type="range">
+                            </section>
+                        </div>
+                        <hr>
+                        <div>
+                            <span>
+                                Địa:
+                            </span>
+                            <input class="rangeValues"></input>
+                            <section style="padding-bottom:20px" class="range-slider">
+                                <input value="5" min="0" max="10" step="0.1" type="range">
+                                <input value="10" min="0" max="10" step="0.1" type="range">
+                            </section>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button"
-                            class="btn btn-secondary"
-                            data-dismiss="modal">Huỷ</button>
-                    <button type="button"
-                            class="btn selected">Nhận thêm gợi ý</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+                    <button type="button" class="btn selected">Nhận thêm gợi ý</button>
                 </div>
             </div>
         </div>
@@ -208,16 +255,26 @@
             // Get slider values
             var parent = this.parentNode;
             var slides = parent.getElementsByTagName("input");
+            //value to show range later
+            var divParent = this.parentNode.parentNode;
+            var inputValue = divParent.getElementsByTagName("input");
+
+            // inputValue.value=slide1 + " - " + slide2;
+            //////////
             var slide1 = parseFloat(slides[0].value);
             var slide2 = parseFloat(slides[1].value);
             // Neither slider will clip the other, so make sure we determine which is larger
             if (slide1 > slide2) { var tmp = slide2; slide2 = slide1; slide1 = tmp; }
 
-            var displayElement = parent.getElementsByClassName("rangeValues")[0];
-            displayElement.innerHTML = slide1 + " - " + slide2;
+            var displayElement = document.getElementsByClassName("rangeValues")[2];
+            // displayElement.value = slide1 + " - " + slide2;
+
+            //In the div there are 3 input tag so I use the 1st input in the array 
+            //- the one value we need to change
+            inputValue[0].value = slide1 + " - " + slide2;
 
             //variable to store range value
-            var value = [slide1, slide2];
+            // var value = [slide1, slide2];
             // console.log(value);
         }
 
