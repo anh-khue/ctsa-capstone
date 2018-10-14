@@ -142,12 +142,13 @@
                     <div class="hideaway role2 mx-4 pl-4 my-2"
                          style="border-left-style: dashed; border-width:3px">
 
-                        <input type="text"
+                        <input type="number"
                                class="my-2 mx-1"
                                id="highSchoolAverage"
                                placeholder="Điểm trung bình của bạn..."
                                onkeypress="retrieveAverage(this)"
-                               style="width: 300px">
+                               style="width: 300px"
+                               step="0.1">
 
                     </div>
                     <span style="font-size: 24px"
@@ -160,7 +161,8 @@
                                 3
                             </span>
                         </span>- Bạn là người hướng ngoại hay hướng nội?</span><br>
-                    <div class="role3 hideaway mx-4 pl-4 my-2">
+                    <div class="role3 hideaway mx-4 pl-4 my-2"
+                         style="height: 130px">
                         <div class="row justify-content-center">
                             <button value="1"
                                     class="characteristic btn btn-outline-dark btn-lg btn-block col-md-4 my-2 mx-2"
@@ -177,7 +179,7 @@
                                 Hướng ngoại
                             </button>
                             <p id="description"
-                               style="font-style:italic;color: #ff6414"></p>
+                               style="font-style:italic;color: #ff6414; "></p>
                         </div>
                     </div>
                     <div id="confirm"
@@ -225,7 +227,7 @@
             let subjectsSelector = $('#chooseSubjects')
             subjectsSelector.empty()
 
-            axios.get('http://localhost:8080/high-school-subjects')
+            axios.get('http://192.168.100.57:8080/high-school-subjects')
                 .then((response) => {
                     let subjects = response.data
                     subjects.forEach(subject => {
@@ -277,15 +279,16 @@
             })
 
             let name = $('<button>', {
-                class: 'btn btn-outline-dark my-2 mx-1 selected',
+                class: 'btn btn-outline-dark my-2 mx-1 selected col-md-2',
                 text: vietnamese,
             }).appendTo(subjectDiv)
 
             let markInput = $('<input>', {
                 type: 'number',
+                step: '0.1',
                 id: 'mark' + subject.weight,
                 value: '',
-                class: 'form-control my-2 mx-1',
+                class: 'my-2 mx-3 col-md-6',
                 placeholder: 'Điểm của bạn...',
                 onkeypress: 'retrieveMark(this)',
                 style: 'width: 300px'
