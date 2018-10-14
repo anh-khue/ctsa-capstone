@@ -334,13 +334,13 @@
         }
 
         function sendInputForSuggestion() {
-            axios.post('http://localhost:8080/suggestions/pupils', pupilInput)
+            axios.post('http://192.168.100.57:8080/suggestions/pupils', pupilInput)
                 .then((response) => {
                     console.log(response.data)
-                })
+                    sessionStorage.setItem('suggestions', JSON.stringify(response.data))
 
-            // sessionStorage.setItem('pupilInput', JSON.stringify(pupilInput))
-            // window.location = 'result.html'
+                    window.location = 'result.html'
+                })
         }
 
         $(".role3").click(function () {
