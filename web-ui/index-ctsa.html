@@ -227,7 +227,7 @@
             let subjectsSelector = $('#chooseSubjects')
             subjectsSelector.empty()
 
-            axios.get('http://192.168.100.57:8080/high-school-subjects')
+            axios.get('http://localhost:8080/high-school-subjects')
                 .then((response) => {
                     let subjects = response.data
                     subjects.forEach(subject => {
@@ -298,7 +298,6 @@
         }
 
         function retrieveMark(inputField) {
-            // console.log(document.getElementById("score1").value);
             let mark = inputField.value;
             if (event.keyCode == 13 &&
                 document.getElementById("mark1").value != "" &&
@@ -334,7 +333,7 @@
         }
 
         function sendInputForSuggestion() {
-            axios.post('http://192.168.100.57:8080/suggestions/pupils', pupilInput)
+            axios.post('http://localhost:8080/suggestions/pupils', pupilInput)
                 .then((response) => {
                     console.log(response.data)
                     sessionStorage.setItem('suggestions', JSON.stringify(response.data))

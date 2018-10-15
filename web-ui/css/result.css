@@ -17,8 +17,6 @@ section.range-slider {
     position: relative;
     width: 50%;
     height: 50px;
-    
-    
 }
 
 section.range-slider input {
@@ -47,7 +45,6 @@ section.range-slider input::-webkit-slider-thumb {
     background:#f32b07;
     cursor: pointer;
     border-radius: 50%; 
-    
 }
 
 section.range-slider input::-moz-range-thumb {
@@ -82,7 +79,3 @@ section.range-slider input:last-of-type::-moz-range-track {
 .rangeValues{
     margin-bottom: 30px;
 }
-
-
-
-
