@@ -19,6 +19,7 @@ public class HighSchoolSubject {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    private String vietnamese;
 
     public int getId() {
         return id;

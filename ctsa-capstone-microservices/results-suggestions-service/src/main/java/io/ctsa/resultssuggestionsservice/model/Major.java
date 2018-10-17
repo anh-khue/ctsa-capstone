@@ -19,7 +19,8 @@ public class Major {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private int businessFieldId;
+    private String vietnamese;
+    private String imageUrl;
 
     @Override
     public boolean equals(Object o) {
@@ -27,12 +28,11 @@ public class Major {
         if (o == null || getClass() != o.getClass()) return false;
         Major major = (Major) o;
         return id == major.id &&
-                businessFieldId == major.businessFieldId &&
                 Objects.equals(name, major.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, businessFieldId);
+        return Objects.hash(id, name);
     }
 }
