@@ -117,7 +117,7 @@
                 <div class="row modal-body justify-content-between">
                     <div class="col-md-6 pl-4"
                          style="border-right: 1px solid grey">
-                        <div>
+                        <div id="mathMark">
                             <span>Toán học:</span>
                             <input class="rangeValues">
                             <section style="padding-bottom:20px"
@@ -135,7 +135,7 @@
                             </section>
                         </div>
                         <hr>
-                        <div>
+                        <div id="literatureMark">
                             <span>
                                 Ngữ Văn:
                             </span>
@@ -155,7 +155,7 @@
                             </section>
                         </div>
                         <hr>
-                        <div>
+                        <div id="englishMark">
                             <span>
                                 Anh Văn:
                             </span>
@@ -175,7 +175,7 @@
                             </section>
                         </div>
                         <hr>
-                        <div>
+                        <div id="physicsMark">
                             <span>
                                 Vật lý:
                             </span>
@@ -195,11 +195,11 @@
                             </section>
                         </div>
                     </div>
-
+                    <hr>
                     <div class="col-md-6 pl-4">
-                        <div>
+                        <div id="chemistryMark">
                             <span>Hóa học:</span>
-                            <input class="rangeValues"></input>
+                            <input class="rangeValues">
                             <section style="padding-bottom:20px"
                                      class="range-slider">
                                 <input value="5"
@@ -215,7 +215,7 @@
                             </section>
                         </div>
                         <hr>
-                        <div>
+                        <div id="biologyMark">
                             <span>
                                 Sinh học:
                             </span>
@@ -235,7 +235,7 @@
                             </section>
                         </div>
                         <hr>
-                        <div>
+                        <div id="historyMark">
                             <span>
                                 Lịch sử:
                             </span>
@@ -255,11 +255,12 @@
                             </section>
                         </div>
                         <hr>
-                        <div>
+                        <div id="geographyMark">
                             <span>
                                 Địa lý:
                             </span>
-                            <input class="rangeValues">
+                            <input class="rangeValues"
+                                   id="testMathMark">
                             <section style="padding-bottom:20px"
                                      class="range-slider">
                                 <input value="5"
@@ -313,7 +314,6 @@
             // var value = [slide1, slide2];
             // console.log(value);
         }
-
 
         window.onload = function () {
             // Initialize Sliders
