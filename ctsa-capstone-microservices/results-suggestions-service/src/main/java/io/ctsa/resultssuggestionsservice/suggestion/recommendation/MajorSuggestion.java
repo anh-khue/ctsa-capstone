@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @NoArgsConstructor
 public class MajorSuggestion {
+
     private Major major;
     private double distance;
 }
