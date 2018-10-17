@@ -3,7 +3,7 @@ function randomMark(min, max) {
 }
 
 function retrieveMark(fieldId) {
-  let subjectMarkDiv = $(fieldId);
+  let subjectMarkDiv = $("#" + fieldId);
 
   let directMark = subjectMarkDiv.find("input.rangeValues").val();
   if (directMark.includes("-")) {
@@ -16,6 +16,26 @@ function retrieveMark(fieldId) {
   }
 }
 
+function getEntranceExamInput() {
+  let entranceExamInput = {
+    id: 0,
+    math: 0,
+    literature: 0,
+    english: 0,
+    physics: null,
+    chemistry: null,
+    biology: null,
+    history: null,
+    geography: null
+  };
+
+  subjects.forEach(subject => {
+    entranceExamInput[subject] = retrieveMark(subject + "Mark");
+  });
+
+  return entranceExamInput;
+}
+
 let subjects = [
   "math",
   "literature",
@@ -26,3 +46,19 @@ let subjects = [
   "history",
   "geography"
 ];
+
+function getSuggestions() {
+  let pupilInput = JSON.parse(sessionStorage.getItem("pupilInput"));
+
+  let entranceExamInput = getEntranceExamInput();
+
+  pupilInput.entranceExamInput = entranceExamInput;
+
+  axios
+    .post("http://localhost:8080/suggestions/pupils", pupilInput)
+    .then(response => {
+      let suggestions = response.data;
+      showSuggestions(suggestions);
+      $("#scoreInputModal").modal("toggle");
+    });
+}
