@@ -74,21 +74,28 @@
 
                 <!-- Button trigger modal -->
                 <button type="button"
-                        class="btn btn-dark"
+                        class="btn selected"
                         data-toggle="modal"
-                        data-target="#exampleModal">
+                        data-target="#scoreInputModal">
                     Bạn muốn nhận gợi ý chính xác hơn?
                 </button>
             </div>
             <div class="row justify-content-around">
                 <div id="suggest2"
-                     class="col-md-3 text-center result">
+                     class="col-md-3 text-center result"
+                     data-toggle="modal"
+                     data-target="#JobDescription"
+                     style="pointer-events: auto;">
                 </div>
                 <div id="suggest1"
-                     class="col-md-3 text-center result">
+                     class="col-md-3 text-center result"
+                     data-toggle="modal"
+                     data-target="#JobDescription">
                 </div>
                 <div id="suggest3"
-                     class="col-md-3 text-center result">
+                     class="col-md-3 text-center result"
+                     data-toggle="modal"
+                     data-target="#JobDescription">
                 </div>
             </div>
         </div>
@@ -96,17 +103,17 @@
 
     <!-- Modal -->
     <div class="modal fade"
-         id="exampleModal"
+         id="scoreInputModal"
          tabindex="-1"
          role="dialog"
-         aria-labelledby="exampleModalLabel"
+         aria-labelledby="scoreInputModalLabel"
          aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg"
              role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"
-                        id="exampleModalLabel">Vui lòng chọn điểm thi Đại học dự tính của bạn phía bên dưới</h5>
+                        id="scoreInputModalLabel">Vui lòng chọn điểm thi Đại học dự tính của bạn phía bên dưới</h5>
                     <button type="button"
                             class="close"
                             data-dismiss="modal"
@@ -288,6 +295,37 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade"
+         id="JobDescription"
+         tabindex="-1"
+         role="dialog"
+         aria-labelledby="scoreInputModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"
+             role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"
+                        id="scoreInputModalLabel">Vui lòng chọn điểm thi Đại học dự tính của bạn phía
+                        bên dưới</h5>
+                    <button type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button"
+                            class="btn btn-secondary"
+                            data-dismiss="modal">Huỷ</button>
+                    <button type="button"
+                            class="btn selected">Nhận thêm gợi ý</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         function getVals() {
             // Get slider values

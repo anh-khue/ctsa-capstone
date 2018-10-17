@@ -184,8 +184,7 @@
                     </div>
                     <div id="confirm"
                          class="hideaway text-center pl-3">
-                        <button class="btn btn-info btn-lg my-3 "
-                                style="background-color:#ff6414; border: none"
+                        <button class="btn btn-lg my-3 selected"
                                 onclick="sendInputForSuggestion()">
                             Nhận gợi ý
                         </button>
@@ -309,9 +308,9 @@
                 })
 
                 $(".role1").slideUp(600);
-                $(".role2").slideDown(600);
                 $(".role3").slideUp(600);
                 $("#confirm").hide(600);
+                $(".role2").slideDown(600);
             }
         }
 
@@ -348,17 +347,20 @@
             $("#confirm").show(600);
         });
 
-        $(".head1").click(function () {
-            $(".role1").slideDown(600);
+       $(".head1").click(function () {
             $(".role2").slideUp(600);
-            $(".role3").slideUp(600)
+            $(".role3").slideUp(600);
+            $(".role1").slideDown(600);
+            
             $("#confirm").hide(600);
         });
         $(".head2").click(function () {
             $(".role1").slideUp(600);
-            $(".role2").slideDown(600);
             $(".role3").slideUp(600);
             $("#confirm").hide(600);
+            $(".role2").slideDown(600);
+            
+            
         });
         $(".head3").click(function () {
             $(".role1").slideUp(600);
