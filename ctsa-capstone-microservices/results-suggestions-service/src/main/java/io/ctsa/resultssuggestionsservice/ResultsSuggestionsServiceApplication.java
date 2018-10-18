@@ -28,7 +28,6 @@ public class ResultsSuggestionsServiceApplication {
     @Bean
     CommandLineRunner runner() {
         return args -> {
-
         };
     }
 }

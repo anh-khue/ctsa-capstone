@@ -1,9 +1,6 @@
 package io.ctsa.careertrendservice.prediction;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import javax.persistence.MappedSuperclass;
 
@@ -13,13 +10,17 @@ import javax.persistence.MappedSuperclass;
 @AllArgsConstructor
 public abstract class PredictionModel {
 
-    @NonNull
     private int year;
     private Double actual;
+    @NonNull
     private Double level;
+    @NonNull
     private Double trend;
+    @NonNull
     private Double forecast;
-    private Double alpha;
-    private Double beta;
+    @NonNull
+    private double alpha;
+    @NonNull
+    private double beta;
     private String link;
 }

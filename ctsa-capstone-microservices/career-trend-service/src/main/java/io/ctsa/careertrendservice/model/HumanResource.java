@@ -14,14 +14,14 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-public class Salary extends PredictionModel {
+public class HumanResource extends PredictionModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int majorId;
 
-    public Salary() {
+    public HumanResource() {
         super();
     }
 }

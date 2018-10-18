@@ -1,6 +1,5 @@
 package io.ctsa.resultssuggestionsservice.suggestion.recommendation;
 
-import io.ctsa.resultssuggestionsservice.exception.EntranceExamResultNotFoundException;
 import io.ctsa.resultssuggestionsservice.model.*;
 import io.ctsa.resultssuggestionsservice.repository.EntranceExamResultCentroidRepository;
 import io.ctsa.resultssuggestionsservice.repository.HighSchoolTopResultCentroidRepository;
@@ -13,7 +12,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-import static java.lang.Math.*;
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
 
 @Component
 public class PupilSuggestion {
@@ -42,7 +42,8 @@ public class PupilSuggestion {
                                       .stream()
                                       .map(majorCentroid -> {
                                           MajorSuggestion suggestion = new MajorSuggestion();
-                                          suggestion.setMajor(majorRepository.findById(majorCentroid.getId()).orElse(null));
+                                          suggestion.setMajor(majorRepository.findById(majorCentroid.getMajorId())
+                                                                             .orElse(null));
                                           suggestion.setDistance(score(input, majorCentroid));
                                           return suggestion;
                                       })
