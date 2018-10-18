@@ -3,6 +3,7 @@ package io.ctsa.resultssuggestionsservice.controller;
 import io.ctsa.resultssuggestionsservice.model.Major;
 import io.ctsa.resultssuggestionsservice.service.MajorService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ import java.util.List;
 
 import static org.springframework.http.HttpStatus.*;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class MajorController {
     private final MajorService majorService;
