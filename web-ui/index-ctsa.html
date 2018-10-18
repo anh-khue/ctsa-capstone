@@ -36,7 +36,6 @@
                  alt="CTSA logo">
         </a>
 
-
         <div class="collapse navbar-collapse  justify-content-center  menu"
              id="navbarSupportedContent">
             <a class="mx-5"
@@ -226,7 +225,7 @@
             let subjectsSelector = $('#chooseSubjects')
             subjectsSelector.empty()
 
-            axios.get('http://localhost:8080/high-school-subjects')
+            axios.get('http://localhost:8005/high-school-subjects')
                 .then((response) => {
                     let subjects = response.data
                     subjects.forEach(subject => {
@@ -331,7 +330,7 @@
         }
 
         function sendInputForSuggestion() {
-            axios.post('http://localhost:8080/suggestions/pupils', pupilInput)
+            axios.post('http://localhost:8005/suggestions/pupils', pupilInput)
                 .then((response) => {
                     sessionStorage.setItem('suggestions', JSON.stringify(response.data))
                     sessionStorage.setItem('pupilInput', JSON.stringify(pupilInput))

@@ -55,7 +55,7 @@ function getSuggestions() {
   pupilInput.entranceExamInput = entranceExamInput;
 
   axios
-    .post("http://localhost:8080/suggestions/pupils", pupilInput)
+    .post("http://localhost:8005/suggestions/pupils", pupilInput)
     .then(response => {
       let suggestions = response.data;
       showSuggestions(suggestions);
