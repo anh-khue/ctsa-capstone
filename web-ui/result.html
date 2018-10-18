@@ -84,14 +84,17 @@
                 <div id="suggest2"
                      class="col-md-3 text-center result"
                      style="pointer-events: auto;">
+                    <span style="font-size: 45px; color:#ff6414">2</span>
                 </div>
                 <div id="suggest1"
                      class="col-md-3 text-center result"
                      style="pointer-events: auto;">
+                    <span style="font-size: 45px; color:#ff6414">1</span>
                 </div>
                 <div id="suggest3"
                      class="col-md-3 text-center result"
                      style="pointer-events: auto;">
+                    <span style="font-size: 45px; color:#ff6414">3</span>
                 </div>
             </div>
         </div>
@@ -472,10 +475,7 @@
                 suggestionDiv.empty()
                 suggestionDiv.attr('onclick', 'showInfoModal(' + suggestion.major.id + ')')
 
-                $('<span>', {
-                    class: 'fa fa-star',
-                    style: 'font-size: 45px; color:#ff6414'
-                }).appendTo(suggestionDiv)
+
 
                 $('<br>').appendTo(suggestionDiv)
                 $('<br>').appendTo(suggestionDiv)
