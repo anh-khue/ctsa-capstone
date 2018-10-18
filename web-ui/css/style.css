@@ -2,6 +2,11 @@
   background-color: #e9e9e9;
   margin-top: 2%;
 } */
+/* a:focus {
+  outline:0;
+} */
+
+
 
 html {
   /* font-family: 'Muli', sans-serif !important; */
@@ -113,4 +118,10 @@ a:hover {
   background-color: #ff6215 !important;
   color:white !important;
   border:none !important;
+  padding: .375rem .75rem !important;
+  }
+input{
+  border: 1px solid black ;
+  border-radius: 4px ;
+  padding: 6px ;
 }
