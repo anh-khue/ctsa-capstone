@@ -8,8 +8,7 @@
     <title>Kết quả</title>
     <meta name="viewport"
           content="width=device-width, initial-scale=1">
-    <link rel="stylesheet"
-          href=".\css\tab.css">
+
     <link rel="stylesheet"
           href=".\css\result.css">
     <!-- Bootstrap -->
@@ -65,17 +64,17 @@
     </nav>
     <!-- End of Header -->
 
-    <div class="container">
+    <div class="container-fluid">
         <div id="content-result"
-             class="tab-content col-md-12 folder">
-            <div class="text-center pt-5">
+             class="tab-content col-md-12 folder text-center">
+            <div class="text-center pt-3">
                 <h2>Chào bạn!</h2>
                 <h4>Dựa theo thông tin bạn cung cấp</h4>
                 <h4>Đây là các ngành nghề có thể phù hợp nhất dành cho bạn</h4>
 
                 <!-- Button trigger modal -->
                 <button type="button"
-                        class="btn selected"
+                        class="btn btn-lg selected"
                         data-toggle="modal"
                         data-target="#scoreInputModal">
                     Bạn muốn nhận gợi ý chính xác hơn?
@@ -85,18 +84,18 @@
                 <div id="suggest2"
                      class="col-md-3 text-center result"
                      data-toggle="modal"
-                     data-target="#JobDescription"
+                     data-target="#JobDescriptionModal"
                      style="pointer-events: auto;">
                 </div>
                 <div id="suggest1"
                      class="col-md-3 text-center result"
                      data-toggle="modal"
-                     data-target="#JobDescription">
+                     data-target="#JobDescriptionModal">
                 </div>
                 <div id="suggest3"
                      class="col-md-3 text-center result"
                      data-toggle="modal"
-                     data-target="#JobDescription">
+                     data-target="#JobDescriptionModal">
                 </div>
             </div>
         </div>
@@ -128,6 +127,8 @@
                         <div id="mathMark">
                             <span>Toán học:</span>
                             <input class="rangeValues">
+                            <button type="button"
+                                    class="btn btn-dark">Không có điểm</button>
                             <section style="padding-bottom:20px"
                                      class="range-slider">
                                 <input value="5"
@@ -299,18 +300,21 @@
 
     <!-- Modal -->
     <div class="modal fade"
-         id="JobDescription"
+         id="JobDescriptionModal"
          tabindex="-1"
          role="dialog"
-         aria-labelledby="scoreInputModalLabel"
+         aria-labelledby="JobDescriptionModalLabel"
          aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg"
              role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header text-center">
                     <h5 class="modal-title"
-                        id="scoreInputModalLabel">Vui lòng chọn điểm thi Đại học dự tính của bạn phía
-                        bên dưới</h5>
+                        id="scoreInputModalLabel">
+                        <span style="font-size:1.5em">Mô tả</span><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
                     <button type="button"
                             class="close"
                             data-dismiss="modal"
@@ -318,12 +322,70 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-footer">
-                    <button type="button"
-                            class="btn btn-secondary"
-                            data-dismiss="modal">Huỷ</button>
-                    <button type="button"
-                            class="btn selected">Nhận thêm gợi ý</button>
+                <div class="modal-body ">
+                    <div class="row justify-content-center text-center">
+                        <!-- <div class="col-md-6">
+                            <h2>Hiện tại</h2>
+                        </div>
+                        <div class="col-md-6 my-auto">
+                            <h2>4 năm tới</h2>
+                        </div> -->
+                        <div class="col-md-12">
+                            <h2>Mức lương khởi điểm</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="triangle"></div>
+                        <div class="banner-description text-center my-auto">
+                            <img src="./images/money-icon.png"
+                                 alt="Money Icon"
+                                 width="160"
+                                 height="160"
+                                 style="margin-top:-25px; margin-bottom:-20px;">
+                        </div>
+                        <div id="triangle2"></div>
+                    </div>
+                    <div class="row justify-content-center text-center">
+
+                        <div class="col-md-12">
+                            <h2>Tổng số nhân lực</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div id="triangle"></div>
+                        <div class="banner-description text-center my-auto">
+                            <img src="./images/human-resources.png"
+                                 alt="Money Icon"
+                                 width="160"
+                                 height="160"
+                                 style="margin-top:-25px; margin-bottom:-20px;">
+                        </div>
+                        <div id="triangle2"></div>
+
+                    </div>
+                    <div class="row justify-content-center text-center">
+
+                        <div class="col-md-12">
+                            <h2>Thông tin bổ sung</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="triangle"></div>
+                        <div class="banner-description text-center my-auto">
+                            <img src="./images/additional.png"
+                                 alt="Money Icon"
+                                 width="160"
+                                 height="160"
+                                 style="margin-top:-25px; margin-bottom:-20px;">
+                        </div>
+                        <div id="triangle2"></div>
+                    </div>
+                </div>
+                <div class="modal-footer text-center">
+                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
                 </div>
             </div>
         </div>

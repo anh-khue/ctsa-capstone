@@ -118,8 +118,8 @@ a:hover {
   background-color: #ff6215 !important;
   color:white !important;
   border:none !important;
-  margin-top:1%;
-}
+  padding: .375rem .75rem !important;
+  }
 input{
   border: 1px solid black ;
   border-radius: 4px ;
