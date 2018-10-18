@@ -90,6 +90,20 @@
                      class="col-md-3 text-center result"
                      style="pointer-events: auto;">
                     <span style="font-size: 45px; color:#ff6414">1</span>
+
+                    <br>
+                    <br>
+                    
+                    <div class="job-result">
+                        <b style="font-size:2em;color:rgb(235, 231, 231);">Công nghệ thông tin</b>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+
+
                 </div>
                 <div id="suggest3"
                      class="col-md-3 text-center result"
@@ -472,7 +486,7 @@
                 let suggestion = suggestions[i++]
 
                 let suggestionDiv = $('#suggest' + i)
-                suggestionDiv.empty()
+                // suggestionDiv.empty()
                 suggestionDiv.attr('onclick', 'showInfoModal(' + suggestion.major.id + ')')
 
                 // $('<span>', {
@@ -482,11 +496,11 @@
 
                 $('<br>').appendTo(suggestionDiv)
                 $('<br>').appendTo(suggestionDiv)
-                $('<br>').appendTo(suggestionDiv)
+               
 
                 $('<b>', {
                     text: suggestion.major.vietnamese,
-                    style: 'font-size:2em'
+                    style: 'font-size:2em;color:rgb(235, 231, 231)'
                 }).appendTo(suggestionDiv)
 
                 $('<br>').appendTo(suggestionDiv)
