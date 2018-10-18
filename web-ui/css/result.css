@@ -135,4 +135,5 @@ section.range-slider input:last-of-type::-moz-range-track {
   .job-result{
     padding-left:20%;
     padding-right:20%;
+    height:120px;
   }
