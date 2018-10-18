@@ -84,35 +84,17 @@
                 <div id="suggest2"
                      class="col-md-3 text-center result"
                      style="pointer-events: auto;">
-                    
+                    <span style="font-size: 45px; color:#ff6414; font-weight: bold;">2</span>
                 </div>
                 <div id="suggest1"
                      class="col-md-3 text-center result"
                      style="pointer-events: auto;">
-                    <span style="font-size: 45px; color:#ff6414">1</span>
-
-                    <br>
-                    <br>
-                    <br>
-                    <div class="job-result">
-                        <b style="font-size:2em;color:rgb(235, 231, 231);">Công nghệ thông tin</b>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <img src="./images/money-icon.png"
-                    alt="Money Icon"
-                    width="180"
-                    height="180"
-                    style="margin-top:-25px; margin-bottom:-20px;">
-
-
+                    <span style="font-size: 45px; color:#ff6414; font-weight: bold;">1</span>
                 </div>
                 <div id="suggest3"
                      class="col-md-3 text-center result"
                      style="pointer-events: auto;">
-                    <span style="font-size: 45px; color:#ff6414">3</span>
+                    <span style="font-size: 45px; color:#ff6414; font-weight: bold;">3</span>
                 </div>
             </div>
         </div>
@@ -490,25 +472,23 @@
                 let suggestion = suggestions[i++]
 
                 let suggestionDiv = $('#suggest' + i)
-                // suggestionDiv.empty()
                 suggestionDiv.attr('onclick', 'showInfoModal(' + suggestion.major.id + ')')
 
-                // $('<span>', {
-                //     class: 'fa fa-star',
-                //     style: 'font-size: 45px; color:#ff6414'
-                // }).appendTo(suggestionDiv)
+                $('<br>').appendTo(suggestionDiv)
+                $('<br>').appendTo(suggestionDiv)
+                $('<br>').appendTo(suggestionDiv)
 
-                $('<br>').appendTo(suggestionDiv)
-                $('<br>').appendTo(suggestionDiv)
-               
+                let wrapper = $('<div>', {
+                    class: 'job-result'
+                })
 
                 $('<b>', {
                     text: suggestion.major.vietnamese,
                     style: 'font-size:2em;color:rgb(235, 231, 231)'
-                }).appendTo(suggestionDiv)
+                }).appendTo(wrapper)
 
-                $('<br>').appendTo(suggestionDiv)
-                $('<br>').appendTo(suggestionDiv)
+                wrapper.appendTo(suggestionDiv)
+
                 $('<br>').appendTo(suggestionDiv)
                 $('<br>').appendTo(suggestionDiv)
 
