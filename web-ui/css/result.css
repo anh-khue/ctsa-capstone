@@ -95,10 +95,10 @@ section.range-slider input:last-of-type::-moz-range-track {
 }
 .banner-description{
     /* border:1px solid grey; */
-    width:1030px;
-    height:140px;
-    margin-left:-63px;
-    margin-right: -63px;
+    width:1300px;
+    height:130px;
+    margin-left:-63px !important;
+    margin-right: -63px !important;
     background: url("../images/orange-background-banner.jpg") no-repeat;
     background-size: 100% 80%;
     /* margin-top: -70px; */
