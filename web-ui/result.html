@@ -81,20 +81,26 @@
                 </button>
             </div>
             <div class="row justify-content-around">
-                <div id="suggest2"
-                     class="col-md-3 text-center result"
+                <div class="col-md-3 text-center result"
                      style="pointer-events: auto;">
                     <span style="font-size: 45px; color:#ff6414; font-weight: bold;">2</span>
+                    <div id="suggest2">
+
+                    </div>
                 </div>
-                <div id="suggest1"
-                     class="col-md-3 text-center result"
+                <div class="col-md-3 text-center result"
                      style="pointer-events: auto;">
                     <span style="font-size: 45px; color:#ff6414; font-weight: bold;">1</span>
+                    <div id="suggest1">
+
+                    </div>
                 </div>
-                <div id="suggest3"
-                     class="col-md-3 text-center result"
+                <div class="col-md-3 text-center result"
                      style="pointer-events: auto;">
                     <span style="font-size: 45px; color:#ff6414; font-weight: bold;">3</span>
+                    <div id="suggest3">
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -472,9 +478,9 @@
                 let suggestion = suggestions[i++]
 
                 let suggestionDiv = $('#suggest' + i)
+                suggestionDiv.empty()
                 suggestionDiv.attr('onclick', 'showInfoModal(' + suggestion.major.id + ')')
 
-                $('<br>').appendTo(suggestionDiv)
                 $('<br>').appendTo(suggestionDiv)
                 $('<br>').appendTo(suggestionDiv)
 
