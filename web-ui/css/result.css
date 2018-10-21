@@ -44,7 +44,7 @@ section.range-slider input {
     margin: 0;
     padding: 0;
     border: 0;
-    opacity: 0.8;
+    /* opacity: 0.8; */
 }
 
 section.range-slider input::-webkit-slider-thumb {
@@ -137,3 +137,7 @@ section.range-slider input:last-of-type::-moz-range-track {
     padding-right:20%;
     height:120px;
   }
+.greyout{
+    background-color: whitesmoke;
+    cursor:default;
+}

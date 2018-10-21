@@ -89,7 +89,7 @@
                     </div>
                 </div>
                 <div class="col-md-3 text-center result"
-                     style="pointer-events: auto;">
+                     style="pointer-events: auto; ">
                     <span style="font-size: 45px; color:#ff6414; font-weight: bold;">1</span>
                     <div id="suggest1">
 
@@ -117,8 +117,9 @@
              role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title"
-                        id="scoreInputModalLabel">Vui lòng chọn điểm thi Đại học dự tính của bạn phía bên dưới</h5>
+                    <h4 class="modal-title"
+                        id="scoreInputModalLabel">Vui lòng chọn <b>điểm thi Đại học</b> dự tính của
+                        bạn phía bên dưới</h4>
                     <button type="button"
                             class="close"
                             data-dismiss="modal"
@@ -130,9 +131,16 @@
                     <div class="col-md-6 pl-4"
                          style="border-right: 1px solid grey">
                         <div id="mathMark">
+
                             <span>Toán học:</span>
                             <input class="rangeValues">
-                            <section style="padding-bottom:20px"
+                            <label>
+                                <input type="checkbox"
+                                       value=""
+                                       onchange="disableScoreInput(this)">Không dùng điểm này
+                            </label>
+                            <section style="
+                                       padding-bottom:20px"
                                      class="range-slider">
                                 <input value="5"
                                        min="0"
@@ -152,6 +160,11 @@
                                 Ngữ Văn:
                             </span>
                             <input class="rangeValues">
+                            <label>
+                                <input type="checkbox"
+                                       value=""
+                                       onchange="disableScoreInput(this)">Không dùng điểm này
+                            </label>
                             <section style="padding-bottom:20px"
                                      class="range-slider">
                                 <input value="5"
@@ -172,6 +185,11 @@
                                 Anh Văn:
                             </span>
                             <input class="rangeValues">
+                            <label>
+                                <input type="checkbox"
+                                       value=""
+                                       onchange="disableScoreInput(this)">Không dùng điểm này
+                            </label>
                             <section style="padding-bottom:20px"
                                      class="range-slider">
                                 <input value="5"
@@ -192,6 +210,11 @@
                                 Vật lý:
                             </span>
                             <input class="rangeValues">
+                            <label>
+                                <input type="checkbox"
+                                       value=""
+                                       onchange="disableScoreInput(this)">Không dùng điểm này
+                            </label>
                             <section style="padding-bottom:20px"
                                      class="range-slider">
                                 <input value="5"
@@ -212,6 +235,11 @@
                         <div id="chemistryMark">
                             <span>Hóa học:</span>
                             <input class="rangeValues">
+                            <label>
+                                <input type="checkbox"
+                                       value=""
+                                       onchange="disableScoreInput(this)">Không dùng điểm này
+                            </label>
                             <section style="padding-bottom:20px"
                                      class="range-slider">
                                 <input value="5"
@@ -232,6 +260,11 @@
                                 Sinh học:
                             </span>
                             <input class="rangeValues">
+                            <label>
+                                <input type="checkbox"
+                                       value=""
+                                       onchange="disableScoreInput(this)">Không dùng điểm này
+                            </label>
                             <section style="padding-bottom:20px"
                                      class="range-slider">
                                 <input value="5"
@@ -252,6 +285,11 @@
                                 Lịch sử:
                             </span>
                             <input class="rangeValues">
+                            <label>
+                                <input type="checkbox"
+                                       value=""
+                                       onchange="disableScoreInput(this)">Không dùng điểm này
+                            </label>
                             <section style="padding-bottom:20px"
                                      class="range-slider">
                                 <input value="5"
@@ -273,6 +311,11 @@
                             </span>
                             <input class="rangeValues"
                                    id="testMathMark">
+                            <label>
+                                <input type="checkbox"
+                                       value=""
+                                       onchange="disableScoreInput(this)">Không dùng điểm này
+                            </label>
                             <section style="padding-bottom:20px"
                                      class="range-slider">
                                 <input value="5"
@@ -559,6 +602,26 @@
 
         const numberWithCommas = (x) => {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+        function disableScoreInput(obj) {
+            if ($(obj).is(":checked")) {
+                var parent = obj.parentNode.parentNode;
+                var section = parent.getElementsByTagName("section");
+                //disable range input
+                $(section).children().prop('disabled', true);
+                //disable text input
+                $(parent).children().prop('disabled', true);
+                $(parent).addClass("greyout");
+
+
+
+
+            } else {
+                var parent = obj.parentNode.parentNode;
+                $(parent).children().prop('disabled', false);
+                $(parent).children().children().prop('disabled', false);
+            }
+
         }
     </script>
 </body>
