@@ -81,25 +81,55 @@
                 </button>
             </div>
             <div class="row justify-content-around">
-                <div class="col-md-3 text-center" id="result2"
+                <div class="col-md-3 text-center result-smaller"
                      style="pointer-events: auto;">
                     <span style="font-size: 45px; color:#ff6414; font-weight: bold;">2</span>
                     <div id="suggest2">
-
+                        <!-- <br>
+                        <br>
+                        <div class='job-result'>
+                            <b style='font-size:2em;color:rgb(235, 231, 231)'>
+                                Công nghệ thông tin
+                            </b>
+                        </div>
+                        <br>
+                        <br>
+                        <img src="./images/job2.png"
+                             alt="sdad"> -->
                     </div>
                 </div>
-                <div class="col-md-3 text-center" id="result1"
+                <div class="col-md-3 text-center result"
                      style="pointer-events: auto; ">
                     <span style="font-size: 45px; color:#ff6414; font-weight: bold;">1</span>
                     <div id="suggest1">
+                        <!-- <br>
+                        <br>
+                        <div class='job-result'>
 
+                            <b style='font-size:2em;color:rgb(235, 231, 231)'>
+                                Công nghệ thông tin
+                            </b>
+                        </div>
+                        <br>
+                        <br>
+                        <img src="./images/job2.png"
+                             alt="sdad"> -->
                     </div>
                 </div>
-                <div class="col-md-3 text-center " id="result3"
+                <div class="col-md-3 text-center result-smaller"
                      style="pointer-events: auto;">
                     <span style="font-size: 45px; color:#ff6414; font-weight: bold;">3</span>
                     <div id="suggest3">
-
+                        <!-- <br>
+                        <br>
+                        <div class='job-result'>
+                            <b style='font-size:2em;color:rgb(235, 231, 231)'>
+                                Công nghệ                            </b>
+                        </div>
+                        <br>
+                        <br>
+                        <img src="./images/job2.png"
+                             alt="sdad"> -->
                     </div>
                 </div>
             </div>
@@ -155,7 +185,8 @@
                             </section>
                         </div>
 
-                        <div id="literatureMark" class="collegeScoreInput">
+                        <div id="literatureMark"
+                             class="collegeScoreInput">
                             <span>
                                 Ngữ Văn:
                             </span>
@@ -179,8 +210,9 @@
                                        type="range">
                             </section>
                         </div>
-                        
-                        <div id="englishMark" class="collegeScoreInput">
+
+                        <div id="englishMark"
+                             class="collegeScoreInput">
                             <span>
                                 Anh Văn:
                             </span>
@@ -204,13 +236,14 @@
                                        type="range">
                             </section>
                         </div>
-                        
-                        <div id="physicsMark" style="padding:3%">
+
+                        <div id="physicsMark"
+                             style="padding:3%">
                             <span>
                                 Vật lý:
                             </span>
                             <input class="rangeValues">
-                            <label  class="float-right">
+                            <label class="float-right">
                                 <input type="checkbox"
                                        value=""
                                        onchange="disableScoreInput(this)"> Không thi
@@ -230,12 +263,13 @@
                             </section>
                         </div>
                     </div>
-                    
+
                     <div class="col-md-6 pl-4">
-                        <div id="chemistryMark" class="collegeScoreInput">
+                        <div id="chemistryMark"
+                             class="collegeScoreInput">
                             <span>Hóa học:</span>
                             <input class="rangeValues">
-                            <label  class="float-right">
+                            <label class="float-right">
                                 <input type="checkbox"
                                        value=""
                                        onchange="disableScoreInput(this)"> Không thi
@@ -254,13 +288,14 @@
                                        type="range">
                             </section>
                         </div>
-                        
-                        <div id="biologyMark" class="collegeScoreInput">
+
+                        <div id="biologyMark"
+                             class="collegeScoreInput">
                             <span>
                                 Sinh học:
                             </span>
                             <input class="rangeValues">
-                            <label  class="float-right">
+                            <label class="float-right">
                                 <input type="checkbox"
                                        value=""
                                        onchange="disableScoreInput(this)"> Không thi
@@ -279,13 +314,14 @@
                                        type="range">
                             </section>
                         </div>
-                        
-                        <div id="historyMark" class="collegeScoreInput">
+
+                        <div id="historyMark"
+                             class="collegeScoreInput">
                             <span>
                                 Lịch sử:
                             </span>
                             <input class="rangeValues">
-                            <label  class="float-right">
+                            <label class="float-right">
                                 <input type="checkbox"
                                        value=""
                                        onchange="disableScoreInput(this)"> Không thi
@@ -304,14 +340,15 @@
                                        type="range">
                             </section>
                         </div>
-                        
-                        <div id="geographyMark" style="padding:3%">
+
+                        <div id="geographyMark"
+                             style="padding:3%">
                             <span>
                                 Địa lý:
                             </span>
                             <input class="rangeValues"
                                    id="testMathMark">
-                            <label  class="float-right">
+                            <label class="float-right">
                                 <input type="checkbox"
                                        value=""
                                        onchange="disableScoreInput(this)"> Không thi
@@ -544,8 +581,8 @@
                 $('<img>', {
                     src: suggestion.major.imageUrl,
                     alt: suggestion.major.vietnamese,
-                    height: '180',
-                    width: '180'
+                    // height: '180',
+                    // width: '180'
                 }).appendTo(suggestionDiv)
             }
         }
@@ -607,8 +644,8 @@
             var parent = obj.parentNode.parentNode;
             var section = parent.getElementsByTagName("section");
             if ($(obj).is(":checked")) {
-                
-               
+
+
                 //disable range input
                 $(section).children().prop('disabled', true);
                 //disable text input
