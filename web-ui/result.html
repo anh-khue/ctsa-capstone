@@ -81,21 +81,21 @@
                 </button>
             </div>
             <div class="row justify-content-around">
-                <div class="col-md-3 text-center result"
+                <div class="col-md-3 text-center" id="result2"
                      style="pointer-events: auto;">
                     <span style="font-size: 45px; color:#ff6414; font-weight: bold;">2</span>
                     <div id="suggest2">
 
                     </div>
                 </div>
-                <div class="col-md-3 text-center result"
+                <div class="col-md-3 text-center" id="result1"
                      style="pointer-events: auto; ">
                     <span style="font-size: 45px; color:#ff6414; font-weight: bold;">1</span>
                     <div id="suggest1">
 
                     </div>
                 </div>
-                <div class="col-md-3 text-center result"
+                <div class="col-md-3 text-center " id="result3"
                      style="pointer-events: auto;">
                     <span style="font-size: 45px; color:#ff6414; font-weight: bold;">3</span>
                     <div id="suggest3">
@@ -130,15 +130,15 @@
                 <div class="row modal-body justify-content-between">
                     <div class="col-md-6 pl-4"
                          style="border-right: 1px solid grey">
-                        <div id="mathMark">
-
+                        <div id="mathMark"
+                             class="collegeScoreInput">
                             <span>Toán học:</span>
                             <input class="rangeValues">
-                            <label>
+                            <!-- <label class="float-right">
                                 <input type="checkbox"
                                        value=""
-                                       onchange="disableScoreInput(this)">Không dùng điểm này
-                            </label>
+                                       onchange="disableScoreInput(this)"> Không thi
+                            </label> -->
                             <section style="
                                        padding-bottom:20px"
                                      class="range-slider">
@@ -154,17 +154,17 @@
                                        type="range">
                             </section>
                         </div>
-                        <hr>
-                        <div id="literatureMark">
+
+                        <div id="literatureMark" class="collegeScoreInput">
                             <span>
                                 Ngữ Văn:
                             </span>
                             <input class="rangeValues">
-                            <label>
+                            <!-- <label  class="float-right">
                                 <input type="checkbox"
                                        value=""
-                                       onchange="disableScoreInput(this)">Không dùng điểm này
-                            </label>
+                                       onchange="disableScoreInput(this)"> Không thi
+                            </label> -->
                             <section style="padding-bottom:20px"
                                      class="range-slider">
                                 <input value="5"
@@ -179,17 +179,17 @@
                                        type="range">
                             </section>
                         </div>
-                        <hr>
-                        <div id="englishMark">
+                        
+                        <div id="englishMark" class="collegeScoreInput">
                             <span>
                                 Anh Văn:
                             </span>
                             <input class="rangeValues">
-                            <label>
+                            <!-- <label  class="float-right">
                                 <input type="checkbox"
                                        value=""
-                                       onchange="disableScoreInput(this)">Không dùng điểm này
-                            </label>
+                                       onchange="disableScoreInput(this)"> Không thi
+                            </label> -->
                             <section style="padding-bottom:20px"
                                      class="range-slider">
                                 <input value="5"
@@ -204,16 +204,16 @@
                                        type="range">
                             </section>
                         </div>
-                        <hr>
-                        <div id="physicsMark">
+                        
+                        <div id="physicsMark" style="padding:3%">
                             <span>
                                 Vật lý:
                             </span>
                             <input class="rangeValues">
-                            <label>
+                            <label  class="float-right">
                                 <input type="checkbox"
                                        value=""
-                                       onchange="disableScoreInput(this)">Không dùng điểm này
+                                       onchange="disableScoreInput(this)"> Không thi
                             </label>
                             <section style="padding-bottom:20px"
                                      class="range-slider">
@@ -230,15 +230,15 @@
                             </section>
                         </div>
                     </div>
-                    <hr>
+                    
                     <div class="col-md-6 pl-4">
-                        <div id="chemistryMark">
+                        <div id="chemistryMark" class="collegeScoreInput">
                             <span>Hóa học:</span>
                             <input class="rangeValues">
-                            <label>
+                            <label  class="float-right">
                                 <input type="checkbox"
                                        value=""
-                                       onchange="disableScoreInput(this)">Không dùng điểm này
+                                       onchange="disableScoreInput(this)"> Không thi
                             </label>
                             <section style="padding-bottom:20px"
                                      class="range-slider">
@@ -254,16 +254,16 @@
                                        type="range">
                             </section>
                         </div>
-                        <hr>
-                        <div id="biologyMark">
+                        
+                        <div id="biologyMark" class="collegeScoreInput">
                             <span>
                                 Sinh học:
                             </span>
                             <input class="rangeValues">
-                            <label>
+                            <label  class="float-right">
                                 <input type="checkbox"
                                        value=""
-                                       onchange="disableScoreInput(this)">Không dùng điểm này
+                                       onchange="disableScoreInput(this)"> Không thi
                             </label>
                             <section style="padding-bottom:20px"
                                      class="range-slider">
@@ -279,16 +279,16 @@
                                        type="range">
                             </section>
                         </div>
-                        <hr>
-                        <div id="historyMark">
+                        
+                        <div id="historyMark" class="collegeScoreInput">
                             <span>
                                 Lịch sử:
                             </span>
                             <input class="rangeValues">
-                            <label>
+                            <label  class="float-right">
                                 <input type="checkbox"
                                        value=""
-                                       onchange="disableScoreInput(this)">Không dùng điểm này
+                                       onchange="disableScoreInput(this)"> Không thi
                             </label>
                             <section style="padding-bottom:20px"
                                      class="range-slider">
@@ -304,17 +304,17 @@
                                        type="range">
                             </section>
                         </div>
-                        <hr>
-                        <div id="geographyMark">
+                        
+                        <div id="geographyMark" style="padding:3%">
                             <span>
                                 Địa lý:
                             </span>
                             <input class="rangeValues"
                                    id="testMathMark">
-                            <label>
+                            <label  class="float-right">
                                 <input type="checkbox"
                                        value=""
-                                       onchange="disableScoreInput(this)">Không dùng điểm này
+                                       onchange="disableScoreInput(this)"> Không thi
                             </label>
                             <section style="padding-bottom:20px"
                                      class="range-slider">
@@ -604,9 +604,11 @@
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
         function disableScoreInput(obj) {
+            var parent = obj.parentNode.parentNode;
+            var section = parent.getElementsByTagName("section");
             if ($(obj).is(":checked")) {
-                var parent = obj.parentNode.parentNode;
-                var section = parent.getElementsByTagName("section");
+                
+               
                 //disable range input
                 $(section).children().prop('disabled', true);
                 //disable text input
@@ -617,7 +619,8 @@
 
 
             } else {
-                var parent = obj.parentNode.parentNode;
+                $(parent).removeClass("greyout");
+
                 $(parent).children().prop('disabled', false);
                 $(parent).children().children().prop('disabled', false);
             }

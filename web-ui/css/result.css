@@ -8,7 +8,7 @@ body{
       .container-fluid {
         width: 80vw !important;
       }
-.result{
+#result1{
     background: url("../images/banner-alternative.png")no-repeat center;
     max-width:100%;
     max-height:100%;
@@ -16,6 +16,26 @@ body{
     height:590px;
     width:280px; 
     padding-top:23px;
+    cursor:pointer;
+}
+#result2{
+    background: url("../images/banner-alternative.png")no-repeat center;
+    max-width:100%;
+    max-height:100%;
+    background-size: contain;
+    height:530px;
+    width:250px; 
+    padding-top:18px;
+    cursor:pointer;
+}
+#result3{
+    background: url("../images/banner-alternative.png")no-repeat center;
+    max-width:100%;
+    max-height:100%;
+    background-size: contain;
+    height:480px;
+    width:228px; 
+    padding-top:13px;
     cursor:pointer;
 }
 #content-result{
@@ -141,3 +161,8 @@ section.range-slider input:last-of-type::-moz-range-track {
     background-color: whitesmoke;
     cursor:default;
 }
+.collegeScoreInput{
+    padding:3%;
+    border-bottom: 1px solid rgb(209, 209, 209);
+}
+
