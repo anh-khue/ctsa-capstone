@@ -5,14 +5,20 @@ function randomMark(min, max) {
 function retrieveMark(fieldId) {
   let subjectMarkDiv = $("#" + fieldId);
 
-  let directMark = subjectMarkDiv.find("input.rangeValues").val();
-  if (directMark.includes("-")) {
-    let values = directMark.split("-");
-    let min = parseFloat(values[0]);
-    let max = parseFloat(values[1]);
-    return randomMark(min, max);
+  let isChecked = subjectMarkDiv.find("input[type=checkbox]");
+
+  if (!isChecked.is(":checked")) {
+    let directMark = subjectMarkDiv.find("input.rangeValues").val();
+    if (directMark.includes("-")) {
+      let values = directMark.split("-");
+      let min = parseFloat(values[0]);
+      let max = parseFloat(values[1]);
+      return randomMark(min, max);
+    } else {
+      return parseFloat(directMark);
+    }
   } else {
-    return parseFloat(directMark);
+    return null;
   }
 }
 
