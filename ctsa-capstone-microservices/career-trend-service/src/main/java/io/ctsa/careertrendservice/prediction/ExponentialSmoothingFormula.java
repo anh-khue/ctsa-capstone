@@ -3,10 +3,9 @@ package io.ctsa.careertrendservice.prediction;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import static java.lang.Math.*;
+import static java.lang.Math.abs;
 
 @Component
 public class ExponentialSmoothingFormula {
@@ -46,13 +45,6 @@ public class ExponentialSmoothingFormula {
             } else {
                 PredictionModel previousModel = models.get(i - 1);
                 model = predict(previousModel, model);
-//                model.setLevel(calculateLevel(previousModel));
-//                model.setTrend(calculateTrend(previousModel, model.getLevel()));
-//                model.setForecast(calculateForecast(model.getLevel(),
-//                                                    model.getTrend(),
-//                                                    model.getYear() - previousModel.getYear()));
-//                model.setAlpha(alpha);
-//                model.setBeta(beta);
             }
         }
 
