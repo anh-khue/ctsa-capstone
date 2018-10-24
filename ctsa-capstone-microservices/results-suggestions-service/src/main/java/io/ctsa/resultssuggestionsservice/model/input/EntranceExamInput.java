@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "entrance_exam_input", schema = "ctsa_results_suggestions_db", catalog = "")
+@Table(name = "entrance_exam_input", schema = "ctsa_results_suggestions_db")
 public class EntranceExamInput {
 
     private int id;

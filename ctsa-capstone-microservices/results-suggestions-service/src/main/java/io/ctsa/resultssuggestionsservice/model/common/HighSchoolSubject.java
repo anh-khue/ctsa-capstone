@@ -1,5 +1,6 @@
 package io.ctsa.resultssuggestionsservice.model.common;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.ctsa.resultssuggestionsservice.model.centroid.HighSchoolTopCentroid;
 import io.ctsa.resultssuggestionsservice.model.input.HighSchoolTopInput;
 import io.ctsa.resultssuggestionsservice.model.sample.HighSchoolTopSample;
@@ -15,8 +16,11 @@ public class HighSchoolSubject {
     private int id;
     private String name;
     private String vietnamese;
+    @JsonIgnore
     private Collection<HighSchoolTopCentroid> highSchoolTopCentroids;
+    @JsonIgnore
     private Collection<HighSchoolTopInput> highSchoolTopInputs;
+    @JsonIgnore
     private Collection<HighSchoolTopSample> highSchoolTopSamples;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

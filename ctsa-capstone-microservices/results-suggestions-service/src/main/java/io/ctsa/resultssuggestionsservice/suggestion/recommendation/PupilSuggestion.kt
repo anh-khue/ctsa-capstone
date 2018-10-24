@@ -64,8 +64,10 @@ class PupilSuggestion(private val majorCentroidRepository: MajorCentroidReposito
 
         inputs.forEach { input ->
             centroids.forEach { centroid ->
-                if (input.subjectId == centroid.subjectId) {
-                    squaredDistance += pow(input.mark * input.weight - centroid.mark * centroid.weight, 2.0)
+                squaredDistance += if (input.subjectId == centroid.subjectId) {
+                    pow(input.mark - centroid.mark * centroid.weight, 2.0)
+                } else {
+                    pow(centroid.mark * centroid.weight, 2.0)
                 }
             }
         }
@@ -78,8 +80,10 @@ class PupilSuggestion(private val majorCentroidRepository: MajorCentroidReposito
 
         input.entranceExamInputDetails.forEach { inputDetail ->
             centroid.entranceExamCentroidDetails.forEach { centroidDetail ->
-                if (inputDetail.entranceExamSubjectId == centroidDetail.entranceExamSubjectId) {
-                    squaredDistance += pow(inputDetail.mark - centroidDetail.mark * centroidDetail.weight, 2.0)
+                squaredDistance += if (inputDetail.entranceExamSubjectId == centroidDetail.entranceExamSubjectId) {
+                    pow(inputDetail.mark - centroidDetail.mark * centroidDetail.weight, 2.0)
+                } else {
+                    pow(centroidDetail.mark * centroidDetail.weight, 2.0)
                 }
             }
         }

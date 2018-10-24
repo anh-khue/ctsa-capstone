@@ -19,10 +19,6 @@ public class EntranceExamCentroid {
     public EntranceExamCentroid() {
     }
 
-    public EntranceExamCentroid(EntranceExamSample sample) {
-
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -47,7 +43,7 @@ public class EntranceExamCentroid {
         return Objects.hash(id);
     }
 
-    @OneToMany(mappedBy = "entranceExamCentroid")
+    @OneToMany(mappedBy = "entranceExamCentroid", fetch = FetchType.EAGER)
     public Collection<EntranceExamCentroidDetail> getEntranceExamCentroidDetails() {
         return entranceExamCentroidDetails;
     }
