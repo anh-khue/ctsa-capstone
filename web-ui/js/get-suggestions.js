@@ -25,46 +25,58 @@ function retrieveMark(fieldId) {
 function getEntranceExamInput() {
   let entranceExamInput = {
     id: 0,
-    math: 0,
-    literature: 0,
-    english: 0,
-    physics: null,
-    chemistry: null,
-    biology: null,
-    history: null,
-    geography: null
+    entranceExamInputDetails: []
   };
 
+  // let entranceExamInput = {
+  //   id: 0,
+  //   math: 0,
+  //   literature: 0,
+  //   english: 0,
+  //   physics: null,
+  //   chemistry: null,
+  //   biology: null,
+  //   history: null,
+  //   geography: null
+  // };
+
+  let subjects = JSON.parse(sessionStorage.getItem("entranceExamSubjects"));
+
   subjects.forEach(subject => {
-    entranceExamInput[subject] = retrieveMark(subject + "Mark");
+    let entranceExamInputDetail = createEntranceExamInputDetail(
+      subject.id,
+      retrieveMark(subject.name + "Mark")
+    );
+    if (entranceExamInputDetail.mark !== null) {
+      entranceExamInput.entranceExamInputDetails.push(entranceExamInputDetail);
+    }
   });
 
   return entranceExamInput;
 }
 
-let subjects = [
-  "math",
-  "literature",
-  "english",
-  "physics",
-  "chemistry",
-  "biology",
-  "history",
-  "geography"
-];
-
 function getSuggestions() {
   let pupilInput = JSON.parse(sessionStorage.getItem("pupilInput"));
 
   let entranceExamInput = getEntranceExamInput();
-
   pupilInput.entranceExamInput = entranceExamInput;
 
   axios
     .post("http://localhost:8005/suggestions/pupils", pupilInput)
     .then(response => {
       let suggestions = response.data;
+      sessionStorage.setItem("suggestions", JSON.stringify(suggestions));
       showSuggestions(suggestions);
       $("#scoreInputModal").modal("toggle");
     });
+}
+
+function createEntranceExamInputDetail(subjectId, mark) {
+  return {
+    id: 0,
+    entranceExamInputId: 0,
+    entranceExamSubjectId: subjectId,
+    mark: mark,
+    entranceExamSubject: null
+  };
 }

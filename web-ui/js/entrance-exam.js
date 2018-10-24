@@ -3,6 +3,8 @@ function retrieveSubjects(modalId) {
 
   let modal = $("#" + modalId);
 
+  let entranceExamSubjects = [];
+
   axios
     .get("http://localhost:8005/entrance-exam-subjects")
     .then(response => {
@@ -13,6 +15,8 @@ function retrieveSubjects(modalId) {
       });
 
       subjects.forEach(subject => {
+        entranceExamSubjects.push(subject);
+
         count++;
 
         createSubjectInput(subject).appendTo(col);
@@ -26,6 +30,7 @@ function retrieveSubjects(modalId) {
       });
     })
     .then(() => {
+      sessionStorage.setItem("entranceExamSubjects", JSON.stringify(entranceExamSubjects));
       // Initialize Sliders
       var sliderSections = document.getElementsByClassName("range-slider");
       for (var x = 0; x < sliderSections.length; x++) {
