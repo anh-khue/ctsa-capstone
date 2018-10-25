@@ -1,7 +1,7 @@
 package io.ctsa.careertrendservice.service;
 
 import io.ctsa.careertrendservice.model.Salary;
-import io.ctsa.careertrendservice.prediction.ExponentialSmoothingFormula;
+import io.ctsa.careertrendservice.prediction.timeseries.ExponentialSmoothingFormula;
 import io.ctsa.careertrendservice.repository.SalaryRepository;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +40,7 @@ public class SalaryService {
         predictionModel.setMajorId(majorId);
         predictionModel.setYear(predictedYear);
 
-        predictionModel = exponentialSmoothingFormula.predict(nearestPredictionModel, predictionModel);
+        predictionModel = exponentialSmoothingFormula.predict(nearestPredictionModel, predictionModel, , );
 
         return predictionModel;
     }

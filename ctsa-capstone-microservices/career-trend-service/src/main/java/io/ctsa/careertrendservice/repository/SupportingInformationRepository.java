@@ -12,4 +12,6 @@ public interface SupportingInformationRepository extends JpaRepository<Supportin
     List<SupportingInformation> findAllByMajorIdOrderByYearAsc(int majorId);
 
     SupportingInformation findFirstByMajorIdOrderByYearDesc(int majorId);
+
+    List<SupportingInformation> findByMajorId(int majorId);
 }

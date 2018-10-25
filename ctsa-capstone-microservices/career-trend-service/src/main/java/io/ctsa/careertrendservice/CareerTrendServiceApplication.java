@@ -3,7 +3,7 @@ package io.ctsa.careertrendservice;
 import io.ctsa.careertrendservice.model.HumanResource;
 import io.ctsa.careertrendservice.model.Salary;
 import io.ctsa.careertrendservice.model.SupportingInformation;
-import io.ctsa.careertrendservice.prediction.ExponentialSmoothingFormula;
+import io.ctsa.careertrendservice.prediction.timeseries.ExponentialSmoothingFormula;
 import io.ctsa.careertrendservice.repository.HumanResourcesRepository;
 import io.ctsa.careertrendservice.repository.SalaryRepository;
 import io.ctsa.careertrendservice.repository.SupportingInformationRepository;
@@ -32,16 +32,16 @@ public class CareerTrendServiceApplication {
                                  List<HumanResource> humanResources = humanResourcesRepository
                                          .findByMajorIdOrderByYearAsc(majorId);
 
-                                 humanResources = formula.exponentialSmooth(humanResources);
+                                 humanResources = formula.exponentialSmooth(humanResources, , );
                                  humanResourcesRepository.saveAll(humanResources);
 
                                  List<Salary> salaries = salaryRepository.findAllByMajorIdOrderByYearAsc(majorId);
-                                 salaries = formula.exponentialSmooth(salaries);
+                                 salaries = formula.exponentialSmooth(salaries, , );
                                  salaryRepository.saveAll(salaries);
 
                                  List<SupportingInformation> supportingInformationList =
                                          supportingInformationRepository.findAllByMajorIdOrderByYearAsc(majorId);
-                                 supportingInformationList = formula.exponentialSmooth(supportingInformationList);
+                                 supportingInformationList = formula.exponentialSmooth(supportingInformationList, , );
                                  supportingInformationRepository.saveAll(supportingInformationList);
                              });
     }

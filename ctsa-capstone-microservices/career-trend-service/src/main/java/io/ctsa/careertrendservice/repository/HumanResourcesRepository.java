@@ -12,4 +12,6 @@ public interface HumanResourcesRepository extends JpaRepository<HumanResource, I
     List<HumanResource> findByMajorIdOrderByYearAsc(int majorId);
 
     HumanResource findFirstByMajorIdOrderByYearDesc(int majorId);
+
+    List<HumanResource> findByMajorId(int majorId);
 }
