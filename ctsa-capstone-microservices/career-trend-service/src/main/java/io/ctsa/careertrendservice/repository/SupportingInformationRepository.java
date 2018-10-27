@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface SupportingInformationRepository extends JpaRepository<SupportingInformation, Integer> {
 
-    List<SupportingInformation> findAllByYear(int year);
+    List<SupportingInformation> findByYear(int year);
 
-    List<SupportingInformation> findAllByMajorIdOrderByYearAsc(int majorId);
+    List<SupportingInformation> findByMajorIdOrderByYearAsc(int majorId);
 
     SupportingInformation findFirstByMajorIdOrderByYearDesc(int majorId);
 

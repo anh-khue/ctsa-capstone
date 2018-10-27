@@ -24,4 +24,20 @@ public class HumanResource extends PredictionModel {
     public HumanResource() {
         super();
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getMajorId() {
+        return majorId;
+    }
+
+    public void setMajorId(int majorId) {
+        this.majorId = majorId;
+    }
 }

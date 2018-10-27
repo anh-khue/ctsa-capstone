@@ -11,15 +11,10 @@ import static java.lang.Math.abs;
 @Component
 public class ExponentialSmoothingFormula {
 
-    @Value("${ctsa.career.trend.default-alpha}")
-    private double alpha;
-    @Value("${ctsa.career.trend.default-beta}")
-    private double beta;
-
     public <T extends PredictionModel> T predict(PredictionModel rootModel, T forecastModel,
                                                  double alpha, double beta) {
-        forecastModel.setAlpha(this.alpha);
-        forecastModel.setBeta(this.beta);
+        forecastModel.setAlpha(alpha);
+        forecastModel.setBeta(beta);
 
         double level = calculateLevel(rootModel, alpha);
         forecastModel.setLevel(level);

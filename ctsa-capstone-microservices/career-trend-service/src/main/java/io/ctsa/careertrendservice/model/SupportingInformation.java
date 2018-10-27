@@ -22,4 +22,28 @@ public class SupportingInformation extends PredictionModel {
     public SupportingInformation() {
         super();
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getMajorId() {
+        return majorId;
+    }
+
+    public void setMajorId(int majorId) {
+        this.majorId = majorId;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
 }

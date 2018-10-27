@@ -1,4 +1,4 @@
-package io.ctsa.careertrendservice.prediction.heuristicsearch.function;
+package io.ctsa.careertrendservice.prediction.heuristicsearch;
 
 import io.ctsa.careertrendservice.prediction.PredictionModel;
 import io.ctsa.careertrendservice.prediction.timeseries.ExponentialSmoothingFormula;

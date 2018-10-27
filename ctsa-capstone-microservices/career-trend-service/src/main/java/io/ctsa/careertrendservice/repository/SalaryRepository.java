@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface SalaryRepository extends JpaRepository<Salary, Integer> {
 
-    List<Salary> findAllByYear(int year);
+    List<Salary> findByYear(int year);
 
-    List<Salary> findAllByMajorIdOrderByYearAsc(int majorId);
+    List<Salary> findByMajorIdOrderByYearAsc(int majorId);
 
     Salary findFirstByMajorIdOrderByYearDesc(int majorId);
 

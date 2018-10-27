@@ -1,4 +1,4 @@
-package io.ctsa.careertrendservice.prediction.heuristicsearch.function;
+package io.ctsa.careertrendservice.prediction.heuristicsearch;
 
 @FunctionalInterface
 public interface HillClimbingFunction<T> {

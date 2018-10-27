@@ -1,4 +1,4 @@
-package io.ctsa.careertrendservice.prediction.heuristicsearch.storage;
+package io.ctsa.careertrendservice.prediction.storage;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -14,7 +14,7 @@ public class RedisConfiguration {
     @Value("${spring.redis.host}")
     private String redisHost;
 
-    @Value("${server.port}")
+    @Value("${spring.redis.port}")
     private int redisPort;
 
     @Bean

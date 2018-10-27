@@ -3,10 +3,16 @@ package io.ctsa.careertrendservice;
 import io.ctsa.careertrendservice.model.HumanResource;
 import io.ctsa.careertrendservice.model.Salary;
 import io.ctsa.careertrendservice.model.SupportingInformation;
+import io.ctsa.careertrendservice.prediction.storage.SmoothingParams;
+import io.ctsa.careertrendservice.prediction.storage.SmoothingParamsConstants;
 import io.ctsa.careertrendservice.prediction.timeseries.ExponentialSmoothingFormula;
 import io.ctsa.careertrendservice.repository.HumanResourcesRepository;
 import io.ctsa.careertrendservice.repository.SalaryRepository;
 import io.ctsa.careertrendservice.repository.SupportingInformationRepository;
+import io.ctsa.careertrendservice.service.HumanResourcesService;
+import io.ctsa.careertrendservice.service.SalaryService;
+import io.ctsa.careertrendservice.service.SmoothingParamsService;
+import io.ctsa.careertrendservice.service.SupportingInformationService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,23 +32,41 @@ public class CareerTrendServiceApplication {
     CommandLineRunner runner(ExponentialSmoothingFormula formula,
                              HumanResourcesRepository humanResourcesRepository,
                              SalaryRepository salaryRepository,
-                             SupportingInformationRepository supportingInformationRepository) {
-        return args -> Arrays.asList(1, 4, 5)
-                             .forEach(majorId -> {
-                                 List<HumanResource> humanResources = humanResourcesRepository
-                                         .findByMajorIdOrderByYearAsc(majorId);
+                             SupportingInformationRepository supportingInformationRepository,
+                             HumanResourcesService humanResourcesService,
+                             SalaryService salaryService,
+                             SupportingInformationService supportingInformationService,
+                             SmoothingParamsService smoothingParamsService) {
+        return args -> Arrays.asList(1, 4, 5).forEach(majorId -> {
+            humanResourcesService.estimateSmoothingParams(majorId);
+            salaryService.estimateSmoothingParams(majorId);
+            supportingInformationService.estimateSmoothingParams(majorId);
 
-                                 humanResources = formula.exponentialSmooth(humanResources, , );
-                                 humanResourcesRepository.saveAll(humanResources);
+            List<HumanResource> humanResources = humanResourcesRepository
+                    .findByMajorIdOrderByYearAsc(majorId);
+            SmoothingParams humanResourcesSmoothingParams = smoothingParamsService
+                    .getSmoothingParams(SmoothingParamsConstants.HUMAN_RESOURCES + "-" + majorId);
+            humanResources = formula.exponentialSmooth(humanResources,
+                                                       humanResourcesSmoothingParams.getAlpha(),
+                                                       humanResourcesSmoothingParams.getBeta());
+            humanResourcesRepository.saveAll(humanResources);
 
-                                 List<Salary> salaries = salaryRepository.findAllByMajorIdOrderByYearAsc(majorId);
-                                 salaries = formula.exponentialSmooth(salaries, , );
-                                 salaryRepository.saveAll(salaries);
+            List<Salary> salaries = salaryRepository.findByMajorIdOrderByYearAsc(majorId);
+            SmoothingParams salarySmoothingParams = smoothingParamsService
+                    .getSmoothingParams(SmoothingParamsConstants.SALARY + "-" + majorId);
+            salaries = formula.exponentialSmooth(salaries,
+                                                 salarySmoothingParams.getAlpha(),
+                                                 salarySmoothingParams.getBeta());
+            salaryRepository.saveAll(salaries);
 
-                                 List<SupportingInformation> supportingInformationList =
-                                         supportingInformationRepository.findAllByMajorIdOrderByYearAsc(majorId);
-                                 supportingInformationList = formula.exponentialSmooth(supportingInformationList, , );
-                                 supportingInformationRepository.saveAll(supportingInformationList);
-                             });
+            List<SupportingInformation> supportingInformationList =
+                    supportingInformationRepository.findByMajorIdOrderByYearAsc(majorId);
+            SmoothingParams supportingInformationSmoothingParams = smoothingParamsService
+                    .getSmoothingParams(SmoothingParamsConstants.SUPPORTING_INFORMATION + "-" + majorId);
+            supportingInformationList = formula.exponentialSmooth(supportingInformationList,
+                                                                  supportingInformationSmoothingParams.getAlpha(),
+                                                                  supportingInformationSmoothingParams.getBeta());
+            supportingInformationRepository.saveAll(supportingInformationList);
+        });
     }
 }
