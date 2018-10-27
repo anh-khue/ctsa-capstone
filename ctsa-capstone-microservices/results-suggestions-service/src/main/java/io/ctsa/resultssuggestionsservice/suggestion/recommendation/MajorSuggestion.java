@@ -1,14 +1,25 @@
 package io.ctsa.resultssuggestionsservice.suggestion.recommendation;
 
-import io.ctsa.resultssuggestionsservice.model.Major;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import io.ctsa.resultssuggestionsservice.model.common.Major;
 
-@Data
-@NoArgsConstructor
 public class MajorSuggestion {
 
     private Major major;
     private double distance;
+
+    public Major getMajor() {
+        return major;
+    }
+
+    public void setMajor(Major major) {
+        this.major = major;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
 }
