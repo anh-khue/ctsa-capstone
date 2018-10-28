@@ -6,7 +6,6 @@ public class SmoothingParams implements Serializable {
 
     private double alpha;
     private double beta;
-//    private double meanSquaredError;
 
     public SmoothingParams(double alpha, double beta) {
         this.alpha = alpha;

@@ -25,7 +25,8 @@ public class DataCleaner {
         return cleanSynonyms(retrieveKeywords(keywords)).stream()
                                                         .map(keyword -> {
                                                             if (keyword.getPositionId() != null) {
-                                                                return this.careersServiceWebClient.getPositionById(keyword.getPositionId());
+                                                                return this.careersServiceWebClient
+                                                                        .getPositionById(keyword.getPositionId());
                                                             } else {
                                                                 return null;
                                                             }
@@ -38,7 +39,8 @@ public class DataCleaner {
         return cleanSynonyms(retrieveKeywords(keywords)).stream()
                                                         .map(keyword -> {
                                                             if (keyword.getSkillId() != null) {
-                                                                return this.careersServiceWebClient.getSkillById(keyword.getSkillId());
+                                                                return this.careersServiceWebClient
+                                                                        .getSkillById(keyword.getSkillId());
                                                             } else {
                                                                 return null;
                                                             }
@@ -58,7 +60,8 @@ public class DataCleaner {
         return new ArrayList<>(new HashSet<>(keywords.stream()
                                                      .map(keyword -> {
                                                          if (keyword.isSynonym()) {
-                                                             return this.careersServiceWebClient.getKeywordById(keyword.getMainKeywordId());
+                                                             return this.careersServiceWebClient
+                                                                     .getKeywordById(keyword.getMainKeywordId());
                                                          }
                                                          return keyword;
                                                      })

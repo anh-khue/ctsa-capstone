@@ -5,23 +5,42 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Data
-@NoArgsConstructor
-@RequiredArgsConstructor
 public class Skill {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NonNull
     private String name;
+    private String imageUrl;
+    private int skillTypeId;
+    private SkillType skillType;
+
+    public Skill() {
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Basic
+    @Column(name = "name")
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -35,5 +54,36 @@ public class Skill {
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
+    }
+
+    @Basic
+    @Column(name = "image_url")
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    @Basic
+    @Column(name = "skill_type_id")
+    public int getSkillTypeId() {
+        return skillTypeId;
+    }
+
+    public void setSkillTypeId(int skillTypeId) {
+        this.skillTypeId = skillTypeId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "skill_type_id", referencedColumnName = "id", nullable = false,
+                insertable = false, updatable = false)
+    public SkillType getSkillType() {
+        return skillType;
+    }
+
+    public void setSkillType(SkillType skillType) {
+        this.skillType = skillType;
     }
 }

@@ -24,11 +24,7 @@ public class VietnamworksScraperApplication {
     @Bean
     CommandLineRunner runner(VietnamworksCollector vietnamworksCollector,
                              DataPersistence dataPersistence) {
-        return args -> {
-            List<CollectedDataModel> collectedData = vietnamworksCollector.collectData();
-            System.out.println(collectedData.size());
-
-//            collectedData.forEach(dataPersistence::persist);
-        };
+        return args -> vietnamworksCollector.collectData()
+                                            .forEach(dataPersistence::persist);
     }
 }
