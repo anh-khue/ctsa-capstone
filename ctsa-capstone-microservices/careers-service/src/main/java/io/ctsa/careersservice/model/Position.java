@@ -6,47 +6,26 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Position {
 
-    private int id;
-    private String name;
-    private int businessFieldId;
-    private String imageUrl;
-    private BusinessField businessField;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @Basic
+    private int id;
     @Column(name = "name")
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Basic
+    private String name;
     @Column(name = "business_field_id")
-    public int getBusinessFieldId() {
-        return businessFieldId;
-    }
+    private int businessFieldId;
+    @Column(name = "image_url")
+    private String imageUrl;
 
-    public void setBusinessFieldId(int businessFieldId) {
-        this.businessFieldId = businessFieldId;
-    }
+    @ManyToOne
+    @JoinColumn(name = "business_field_id", referencedColumnName = "id", nullable = false,
+                insertable = false, updatable = false)
+    private BusinessField businessField;
 
     @Override
     public boolean equals(Object o) {
@@ -56,31 +35,5 @@ public class Position {
         return id == position.id &&
                 businessFieldId == position.businessFieldId &&
                 Objects.equals(name, position.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, businessFieldId);
-    }
-
-    @Basic
-    @Column(name = "image_url")
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "business_field_id", referencedColumnName = "id", nullable = false,
-                insertable = false, updatable = false)
-    public BusinessField getBusinessField() {
-        return businessField;
-    }
-
-    public void setBusinessField(BusinessField businessField) {
-        this.businessField = businessField;
     }
 }

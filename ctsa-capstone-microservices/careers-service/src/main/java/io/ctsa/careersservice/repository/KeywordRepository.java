@@ -8,9 +8,7 @@ import java.util.Optional;
 
 public interface KeywordRepository extends JpaRepository<Keyword, Integer> {
 
-    List<Keyword> findBySynonymIs(boolean isSynonym);
-
-//    List<Keyword> findBySynonymIs(boolean isSynonym);
+    List<Keyword> findByIsSynonym(boolean isSynonym);
 
     List<Keyword> findByMainKeywordId(int id);
 

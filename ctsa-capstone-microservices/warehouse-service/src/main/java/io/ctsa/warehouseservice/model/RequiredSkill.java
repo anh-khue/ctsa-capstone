@@ -17,6 +17,7 @@ public class RequiredSkill {
     private int id;
     private int recruitmentId;
     private int skillId;
+    private int skillTypeId;
 
     @Override
     public boolean equals(Object o) {
@@ -25,11 +26,12 @@ public class RequiredSkill {
         RequiredSkill that = (RequiredSkill) o;
         return id == that.id &&
                 recruitmentId == that.recruitmentId &&
-                skillId == that.skillId;
+                skillId == that.skillId &&
+                skillTypeId == that.skillTypeId;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, recruitmentId, skillId);
+        return Objects.hash(id, recruitmentId, skillId, skillTypeId);
     }
 }

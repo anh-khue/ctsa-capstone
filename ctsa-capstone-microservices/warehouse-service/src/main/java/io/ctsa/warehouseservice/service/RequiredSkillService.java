@@ -4,6 +4,8 @@ import io.ctsa.warehouseservice.model.RequiredSkill;
 import io.ctsa.warehouseservice.repository.RequiredSkillRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RequiredSkillService {
 
@@ -17,5 +19,9 @@ public class RequiredSkillService {
         requiredSkillRepository.save(requiredSkill);
         requiredSkillRepository.flush();
         return requiredSkill;
+    }
+
+    public List<Integer> findTopSkillsByPositionAndSkillType(Integer positionId, Integer skillTypeId) {
+        return requiredSkillRepository.findTopSkillsByPositionAndSkillType(positionId, skillTypeId);
     }
 }

@@ -6,6 +6,9 @@ import io.ctsa.careersservice.service.SkillService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static org.springframework.http.HttpStatus.*;
 
 @RestController
@@ -39,5 +42,13 @@ public class SkillController {
         } catch (NotFoundInDatasetException e) {
             return ResponseEntity.status(NOT_FOUND).build();
         }
+    }
+
+    @PostMapping("/list")
+    public ResponseEntity getListByIds(@RequestBody List<Integer> ids) {
+        return ResponseEntity.status(OK)
+                             .body(ids.stream()
+                                      .map(skillService::findById)
+                                      .collect(Collectors.toList()));
     }
 }

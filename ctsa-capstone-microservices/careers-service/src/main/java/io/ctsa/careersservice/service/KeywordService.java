@@ -17,7 +17,7 @@ public class KeywordService {
     }
 
     public List<Keyword> getKeywords() {
-        return keywordRepository.findBySynonymIs(false);
+        return keywordRepository.findByIsSynonym(false);
     }
 
     public void insertSynonyms(List<String> words, Integer mainKeywordId)

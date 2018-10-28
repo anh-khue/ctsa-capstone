@@ -5,10 +5,7 @@ import io.ctsa.warehouseservice.service.RequiredSkillService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "*")
 @Slf4j
@@ -25,5 +22,12 @@ public class RequiredSkillController {
     public ResponseEntity save(@RequestBody RequiredSkill requiredSkill) {
         return ResponseEntity.status(HttpStatus.OK)
                              .body(requiredSkillService.saveRequiredSkill(requiredSkill));
+    }
+
+    @GetMapping("/required_skills/top")
+    public ResponseEntity findTopSkillsByPositionAndSkillType(@RequestParam("position_id") Integer positionId,
+                                                              @RequestParam("skill_type_id") Integer skillTypeId) {
+        return ResponseEntity.status(HttpStatus.OK)
+                             .body(requiredSkillService.findTopSkillsByPositionAndSkillType(positionId, skillTypeId));
     }
 }
