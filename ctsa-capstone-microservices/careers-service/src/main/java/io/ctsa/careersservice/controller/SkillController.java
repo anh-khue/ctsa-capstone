@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 
 import static org.springframework.http.HttpStatus.*;
 
+@CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/skills")
 public class SkillController {
 
     private final SkillService skillService;
@@ -33,7 +33,7 @@ public class SkillController {
         }
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/skills/{id}")
     public ResponseEntity getById(@PathVariable String id) {
         try {
             return ResponseEntity.status(OK)
@@ -44,7 +44,7 @@ public class SkillController {
         }
     }
 
-    @PostMapping("/list")
+    @PostMapping("/skills/list")
     public ResponseEntity getListByIds(@RequestBody List<Integer> ids) {
         return ResponseEntity.status(OK)
                              .body(ids.stream()
