@@ -1,8 +1,9 @@
-body{
-  background-color: #ff7d1f !important; 
+body {
+  background-color: #ff7d1f !important;
   /* background-color: #fff691 !important; */
 }
-#triangle {
+
+.left-triangle {
   width: 0;
   height: 0;
   border-style: solid;
@@ -17,7 +18,7 @@ body{
   margin-top: 72px;
 }
 
-#triangle2 {
+.right-triangle {
   width: 0;
   height: 0;
   border-style: solid;
@@ -28,56 +29,9 @@ body{
   border-right-color: transparent;
   margin-left: 1520px;
   margin-top: 32px;
-
 }
 
-#triangle3 {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 75px;
-  /* border-top-color: #e27e21; */
-  border-top-color: #fdb03e;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-  border-right-color: transparent;
-  /* border-right-color: #e27e21; */
-
-}
-
-#triangle4 {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 75px;
-  /* border-top-color: #e27e21; */
-  border-top-color: #fe6f20;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-  border-right-color: transparent;
-  /* border-right-color: #e27e21; */
-
-}
-
-#triangle5 {
-
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 125px;
-  /* border-top-color: #e27e21; */
-  border-top-color: #fdb03e;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-  border-right-color: transparent;
-
-  background: url("../images/banner-middle.png") no-repeat center;
-  background-size: 100% 100%;
-
-
-}
-
-#skill {
+.top-left {
   /* background: url("./images/background-ctsa.png"); */
   background-position-x: 80%;
   /* background: url("./images/violet-banner.jpg"); */
@@ -85,13 +39,11 @@ body{
   background-color: white;
   left: -80px;
   top: 72px;
-  height: 150px;
   border-radius: 0px 90px 90px 0px;
   /* box-shadow: grey 0 5px 5px 1px; */
-
 }
 
-#position {
+.top-right {
   /* background: url("./images/background-ctsa - inverse.png"); */
   background: url("../images/orange-background-banner-flip.jpg") no-repeat;
   /* background: url("./images/orange-background.jpg"); */
@@ -99,16 +51,10 @@ body{
   background-color: white;
   left: 453px;
   top: 32px;
-  height: 150px;
   border-radius: 90px 0px 0px 90px;
   /* box-shadow: grey 0 5px 5px 1px; */
   text-align: right;
-
 }
-
-
-
-
 
 .tab {
   height: 50px;
@@ -120,7 +66,7 @@ body{
 
   display: inline-block;
   z-index: 2;
-  color: #EEE;
+  color: #eee;
 }
 .tab:before {
   height: 50px;
@@ -136,8 +82,7 @@ body{
   z-index: -1;
 }
 
-
-#myTab>li>a {
+#myTab > li > a {
   color: rgb(214, 213, 213);
   padding: 10px;
   font-size: 1.4em;
@@ -149,12 +94,11 @@ body{
   /* color: rgb(226, 220, 220) ; */
 }
 
-.tabactive>a {
+.tabactive > a {
   color: #161616 !important;
   font-size: 1.4em;
   font-weight: bold;
 }
-
 
 .tabactive:before {
   height: 50px;
@@ -171,76 +115,35 @@ body{
 }
 
 .tab:nth-of-type(2) {
-
-
   left: 30px;
   z-index: 1;
-
 }
-
-
-
-/* .tab:nth-of-type(2):hover,
-.tab:nth-of-type(2):hover:before {
-  background-color: #159;
-  transition: 0.3s ease-out;
-} */
 
 .tab:nth-of-type(3) {
-
-
   left: 60px;
   z-index: 0;
-
 }
 
-
-
-/* .tab:nth-of-type(3):hover,
-.tab:nth-of-type(3):hover:before {
-  background-color: #159;
-  transition: 0.3s ease-out;
-} */
-
-
-
 #content {
-  /* background-color: #0a90b5; */
-  /* height: 550px; */
   border-radius: 0px 20px 20px 20px;
   height: calc(100vh - 200px);
   top: 10px;
-  min-height: 800px; 
-  /* height:100vh; */
-  
-
+  /* min-height: 800px;  */
+  height: 80%;
 }
 
-
-#icon1 {
+.top-icons-left {
   margin-right: 20px;
 }
 
-#icon1>div>img {
-  height: 110px;
-  width: 110px;
-  /* border: 3px solid rgba(175, 174, 174, 0.781); */
-  /* border-radius: 50%; */
-
-
-}
-
-#icon2 {
+.top-icons-right {
   margin-left: 20px;
 }
 
-#icon2>div>img {
+.top-icons-left > div > img,
+.top-icons-right > div > img {
   height: 110px;
   width: 110px;
-  /* border: 3px solid rgba(175, 174, 174, 0.781); */
-  /* border-radius: 50%; */
-  /* margin-top:5px; */
-  /* margin-left: 20px; */
 }
 
 .container-fluid {
@@ -262,35 +165,23 @@ body{
   box-shadow: gray 0 5px 8px 0;
 }
 
-#recruit>div>div>div>span {
-  /* color: rgb(235, 226, 226); */
-
-}
-
 .banner {
   background: url("../images/banner-alternative.png") no-repeat center;
-
- 
-  max-width:100%;
-  max-height:100%;
+  max-width: 100%;
+  max-height: 100%;
   background-size: contain;
   /* background-position-x: 48%; */
-  width:350px;
-  height:600px;
-padding-top:1%
-  
-
-
+  width: 350px;
+  height: 600px;
+  padding-top: 1%;
 }
 
 .statistic1 {
   background: url("../images/statistic1.png") no-repeat center;
   background-size: 100% 100%;
-
 }
 
 .statistic2 {
   background: url("../images/statistic2.png") no-repeat center;
   background-size: 100% 100%;
-
 }

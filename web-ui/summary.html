@@ -108,42 +108,36 @@
              role="tabpanel"
              aria-labelledby="home-tab">
 
-          <div id="skill"
-               class="col-md-9 top-3">
+          <div class="col-md-9 top-3 top-left">
             <div class="row justify-content-between">
               <div class="col-md-3 my-auto pl-5">
                 <b style="color: white; font-size: 40px;font-style: italic">TOP<br>KỸ NĂNG</b>
               </div>
-              <div class="col-md-7 row justify-content-around"
-                   id="icon1">
-
+              <div class="col-md-7 row justify-content-around top-icons-left">
                 <div class="col-md-3 text-center">
                   <img src="./images/skill1.png"
-                       alt="Skill"><span>text</span>
-
+                       alt="Skill">
+                  Java
                 </div>
                 <div class="col-md-3 text-center">
                   <img src="./images/skill2.svg"
-                       alt="Skill">text
+                       alt="Skill">
+                  JavaScript
                 </div>
-
-
                 <div class="col-md-3 text-center">
                   <img src="./images/spring.svg"
-                       alt="Skill">text
+                       alt="Skill">
+                  Spring
                 </div>
               </div>
-
             </div>
-
-
           </div>
-          <div id="triangle"></div>
-          <div id="position"
-               class="col-md-9 top-3">
+
+          <div class="left-triangle"></div>
+
+          <div class="col-md-9 top-3 top-right">
             <div class="row justify-content-between">
-              <div class="col-md-7 row justify-content-around"
-                   id="icon2">
+              <div class="col-md-7 row justify-content-around top-icons-right">
                 <div class="col-md-3 text-center">
                   <img src="./images/job2.png"
                        alt="Job">text
@@ -152,22 +146,45 @@
                   <img src="./images/job1.png"
                        alt="Job">text
                 </div>
-
-
                 <div class="col-md-3 text-center">
                   <img src="./images/job.png"
                        alt="Job">text
                 </div>
               </div>
-
               <div class="col-md-3 my-auto pr-5">
                 <b style="color: white; font-size: 40px;font-style: italic">TOP<br>VỊ TRÍ</b>
               </div>
-
             </div>
-
           </div>
-          <div id="triangle2"></div>
+
+          <div class="right-triangle"></div>
+
+          <div class="col-md-9 top-3 top-left">
+            <div class="row justify-content-between">
+              <div class="col-md-3 my-auto pl-5">
+                <b style="color: white; font-size: 40px;font-style: italic">TOP<br>KỸ NĂNG</b>
+              </div>
+              <div class="col-md-7 row justify-content-around top-icons-left">
+                <div class="col-md-3 text-center">
+                  <img src="./images/skill1.png"
+                       alt="Skill">
+                  Java
+                </div>
+                <div class="col-md-3 text-center">
+                  <img src="./images/skill2.svg"
+                       alt="Skill">
+                  JavaScript
+                </div>
+                <div class="col-md-3 text-center">
+                  <img src="./images/spring.svg"
+                       alt="Skill">
+                  Spring
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="left-triangle"></div>
 
         </div>
         <div class="tab-pane fade"
@@ -241,7 +258,6 @@
                    width="150"><br>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.</p>
-
             </div>
           </div>
         </div>
@@ -265,11 +281,6 @@
                       class="list-group-item">Đang tuyển dụng</li>
                 </ul>
               </div>
-
-
-              <!-- <hr style="border: 3px solid rgb(224, 221, 221); width: 1528px;position:relative; z-index: 10;left:-207px; margin-top:18px"> -->
-
-              <!-- <span style="color:rgb(235, 226, 226); font-size:1.4em">Công ty ABC</span> -->
               <img src="..\web-ui\images\companyA.png"
                    alt="Hình công ty"
                    height="100"
@@ -313,14 +324,8 @@
                    height="80"
                    width="160"
                    style="margin-top:100px"><br>
-
-
-
-
             </div>
           </div>
-
-
         </div>
       </div>
     </div>
@@ -328,6 +333,8 @@
   <style>
 
   </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
   <script>
     $("#tabhome").click(function () {
       $(this).addClass("tabactive");
@@ -344,6 +351,168 @@
       $("#tabhome").removeClass("tabactive");
       $("#tabstat").removeClass("tabactive");
     });
+
+    function getITSoftwareTrends() {
+      let skillTypeIds = [1, 2, 3]
+
+      let homeDiv = $('#home')
+      axios.get('http://localhost:8003/required_skills/top?')
+    }
+
+    window.onload = async function () {
+      let homeDiv = $('#home')
+      homeDiv.empty()
+      let skillTypes = []
+
+      let topSkills = []
+
+      let response = await axios.get("http://localhost:8001/skill-types?business-field-id=1")
+
+      for (let skillType of response.data) {
+        skillTypes.push(skillType)
+      }
+
+      // response.data.forEach((skillType) => {
+      //   skillTypes.push(skillType)
+      // })
+
+      let count = 0
+      for (let skillType of skillTypes) {
+        console.log(skillType.vietnamese)
+        let skills = await getITSoftwareTrendByPositionAndSkillType(4, skillType.id);
+
+        topSkills.push({
+          skillTypeId: skillType.id,
+          skills: skills
+        })
+      }
+
+      let sortedlist = topSkills.sort(async (top1, top2) => {
+        return await top1.skillTypeId - top2.skillTypeId;
+      })
+
+      console.log(sortedlist);
+      sortedlist.map(async (skillsWithType, i) => {
+        if (i % 2 === 0) {
+          generateUI(skillsWithType.skills, 'left')
+        } else {
+          generateUI(skillsWithType.skills, 'right')
+        }
+      })
+    }
+
+    async function getITSoftwareTrendByPositionAndSkillType(positionId, skillTypeId) {
+      let ids = []
+      let response = await axios.get('http://localhost:8003/required_skills/top?position_id=' + positionId + '&skill_type_id=' + skillTypeId);
+      if (response) {
+        await response.data.forEach((id) => {
+          ids.push(id)
+        });
+        if (ids.length > 0) {
+          let postData = await axios.post('http://localhost:8001/skills/list', ids)
+          // console.log(postData.data)
+          return postData.data
+        }
+      }
+
+      return null
+    }
+
+    function generateUI(skills, direction) {
+      let homeDiv = $('#home')
+
+      if (direction === 'left') {
+        let banner = $('<div>', {
+          class: "col-md-9 top-3 top-left"
+        })
+
+        let row = $('<div>', {
+          class: "row justify-content-between"
+        })
+
+        let skillTypeName = $('<div>', {
+          class: "col-md-5 my-auto pl-5"
+        })
+
+        $('<b>', {
+          style: "color: white; font-size: 40px;font-style: italic",
+          html: "TOP<br>" + skills[0].skillType.vietnamese
+        }).appendTo(skillTypeName)
+
+        skillTypeName.appendTo(row)
+
+        let skillItems = $('<div>', {
+          class: "col-md-7 row justify-content-around top-icons-left"
+        })
+
+        for (let i = 0; i < 3; i++) {
+          let skillItem = $('<div>', {
+            class: "col-md-3 text-center",
+            style: "font-size: 1.1em; font-weight: bold"
+          })
+
+          $('<img>', {
+            src: skills[i].imageUrl
+          }).appendTo(skillItem)
+          skillItem.append(skills[i].name)
+
+          skillItem.appendTo(skillItems)
+        }
+
+        skillItems.appendTo(row)
+        row.appendTo(banner)
+        banner.appendTo(homeDiv)
+
+        $('<div>', {
+          class: "left-triangle"
+        }).appendTo(homeDiv)
+      } else {
+        let banner = $('<div>', {
+          class: "col-md-9 top-3 top-right"
+        })
+
+        let row = $('<div>', {
+          class: "row justify-content-between"
+        })
+
+        let skillItems = $('<div>', {
+          class: "col-md-7 row justify-content-around top-icons-left"
+        })
+
+        for (let i = 0; i < 3; i++) {
+          let skillItem = $('<div>', {
+            class: "col-md-3 text-center",
+            style: "font-size: 1.1em; font-weight: bold"
+          })
+
+          $('<img>', {
+            src: skills[i].imageUrl
+          }).appendTo(skillItem)
+          skillItem.append(skills[i].name)
+
+          skillItem.appendTo(skillItems)
+        }
+
+        skillItems.appendTo(row)
+        let skillTypeName = $('<div>', {
+          class: "col-md-5 my-auto pl-5"
+        })
+
+        $('<b>', {
+          style: "color: white; font-size: 40px;font-style: italic",
+          html: "TOP<br>" + skills[0].skillType.vietnamese
+        }).appendTo(skillTypeName)
+        skillTypeName.appendTo(row)
+
+        row.appendTo(banner)
+
+        banner.appendTo(homeDiv)
+
+        $('<div>', {
+          class: "right-triangle"
+        }).appendTo(homeDiv)
+      }
+    }
   </script>
 </body>
 
