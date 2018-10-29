@@ -42,7 +42,6 @@
            alt="CTSA logo">
     </a>
 
-
     <div class="collapse navbar-collapse justify-content-center menu "
          id="navbarSupportedContent">
       <a class="mx-5"
@@ -61,8 +60,6 @@
     </span>
   </nav>
   <!-- End of Header -->
-
-
   <div class="container-fluid">
     <div class="row">
       <ul class="nav col-md-12"
@@ -107,6 +104,8 @@
              id="home"
              role="tabpanel"
              aria-labelledby="home-tab">
+
+
 
           <div class="col-md-9 top-3 top-left">
             <div class="row justify-content-between">
@@ -352,53 +351,55 @@
       $("#tabstat").removeClass("tabactive");
     });
 
-    function getITSoftwareTrends() {
-      let skillTypeIds = [1, 2, 3]
-
-      let homeDiv = $('#home')
-      axios.get('http://localhost:8003/required_skills/top?')
-    }
-
     window.onload = async function () {
+      let position = JSON.parse(sessionStorage.getItem('position'))
+
       let homeDiv = $('#home')
       homeDiv.empty()
+      $('<h3>', {
+        class: 'text-center',
+        style: 'margin-top: 1%',
+        html: 'Top các nhóm kỹ năng thông dụng nhất cho vị trí<br><h1 style="font-weight: bold; margin-top: 1%">' + position.name + '</h1>'
+      }).appendTo(homeDiv)
+
       let skillTypes = []
+      let response
+      if (position.mainSkillTypeId !== null) {
+        skillTypes.push(position.mainSkillTypeId)
+        response = await axios.get("http://localhost:8003/required_skills/position_id=" + position.id + "/top-skill-types?escape-skill-type-id=" + position.mainSkillTypeId)
+      } else {
+        response = await axios.get("http://localhost:8003/required_skills/position_id=" + position.id + "/top-skill-types")
+      }
 
       let topSkills = []
 
-      let response = await axios.get("http://localhost:8001/skill-types?business-field-id=1")
+      // let response = await axios.get("http://localhost:8001/skill-types?business-field-id=1")
 
       for (let skillType of response.data) {
         skillTypes.push(skillType)
       }
 
-      // response.data.forEach((skillType) => {
-      //   skillTypes.push(skillType)
-      // })
-
       let count = 0
       for (let skillType of skillTypes) {
-        console.log(skillType.vietnamese)
-        let skills = await getITSoftwareTrendByPositionAndSkillType(4, skillType.id);
+        let skills = await getITSoftwareTrendByPositionAndSkillType(position.id, skillType);
 
-        topSkills.push({
-          skillTypeId: skillType.id,
-          skills: skills
-        })
+        if (skills) {
+          topSkills.push({
+            skillTypeId: skillType,
+            skills: skills
+          })
+        }
       }
 
-      let sortedlist = topSkills.sort(async (top1, top2) => {
-        return await top1.skillTypeId - top2.skillTypeId;
-      })
-
-      console.log(sortedlist);
-      sortedlist.map(async (skillsWithType, i) => {
-        if (i % 2 === 0) {
+      count = 0
+      for (let skillsWithType of topSkills) {
+        if (count % 2 === 0) {
           generateUI(skillsWithType.skills, 'left')
         } else {
           generateUI(skillsWithType.skills, 'right')
         }
-      })
+        count++
+      }
     }
 
     async function getITSoftwareTrendByPositionAndSkillType(positionId, skillTypeId) {
@@ -410,7 +411,6 @@
         });
         if (ids.length > 0) {
           let postData = await axios.post('http://localhost:8001/skills/list', ids)
-          // console.log(postData.data)
           return postData.data
         }
       }
@@ -446,17 +446,19 @@
         })
 
         for (let i = 0; i < 3; i++) {
-          let skillItem = $('<div>', {
-            class: "col-md-3 text-center",
-            style: "font-size: 1.1em; font-weight: bold"
-          })
+          if (skills[i]) {
+            let skillItem = $('<div>', {
+              class: "col-md-3 text-center",
+              style: "font-size: 1.1em; font-weight: bold"
+            })
 
-          $('<img>', {
-            src: skills[i].imageUrl
-          }).appendTo(skillItem)
-          skillItem.append(skills[i].name)
+            $('<img>', {
+              src: skills[i].imageUrl
+            }).appendTo(skillItem)
+            skillItem.append(skills[i].vietnamese)
 
-          skillItem.appendTo(skillItems)
+            skillItem.appendTo(skillItems)
+          }
         }
 
         skillItems.appendTo(row)
@@ -480,17 +482,19 @@
         })
 
         for (let i = 0; i < 3; i++) {
-          let skillItem = $('<div>', {
-            class: "col-md-3 text-center",
-            style: "font-size: 1.1em; font-weight: bold"
-          })
+          if (skills[i]) {
+            let skillItem = $('<div>', {
+              class: "col-md-3 text-center",
+              style: "font-size: 1.1em; font-weight: bold"
+            })
 
-          $('<img>', {
-            src: skills[i].imageUrl
-          }).appendTo(skillItem)
-          skillItem.append(skills[i].name)
+            $('<img>', {
+              src: skills[i].imageUrl
+            }).appendTo(skillItem)
+            skillItem.append(skills[i].vietnamese)
 
-          skillItem.appendTo(skillItems)
+            skillItem.appendTo(skillItems)
+          }
         }
 
         skillItems.appendTo(row)

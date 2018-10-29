@@ -117,7 +117,8 @@
                                 1
                             </span>
                         </span>- 3 môn bạn tự tin nhất là gì?
-                    </span><br>
+                    </span>
+                    <br>
                     <div class="role1 hideaway mx-4 pl-4 my-2"
                          style="border-left-style: dashed; border-width:3px;">
                         <div id="chooseSubjects">
@@ -189,8 +190,38 @@
                         </button>
                     </div>
                 </div>
+
+                <div id="ITAskform"
+                     class="hideaway">
+                    <span class="head1"
+                          style="font-size: 24px">
+                        <span class="fa-stack">
+                            <span class="fa fa-circle fa-stack-2x"
+                                  style="color: #ff6414"></span>
+                            <span class="fa-stack-1x"
+                                  style="font-size: 20px;color:rgb(243, 243, 243);">
+                                1
+                            </span>
+                        </span>- Bạn có muốn xem thông tin xu hướng của vị trí nào?
+                    </span>
+                    <br>
+                    <div class="role1 hideaway mx-4 pl-4 my-2"
+                         style="border-left-style: dashed; border-width:3px;">
+                        <div id="choosePosition">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="confirm"
+                     class="hideaway text-center pl-3">
+                    <button class="btn btn-lg my-3 selected"
+                            onclick="sendInputForSuggestion()">
+                        Nhận gợi ý
+                    </button>
+                </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
@@ -205,7 +236,7 @@
         // Freshmen clicked
         $("#college").on('click', () => {
             $("#choose").hide(600);
-            $("#askform").show(600);
+            $("#ITAskform").show(600);
             $(".role1").slideDown(600);
         })
 
@@ -233,13 +264,39 @@
                             class: 'btn btn-outline-dark my-2 mx-1 rolebtn',
                             value: subject.id,
                             text: subject.vietnamese,
-                            onclick: 'choose(this)'
+                            onclick: 'chooseSubject(this)'
                         }).appendTo(subjectsSelector)
+                    });
+                })
+
+            let positionsSelector = $('#choosePosition')
+            positionsSelector.empty()
+
+            axios.get('http://localhost:8001/positions')
+                .then((response) => {
+                    let positions = response.data
+                    positions.forEach(position => {
+                        let positionButton = $('<button>', {
+                            class: 'btn btn-outline-dark my-2 mx-1 rolebtn',
+                            value: position.id,
+                            text: position.name,
+                            onclick: 'choosePosition(this)'
+                        }).appendTo(positionsSelector)
                     });
                 })
         })
 
-        function choose(subject) {
+        function choosePosition(position) {
+            axios.get("http://localhost:8001/positions/" + position.value)
+                .then((response) => {
+                    sessionStorage.setItem('position', JSON.stringify(response.data))
+                })
+                .then(() => {
+                    window.location = 'summary.html'
+                })
+        }
+
+        function chooseSubject(subject) {
             count++
             subject.classList.add("selected")
             addToTopSubjects(subject, count)
@@ -351,20 +408,21 @@
 
             $("#confirm").hide(600);
         });
+
         $(".head2").click(function () {
             $(".role1").slideUp(600);
             $(".role3").slideUp(600);
             $("#confirm").hide(600);
             $(".role2").slideDown(600);
-
-
         });
+
         $(".head3").click(function () {
             $(".role1").slideUp(600);
             $(".role2").slideUp(600);
             $(".role3").slideDown(600);
             $("#confirm").hide(600);
         });
+
         function mouseOverIntrovert() {
             document.getElementById("description").innerHTML = "*<b>Hướng nội</b>: Khuynh "
                 + "hướng quan tâm đến cuộc sống tinh thần của bản thân người đó, có xu hướng mở rộng khi"
