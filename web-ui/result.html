@@ -83,7 +83,9 @@
             </div>
             <div class="row justify-content-around">
                 <div class="col-md-3 text-center result-smaller"
-                     style="pointer-events: auto;">
+                     style="pointer-events: auto;"
+                     data-toggle="modal"
+                     data-target="#JobDescriptionModal">
                     <span style="font-size: 45px; color:#ff6414; font-weight: bold;">2</span>
                     <div id="suggest2">
                         <!-- <br>
@@ -160,7 +162,7 @@
                 </div>
                 <div id="entranceExamInput"
                      class="row modal-body justify-content-between">
-                    
+
                 </div>
                 <div class="modal-footer">
                     <button type="button"
@@ -184,18 +186,19 @@
         <div class="modal-dialog modal-dialog-centered modal-lg"
              role="document">
             <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h5 class="modal-title"
-                        id="scoreInputModalLabel">
-                        <span style="font-size:1.5em">Mô tả</span><br>
+                <div class="px-5 pt-4 text-center">
+                    <h4>Mô tả</h4>
+                    <h5 style="text-align: justify"
+                        id="JobDescriptionModalLabel">
+
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                         nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
 
                 </div>
                 <div class="modal-body">
-                    <div class="row text-center">
-                        <div class="col-md-12 ml-3">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-md-7 ml-3 mb-4">
                             <h2>Mức lương khởi điểm</h2>
                         </div>
                     </div>
@@ -203,11 +206,16 @@
                         <div id="triangle"></div>
                         <div class="row banner-description justify-content-between my-auto"
                              style="font-size: 1.8em; font-style: italic">
-                            <div class="col-md-3 my-4 ml-5"
-                                 style="margin-top: 0.5rem!important">
+                            <div class="col-md-3 ml-5"
+                                 style="margin-top:-40px;">
+                                <div class="lastest-result-text">
+                                    <b id="yearSalary"
+                                       style="color:rgb(240, 240, 240) ">
+                                        Số liệu 2017
+                                    </b></div>
                                 <b id="latestSalary"
                                    style="color:rgb(240, 240, 240)">
-
+                                    2.123.235<br>VND
                                 </b>
                             </div>
                             <div class="col-md-2">
@@ -217,26 +225,34 @@
                                      height="155"
                                      style="margin-top:-25px; margin-bottom:-20px;">
                             </div>
-                            <div class="col-md-3 my-4 mr-5"
-                                 style="text-align: right; margin-top: 0.5rem!important">
+                            <div class="col-md-3 mr-5"
+                                 style="text-align: right;margin-top:-40px">
+                                <div class="predict-result-text">
+                                    <b id="yearPredict">
+                                        Dự đoán 2021
+                                    </b></div>
                                 <b id="predictedSalary">
-
+                                    3.526.513<br>VND
                                 </b>
                             </div>
                         </div>
                         <div id="triangle2"></div>
                     </div>
                     <div class="row justify-content-center text-center">
-                        <div class="col-md-12 ml-3">
+                        <div class="col-md-7 ml-3 mb-4">
                             <h2>Tổng số nhân lực</h2>
                         </div>
                     </div>
                     <div class="row">
                         <div id="triangle"></div>
-                        <div class="row banner-description justify-content-between my-auto"
+                        <!-- <div class="row banner-description justify-content-between my-auto"
                              style="font-size: 1.8em; font-style: italic">
-                            <div class="col-md-3 my-4 ml-5"
-                                 style="margin-top: 0.5rem!important">
+                            <div class="col-md-3 ml-5 "
+                                 style="margin-top:-40px">
+                                <b id="yearHumanResource"
+                                   style="color:rgb(44, 44, 44)k; padding-left:60% ">
+                                    2017
+                                </b>
                                 <b id="latestHumanResource"
                                    style="color:rgb(240, 240, 240)">
 
@@ -255,20 +271,56 @@
 
                                 </b>
                             </div>
+                        </div> -->
+                        <div class="row banner-description justify-content-between my-auto"
+                             style="font-size: 1.8em; font-style: italic">
+                            <div class="col-md-3 ml-5"
+                                 style="margin-top:-40px;">
+                                <div class="lastest-result-text">
+                                    <b id="yearHumanResource"
+                                       style="color:rgb(240, 240, 240) ">
+                                        Số liệu 2017
+                                    </b></div>
+                                <b id="latestHumanResource"
+                                   style="color:rgb(240, 240, 240)">
+                                    2.123.235<br>VND
+                                </b>
+                            </div>
+                            <div class="col-md-2">
+                                <img src="./images/human-resources.png"
+                                     alt="Money Icon"
+                                     width="155"
+                                     height="155"
+                                     style="margin-top:-25px; margin-bottom:-20px;">
+                            </div>
+                            <div class="col-md-3 mr-5"
+                                 style="text-align: right;margin-top:-40px">
+                                <div class="predict-result-text">
+                                    <b id="yearPredict">
+                                        Dự đoán 2021
+                                    </b></div>
+                                <b id="predictedHumanResource">
+                                    3.526<br>người
+                                </b>
+                            </div>
                         </div>
                         <div id="triangle2"></div>
                     </div>
                     <div class="row justify-content-center text-center">
-                        <div class="col-md-12 ml-3">
+                        <div class="col-md-7 ml-3 mb-4">
                             <h2>Thông tin bổ sung</h2>
                         </div>
                     </div>
                     <div class="row">
                         <div id="triangle"></div>
-                        <div class="row banner-description justify-content-between my-auto"
+                        <!-- <div class="row banner-description justify-content-between my-auto"
                              style="font-size: 1.8em; font-style: italic">
-                            <div class="col-md-3 my-4 ml-5"
-                                 style="margin-top: 0.5rem!important">
+                            <div class="col-md-3 ml-5 "
+                                 style="margin-top:-40px">
+                                <b id="yearHumanResource"
+                                   style="color:rgb(44, 44, 44)k; padding-left:60% ">
+                                    2017
+                                </b>
                                 <b id="latestSupportingInfomation"
                                    style="color:rgb(240, 240, 240)">
 
@@ -287,12 +339,44 @@
 
                                 </b>
                             </div>
+                        </div> -->
+                        <div class="row banner-description justify-content-between my-auto"
+                             style="font-size: 1.8em; font-style: italic">
+                            <div class="col-md-3 ml-5"
+                                 style="margin-top:-40px;">
+                                <div class="lastest-result-text">
+                                    <b id="yearHumanResource">
+                                        Số liệu 2017
+                                    </b></div>
+                                <b id="latestSupportingInfomation"
+                                   style="color:rgb(240, 240, 240)">
+                                    2.123.235<br>VND
+                                </b>
+                            </div>
+                            <div class="col-md-2">
+                                <img src="./images/additional.png"
+                                     alt="Money Icon"
+                                     width="155"
+                                     height="155"
+                                     style="margin-top:-25px; margin-bottom:-20px;">
+                            </div>
+                            <div class="col-md-3 mr-5"
+                                 style="text-align: right;margin-top:-40px">
+                                <div class="predict-result-text">
+                                    <b id="yearPredict">
+                                        Dự đoán 2021
+                                    </b></div>
+                                <b id="predictSupportingInfomation">
+                                    3.526<br>người
+                                </b>
+                            </div>
                         </div>
                         <div id="triangle2"></div>
                     </div>
                 </div>
-                <div class="modal-footer text-center">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                <div class="py-3 text-center text-conclusion ">
+                    <h4 class=" py-2 mb-2">Kết luận</h4>
+                    <h5 style="text-align:justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                         nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
                 </div>
