@@ -10,7 +10,6 @@ import static org.springframework.http.HttpStatus.*;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("")
 public class PositionController {
 
     private final PositionService positionService;
@@ -40,5 +39,11 @@ public class PositionController {
         } catch (NotFoundInDatasetException e) {
             return ResponseEntity.status(NOT_FOUND).build();
         }
+    }
+
+    @GetMapping("/positions")
+    public ResponseEntity getAll() {
+        return ResponseEntity.status(OK)
+                             .body(positionService.findAll());
     }
 }

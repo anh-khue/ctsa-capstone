@@ -21,6 +21,8 @@ public class Position {
     private int businessFieldId;
     @Column(name = "image_url")
     private String imageUrl;
+    @Column(name = "main_skill_type_id")
+    private Integer mainSkillTypeId;
 
     @ManyToOne
     @JoinColumn(name = "business_field_id", referencedColumnName = "id", nullable = false,

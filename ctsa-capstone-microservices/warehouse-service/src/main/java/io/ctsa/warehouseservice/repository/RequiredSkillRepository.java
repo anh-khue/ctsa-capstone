@@ -20,4 +20,22 @@ public interface RequiredSkillRepository extends JpaRepository<RequiredSkill, In
     List<Integer> findTopSkillsByPositionAndSkillType(@Param("positionId") Integer positionId,
                                                       @Param("skillTypeId") Integer skillTypeId);
 
+    @Query(value = "select rs.skill_type_id\n" +
+            "from recruitment r\n" +
+            "       join required_skill rs on r.id = rs.recruitment_id\n" +
+            "where r.position_id = :positionId\n" +
+            "group by rs.skill_type_id\n" +
+            "order by count(rs.skill_type_id) desc",
+           nativeQuery = true)
+    List<Integer> findTopSkillTypesByPosition(@Param("positionId") Integer positionId);
+
+    @Query(value = "select rs.skill_type_id\n" +
+            "from recruitment r\n" +
+            "       join required_skill rs on r.id = rs.recruitment_id\n" +
+            "where r.position_id = :positionId and rs.skill_type_id <> :skillTypeId\n" +
+            "group by rs.skill_type_id\n" +
+            "order by count(rs.skill_type_id) desc",
+           nativeQuery = true)
+    List<Integer> findTopSkillTypesByPositionEscapeSkillType(@Param("positionId") Integer positionId,
+                                                             @Param("skillTypeId") Integer skillTypeId);
 }

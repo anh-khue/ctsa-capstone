@@ -5,6 +5,7 @@ import io.ctsa.careersservice.repository.PositionRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -33,5 +34,9 @@ public class PositionService {
 
     public Optional<Position> findById(int id) {
         return positionRepository.findById(id);
+    }
+
+    public List<Position> findAll() {
+        return positionRepository.findAll();
     }
 }

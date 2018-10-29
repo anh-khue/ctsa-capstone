@@ -17,6 +17,8 @@ public class Skill {
     private int id;
     @Column(name = "name")
     private String name;
+    @Column(name = "vietnamese")
+    private String vietnamese;
     @Column(name = "image_url")
     private String imageUrl;
     @Column(name = "skill_type_id")
