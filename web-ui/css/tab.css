@@ -187,6 +187,28 @@ body {
 .modal-content  {
   -webkit-border-radius: 20px !important;
   -moz-border-radius: 20px !important;
-  border-top-left-radius: 40px !important; 
-  border-top-right-radius: 40px !important; 
+  border-top-left-radius: 20px !important; 
+  border-top-right-radius: 20px !important; 
+}
+
+
+/* .pagi-button{
+  color: rgb(240, 240, 240);
+  border: 1px solid #ff7d1f;
+} */
+.page-link{
+  color: #ff7d1f;
+  border: 1px solid #ff7d1f;
+}
+.pagi-button-selected{
+  color: rgb(240, 240, 240);
+  background-color: #ff7d1f;
+}
+.pagi-button-selected:hover{
+  color: rgb(240, 240, 240) !important;
+  background-color: #ff7d1f !important;
+}
+.page-link:hover{
+  color: #ff7d1f;
+  border: 1px solid #ff7d1f;
 }
