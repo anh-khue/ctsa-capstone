@@ -184,3 +184,9 @@ body {
   background: url("../images/statistic2.png") no-repeat center;
   background-size: 100% 100%;
 }
+.modal-content  {
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  border-top-left-radius: 40px !important; 
+  border-top-right-radius: 40px !important; 
+}

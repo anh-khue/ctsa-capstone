@@ -116,7 +116,7 @@ a:hover {
 }
 .selected{
   background-color: #ff6215 !important;
-  color:white !important;
+  color:rgb(240, 240, 240) !important;
   border:none !important;
   padding: .375rem .75rem !important;
   }
@@ -124,4 +124,10 @@ input{
   border: 1px solid black ;
   border-radius: 4px ;
   padding: 6px ;
+}
+.bg-orange{
+  background-color: #FF7D1F ;
+}
+.text-white{
+  color: rgb(240, 240, 240);
 }

@@ -8,8 +8,7 @@
   <title>Thống kê</title>
   <meta name="viewport"
         content="width=device-width, initial-scale=1">
-  <link rel="stylesheet"
-        href=".\css\tab.css">
+
 
   <!-- Bootstrap -->
   <link rel="stylesheet"
@@ -25,6 +24,8 @@
         rel="stylesheet">
   <link rel="stylesheet"
         href=".\css\style.css">
+  <link rel="stylesheet"
+        href=".\css\tab.css">
 </head>
 
 
@@ -107,7 +108,9 @@
 
 
 
-          <div class="col-md-9 top-3 top-left">
+          <div class="col-md-9 top-3 top-left"
+               data-toggle="modal"
+               data-target="#skillModal">
             <div class="row justify-content-between">
               <div class="col-md-3 my-auto pl-5">
                 <b style="color: white; font-size: 40px;font-style: italic">TOP<br>KỸ NĂNG</b>
@@ -329,9 +332,53 @@
       </div>
     </div>
   </div>
-  <style>
+  <!-- Modal -->
+  <div class="modal fade rounded"
+       id="skillModal"
+       tabindex="-1"
+       role="dialog"
+       aria-labelledby="skillModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xm"
+         role="document">
+      <div class="modal-content">
+        <div class="pt-3 pb-2 bg-orange text-white text-center shadow " style="border-top-left-radius: 40px !important; 
+        border-top-right-radius: 40px !important; ">
+          <h4>Xếp hạng</h4>
 
-  </style>
+        </div>
+        <div class="row modal-body justify-content-between">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tên skill</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry the Bird</td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
   <script>
@@ -355,7 +402,7 @@
       let position = JSON.parse(sessionStorage.getItem('position'))
 
       let homeDiv = $('#home')
-      homeDiv.empty()
+      // homeDiv.empty()
       $('<h3>', {
         class: 'text-center',
         style: 'margin-top: 1%',
