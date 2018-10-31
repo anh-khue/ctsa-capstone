@@ -39,6 +39,7 @@ body {
   left: -80px;
   top: 20px;
   border-radius: 0px 90px 90px 0px;
+  cursor: pointer;
   /* box-shadow: grey 0 5px 5px 1px; */
 }
 
@@ -53,6 +54,7 @@ body {
   border-radius: 90px 0px 0px 90px;
   /* box-shadow: grey 0 5px 5px 1px; */
   text-align: right;
+  cursor: pointer;
 }
 
 .tab {
@@ -211,4 +213,10 @@ body {
 .page-link:hover{
   color: #ff7d1f;
   border: 1px solid #ff7d1f;
+}
+.img-recruitment{
+  margin-top:5%;
+}
+.info-recruitment{
+  margin-top:17%;
 }
