@@ -31,19 +31,14 @@ public class RequiredSkillController {
                              .body(requiredSkillService.findTopSkillsByPositionAndSkillType(positionId, skillTypeId));
     }
 
-//    @GetMapping("/required_skills/position_id={positionId}/top-skill-types")
-//    public ResponseEntity findTopSkillsByPosition(@PathVariable String positionId) {
-//        return ResponseEntity.status(HttpStatus.OK)
-//                             .body(requiredSkillService.findTopSkillTypesByPosition(Integer.parseInt(positionId)));
-//    }
-
     @GetMapping("/required_skills/position_id={positionId}/top-skill-types")
     public ResponseEntity findTopSkillsByPosition(@PathVariable String positionId,
                                                   @RequestParam(value = "escape-skill-type-id",
                                                                 required = false) Integer escapedSkillTypeId) {
         return ResponseEntity.status(HttpStatus.OK)
-                             .body(requiredSkillService
-                                           .findTopSkillTypesByPositionEscape(Integer.parseInt(positionId),
-                                                                              escapedSkillTypeId));
+                             .body(requiredSkillService.findTopSkillTypesByPositionEscape(
+                                     Integer.parseInt(positionId),
+                                     escapedSkillTypeId)
+                             );
     }
 }
