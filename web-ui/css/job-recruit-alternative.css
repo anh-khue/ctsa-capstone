@@ -1,0 +1,36 @@
+body {
+    background-color: #ff7d1f !important;
+    /* background-color: #fff691 !important; */
+}
+
+.container-fluid {
+    width: 80vw !important;
+}
+
+.folder {
+    /* background: url("../images/world-map.png") no-repeat; */
+    /* background-size: 95% 95%; */
+    background-color: rgb(235, 231, 231);
+    /* background-attachment: fixed; */
+    /* background-position: center;  */
+    background-position-y: 20%;
+    /* box-shadow: black 0 5px 10px 0; */
+    z-index: 20;
+    margin-top: 5%;
+}
+
+#content {
+    border-radius: 20px;
+    height: calc(100vh - 200px);
+    top: 10px;
+    /* min-height: 800px;  */
+    height: 80%;
+    
+}
+.job-detail {
+    background-color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius:10px;
+    padding:2%;
+  }
