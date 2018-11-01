@@ -112,10 +112,10 @@
                data-toggle="modal"
                data-target="#skillModal">
             <div class="row justify-content-between">
-              <div class="col-md-5 my-auto pl-5">
-                <b style="color: white; font-size: 40px;font-style: italic">TOP<br>Ngôn ngữ lập trình</b>
+              <div class="col-md-3 my-auto pl-5">
+                <b style="color: white; font-size: 40px;font-style: italic">TOP<br>KỸ NĂNG</b>
               </div>
-              <div class="col-md-6 row justify-content-around top-icons-left">
+              <div class="col-md-7 row justify-content-around top-icons-left">
                 <div class="col-md-3 text-center">
                   <img src="./images/skill1.png"
                        alt="Skill">
@@ -425,7 +425,7 @@
       let position = JSON.parse(sessionStorage.getItem('position'))
 
       let homeDiv = $('#home')
-      homeDiv.empty()
+      // homeDiv.empty()
       $('<h3>', {
         class: 'text-center',
         style: 'margin-top: 1%',
@@ -512,7 +512,7 @@
         skillTypeName.appendTo(row)
 
         let skillItems = $('<div>', {
-          class: "col-md-6 row justify-content-around top-icons-left"
+          class: "col-md-7 row justify-content-around top-icons-left"
         })
 
         for (let i = 0; i < 3; i++) {
@@ -548,7 +548,7 @@
         })
 
         let skillItems = $('<div>', {
-          class: "col-md-6 row justify-content-around top-icons-left"
+          class: "col-md-7 row justify-content-around top-icons-left"
         })
 
         for (let i = 0; i < 3; i++) {
