@@ -26,7 +26,6 @@ public class RecruitmentController {
     @GetMapping(value = "/recruitment", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getAll() {
         List<Recruitment> recruitment = recruitmentService.getAll();
-
         return !recruitment.isEmpty() ? status(OK).body(recruitment) :
                 status(NO_CONTENT).build();
     }
@@ -34,7 +33,6 @@ public class RecruitmentController {
     @GetMapping(value = "/recruitment/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getById(@PathVariable("id") int recruitmentId) throws RecruitmentNotFoundException {
         recruitmentService.updateViewCount(recruitmentId);
-
         return recruitmentService.getById(recruitmentId)
                 .map(recruitment -> status(OK).body(recruitment))
                 .orElseGet(status(NO_CONTENT)::build);
@@ -43,7 +41,6 @@ public class RecruitmentController {
     @PostMapping(value = "/recruitment", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity create(@RequestBody Recruitment modifiedData) {
         Recruitment recruitment = recruitmentService.create(modifiedData);
-
         return recruitment != null ? status(CREATED).body(recruitment) :
                 status(CONFLICT).build();
     }
