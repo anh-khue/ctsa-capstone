@@ -8,12 +8,14 @@ body {
     border-radius: 20px 20px 20px 20px;
     height: calc(100vh - 200px);
     top: 10px;
+    margin-bottom: 50px;
     /* min-height: 800px;  */
     height: 80%;
     padding-left:2%;
     padding-right:2%;
     padding-top:1%;
     padding-bottom:1%;
+    
     
 }
 
