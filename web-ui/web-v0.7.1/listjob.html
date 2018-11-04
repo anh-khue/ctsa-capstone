@@ -4,60 +4,44 @@
 <head>
     <title>Danh sách tuyển dụng</title>
     <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link rel="stylesheet"
-          href=".\css\style.css">
-    <link rel="stylesheet"
-          href=".\css\listjob.css">
+    <link rel="stylesheet" href=".\css\style.css">
+    <link rel="stylesheet" href=".\css\listjob.css">
 </head>
 
-<body>
+<body onload="getListRecruitment()">
     <!-- Header -->
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark"
-         style="height: 45px">
-        <a class="navbar-brand"
-           href=".\index.html">
-            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/logoctsa.png"
-                 width="90"
-                 height="27"
-                 class="d-inline-block align-top"
-                 alt="CTSA logo">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height: 45px">
+        <a class="navbar-brand" href=".\index.html">
+            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/logoctsa.png" width="90"
+                height="27" class="d-inline-block align-top" alt="CTSA logo">
         </a>
 
-        <div class="collapse navbar-collapse  justify-content-center  menu"
-             id="navbarSupportedContent">
-            <a class="mx-5"
-               href="#">Tuyển Dụng</a>
-            <a class="mx-5"
-               href=".\graph.html">Thống Kê</a>
-            <a class="mx-5"
-               href="#">Tuyển Dụng</a>
-            <a class="mx-5"
-               href="#">Thống Kê</a>
+        <div class="collapse navbar-collapse  justify-content-center  menu" id="navbarSupportedContent">
+            <a class="mx-5" href="#">Tuyển Dụng</a>
+            <a class="mx-5" href=".\graph.html">Thống Kê</a>
+            <a class="mx-5" href="#">Tuyển Dụng</a>
+            <a class="mx-5" href="#">Thống Kê</a>
 
         </div>
         <span class="fa-stack">
-            <i class="	fa fa-user-circle-o fa-stack-1x"
-               style="font-size:36px; color:white"></i>
+            <i class="	fa fa-user-circle-o fa-stack-1x" style="font-size:36px; color:white"></i>
         </span>
     </nav>
     <!-- End of Header -->
     <div class="container-fluid">
 
-        <div id="content"
-             class="tab-content col-md-12 folder">
+        <div id="content" class="tab-content col-md-12 folder">
             <h1 class="text-center pt-3 pb-2 ">Danh sách các tin tuyển dụng</h1>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 list-jobs">
                     <!-- <h3>1,416 IT jobs in Vietnam for you </h3> -->
                     <!-- div each row of a job -->
 
@@ -67,8 +51,7 @@
 
                         <div class="col-md-2 text-center my-auto">
                             <img src="https://cdn.itviec.com/employers/neos-corp/logo/w170/neos-corp-logo.jpg?S3qwxYSQVPqEkYFf4oojSQXU"
-                                 width="200"
-                                 height="200">
+                                width="200" height="200">
                         </div>
                         <div class="col-md-7">
                             <h2>Software Quality Assurance Automation QA</h2>
@@ -79,16 +62,12 @@
                                 platform called
                                 Knorex XPO™ (https://xpo.knorex.com/) where.. </p>
                             <div class="pt-5">
-                                <a href="#"
-                                   class="btn  btn-outline-dark ">QA QC</a>
-                                <a href="#"
-                                   class="btn  btn-outline-dark ">English</a>
-                                <a href="#"
-                                   class="btn  btn-outline-dark ">Tester</a>
+                                <a href="#" class="btn  btn-outline-dark ">QA QC</a>
+                                <a href="#" class="btn  btn-outline-dark ">English</a>
+                                <a href="#" class="btn  btn-outline-dark ">Tester</a>
                             </div>
                         </div>
-                        <div class="col-md-2  my-auto"
-                             style="text-align: right">
+                        <div class="col-md-2  my-auto" style="text-align: right">
 
                             <div class="btn bg-orange text-white btn-sm my-2">Hot</div>
 
@@ -114,8 +93,7 @@
 
                         <div class="col-md-2 text-center my-auto">
                             <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541231056/company/companyB.svg"
-                                 width="200"
-                                 height="200">
+                                width="200" height="200">
                         </div>
                         <div class="col-md-7">
                             <h2>【~1200$】Tuyển Dụng Kỹ Sư IOS</h2>
@@ -123,16 +101,12 @@
                             <p class="job-descript"> Tham gia phát triển dự án IOS với khách hàng Nhật. Làm việc theo
                                 mô hình phát triển dự án Agile, Scrum. </p>
                             <div class="pt-5">
-                                <a href="#"
-                                   class="btn  btn-outline-dark ">iOS</a>
-                                <a href="#"
-                                   class="btn  btn-outline-dark ">Mobile Apps</a>
-                                <a href="#"
-                                   class="btn  btn-outline-dark ">Swift</a>
+                                <a href="#" class="btn  btn-outline-dark ">iOS</a>
+                                <a href="#" class="btn  btn-outline-dark ">Mobile Apps</a>
+                                <a href="#" class="btn  btn-outline-dark ">Swift</a>
                             </div>
                         </div>
-                        <div class="col-md-2  my-auto"
-                             style="text-align: right">
+                        <div class="col-md-2  my-auto" style="text-align: right">
 
                             <div class="btn btn-outline-dark btn-sm my-2">New</div>
 
@@ -159,8 +133,7 @@
 
                         <div class="col-md-2 text-center my-auto">
                             <img src="https://cdn.itviec.com/employers/neos-corp/logo/w170/neos-corp-logo.jpg?S3qwxYSQVPqEkYFf4oojSQXU"
-                                 width="200"
-                                 height="200">
+                                width="200" height="200">
                         </div>
                         <div class="col-md-7">
                             <h2>Software Quality Assurance Automation QA</h2>
@@ -171,16 +144,12 @@
                                 platform called
                                 Knorex XPO™ (https://xpo.knorex.com/) where.. </p>
                             <div class="pt-5">
-                                <a href="#"
-                                   class="btn  btn-outline-dark ">QA QC</a>
-                                <a href="#"
-                                   class="btn  btn-outline-dark ">English</a>
-                                <a href="#"
-                                   class="btn  btn-outline-dark ">Tester</a>
+                                <a href="#" class="btn  btn-outline-dark ">QA QC</a>
+                                <a href="#" class="btn  btn-outline-dark ">English</a>
+                                <a href="#" class="btn  btn-outline-dark ">Tester</a>
                             </div>
                         </div>
-                        <div class="col-md-2  my-auto"
-                             style="text-align: right">
+                        <div class="col-md-2  my-auto" style="text-align: right">
 
                             <div class="btn bg-orange text-white btn-sm my-2">Hot</div>
 
@@ -206,8 +175,7 @@
 
                         <div class="col-md-2 text-center my-auto">
                             <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541231056/company/companyB.svg"
-                                 width="200"
-                                 height="200">
+                                width="200" height="200">
                         </div>
                         <div class="col-md-7">
                             <h2>【~1200$】Tuyển Dụng Kỹ Sư IOS</h2>
@@ -215,16 +183,12 @@
                             <p class="job-descript"> Tham gia phát triển dự án IOS với khách hàng Nhật. Làm việc theo
                                 mô hình phát triển dự án Agile, Scrum. </p>
                             <div class="pt-5">
-                                <a href="#"
-                                   class="btn  btn-outline-dark ">iOS</a>
-                                <a href="#"
-                                   class="btn  btn-outline-dark ">Mobile Apps</a>
-                                <a href="#"
-                                   class="btn  btn-outline-dark ">Swift</a>
+                                <a href="#" class="btn  btn-outline-dark ">iOS</a>
+                                <a href="#" class="btn  btn-outline-dark ">Mobile Apps</a>
+                                <a href="#" class="btn  btn-outline-dark ">Swift</a>
                             </div>
                         </div>
-                        <div class="col-md-2  my-auto"
-                             style="text-align: right">
+                        <div class="col-md-2  my-auto" style="text-align: right">
 
                             <div class="btn btn-outline-dark btn-sm my-2">New</div>
 
@@ -243,27 +207,21 @@
                         </div>
                     </div>
                     <!-- END div each row of a job -->
+                    
                     <div class="row justify-content-center">
 
                         <ul class="pagination pagination-lg">
                             <li class="page-item">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="Previous">
+                                <a class="page-link" href="#" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
                                     <span class="sr-only">Previous</span>
                                 </a>
                             </li>
-                            <li class="page-item"><a class="page-link pagi-button-selected"
-                                   href="#">1</a></li>
-                            <li class="page-item"><a class="page-link"
-                                   href="#">2</a></li>
-                            <li class="page-item"><a class="page-link"
-                                   href="#">3</a></li>
+                            <li class="page-item"><a class="page-link pagi-button-selected" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item">
-                                <a class="page-link"
-                                   href="#"
-                                   aria-label="Next">
+                                <a class="page-link" href="#" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
                                     <span class="sr-only">Next</span>
                                 </a>
@@ -324,7 +282,48 @@
             </div>
         </div>
     </div>
+
     <script src=".\js\scroll-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+    <script>
+        function getListRecruitment() {
+            axios.get("http://localhost:8080/recruitment")
+                .then(response => {
+                    let list = response.data;
+                    console.log(JSON.stringify(list));
+
+                    var i;
+                    for (i = 0; i < list.length; i++) {
+                        var recruitment = '<div class="row justify-content-around stylish-panel">'
+                            + '<div class="col-md-2 text-center my-auto">'
+                            + '<img src="' + list[i].image + '" width="200" height="200">'
+                            + '</div>'
+                            + '<div class="col-md-7">'
+                            + '<h2>' + list[i].title + '</h2>'
+                            + '<p class="job-descript">' + list[i].jobDescription + '</p>'
+                            + '<div class="pt-5">';
+
+                        var j;
+                        for (j = 0; j < list[i].skills.length; j++) {
+                            recruitment += '<a href="#" class="btn btn-outline-dark">' + list[i].skills[j].skillName + '</a>';
+                        }
+
+                        recruitment += '</div>'
+                            + '</div>'
+                            + '<div class="col-md-2  my-auto" style="text-align: right">'
+                            + '<div class="btn bg-orange text-white btn-sm my-2">Hot</div>'
+                            + '<div class="my-2"><span>' + list[i].startDate + '</span></div>'
+                            + '<div class="my-2"><span>' + list[i].address + '</span></div>'
+                            + '</div>'
+                            + '</div>';
+
+                        $('.list-jobs').append(recruitment);
+                    }
+                });
+        }
+    </script>
 </body>
 
 </html>
