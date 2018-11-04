@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -18,7 +19,9 @@ public class Recruitment {
     private int id;
     @NonNull
     private String title;
-    private String position;
+    @NonNull
+    private int positionId;
+    private String positionName;
     @NonNull
     private Timestamp startDate;
     @NonNull
@@ -30,7 +33,7 @@ public class Recruitment {
     @NonNull
     private String jobRequirement;
     @NonNull
-    private int enabled;
+    private int published;
     @NonNull
     private String email;
     @NonNull
@@ -42,6 +45,8 @@ public class Recruitment {
     private String image;
     @NonNull
     private int companyId;
+    @Transient
+    private List<RecruitmentHasSkill> skills;
 
     @Override
     public boolean equals(Object o) {
@@ -49,10 +54,11 @@ public class Recruitment {
         if (o == null || getClass() != o.getClass()) return false;
         Recruitment that = (Recruitment) o;
         return id == that.id &&
-                enabled == that.enabled &&
+                published == that.published &&
                 companyId == that.companyId &&
                 Objects.equals(title, that.title) &&
-                Objects.equals(position, that.position) &&
+                Objects.equals(positionId, that.positionId) &&
+                Objects.equals(positionName, that.positionName) &&
                 Objects.equals(startDate, that.startDate) &&
                 Objects.equals(endDate, that.endDate) &&
                 Objects.equals(modifiedDate, that.modifiedDate) &&
@@ -70,6 +76,6 @@ public class Recruitment {
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, title, position, startDate, endDate, modifiedDate, number, jobDescription, jobRequirement, enabled, email, phone, address, additionalInformation, viewCount, image, companyId);
+        return Objects.hash(id, title, positionId, positionName, startDate, endDate, modifiedDate, number, jobDescription, jobRequirement, published, email, phone, address, additionalInformation, viewCount, image, companyId);
     }
 }

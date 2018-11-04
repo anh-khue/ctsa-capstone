@@ -1,6 +1,7 @@
 package io.ctsa.companymanagement.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.ctsa.companymanagement.exception.CompanyNotFoundException;
 import io.ctsa.companymanagement.model.Company;
 import io.ctsa.companymanagement.model.Recruitment;
 import io.ctsa.companymanagement.service.CompanyService;
@@ -57,5 +58,25 @@ public class CompanyController {
 
         return partner != null ? status(CREATED).body(partner) :
                 status(CONFLICT).build();
+    }
+
+    @PutMapping(value = "/companies/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity updateCompany(@PathVariable("id") int partnerId,
+                                        @RequestBody Company modifiedData) {
+        try {
+            return status(OK).body(companyService.updateCompany(partnerId, modifiedData));
+        } catch (CompanyNotFoundException e) {
+            return status(NO_CONTENT).build();
+        }
+    }
+
+    @PutMapping(value = "/companies/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity updateLogo(@PathVariable("id") int partnerId,
+                                     @RequestParam("file") MultipartFile file) {
+        return companyService.getById(partnerId)
+                .map(partner -> {
+                    partner.setLogo(companyService.generateLogoLink(file));
+                    return status(OK).body(partner);
+                }).orElseGet(status(NO_CONTENT)::build);
     }
 }

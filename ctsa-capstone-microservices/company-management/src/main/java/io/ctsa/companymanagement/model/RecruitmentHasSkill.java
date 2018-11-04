@@ -19,6 +19,7 @@ public class RecruitmentHasSkill {
     private int recruitmentId;
     @NonNull
     private int skillId;
+    private String skillName;
 
     @Override
     public boolean equals(Object o) {
@@ -27,12 +28,13 @@ public class RecruitmentHasSkill {
         RecruitmentHasSkill that = (RecruitmentHasSkill) o;
         return id == that.id &&
                 recruitmentId == that.recruitmentId &&
-                skillId == that.skillId;
+                skillId == that.skillId &&
+                Objects.equals(skillName, that.skillName);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, recruitmentId, skillId);
+        return Objects.hash(id, recruitmentId, skillId, skillName);
     }
 }

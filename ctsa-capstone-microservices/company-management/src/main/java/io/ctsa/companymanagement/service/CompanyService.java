@@ -2,6 +2,7 @@ package io.ctsa.companymanagement.service;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
+import io.ctsa.companymanagement.exception.CompanyNotFoundException;
 import io.ctsa.companymanagement.model.Company;
 import io.ctsa.companymanagement.model.Recruitment;
 import io.ctsa.companymanagement.repository.CompanyRepository;
@@ -92,5 +93,20 @@ public class CompanyService {
             }
         }
         return file;
+    }
+
+    public Company updateCompany(int partnerId, Company modifiedData) throws CompanyNotFoundException {
+        return companyRepository.findById(partnerId)
+                .map(company -> {
+                    company.setName(modifiedData.getName());
+                    company.setDescription(modifiedData.getDescription());
+                    company.setEmail(modifiedData.getEmail());
+                    company.setPhone(modifiedData.getPhone());
+                    company.setAddress(modifiedData.getAddress());
+                    company.setAdditionalInformation(modifiedData.getAdditionalInformation());
+                    companyRepository.saveAndFlush(company);
+
+                    return company;
+                }).orElseThrow(CompanyNotFoundException::new);
     }
 }
