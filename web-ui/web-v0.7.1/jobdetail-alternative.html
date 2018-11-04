@@ -20,6 +20,14 @@
 </head>
 
 <body>
+        <div id="loader">
+                <div class="spinner"></div>
+            </div>
+            <script>
+                $(window).ready(function () {
+            $('#loader').hide();
+        });
+            </script>
     <!-- Header -->
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark"
@@ -52,8 +60,6 @@
     </nav>
     <!-- End of Header -->
     <div class="container-fluid">
-
-
         <div id="content"
              class="tab-content col-md-12 folder">
             <div class="top-background">
