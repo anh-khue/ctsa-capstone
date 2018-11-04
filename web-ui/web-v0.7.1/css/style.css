@@ -165,7 +165,7 @@ input{
       opacity: 0
   }
 }
-.spinner {
+/* .spinner {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -175,4 +175,10 @@ input{
   border-radius: 100%;
   -webkit-animation: sk-scaleout 1s infinite ease-in-out;
   animation: sk-scaleout 1s infinite ease-in-out
+} */
+.spinner {
+  background: url('https://res.cloudinary.com/ctsa-capstone/image/upload/v1541343719/demo-image/loader.gif') no-repeat center center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
