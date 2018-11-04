@@ -443,8 +443,6 @@
 
       let topSkills = []
 
-      // let response = await axios.get("http://localhost:8001/skill-types?business-field-id=1")
-
       for (let skillType of response.data) {
         skillTypes.push(skillType)
       }
@@ -454,19 +452,16 @@
         let skills = await getITSoftwareTrendByPositionAndSkillType(position.id, skillType);
 
         if (skills) {
-          topSkills.push({
-            skillTypeId: skillType,
-            skills: skills
-          })
+          topSkills.push(skills)
         }
       }
 
       count = 0
       for (let skillsWithType of topSkills) {
         if (count % 2 === 0) {
-          generateUI(skillsWithType.skills, 'left')
+          generateUI(skillsWithType, 'left')
         } else {
-          generateUI(skillsWithType.skills, 'right')
+          generateUI(skillsWithType, 'right')
         }
         count++
       }
@@ -512,7 +507,7 @@
         skillTypeName.appendTo(row)
 
         let skillItems = $('<div>', {
-          class: "col-md-7 row justify-content-around top-icons-left"
+          class: "col-md-6 row justify-content-around top-icons-left"
         })
 
         for (let i = 0; i < 3; i++) {
@@ -548,7 +543,7 @@
         })
 
         let skillItems = $('<div>', {
-          class: "col-md-7 row justify-content-around top-icons-left"
+          class: "col-md-6 row justify-content-around top-icons-left"
         })
 
         for (let i = 0; i < 3; i++) {
