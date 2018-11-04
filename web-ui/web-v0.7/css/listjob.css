@@ -1,13 +1,14 @@
 body {
     background-color: #ff7d1f !important;
     /* background-color: #fff691 !important; */
-    background: url("https://wallpaperlayer.com/img/2015/4/awesome-yellow-wallpaper-76-120-hd-wallpapers.jpg") no-repeat;
+    /* background: url("https://wallpaperlayer.com/img/2015/4/awesome-yellow-wallpaper-76-120-hd-wallpapers.jpg") no-repeat; */
 }
 
 #content {
     border-radius: 20px 20px 20px 20px;
     height: calc(100vh - 200px);
     top: 10px;
+    margin-bottom: 50px;
     /* min-height: 800px;  */
     height: 80%;
     padding-left:2%;
