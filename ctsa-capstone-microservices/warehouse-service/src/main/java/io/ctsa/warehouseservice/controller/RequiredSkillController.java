@@ -26,9 +26,12 @@ public class RequiredSkillController {
 
     @GetMapping("/required_skills/top")
     public ResponseEntity findTopSkillsByPositionAndSkillType(@RequestParam("position_id") Integer positionId,
-                                                              @RequestParam("skill_type_id") Integer skillTypeId) {
+                                                              @RequestParam("skill_type_id") Integer skillTypeId,
+                                                              @RequestParam("page") Integer page,
+                                                              @RequestParam("skillsPerPage") Integer skillsPerPage) {
         return ResponseEntity.status(HttpStatus.OK)
-                             .body(requiredSkillService.findTopSkillsByPositionAndSkillType(positionId, skillTypeId));
+                             .body(requiredSkillService.findTopSkillsByPositionAndSkillType(positionId, skillTypeId,
+                                                                                            page, skillsPerPage));
     }
 
     @GetMapping("/required_skills/position_id={positionId}/top-skill-types")

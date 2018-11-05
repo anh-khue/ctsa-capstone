@@ -15,10 +15,14 @@ public interface RequiredSkillRepository extends JpaRepository<RequiredSkill, In
             "where r.position_id = :positionId\n" +
             "  and rs.skill_type_id = :skillTypeId\n" +
             "group by rs.skill_id\n" +
-            "order by count(rs.skill_id) desc",
+            "order by count(rs.skill_id) desc\n" +
+            "limit :itemPerPage\n" +
+            "offset :skippedItemNumber",
            nativeQuery = true)
     List<Integer> findTopSkillsByPositionAndSkillType(@Param("positionId") Integer positionId,
-                                                      @Param("skillTypeId") Integer skillTypeId);
+                                                      @Param("skillTypeId") Integer skillTypeId,
+                                                      @Param("itemPerPage") Integer itemPerPage,
+                                                      @Param("skippedItemNumber") Integer skippedItemNumber);
 
     @Query(value = "select rs.skill_type_id\n" +
             "from recruitment r\n" +

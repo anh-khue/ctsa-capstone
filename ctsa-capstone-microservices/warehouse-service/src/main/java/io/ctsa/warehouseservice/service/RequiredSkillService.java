@@ -21,8 +21,13 @@ public class RequiredSkillService {
         return requiredSkill;
     }
 
-    public List<Integer> findTopSkillsByPositionAndSkillType(Integer positionId, Integer skillTypeId) {
-        return requiredSkillRepository.findTopSkillsByPositionAndSkillType(positionId, skillTypeId);
+    public List<Integer> findTopSkillsByPositionAndSkillType(Integer positionId,
+                                                             Integer skillTypeId,
+                                                             Integer page,
+                                                             Integer skillsPerPage) {
+        return requiredSkillRepository.findTopSkillsByPositionAndSkillType(positionId, skillTypeId,
+                                                                           skillsPerPage,
+                                                                           (page - 1) * skillsPerPage);
     }
 
     public List<Integer> findTopSkillTypesByPositionEscape(Integer positionId, Integer skillTypeId) {
@@ -30,5 +35,12 @@ public class RequiredSkillService {
             return requiredSkillRepository.findTopSkillTypesByPosition(positionId);
         }
         return requiredSkillRepository.findTopSkillTypesByPositionEscapeSkillType(positionId, skillTypeId);
+    }
+
+    public List<Integer> findTopSkillTypesByPosition(Integer positionId, Integer exceptedSkillTypeId) {
+        if (exceptedSkillTypeId == null) {
+            return requiredSkillRepository.findTopSkillTypesByPosition(positionId);
+        }
+        return requiredSkillRepository.findTopSkillTypesByPositionEscapeSkillType(positionId, exceptedSkillTypeId);
     }
 }
