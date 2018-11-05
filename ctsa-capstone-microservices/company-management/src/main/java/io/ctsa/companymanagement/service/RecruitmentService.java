@@ -2,6 +2,8 @@ package io.ctsa.companymanagement.service;
 
 import io.ctsa.companymanagement.exception.RecruitmentNotFoundException;
 import io.ctsa.companymanagement.model.Recruitment;
+import io.ctsa.companymanagement.model.RecruitmentHasSkill;
+import io.ctsa.companymanagement.repository.RecruitmentHasSkillRepository;
 import io.ctsa.companymanagement.repository.RecruitmentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,13 +17,23 @@ import java.util.Optional;
 public class RecruitmentService {
 
     private final RecruitmentRepository recruitmentRepository;
+    private final RecruitmentHasSkillRepository recruitmentHasSkillRepository;
 
-    public RecruitmentService(RecruitmentRepository recruitmentRepository) {
+    public RecruitmentService(RecruitmentRepository recruitmentRepository, RecruitmentHasSkillRepository recruitmentHasSkillRepository) {
         this.recruitmentRepository = recruitmentRepository;
+        this.recruitmentHasSkillRepository = recruitmentHasSkillRepository;
     }
 
     public List<Recruitment> getAll() {
-        return recruitmentRepository.findAll();
+        List<Recruitment> list = recruitmentRepository.findAll();
+        for (Recruitment recruitment : list) {
+            recruitment.setSkills(getRecruitmentSkills(recruitment.getId()));
+        }
+        return list;
+    }
+
+    private List<RecruitmentHasSkill> getRecruitmentSkills(int recruitmentId) {
+        return recruitmentHasSkillRepository.findByRecruitmentId(recruitmentId);
     }
 
     public Optional<Recruitment> getById(int recruitmentId) {
@@ -44,13 +56,14 @@ public class RecruitmentService {
         return recruitmentRepository.findById(recruitmentId)
                 .map(recruitment -> {
                     recruitment.setTitle(modifiedData.getTitle());
-                    recruitment.setPosition(modifiedData.getPosition());
+                    recruitment.setPositionId(modifiedData.getPositionId());
+                    recruitment.setPositionName(modifiedData.getPositionName());
                     recruitment.setEndDate(modifiedData.getEndDate());
                     recruitment.setModifiedDate(new Timestamp(System.currentTimeMillis()));
                     recruitment.setNumber(modifiedData.getNumber());
                     recruitment.setJobDescription(modifiedData.getJobDescription());
                     recruitment.setJobRequirement(modifiedData.getJobRequirement());
-                    recruitment.setEnabled(modifiedData.getEnabled());
+                    recruitment.setPublished(modifiedData.getPublished());
                     recruitment.setEmail(modifiedData.getEmail());
                     recruitment.setPhone(modifiedData.getPhone());
                     recruitment.setAddress(modifiedData.getAddress());
