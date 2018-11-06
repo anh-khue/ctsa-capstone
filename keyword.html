@@ -384,7 +384,44 @@
                                             </tr>
                                         </tfoot>
                                         <tbody id='synonymsTable'>
-
+                                            <tr>
+                                                <td>1</td>
+                                                <td>sql server</td>
+                                                <td>
+                                                    <form>
+                                                        <input type="text"
+                                                               name="read1"
+                                                               value="mssql, ms sql, sqlserver">
+                                                        <br>
+                                                        <input type="text"
+                                                               name="tags1"
+                                                               value="">
+                                                    </form>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-success btn-block"
+                                                            type="button">Update</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>apache kafka</td>
+                                                <td>
+                                                    <form>
+                                                        <input type="text"
+                                                               name="read2"
+                                                               value="kafka, apachekafka">
+                                                        <br>
+                                                        <input type="text"
+                                                               name="tags2"
+                                                               value="">
+                                                    </form>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-success btn-block"
+                                                            type="button">Update</button>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -408,34 +445,46 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script>
         window.addEventListener('load', function () {
-            (function () {
-                axios.get('http://localhost:8001/keywords')
-                    .then((response) => {
-                        let synonymsTable = document.getElementById('synonymsTable');
+            // for testing UI only
+            for (let i = 1; i <= document.forms.length; i++) {
+                document.forms[i - 1].reset();
+                var input = document.querySelector('input[name=read' + i + ']'),
+                    tagify = new Tagify(input);
+            }
 
-                        let keywords = response.data;
+            for (let i = 1; i <= document.forms.length; i++) {
+                var input = document.querySelector('input[name=tags' + i + ']'),
+                    tagify = new Tagify(input, {});
+            }
 
-                        keywords.forEach(keyword => {
-                            let row = retrieveSynonyms(keyword);
-                            synonymsTable.appendChild(row);
-                        });
-                    }).catch((err) => {
-                        console.log(err);
-                    }).then(() => {
-                        for (let i = 1; i <= document.forms.length; i++) {
-                            document.forms[i - 1].reset();
-                            var input = document.querySelector('input[name=read' + i + ']'),
-                                tagify = new Tagify(input);
-                        }
+            // (function () {
+            //     axios.get('http://localhost:8001/keywords')
+            //         .then((response) => {
+            //             let synonymsTable = document.getElementById('synonymsTable');
 
-                        for (let i = 1; i <= document.forms.length; i++) {
-                            var input = document.querySelector('input[name=tags' + i + ']'),
-                                tagify = new Tagify(input, {});
-                        }
+            //             let keywords = response.data;
 
-                        document.getElementsByClassName('odd')[0].remove();
-                    });
-            })()
+            //             for (keyword of keywords) {
+            //                 let row = retrieveSynonyms(keyword);
+            //                 synonymsTable.appendChild(row);
+            //             }
+            //         }).catch((err) => {
+            //             console.log(err);
+            //         }).then(() => {
+            //             for (let i = 1; i <= document.forms.length; i++) {
+            //                 document.forms[i - 1].reset();
+            //                 var input = document.querySelector('input[name=read' + i + ']'),
+            //                     tagify = new Tagify(input);
+            //             }
+
+            //             for (let i = 1; i <= document.forms.length; i++) {
+            //                 var input = document.querySelector('input[name=tags' + i + ']'),
+            //                     tagify = new Tagify(input, {});
+            //             }
+
+            //             document.getElementsByClassName('odd')[0].remove();
+            //         });
+            // })()
         });
 
         function retrieveSynonyms(keyword) {
@@ -451,7 +500,13 @@
 
             let synonymsCell = document.createElement('td')
             let synonymsForm = document.createElement('form')
-            let synonyms = keyword.synonyms.join(', ')
+
+            let synonymsArray = []
+            for (let synonym of keyword.synonyms) {
+                synonymsArray.push(synonym.word)
+            }
+
+            let synonyms = synonymsArray.join(', ')
             let existedSynonyms = document.createElement('input')
             existedSynonyms.setAttribute('name', 'read' + keyword.id)
             existedSynonyms.setAttribute('value', synonyms)

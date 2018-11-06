@@ -1,0 +1,9 @@
+.tagify tag > div:not([contenteditable]) {
+  background-color: #FF7D1F;
+  color: white;
+  font-size: 1.1em;
+}
+
+.tagify tag x {
+  color: white;
+}
