@@ -2,3 +2,10 @@
     color: #fff!important;
     background: #FF7D1F;
 }
+
+input{
+    border: 1px solid rgba(85, 85, 85, 0.555) !important;
+}
+.table-bordered th, .table-bordered td{
+    border: 1px solid rgba(85, 85, 85, 0.555) !important;
+}

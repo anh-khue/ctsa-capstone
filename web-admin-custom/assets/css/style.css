@@ -8,24 +8,37 @@ svg {
     margin-left: 10%;
     margin-top: 25%;
 }
-.sidebar-menu{
+
+.sidebar-menu {
     background: url("https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237103/demo-image/orange-background.jpg") fixed no-repeat center;
     background-size: 100% 100%;
-    
 }
+
 .sidebar-menu>li>a, .sidebar-menu>li>a>span>i, .sidebar-menu>li>ul>li>a {
-    color:white !important;
+    color: white !important;
 }
+
 /* .sidebar-logo{
     border-right: 1px solid rgba(128, 128, 128, 0.37) !important;
     
 } */
-.btn-orange{
-           background-color: #FF7D1F ;
-            color: rgb(240, 240, 240);
-     }
-.peers 
-.jvectormap-container {
+
+.btn-orange {
+    background-color: #FF7D1F;
+    color: rgb(240, 240, 240);
+}
+
+input {
+    border: 1px solid rgba(85, 85, 85, 0.555) !important;
+}
+input[type="file"]{
+    border: none !important;
+}
+textarea{
+    border: 1px solid rgba(85, 85, 85, 0.555) !important;
+}
+
+.peers .jvectormap-container {
     width: 100%;
     height: 100%;
     position: relative;
