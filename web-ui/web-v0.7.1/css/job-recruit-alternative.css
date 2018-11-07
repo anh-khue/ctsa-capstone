@@ -4,9 +4,9 @@ body {
     background: url("https://wallpaperlayer.com/img/2015/4/awesome-yellow-wallpaper-76-120-hd-wallpapers.jpg") no-repeat;
 }
 .top-background{
-     background: url("https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237119/demo-image/world-map.png") no-repeat;
-      background-size: 100% 100%;
-      
+    background: url("https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237119/demo-image/world-map.png") no-repeat;
+    background-position-x: 0%;
+    background-position-y: 0%
 }
 .container-fluid {
     width: 80vw !important;
@@ -24,13 +24,21 @@ body {
     margin-top: 5%;
 }
 
+#job-info {
+    padding-left: 150px
+}
+
+#job-contact {
+    padding-left: 220px
+}
+
 #content {
     border-radius: 20px;
     height: calc(100vh - 200px);
     top: 10px;
     /* min-height: 800px;  */
     height: 80%;
-    
+    margin-bottom: 200px
 }
 .job-detail1 {
     background-color: white;
@@ -58,5 +66,4 @@ body {
     border-top-right-radius:10px;
     border-bottom-right-radius:10px;
     padding:2%;
-    
   }

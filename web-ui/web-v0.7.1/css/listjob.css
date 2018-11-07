@@ -37,22 +37,24 @@ body {
 .job-descript{
     font-size: 1.2em;
 }
-.pagination{
+
+.pagination {
     margin-top:2%;
 }
-.page-link{
-    color: #ff7d1f;
-    border: 1px solid #ff7d1f;
-  }
-  .pagi-button-selected{
-    color: rgb(240, 240, 240);
+.page-link {
+    color: #ff7d1f
+}
+.pagi-button-selected {
+    color: white;
     background-color: #ff7d1f;
-  }
-  .pagi-button-selected:hover{
-    color: rgb(240, 240, 240) !important;
-    background-color: #ff7d1f !important;
-  }
-  .page-link:hover{
+    outline: none
+}
+.page-link:hover {
     color: #ff7d1f;
     border: 1px solid #ff7d1f;
-  }
+    background-color: white
+}
+.pagination > li > a {
+      border-radius: 50% !important;
+      margin: 0 5px;
+}

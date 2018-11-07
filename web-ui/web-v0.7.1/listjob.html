@@ -15,327 +15,186 @@
     <link rel="stylesheet" href=".\css\listjob.css">
 </head>
 
-<<<<<<< HEAD
 <body onload="getListRecruitment()">
-=======
-<body>
+
+    <body>
         <div id="loader">
-                <div class="spinner"></div>
-            </div>
-            <script>
-                $(window).ready(function () {
-            $('#loader').hide();
-        });
-            </script>
->>>>>>> dc79807638136f0314f104b319e80a1ae9db2c94
-    <!-- Header -->
-
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height: 45px">
-        <a class="navbar-brand" href=".\index.html">
-            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/logoctsa.png" width="90"
-                height="27" class="d-inline-block align-top" alt="CTSA logo">
-        </a>
-
-        <div class="collapse navbar-collapse  justify-content-center  menu" id="navbarSupportedContent">
-            <a class="mx-5" href="#">Tuyển Dụng</a>
-            <a class="mx-5" href=".\graph.html">Thống Kê</a>
-            <a class="mx-5" href="#">Tuyển Dụng</a>
-            <a class="mx-5" href="#">Thống Kê</a>
-
+            <div class="spinner"></div>
         </div>
-        <span class="fa-stack">
-            <i class="	fa fa-user-circle-o fa-stack-1x" style="font-size:36px; color:white"></i>
-        </span>
-    </nav>
-    <!-- End of Header -->
-    <div class="container-fluid">
 
-        <div id="content" class="tab-content col-md-12 folder">
-            <h1 class="text-center pt-3 pb-2 ">Danh sách các tin tuyển dụng</h1>
-            <div class="row">
-                <div class="col-md-12 list-jobs">
-                    <!-- <h3>1,416 IT jobs in Vietnam for you </h3> -->
-                    <!-- div each row of a job -->
+        <script>
+            window.addEventListener('load', () => {
+                const loader = document.getElementById('loader');
+                setTimeout(() => {
+                    loader.classList.add('fadeOut');
+                }, 500);
+            });
+        </script>
 
+        <!-- Header -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height: 45px">
+            <a class="navbar-brand" href=".\index.html">
+                <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/logoctsa.png"
+                    width="90" height="27" class="d-inline-block align-top" alt="CTSA logo">
+            </a>
 
-                    <div class="row justify-content-around stylish-panel">
+            <div class="collapse navbar-collapse  justify-content-center  menu" id="navbarSupportedContent">
+                <a class="mx-5" href="#">Tuyển Dụng</a>
+                <a class="mx-5" href=".\graph.html">Thống Kê</a>
+                <a class="mx-5" href="#">Tuyển Dụng</a>
+                <a class="mx-5" href="#">Thống Kê</a>
 
+            </div>
+            <span class="fa-stack">
+                <i class="	fa fa-user-circle-o fa-stack-1x" style="font-size:36px; color:white"></i>
+            </span>
+        </nav>
+        <!-- End of Header -->
+        <div class="container-fluid">
 
-                        <div class="col-md-2 text-center my-auto">
-                            <img src="https://cdn.itviec.com/employers/neos-corp/logo/w170/neos-corp-logo.jpg?S3qwxYSQVPqEkYFf4oojSQXU"
-                                width="200" height="200">
+            <div id="content" class="tab-content col-md-12 folder">
+                <h1 class="text-center pt-3 pb-2 ">TIN TUYỂN DỤNG</h1>
+                <div class="row">
+                    <div class="col-md-12 list-jobs">
+
+                        <!-- Pagination -->
+                        <div class="row justify-content-center">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link pagi-button-selected" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="col-md-7">
-                            <h2>Software Quality Assurance Automation QA</h2>
-
-                            <p class="job-descript"> Knorex develops a cloud-based, highly scalable, all-in-one
-                                advertising and
-                                marketing
-                                platform called
-                                Knorex XPO™ (https://xpo.knorex.com/) where.. </p>
-                            <div class="pt-5">
-                                <a href="#" class="btn  btn-outline-dark ">QA QC</a>
-                                <a href="#" class="btn  btn-outline-dark ">English</a>
-                                <a href="#" class="btn  btn-outline-dark ">Tester</a>
-                            </div>
-                        </div>
-                        <div class="col-md-2  my-auto" style="text-align: right">
-
-                            <div class="btn bg-orange text-white btn-sm my-2">Hot</div>
-
-
-                            <!-- <div id="address">
-                            <p>Ho Chi Minh Quận 3</p>
-                        </div>
-                        <div>2 hours ago</div> -->
-
-                            <div class="my-2">
-                                <span>20/10/2018</span>
-                            </div>
-                            <div class="my-2">
-                                <span>Ho Chi Minh Quận 3</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END div each row of a job -->
-
-                    <!-- div each row of a job -->
-                    <div class="row justify-content-around stylish-panel">
-
-
-                        <div class="col-md-2 text-center my-auto">
-                            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541231056/company/companyB.svg"
-                                width="200" height="200">
-                        </div>
-                        <div class="col-md-7">
-                            <h2>【~1200$】Tuyển Dụng Kỹ Sư IOS</h2>
-
-                            <p class="job-descript"> Tham gia phát triển dự án IOS với khách hàng Nhật. Làm việc theo
-                                mô hình phát triển dự án Agile, Scrum. </p>
-                            <div class="pt-5">
-                                <a href="#" class="btn  btn-outline-dark ">iOS</a>
-                                <a href="#" class="btn  btn-outline-dark ">Mobile Apps</a>
-                                <a href="#" class="btn  btn-outline-dark ">Swift</a>
-                            </div>
-                        </div>
-                        <div class="col-md-2  my-auto" style="text-align: right">
-
-                            <div class="btn btn-outline-dark btn-sm my-2">New</div>
-
-
-                            <!-- <div id="address">
-                            <p>Ho Chi Minh Quận 3</p>
-                        </div>
-                        <div>2 hours ago</div> -->
-
-                            <div class="my-2">
-                                <span>20/10/2018</span>
-                            </div>
-                            <div class="my-2">
-                                <span>Ho Chi Minh Quận 3</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END div each row of a job -->
-                    <!-- div each row of a job -->
-
-
-                    <div class="row justify-content-around stylish-panel">
-
-
-                        <div class="col-md-2 text-center my-auto">
-                            <img src="https://cdn.itviec.com/employers/neos-corp/logo/w170/neos-corp-logo.jpg?S3qwxYSQVPqEkYFf4oojSQXU"
-                                width="200" height="200">
-                        </div>
-                        <div class="col-md-7">
-                            <h2>Software Quality Assurance Automation QA</h2>
-
-                            <p class="job-descript"> Knorex develops a cloud-based, highly scalable, all-in-one
-                                advertising and
-                                marketing
-                                platform called
-                                Knorex XPO™ (https://xpo.knorex.com/) where.. </p>
-                            <div class="pt-5">
-                                <a href="#" class="btn  btn-outline-dark ">QA QC</a>
-                                <a href="#" class="btn  btn-outline-dark ">English</a>
-                                <a href="#" class="btn  btn-outline-dark ">Tester</a>
-                            </div>
-                        </div>
-                        <div class="col-md-2  my-auto" style="text-align: right">
-
-                            <div class="btn bg-orange text-white btn-sm my-2">Hot</div>
-
-
-                            <!-- <div id="address">
-                                <p>Ho Chi Minh Quận 3</p>
-                            </div>
-                            <div>2 hours ago</div> -->
-
-                            <div class="my-2">
-                                <span>20/10/2018</span>
-                            </div>
-                            <div class="my-2">
-                                <span>Ho Chi Minh Quận 3</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END div each row of a job -->
-
-                    <!-- div each row of a job -->
-                    <div class="row justify-content-around stylish-panel">
-
-
-                        <div class="col-md-2 text-center my-auto">
-                            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541231056/company/companyB.svg"
-                                width="200" height="200">
-                        </div>
-                        <div class="col-md-7">
-                            <h2>【~1200$】Tuyển Dụng Kỹ Sư IOS</h2>
-
-                            <p class="job-descript"> Tham gia phát triển dự án IOS với khách hàng Nhật. Làm việc theo
-                                mô hình phát triển dự án Agile, Scrum. </p>
-                            <div class="pt-5">
-                                <a href="#" class="btn  btn-outline-dark ">iOS</a>
-                                <a href="#" class="btn  btn-outline-dark ">Mobile Apps</a>
-                                <a href="#" class="btn  btn-outline-dark ">Swift</a>
-                            </div>
-                        </div>
-                        <div class="col-md-2  my-auto" style="text-align: right">
-
-                            <div class="btn btn-outline-dark btn-sm my-2">New</div>
-
-
-                            <!-- <div id="address">
-                                <p>Ho Chi Minh Quận 3</p>
-                            </div>
-                            <div>2 hours ago</div> -->
-
-                            <div class="my-2">
-                                <span>20/10/2018</span>
-                            </div>
-                            <div class="my-2">
-                                <span>Ho Chi Minh Quận 3</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END div each row of a job -->
-                    
-                    <div class="row justify-content-center">
-
-                        <ul class="pagination pagination-lg">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link pagi-button-selected" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
-                        </ul>
 
                     </div>
+
+                    <!-- Company Spotlight Div
+                    <div class="col-md-3">
+                        <div id="sidebar">
+                            <div class="inside">
+
+                                <div class="photos">
+                                    <div class="headline-photo">
+                                        <img alt="KMS Technology Headline Photo" src="https://cdn.itviec.com/photos/31336/tiny_headline_photo/kms-technology-tiny_headline_photo.png?FmkXhYxLh1HQbMPCdBfxSFiA"
+                                            width="256" height="125">
+                                    </div>
+                                    <div class="logo">
+                                        <img src="https://cdn.itviec.com/employers/kms-technology/logo/s65/kms-technology-logo.png?gjCnVTfqe1uPf7ypqStLf9TV"
+                                            width="68" height="68">
+                                    </div>
+                                    <div class="info">
+                                        <span class="name">
+                                            KMS Technology
+                                        </span>
+                                        <span class="city">
+                                            Ho Chi Minh
+                                        </span>
+                                        <p>Agile &amp; innovative global outsourcing</p>
+                                    </div>
+                                    <a class="mkt-track link" rel="nofollow" data-method="PUT" href="/companies/kms-technology?track_action=Click+Branding"></a>
+                                </div>
+                                <div class="border-around">
+                                    <div class="jobs">
+                                        <div class="job">
+                                            <a href="/it-jobs/senior-automation-tester-qa-qc-kms-technology-3325">Senior
+                                                Automation Tester (QA QC)</a>
+                                        </div>
+                                        <div class="job">
+                                            <a href="/it-jobs/senior-python-developer-kms-technology-4915">Senior
+                                                Python
+                                                Developer</a>
+                                        </div>
+                                        <div class="job">
+                                            <a href="/it-jobs/senior-front-end-developer-javascript-kms-technology-4641">Senior
+                                                Front-End Developer (JavaScript)</a>
+                                        </div>
+                                    </div>
+                                    <div class="other-jobs">
+                                        <a href="/companies/kms-technology#our-jobs">View 5 jobs</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
 
                 </div>
-
-                <!-- Company Spotlight div
-            <div class="col-md-3">
-                <div id="sidebar">
-                    <div class="inside">
-
-                        <div class="photos">
-                            <div class="headline-photo">
-                                <img alt="KMS Technology Headline Photo" src="https://cdn.itviec.com/photos/31336/tiny_headline_photo/kms-technology-tiny_headline_photo.png?FmkXhYxLh1HQbMPCdBfxSFiA"
-                                    width="256" height="125">
-                            </div>
-                            <div class="logo">
-                                <img src="https://cdn.itviec.com/employers/kms-technology/logo/s65/kms-technology-logo.png?gjCnVTfqe1uPf7ypqStLf9TV"
-                                    width="68" height="68">
-                            </div>
-                            <div class="info">
-                                <span class="name">
-                                    KMS Technology
-                                </span>
-                                <span class="city">
-                                    Ho Chi Minh
-                                </span>
-                                <p>Agile &amp; innovative global outsourcing</p>
-                            </div>
-                            <a class="mkt-track link" rel="nofollow" data-method="PUT" href="/companies/kms-technology?track_action=Click+Branding"></a>
-                        </div>
-                        <div class="border-around">
-                            <div class="jobs">
-                                <div class="job">
-                                    <a href="/it-jobs/senior-automation-tester-qa-qc-kms-technology-3325">Senior
-                                        Automation Tester (QA QC)</a>
-                                </div>
-                                <div class="job">
-                                    <a href="/it-jobs/senior-python-developer-kms-technology-4915">Senior Python
-                                        Developer</a>
-                                </div>
-                                <div class="job">
-                                    <a href="/it-jobs/senior-front-end-developer-javascript-kms-technology-4641">Senior
-                                        Front-End Developer (JavaScript)</a>
-                                </div>
-                            </div>
-                            <div class="other-jobs">
-                                <a href="/companies/kms-technology#our-jobs">View 5 jobs</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
             </div>
         </div>
-    </div>
 
-    <script src=".\js\scroll-animate.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+        <script src=".\js\scroll-animate.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 
-    <script>
-        function getListRecruitment() {
-            axios.get("http://localhost:8080/recruitment")
-                .then(response => {
-                    let list = response.data;
-                    console.log(JSON.stringify(list));
+        <script>
+            function truncateText(text, maxLength) {
+                if (text.length > maxLength) {
+                    var nextSpace = text.indexOf(' ', maxLength);
+                    text = text.substr(0, nextSpace) + '...';
+                }
 
-                    var i;
-                    for (i = 0; i < list.length; i++) {
-                        var recruitment = '<div class="row justify-content-around stylish-panel">'
-                            + '<div class="col-md-2 text-center my-auto">'
-                            + '<img src="' + list[i].image + '" width="200" height="200">'
-                            + '</div>'
-                            + '<div class="col-md-7">'
-                            + '<h2>' + list[i].title + '</h2>'
-                            + '<p class="job-descript">' + list[i].jobDescription + '</p>'
-                            + '<div class="pt-5">';
+                return text;
+            }
 
-                        var j;
-                        for (j = 0; j < list[i].skills.length; j++) {
-                            recruitment += '<a href="#" class="btn btn-outline-dark">' + list[i].skills[j].skillName + '</a>';
+            function coundDays(startDate) {
+                var start = new Date(startDate);
+                var today = new Date();
+                var result = today.getDate() - start.getDate();
+
+                if (result == 0) {
+                    return 'Hôm nay';
+                } else {
+                    return result + ' ngày trước';
+                }
+            }
+
+            function getListRecruitment() {
+                var url = 'http://localhost:8080/recruitment';
+
+                axios.get(url)
+                    .then(response => {
+                        let list = response.data;
+                        // console.log(JSON.stringify(list));
+
+                        var i;
+                        for (i = 0; i < list.length; i++) {
+                            var recruitment = '<div class="row justify-content-around stylish-panel">'
+                                + '<div class="col-md-2 text-center my-auto">'
+                                + '<a href="' + (url + '/' + list[i].id) + '"><img src="' + list[i].image + '" width="200" height="200"></a>'
+                                + '</div>'
+                                + '<div class="col-md-7">'
+                                + '<a href="' + (url + '/' + list[i].id) + '"><h2>' + list[i].title + '</h2></a>'
+                                + '<p class="job-descript">' + truncateText(list[i].jobDescription, 250) + '</p>'
+                                + '<div class="pt-5">';
+
+                            var j;
+                            for (j = 0; j < list[i].skills.length; j++) {
+                                recruitment += '<a href="#" class="btn btn-outline-dark">' + list[i].skills[j].skillName + '</a>&nbsp;';
+                            }
+
+                            recruitment += '</div>'
+                                + '</div>'
+                                + '<div class="col-md-2 my-auto" style="text-align: right">'
+                                + '<div class="btn bg-orange text-white my-2">Hot</div>&nbsp;<div class="btn btn-primary my-2">New</div>'
+                                + '<div class="my-4"><span>' + coundDays(list[i].startDate) + '</span></div>'
+                                + '<div class="my-4"><span>' + list[i].address + '</span></div>'
+                                + '</div>'
+                                + '</div>';
+
+                            $('.list-jobs').append(recruitment);
                         }
-
-                        recruitment += '</div>'
-                            + '</div>'
-                            + '<div class="col-md-2  my-auto" style="text-align: right">'
-                            + '<div class="btn bg-orange text-white btn-sm my-2">Hot</div>'
-                            + '<div class="my-2"><span>' + list[i].startDate + '</span></div>'
-                            + '<div class="my-2"><span>' + list[i].address + '</span></div>'
-                            + '</div>'
-                            + '</div>';
-
-                        $('.list-jobs').append(recruitment);
-                    }
-                });
-        }
-    </script>
-</body>
+                    });
+            }
+        </script>
+    </body>
 
 </html>
