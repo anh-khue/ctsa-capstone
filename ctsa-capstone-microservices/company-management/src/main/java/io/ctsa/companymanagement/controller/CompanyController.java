@@ -46,8 +46,14 @@ public class CompanyController {
 
     @GetMapping(value = "/companies/{id}/recruitment/pages/{pageNumber}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getAllRecruitmentByCompanyId(@PathVariable("id") int companyId,
-                                                       @PathVariable("pageNumber") int pageNumber) {
-        Page<Recruitment> recruitment = companyService.getRecruitmentByCompanyId(companyId, pageNumber, ITEMS_PER_PAGE);
+                                                       @PathVariable("pageNumber") int pageNumber,
+                                                       @RequestParam(value = "status", required = false) Integer published) {
+        Page<Recruitment> recruitment;
+        if (null != published) {
+            recruitment = companyService.getByCompanyIdAndPublished(companyId, published, pageNumber, ITEMS_PER_PAGE);
+        } else {
+            recruitment = companyService.getRecruitmentByCompanyId(companyId, pageNumber, ITEMS_PER_PAGE);
+        }
         return recruitment != null ? status(OK).body(recruitment)
                 : status(NO_CONTENT).build();
     }

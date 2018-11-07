@@ -83,6 +83,7 @@ public class RecruitmentService {
         return recruitmentRepository.findById(recruitmentId)
                 .map(recruitment -> {
                     recruitment.setPublished(status);
+                    recruitmentRepository.saveAndFlush(recruitment);
                     return recruitment;
                 }).orElseThrow(RecruitmentNotFoundException::new);
     }
@@ -132,10 +133,5 @@ public class RecruitmentService {
                     return recruitment;
                 })
                 .orElseThrow(RecruitmentNotFoundException::new);
-    }
-
-    public Page<Recruitment> getByCompanyIdAndPublished(int companyId, int status, int pageNumber, int itemsPerPage) {
-        Pageable pageable = PageRequest.of(pageNumber - 1, itemsPerPage);
-        return recruitmentRepository.findByCompanyIdAndPublished(pageable, companyId, status);
     }
 }

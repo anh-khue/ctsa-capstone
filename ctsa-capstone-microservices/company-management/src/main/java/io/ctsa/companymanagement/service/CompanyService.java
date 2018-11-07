@@ -57,7 +57,7 @@ public class CompanyService {
     }
 
     public Page<Recruitment> getRecruitmentByCompanyId(int companyId, int pageNumber, int itemsPerPage) {
-        Pageable pageable = PageRequest.of(pageNumber, itemsPerPage);
+        Pageable pageable = PageRequest.of(pageNumber - 1, itemsPerPage);
         return recruitmentRepository.findByCompanyId(pageable, companyId);
     }
 
@@ -112,5 +112,10 @@ public class CompanyService {
 
                     return company;
                 }).orElseThrow(CompanyNotFoundException::new);
+    }
+
+    public Page<Recruitment> getByCompanyIdAndPublished(int companyId, int status, int pageNumber, int itemsPerPage) {
+        Pageable pageable = PageRequest.of(pageNumber - 1, itemsPerPage);
+        return recruitmentRepository.findByCompanyIdAndPublished(pageable, companyId, status);
     }
 }
