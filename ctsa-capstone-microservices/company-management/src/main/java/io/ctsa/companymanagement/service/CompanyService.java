@@ -10,6 +10,9 @@ import io.ctsa.companymanagement.repository.RecruitmentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -53,8 +56,9 @@ public class CompanyService {
         return companyRepository.findById(companyId);
     }
 
-    public List<Recruitment> getAllRecruitmentByCompanyId(int companyId) {
-        return recruitmentRepository.findAllByCompanyId(companyId);
+    public Page<Recruitment> getRecruitmentByCompanyId(int companyId, int pageNumber, int itemsPerPage) {
+        Pageable pageable = PageRequest.of(pageNumber, itemsPerPage);
+        return recruitmentRepository.findByCompanyId(pageable, companyId);
     }
 
     public Company create(Company partner) {

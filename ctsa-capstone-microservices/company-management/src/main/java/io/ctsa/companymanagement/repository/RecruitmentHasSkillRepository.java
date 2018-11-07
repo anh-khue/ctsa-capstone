@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface RecruitmentHasSkillRepository extends JpaRepository<RecruitmentHasSkill, Integer> {
     List<RecruitmentHasSkill> findByRecruitmentId(int id);
+
+    Integer countByRecruitmentIdAndSkillId(int recruitmentId, int skillId);
 }

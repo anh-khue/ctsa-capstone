@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @Entity
@@ -47,6 +48,8 @@ public class Recruitment {
     private int companyId;
     @Transient
     private List<RecruitmentHasSkill> skills;
+    @Transient
+    private Map<String, String> attributes;
 
     @Override
     public boolean equals(Object o) {

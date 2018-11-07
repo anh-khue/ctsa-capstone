@@ -5,6 +5,7 @@ import io.ctsa.companymanagement.exception.CompanyNotFoundException;
 import io.ctsa.companymanagement.model.Company;
 import io.ctsa.companymanagement.model.Recruitment;
 import io.ctsa.companymanagement.service.CompanyService;
+import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,8 @@ import static org.springframework.http.ResponseEntity.status;
 @CrossOrigin(origins = "*")
 public class CompanyController {
 
+    private static final int ITEMS_PER_PAGE = 5;
+
     private final CompanyService companyService;
 
     public CompanyController(CompanyService companyService) {
@@ -30,8 +33,8 @@ public class CompanyController {
     @GetMapping(value = "/companies", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getAll() {
         List<Company> companies = companyService.getAll();
-        return !companies.isEmpty() ? status(OK).body(companies) :
-                status(NO_CONTENT).build();
+        return !companies.isEmpty() ? status(OK).body(companies)
+                : status(NO_CONTENT).build();
     }
 
     @GetMapping(value = "/companies/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -41,11 +44,12 @@ public class CompanyController {
                 .orElseGet(status(NO_CONTENT)::build);
     }
 
-    @GetMapping(value = "/companies/{id}/recruitment", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity getAllRecruitmentByCompanyId(@PathVariable("id") int companyId) {
-        List<Recruitment> recruitment = companyService.getAllRecruitmentByCompanyId(companyId);
-        return !recruitment.isEmpty() ? status(OK).body(recruitment) :
-                status(NO_CONTENT).build();
+    @GetMapping(value = "/companies/{id}/recruitment/pages/{pageNumber}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity getAllRecruitmentByCompanyId(@PathVariable("id") int companyId,
+                                                       @PathVariable("pageNumber") int pageNumber) {
+        Page<Recruitment> recruitment = companyService.getRecruitmentByCompanyId(companyId, pageNumber, ITEMS_PER_PAGE);
+        return recruitment != null ? status(OK).body(recruitment)
+                : status(NO_CONTENT).build();
     }
 
     @PostMapping(value = "/companies", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
@@ -56,8 +60,7 @@ public class CompanyController {
         partner.setAccountId(1);
         partner = companyService.create(partner);
 
-        return partner != null ? status(CREATED).body(partner) :
-                status(CONFLICT).build();
+        return partner != null ? status(CREATED).body(partner) : status(CONFLICT).build();
     }
 
     @PutMapping(value = "/companies/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)

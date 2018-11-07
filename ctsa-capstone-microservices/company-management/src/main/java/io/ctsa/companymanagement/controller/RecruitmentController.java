@@ -3,6 +3,7 @@ package io.ctsa.companymanagement.controller;
 import io.ctsa.companymanagement.exception.RecruitmentNotFoundException;
 import io.ctsa.companymanagement.model.Recruitment;
 import io.ctsa.companymanagement.service.RecruitmentService;
+import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,7 @@ import static org.springframework.http.ResponseEntity.*;
 @Controller
 @CrossOrigin(origins = "*")
 public class RecruitmentController {
+    private static final int ITEMS_PER_PAGE = 5;
 
     private final RecruitmentService recruitmentService;
 
@@ -26,8 +28,15 @@ public class RecruitmentController {
     @GetMapping(value = "/recruitment", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getAll() {
         List<Recruitment> recruitment = recruitmentService.getAll();
-        return !recruitment.isEmpty() ? status(OK).body(recruitment) :
-                status(NO_CONTENT).build();
+        return !recruitment.isEmpty() ? status(OK).body(recruitment)
+                : status(NO_CONTENT).build();
+    }
+
+    @GetMapping(value = "/recruitment/pages/{pageNumber}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity getAllByPage(@PathVariable("pageNumber") int pageNumber) {
+        Page<Recruitment> recruitment = recruitmentService.getAllByPage(pageNumber, ITEMS_PER_PAGE);
+        return recruitment != null ? status(OK).body(recruitment)
+                : status(NO_CONTENT).build();
     }
 
     @GetMapping(value = "/recruitment/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -41,8 +50,8 @@ public class RecruitmentController {
     @PostMapping(value = "/recruitment", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity create(@RequestBody Recruitment modifiedData) {
         Recruitment recruitment = recruitmentService.create(modifiedData);
-        return recruitment != null ? status(CREATED).body(recruitment) :
-                status(CONFLICT).build();
+        return recruitment != null ? status(CREATED).body(recruitment)
+                : status(CONFLICT).build();
     }
 
     @PutMapping(value = "/recruitment/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -50,6 +59,16 @@ public class RecruitmentController {
                                             @RequestBody Recruitment modifiedData) {
         try {
             return status(OK).body(recruitmentService.updateRecruitment(recruitmentId, modifiedData));
+        } catch (RecruitmentNotFoundException e) {
+            return status(NO_CONTENT).build();
+        }
+    }
+
+    @PutMapping(value = "/recruitment/{id}/status", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity updateStatus(@PathVariable("id") int recruitmentId,
+                                       @RequestParam("status") int status) {
+        try {
+            return status(OK).body(recruitmentService.updateStatus(recruitmentId, status));
         } catch (RecruitmentNotFoundException e) {
             return status(NO_CONTENT).build();
         }
