@@ -32,7 +32,11 @@ public class RecruitmentService {
     }
 
     public List<Recruitment> getAll() {
-        return recruitmentRepository.findAll();
+        List<Recruitment> list = recruitmentRepository.findAll();
+        for (Recruitment recruitment : list) {
+            recruitment.setSkills(getRecruitmentSkills(recruitment.getId()));
+        }
+        return list;
     }
 
     public Page<Recruitment> getAllByPage(int pageNumber, int itemsPerPage) {
