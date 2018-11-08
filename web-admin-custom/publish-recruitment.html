@@ -59,7 +59,7 @@
     </style>
 
     <link href="assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/sweetalert2.min.css">
+    <link rel="stylesheet" href="./assets/css/sweetalert2.min.css">
 
     <script type="text/javascript" src="assets/js/vendor.js"></script>
     <script type="text/javascript" src="assets/js/bundle.js"></script>
@@ -75,7 +75,7 @@
             const loader = document.getElementById('loader');
             setTimeout(() => {
                 loader.classList.add('fadeOut');
-            }, 300);
+            }, 500);
         });
     </script>
 
@@ -272,12 +272,11 @@
                                     <h3 class="c-grey-900">Tin đã đăng</h3>
                                     <div class="mT-30">
                                         <div class="form-group">
-                                            <table class="table table-striped form-control">
+                                            <table class="table table-striped">
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
                                                         <th>Tiêu đề</th>
-                                                        <th>Ngày tạo</th>
                                                         <th>Ngày hết hạn</th>
                                                         <th>Lượt xem</th>
                                                         <th></th>
@@ -296,7 +295,7 @@
                                     <h3 class="c-grey-900">Tin chưa đăng</h3>
                                     <div class="mT-30">
                                         <div class="form-group">
-                                            <table class="table table-striped form-control">
+                                            <table class="table table-striped">
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
@@ -327,7 +326,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script src="./js/sweetalert2.all.min.js"></script>
+    <script src="./assets/js/sweetalert2.all.min.js"></script>
 
     <script>
         function onLoadListRecruitment(companyId, pageNumber) {
@@ -347,14 +346,17 @@
                         var row = '<tr id="' + published + 'row' + i + '">';
                         row += '<td>' + (i + 1) + '</td>';
                         row += '<td>' + list[i].title + '</td>';
-                        row += '<td>' + new Date(list[i].startDate).toLocaleDateString('vi-VN') + '</td>';
+                        if (published == 0) {
+                            row += '<td>' + new Date(list[i].startDate).toLocaleDateString('vi-VN') + '</td>';
+                        }
                         row += '<td>' + new Date(list[i].endDate).toLocaleDateString('vi-VN') + '</td>';
 
                         if (published == 1) {
                             row += '<td>' + list[i].viewCount + '</td>';
-                            row += '<td><button class="btn btn-sm btn-secondary" onclick="publishRecruitment(' + list[i].id + ', ' + 0 + ',' + i + ')">Gỡ tin</button></td>';
+                            row += '<td><button type="button" class="btn btn-sm btn-secondary" onclick="publishRecruitment(' + list[i].id + ', ' + 0 + ',' + i + ')">Gỡ tin</button></td>';
                         } else {
-                            row += '<td><button class="btn btn-sm bg-orange text-white" onclick="publishRecruitment(' + list[i].id + ', ' + 1 + ',' + i + ')">Đăng tin</button></td>';
+                            row += '<td><button type="button" class="btn btn-sm btn-orange text-white" onclick="publishRecruitment(' + list[i].id + ', ' + 1 + ',' + i + ')">Đăng tin</button>&nbsp;';
+                            row += '<button type="button" class="btn btn-sm btn-secondary">Chỉnh sửa</button></td>';
                         }
 
                         row += '</tr>';
@@ -379,25 +381,31 @@
                     }
                     successDialog(msg);
                     $('#' + rowId + 'row' + rowId).remove();
+
+                    //Get company ID and last page number for 2 tables.
+                    $('#list-recruitment1').empty();
+                    $('#list-recruitment0').empty();
+                    onLoadListRecruitment(4, 1);
                 } else {
                     errorDialog('Đã có lỗi xảy ra!<br>Xin vui lòng thử lại sau...');
                 }
             });
         }
 
-        function successDialog(message) {
+        function successDialog(msg) {
+            console.log("success");
             swal({
                 type: 'success',
-                title: message,
+                title: msg,
                 showConfirmButton: false,
                 timer: 1800
             })
         };
 
-        function errorDialog(message) {
+        function errorDialog(msg) {
             swal({
                 type: 'error',
-                title: message,
+                title: msg,
                 showConfirmButton: false,
                 timer: 1800
             })
