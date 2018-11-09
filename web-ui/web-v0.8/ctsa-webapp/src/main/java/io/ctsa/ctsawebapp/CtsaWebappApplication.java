@@ -1,12 +1,12 @@
-package com.minh.demoWebSpring;
+package io.ctsa.ctsawebapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoWebSpringApplication {
+public class CtsaWebappApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoWebSpringApplication.class, args);
+		SpringApplication.run(CtsaWebappApplication.class, args);
 	}
 }
