@@ -1,10 +1,25 @@
+body, button, table, label{
+    font-size: 1.2em !important
+}
+select{
+    font-style:bold !important;
+    color:rgb(70, 70, 70) !important
+}
+.page-container{
+    background-color:#F2F3F5 
+}
+.title-header{
+    margin-top:10px;
+    font-size:1.4em;
+    color:rgb(255, 140, 78)
+}
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
     color: #fff!important;
     background: #FF7D1F;
 }
 
-input{
-    border: 1px solid rgba(85, 85, 85, 0.555) !important;
+input, select{
+    border: 1px solid rgba(85, 85, 85, 0.829) !important;
 }
 .table-bordered th, .table-bordered td{
     border: 1px solid rgba(85, 85, 85, 0.555) !important;

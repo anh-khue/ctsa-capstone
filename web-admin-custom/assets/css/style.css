@@ -1,3 +1,4 @@
+
 svg {
     touch-action: none
 }
@@ -15,7 +16,8 @@ svg {
 }
 
 .sidebar-menu>li>a, .sidebar-menu>li>a>span>i, .sidebar-menu>li>ul>li>a {
-    color: white !important;
+    color: rgb(235, 235, 235) !important;
+    font-size: 1.1em !important
 }
 
 /* .sidebar-logo{
