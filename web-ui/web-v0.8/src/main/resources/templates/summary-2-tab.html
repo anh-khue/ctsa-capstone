@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vn">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>(Company Name)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <!-- <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">  -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href=".\css\style.css">
+  <link rel="stylesheet" href=".\css\tab.css">
+  <link rel="stylesheet" href="../../../../css/sweetalert2.min.css">
+</head>
+
+
+<body onload="getRecruitmentByCompanyIdAndPublished(4, 1, 1)">
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+  <script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      setTimeout(() => {
+        loader.classList.add('fadeOut');
+      }, 500);
+    });
+  </script>
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height: 45px">
+    <a class="navbar-brand" href=".\index.html">
+      <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/logoctsa.png" width="90"
+        height="30" class="d-inline-block align-top" alt="CTSA logo">
+    </a>
+
+    <div class="collapse navbar-collapse justify-content-center menu " id="navbarSupportedContent">
+      <a class="mx-5" href="#">Tuyển Dụng</a>
+      <a class="mx-5" href=".\graph.html">Thống Kê</a>
+      <a class="mx-5" href="#">Tuyển Dụng</a>
+      <a class="mx-5" href="#">Thống Kê</a>
+
+    </div>
+    <span class="fa-stack">
+      <i class="	fa fa-user-circle-o fa-stack-1x" style="font-size:36px; color:white"></i>
+    </span>
+  </nav>
+  <!-- End of Header -->
+
+  <div class="container-fluid">
+    <div class="row">
+      <ul class="nav col-md-12" id="myTab" role="tablist">
+        <li class="nav-item tab tabactive col-md-4" id="tab-published">
+          <a class="nav-link active" href="#list-published">Tin đã đăng</a>
+        </li>
+        <li class="nav-item tab col-md-4" id="tab-unpublished">
+          <a class="nav-link" href="#list-unpublished">Tin chưa công bố</a>
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <div id="content" class="tab-content col-md-12 folder">
+        <div class="tab-pane fade show active" id="list-published">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Tiêu đề</th>
+                <th>Ngày đăng</th>
+                <th>Ngày hết hạn</th>
+                <th>Lượt xem</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="list-recruitment1">
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane fade" id="list-unpublished">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Tiêu đề</th>
+                <th>Ngày đăng</th>
+                <th>Ngày hết hạn</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="list-recruitment0">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <script src="../../../../js/sweetalert2.all.min.js"></script>
+
+  <script>
+    $("#tab-published").click(function () {
+      $(this).addClass("tabactive");
+      $("#list-published").addClass("show");
+      $("#list-published").addClass("active");
+
+      $("#tab-unpublished").removeClass("tabactive");
+      $("#list-unpublished").removeClass("show");
+      $("#list-unpublished").removeClass("active");
+      $("#list-recruitment1").empty();
+
+      getRecruitmentByCompanyIdAndPublished(4, 1, 1);
+    });
+
+    $("#tab-unpublished").click(function () {
+      $(this).addClass("tabactive");
+      $("#list-unpublished").addClass("show");
+      $("#list-unpublished").addClass("active");
+
+      $("#tab-published").removeClass("tabactive");
+      $("#list-published").removeClass("show");
+      $("#list-published").removeClass("active");
+      $("#list-recruitment0").empty();
+
+      getRecruitmentByCompanyIdAndPublished(4, 0, 1);
+    });
+
+    function getRecruitmentByCompanyIdAndPublished(companyId, published, pageNumber) {
+      var url = 'http://localhost:8080/companies/' + companyId + '/recruitment/pages/' + pageNumber;
+      if (published == 0 || published == 1) {
+        url += '?status=' + published;
+
+      }
+      axios.get(url)
+        .then(response => {
+          let list = response.data.content;
+          var total = response.data.totalPages;
+
+          var i;
+          for (i = 0; i < list.length; i++) {
+            var row = '<tr id="row' + i + '">';
+            row += '<td>' + (i + 1) + '</td>';
+            row += '<td>' + list[i].title + '</td>';
+            row += '<td>' + new Date(list[i].startDate).toLocaleDateString('vi-VN') + '</td>';
+            row += '<td>' + new Date(list[i].endDate).toLocaleDateString('vi-VN') + '</td>';
+
+            if (published == 1) {
+              row += '<td>' + list[i].viewCount + '</td>';
+              row += '<td><button class="btn btn-sm btn-secondary" onclick="publishRecruitment(' + list[i].id + ', ' + 0 + ',' + i + ')">Gỡ tin</button></td>';
+            } else {
+              row += '<td><button class="btn btn-sm bg-orange text-white" onclick="publishRecruitment(' + list[i].id + ', ' + 1 + ',' + i + ')">Đăng tin</button></td>';
+            }
+
+            row += '</tr>';
+
+            $('#list-recruitment' + published).append(row);
+          }
+        });
+    }
+
+    function publishRecruitment(recruitmentId, published, rowId) {
+      axios.put("http://localhost:8080/recruitment/" + recruitmentId + "/publish?published=" + published, {}, {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        }
+      }).then(response => {
+        if (response.status == 200) {
+          $('#row' + rowId).remove();
+          successDialog();
+        } else {
+          errorDialog();
+        }
+      });
+    }
+
+    function successDialog() {
+      swal({
+        type: 'success',
+        title: 'Đã lưu!',
+        showConfirmButton: false,
+        timer: 1800
+      })
+    };
+
+    function errorDialog() {
+      swal({
+        type: 'error',
+        title: 'Đã có lỗi xảy ra!<br>Vui lòng thử lại sau...',
+        showConfirmButton: false,
+        timer: 1800
+      })
+    };
+  </script>
+</body>
+
+</html>

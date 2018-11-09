@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Thông tin tuyển dụng</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href=".\css\style.css">
+    <link rel="stylesheet" href=".\css\job-recruit-alternative.css">
+</head>
+
+<body onload="getRecruitmentById(5)">
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.classList.add('fadeOut');
+            }, 500);
+        });
+    </script>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height: 45px">
+        <a class="navbar-brand" href=".\index.html">
+            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/logoctsa.png" width="90"
+                height="27" class="d-inline-block align-top" alt="CTSA logo">
+        </a>
+
+        <div class="collapse navbar-collapse  justify-content-center  menu" id="navbarSupportedContent">
+            <a class="mx-5" href="#">Tuyển Dụng</a>
+            <a class="mx-5" href=".\graph.html">Thống Kê</a>
+            <a class="mx-5" href="#">Tuyển Dụng</a>
+            <a class="mx-5" href="#">Thống Kê</a>
+
+        </div>
+        <span class="fa-stack">
+            <i class="	fa fa-user-circle-o fa-stack-1x" style="font-size:36px; color:white"></i>
+        </span>
+    </nav>
+    <!-- End of Header -->
+
+    <div class="container-fluid">
+        <div id="content" class="tab-content col-md-12 folder">
+            <div class="top-background">
+                <div class="row justify-content-center">
+                    <div style="background-color: white; margin-top:-50px; border-radius:20px" id="company-logo">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>
+                            <div class="row justify-content-center">
+                                <table class="table table-hover text-center col-md-6 bg-white table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="bg-orange text-white">
+                                                <h3 id="job-title"></h3>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="row justify-content-around my-auto">
+                                                    <div class="col-md-5">Ngày đăng: <span id="job-start"></span></div>
+                                                    &mdash;
+                                                    <div class="col-md-5">Ngày hết hạn: <span id="job-due"></span></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Số lượng: <span id="job-number"></span> người</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="job-detail1 col-md-4">
+                        <div class="text-center">
+                            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237108/demo-image/question.png"
+                                alt="" width="50"><br><br>
+                            <h2>Mô tả công việc</h2>
+                            <hr>
+                        </div>
+                        <div id="job-description" class="text-justify">
+                        </div>
+                    </div>
+                    <div class="job-detail2 col-md-4">
+                        <div class="text-center">
+                            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237111/demo-image/requirement.png"
+                                alt="" width="50"><br><br>
+                            <h2>Yêu cầu công việc</h2>
+                            <hr>
+                        </div>
+                        <div id="job-requirement" class="text-justify">
+                        </div>
+                    </div>
+                    <div class="job-detail3 col-md-4">
+                        <div class="text-center">
+                            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237112/demo-image/skill.png"
+                                alt="" width="50" ><br><br>
+                            <h2>Kỹ năng cần thiết</h2>
+                            <hr>
+                        </div>
+                        <div id="job-skills">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="row justify-content-center">
+                    <div class="job-detail1 col-md-6">
+                        <div class="text-center">
+                            <h2><img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541484328/contact.png"
+                                    alt="" width="50"> Liên hệ</h2>
+                            <hr>
+                        </div>
+                        <div class="text-justify">
+                            <ul id="job-contact"></ul>
+                        </div>
+                    </div>
+                    <div class="job-detail3 col-md-6">
+                        <div class="text-center">
+                            <h2><img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541477752/demo-image/info.png"
+                                alt="" width="50"> Thông tin thêm</h2>
+                            <hr>
+                        </div>
+                        <div class="text-justify" id="job-info">
+                        </div>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src=".\js\scroll-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+
+    <script>
+        function getRecruitmentById(recruitmentId) {
+            axios.get("http://localhost:8080/recruitment/" + recruitmentId)
+                .then(response => {
+                    let recruitment = response.data;
+                    console.log(recruitment)
+
+                    var imgTag = '<a href="#"><img alt="" src="' + recruitment.image + '" style="margin: 15px" width="250" height="250"></a>';
+                    $('#company-logo').append(imgTag);
+
+                    $('#job-title').append(recruitment.title);
+                    $('#job-start').append(new Date(recruitment.startDate).toLocaleDateString("vi-VN"));
+                    $('#job-due').append(new Date(recruitment.endDate).toLocaleDateString("vi-VN"));
+                    $('#job-number').append(recruitment.number);
+                    $('#job-description').append(recruitment.jobDescription);
+                    $('#job-requirement').append(recruitment.jobRequirement);
+
+                    $('#job-skills').append('<ul>');
+                    var i;
+                    for (i = 0; i < recruitment.skills.length; i++) {
+                        var liTag = '<li class="btn bg-orange text-white mb-1">' + recruitment.skills[i].skillName + '</li>&nbsp;';
+                        $('#job-skills').append(liTag);
+                    }
+                    $('#job-skills').append('</ul>');
+
+                    $('#job-contact').append('<li class="mb-4"><img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541484328/location.png" alt="" width="20" width="20">&emsp;' + recruitment.address + '</li>');
+                    $('#job-contact').append('<li class="mb-4"><img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541484329/mail.png" alt="" width="20" width="20">&emsp;' + recruitment.email + '</li>');
+                    $('#job-contact').append('<li class="mb-4"><img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541477752/demo-image/phone.png" alt="" width="20" width="20">&emsp;' + recruitment.phone + '</li>');
+
+                    $('#job-info').append('<ul>');
+                    var map = Object.keys(recruitment.attributes);
+                    map.forEach(key => {
+                        // console.log(key + ': ' + recruitment.attributes[key]);
+                        $('#job-info').append('<li class="mb-3">' + key + ': ' + recruitment.attributes[key] + '</li>');
+                    });
+                    $('#job-info').append('</ul>');
+                });
+        }
+    </script>
+</body>
+
+</html>
