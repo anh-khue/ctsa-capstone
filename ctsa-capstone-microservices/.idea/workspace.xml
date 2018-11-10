@@ -2,53 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99154fe8-6e12-4fb6-98b9-7e6c8e295d0b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/anh_khue.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/anh_khue.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_4_1_29_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_56.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_56.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_commons_2_0_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_config_client_2_0_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_config_server_2_0_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_context_2_0_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_archaius_2_0_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_core_2_0_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_eureka_client_2_0_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_eureka_server_2_0_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_ribbon_2_0_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_2_0_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_config_2_0_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_archaius_2_0_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_eureka_server_2_0_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_ribbon_2_0_1_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_rsa_1_0_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/career-trend-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/career-trend-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/CareerTrendServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/CareerTrendServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/career-trend-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/career-trend-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/careers-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/careers-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/CareersServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/CareersServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/careers-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/careers-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-management/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/company-management/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/CompanyManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/CompanyManagementApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/model/RecruitmentHasSkill.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/model/RecruitmentHasSkill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/service/RecruitmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/service/RecruitmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-management/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/company-management/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/company-management/src/main/webapp/views/form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticsearch-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/elasticsearch-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticsearch-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/elasticsearch-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/ResultsSuggestionsServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/ResultsSuggestionsServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/warehouse-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/WarehouseServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/WarehouseServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/warehouse-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/eureka-service/target/" />
     <ignored path="$PROJECT_DIR$/config-service/target/" />
@@ -217,7 +172,7 @@
           <entry key="class" value="15" />
           <entry key="cmd" value="1" />
           <entry key="html" value="2" />
-          <entry key="java" value="522" />
+          <entry key="java" value="523" />
           <entry key="kt" value="11" />
           <entry key="properties" value="54" />
           <entry key="sql" value="1" />
@@ -228,7 +183,7 @@
         <counts>
           <entry key="CLASS" value="15" />
           <entry key="HTML" value="2" />
-          <entry key="JAVA" value="522" />
+          <entry key="JAVA" value="523" />
           <entry key="Kotlin" value="11" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="54" />
@@ -240,34 +195,34 @@
         <counts>
           <entry key="dummy" value="61" />
           <entry key="html" value="15" />
-          <entry key="java" value="13386" />
+          <entry key="java" value="13620" />
           <entry key="kt" value="3083" />
-          <entry key="properties" value="1072" />
-          <entry key="txt" value="38" />
-          <entry key="xml" value="359" />
+          <entry key="properties" value="1074" />
+          <entry key="txt" value="151" />
+          <entry key="xml" value="450" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="15" />
-          <entry key="JAVA" value="13384" />
+          <entry key="JAVA" value="13618" />
           <entry key="Kotlin" value="3083" />
-          <entry key="PLAIN_TEXT" value="99" />
-          <entry key="Properties" value="1072" />
+          <entry key="PLAIN_TEXT" value="212" />
+          <entry key="Properties" value="1074" />
           <entry key="SQL" value="1" />
           <entry key="Spring Data QL" value="1" />
-          <entry key="XML" value="359" />
+          <entry key="XML" value="450" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="54" />
+          <entry key="project.closed" value="55" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.27" value="2" />
           <entry key="project.open.time.28" value="6" />
@@ -291,7 +246,7 @@
           <entry key="project.open.time.75" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="57" />
+          <entry key="project.opened" value="58" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.mvc.usages" />
@@ -303,19 +258,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/io/ctsa/apigateway/ApiGatewayApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api-gateway/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-299">
-              <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+            <state relative-caret-position="230">
+              <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="37" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -323,8 +269,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api-gateway/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+            <state relative-caret-position="46">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/io/ctsa/apigateway/ApiGatewayApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#768#769#0" expanded="true" />
+                <element signature="e#840#841#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -493,7 +453,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -539,6 +498,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -551,7 +511,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541834862566" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541838795860" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/api-gateway/pom.xml" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -619,7 +579,7 @@
     </option>
     <option name="contentProportion" value="0.22234273" />
   </component>
-  <component name="RunManager" selected="Spring Boot.WarehouseServiceApplication">
+  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="io.ctsa.apigateway.ApiGatewayApplication" />
@@ -786,7 +746,8 @@
       <workItem from="1541581596579" duration="3037000" />
       <workItem from="1541660930220" duration="1264000" />
       <workItem from="1541745467293" duration="1402000" />
-      <workItem from="1541827452534" duration="7261000" />
+      <workItem from="1541827452534" duration="11248000" />
+      <workItem from="1541838881401" duration="158000" />
     </task>
     <task id="LOCAL-00001" summary="Remove unnecessary @NonNull annotations in models. Create results-suggestions-service in replacement for students-results-service.">
       <created>1539141464571</created>
@@ -830,7 +791,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539319948801</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add dependencies for service-discovery in services. Create API Gateway but faced bug mentioned in spring-cloud/spring-cloud-gateway#577">
+      <created>1541834955830</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1541834955830</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -839,13 +807,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298073000" />
+    <option name="totallyTimeSpent" value="302218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8067318" visible="true" weight="0.30235043" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8067318" visible="true" weight="0.30608973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -867,7 +835,7 @@
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32822758" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="12" sideWeight="0.49946582" weight="0.32899022" />
-      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49946582" weight="0.32790446" />
+      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49946582" weight="0.32713348" />
       <window_info active="true" anchor="bottom" id="Run Dashboard" order="14" visible="true" weight="0.39059082" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32899022" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -875,7 +843,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32959402" />
+      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.24679486" />
       <window_info anchor="right" id="Database" order="6" weight="0.32959402" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -913,7 +881,8 @@
     <MESSAGE value="Identify centroids for clusters using native queries." />
     <MESSAGE value="Suggest for pupil with input using top results in high school." />
     <MESSAGE value="Fix errors for transient fields in entities. Successfully tested with sample data." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix errors for transient fields in entities. Successfully tested with sample data." />
+    <MESSAGE value="Add dependencies for service-discovery in services. Create API Gateway but faced bug mentioned in spring-cloud/spring-cloud-gateway#577" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add dependencies for service-discovery in services. Create API Gateway but faced bug mentioned in spring-cloud/spring-cloud-gateway#577" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1079,9 +1048,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1089,9 +1055,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1106,9 +1069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1116,9 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1133,9 +1090,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1157,9 +1111,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="634">
           <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
-          <folding>
-            <element signature="e#881#882#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1174,10 +1125,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding>
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#418#419#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1206,11 +1153,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#259#260#0" expanded="true" />
-            <element signature="e#326#327#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1242,9 +1184,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1273,11 +1212,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
-            <element signature="e#474#475#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1316,31 +1250,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/io/ctsa/apigateway/GatewayDiscoveryConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/io/ctsa/apigateway/GatewayDiscoveryConfiguration.java" />
     <entry file="file://$PROJECT_DIR$/api-gateway/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api-gateway/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-299">
-          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/io/ctsa/apigateway/ApiGatewayApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="207">
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#768#769#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="37" selection-end-column="21" />
         </state>
       </provider>
     </entry>
