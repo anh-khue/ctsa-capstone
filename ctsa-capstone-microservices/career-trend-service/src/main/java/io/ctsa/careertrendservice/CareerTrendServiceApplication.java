@@ -16,11 +16,13 @@ import io.ctsa.careertrendservice.service.SupportingInformationService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 
 import java.util.Arrays;
 import java.util.List;
 
+@EnableDiscoveryClient
 @SpringBootApplication
 public class CareerTrendServiceApplication {
 
@@ -28,7 +30,7 @@ public class CareerTrendServiceApplication {
         SpringApplication.run(CareerTrendServiceApplication.class, args);
     }
 
-    @Bean
+    /*@Bean
     CommandLineRunner runner(ExponentialSmoothingFormula formula,
                              HumanResourcesRepository humanResourcesRepository,
                              SalaryRepository salaryRepository,
@@ -68,5 +70,5 @@ public class CareerTrendServiceApplication {
                                                                   supportingInformationSmoothingParams.getBeta());
             supportingInformationRepository.saveAll(supportingInformationList);
         });
-    }
+    }*/
 }

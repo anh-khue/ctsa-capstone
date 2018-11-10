@@ -2,12 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99154fe8-6e12-4fb6-98b9-7e6c8e295d0b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/anh_khue.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/anh_khue.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_4_1_29_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_56.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_56.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_commons_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_config_client_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_config_server_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_context_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_archaius_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_core_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_eureka_client_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_eureka_server_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_ribbon_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_config_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_archaius_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_eureka_server_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_ribbon_2_0_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_rsa_1_0_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/career-trend-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/career-trend-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/CareerTrendServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/CareerTrendServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/career-trend-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/career-trend-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careers-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/careers-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/CareersServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/CareersServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/careers-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/careers-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-management/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/company-management/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/CompanyManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/CompanyManagementApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/model/RecruitmentHasSkill.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/model/RecruitmentHasSkill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/service/RecruitmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/service/RecruitmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-management/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/company-management/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company-management/src/main/webapp/views/form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elasticsearch-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/elasticsearch-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elasticsearch-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/elasticsearch-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results-suggestions-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/ResultsSuggestionsServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/ResultsSuggestionsServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/results-suggestions-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/controller/RequiredSkillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/controller/RequiredSkillController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/service/RequiredSkillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/service/RequiredSkillService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/warehouse-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/WarehouseServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/WarehouseServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/warehouse-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/warehouse-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/eureka-service/target/" />
@@ -20,6 +60,8 @@
     <ignored path="$PROJECT_DIR$/results-suggestions/target/" />
     <ignored path="$PROJECT_DIR$/results-suggestions-service/target/" />
     <ignored path="$PROJECT_DIR$/career-trend-service/target/" />
+    <ignored path="$PROJECT_DIR$/company-management/target/" />
+    <ignored path="$PROJECT_DIR$/api-gateway/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,50 +214,54 @@
     <session id="-994657753">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="14" />
+          <entry key="class" value="15" />
+          <entry key="cmd" value="1" />
           <entry key="html" value="2" />
-          <entry key="java" value="462" />
+          <entry key="java" value="522" />
           <entry key="kt" value="11" />
-          <entry key="properties" value="34" />
+          <entry key="properties" value="54" />
           <entry key="sql" value="1" />
-          <entry key="xml" value="12" />
+          <entry key="xml" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="14" />
+          <entry key="CLASS" value="15" />
           <entry key="HTML" value="2" />
-          <entry key="JAVA" value="462" />
+          <entry key="JAVA" value="522" />
           <entry key="Kotlin" value="11" />
-          <entry key="Properties" value="34" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Properties" value="54" />
           <entry key="SQL" value="1" />
-          <entry key="XML" value="12" />
+          <entry key="XML" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="47" />
+          <entry key="dummy" value="61" />
           <entry key="html" value="15" />
-          <entry key="java" value="10237" />
+          <entry key="java" value="13386" />
           <entry key="kt" value="3083" />
-          <entry key="properties" value="504" />
+          <entry key="properties" value="1072" />
           <entry key="txt" value="38" />
-          <entry key="xml" value="18" />
+          <entry key="xml" value="359" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="15" />
-          <entry key="JAVA" value="10237" />
+          <entry key="JAVA" value="13384" />
           <entry key="Kotlin" value="3083" />
-          <entry key="PLAIN_TEXT" value="85" />
-          <entry key="Properties" value="504" />
-          <entry key="XML" value="18" />
+          <entry key="PLAIN_TEXT" value="99" />
+          <entry key="Properties" value="1072" />
+          <entry key="SQL" value="1" />
+          <entry key="Spring Data QL" value="1" />
+          <entry key="XML" value="359" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="42" />
+          <entry key="project.closed" value="54" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="1" />
@@ -224,19 +270,20 @@
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.27" value="2" />
-          <entry key="project.open.time.28" value="5" />
-          <entry key="project.open.time.29" value="2" />
+          <entry key="project.open.time.28" value="6" />
+          <entry key="project.open.time.29" value="3" />
           <entry key="project.open.time.30" value="2" />
           <entry key="project.open.time.31" value="1" />
-          <entry key="project.open.time.33" value="2" />
+          <entry key="project.open.time.33" value="3" />
           <entry key="project.open.time.34" value="1" />
-          <entry key="project.open.time.35" value="3" />
-          <entry key="project.open.time.36" value="3" />
-          <entry key="project.open.time.37" value="1" />
-          <entry key="project.open.time.38" value="2" />
-          <entry key="project.open.time.39" value="1" />
+          <entry key="project.open.time.35" value="5" />
+          <entry key="project.open.time.36" value="4" />
+          <entry key="project.open.time.37" value="2" />
+          <entry key="project.open.time.38" value="3" />
+          <entry key="project.open.time.39" value="3" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.40" value="1" />
+          <entry key="project.open.time.41" value="2" />
           <entry key="project.open.time.45" value="3" />
           <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.50" value="1" />
@@ -244,7 +291,7 @@
           <entry key="project.open.time.75" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="45" />
+          <entry key="project.opened" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.mvc.usages" />
@@ -256,37 +303,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/career-trend-service/src/main/resources/application.properties">
+        <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/io/ctsa/apigateway/ApiGatewayApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+            <state relative-caret-position="322">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/careers-service/src/main/resources/application.properties">
+        <entry file="file://$PROJECT_DIR$/api-gateway/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+            <state relative-caret-position="-299">
+              <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/resources/application.properties">
+        <entry file="file://$PROJECT_DIR$/api-gateway/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+            <state relative-caret-position="69">
+              <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -321,39 +359,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/prediction/storage/SmoothingParamsRepository.java" />
-        <option value="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/prediction/redis/SmoothingParamsRepository.java" />
-        <option value="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/repository/SalaryRepository.java" />
-        <option value="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/repository/SupportingInformationRepository.java" />
-        <option value="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/service/SmoothingParamsService.kt" />
-        <option value="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/service/HumanResourcesService.kt" />
-        <option value="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/service/SupportingInformationService.kt" />
-        <option value="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/service/SalaryService.kt" />
-        <option value="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/CareerTrendServiceApplication.java" />
-        <option value="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/prediction/heuristicsearch/HillClimbingFunction.kt" />
-        <option value="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/prediction/heuristicsearch/SmoothingParameterOptimization.kt" />
-        <option value="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/prediction/heuristicsearch/SmoothingParameterOptimization.java" />
-        <option value="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/prediction/storage/SmoothingParams.java" />
-        <option value="$PROJECT_DIR$/vietnamworks-scraper/src/main/java/io/anhkhue/ctsa/vietnamworksscraper/scraper/datacleaner/DataCleaner.java" />
-        <option value="$PROJECT_DIR$/vietnamworks-scraper/src/main/java/io/anhkhue/ctsa/vietnamworksscraper/model/Recruitment.java" />
-        <option value="$PROJECT_DIR$/vietnamworks-scraper/src/main/java/io/anhkhue/ctsa/vietnamworksscraper/VietnamworksScraperApplication.java" />
-        <option value="$PROJECT_DIR$/vietnamworks-scraper/src/main/java/io/anhkhue/ctsa/vietnamworksscraper/scraper/collector/VietnamworksCollector.java" />
-        <option value="$PROJECT_DIR$/vietnamworks-scraper/src/main/java/io/anhkhue/ctsa/vietnamworksscraper/scraper/persistence/DataPersistence.java" />
-        <option value="$PROJECT_DIR$/elasticsearch-service/src/main/java/io/ctsa/elasticsearchservice/model/Keyword.java" />
-        <option value="$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/model/BusinessField.java" />
-        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/model/RequiredSkill.java" />
-        <option value="$PROJECT_DIR$/elasticsearch-service/src/main/java/io/ctsa/elasticsearchservice/communicator/careersservice/CareersServiceWebClient.java" />
-        <option value="$PROJECT_DIR$/vietnamworks-scraper/src/main/java/io/anhkhue/ctsa/vietnamworksscraper/model/Keyword.java" />
-        <option value="$PROJECT_DIR$/vietnamworks-scraper/src/main/java/io/anhkhue/ctsa/vietnamworksscraper/communicator/careersservice/CareersServiceWebClient.java" />
-        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/model/Skill.java" />
-        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/model/SkillType.java" />
-        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/communicator/communicator/warehouseservice/WarehouseWebClient.java" />
-        <option value="$PROJECT_DIR$/warehouse-service/pom.xml" />
-        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/communicator/careersservice/CareersServiceCommunicator.java" />
-        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/exception/NoPositionFoundException.java" />
-        <option value="$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/model/Keyword.java" />
-        <option value="$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/model/SkillType.java" />
-        <option value="$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/repository/KeywordRepository.java" />
         <option value="$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/service/KeywordService.java" />
         <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/communicator/careersservice/CareersServiceWebClient.java" />
         <option value="$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/controller/KeywordController.java" />
@@ -364,14 +369,47 @@
         <option value="$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/service/PositionService.java" />
         <option value="$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/controller/PositionController.java" />
         <option value="$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/model/Position.java" />
-        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/repository/RequiredSkillRepository.java" />
         <option value="$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/model/Skill.java" />
-        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/service/RequiredSkillService.java" />
         <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/controller/RequiredSkillController.java" />
-        <option value="$PROJECT_DIR$/warehouse-service/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/career-trend-service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/service/RequiredSkillService.java" />
+        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/repository/RequiredSkillRepository.java" />
+        <option value="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/stream/producer/ProducerChannel.java" />
+        <option value="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/stream/producer/MessageCreator.java" />
+        <option value="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/stream/messagepayload/warehousemodel/Recruitment.java" />
+        <option value="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/stream/messagepayload/warehousemodel/RecruitmentMessagePayload.java" />
+        <option value="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/stream/producer/ProducerChannels.java" />
+        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/stream/consumer/ConsumerChannels.java" />
+        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/stream/consumer/MessageEndpoint.java" />
+        <option value="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/CompanyManagementApplication.java" />
+        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/stream/consumer/RecruitmentMessageEndpoint.java" />
+        <option value="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/service/RecruitmentService.java" />
+        <option value="$PROJECT_DIR$/company-management/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/company-management/pom.xml" />
+        <option value="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/stream/producer/StreamProducer.java" />
+        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/stream/consumer/StreamConsumer.java" />
+        <option value="$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/model/RecruitmentHasSkill.java" />
+        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/model/RequiredSkill.java" />
+        <option value="$PROJECT_DIR$/eureka-service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/config-service/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-service/pom.xml" />
         <option value="$PROJECT_DIR$/careers-service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/CareersServiceApplication.java" />
+        <option value="$PROJECT_DIR$/elasticsearch-service/pom.xml" />
+        <option value="$PROJECT_DIR$/elasticsearch-service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/warehouse-service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/careers-service/pom.xml" />
+        <option value="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/WarehouseServiceApplication.java" />
         <option value="$PROJECT_DIR$/results-suggestions-service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/warehouse-service/pom.xml" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/pom.xml" />
+        <option value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/ResultsSuggestionsServiceApplication.java" />
+        <option value="$PROJECT_DIR$/career-trend-service/pom.xml" />
+        <option value="$PROJECT_DIR$/career-trend-service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/CareerTrendServiceApplication.java" />
+        <option value="$PROJECT_DIR$/api-gateway/src/main/java/GatewayDiscoveryConfiguration.java" />
+        <option value="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/api-gateway/src/main/java/io/ctsa/apigateway/ApiGatewayApplication.java" />
+        <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
       </list>
     </option>
   </component>
@@ -399,10 +437,27 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="api-gateway" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="api-gateway" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="20" />
-    <option name="width" value="1024" />
-    <option name="height" value="740" />
+    <option name="x" value="960" />
+    <option name="y" value="27" />
+    <option name="width" value="960" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -438,43 +493,44 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="ctsa-capstone-microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="warehouse-service" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ctsa-capstone-microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="warehouse-service" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ctsa-capstone-microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="warehouse-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ctsa-capstone-microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="warehouse-service" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ctsa-capstone-microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="warehouse-service" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="warehouseservice" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ctsa-capstone-microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="warehouse-service" type="462c0819:PsiDirectoryNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="apigateway" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ctsa-capstone-microservices" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api-gateway" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
@@ -483,7 +539,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -496,9 +551,9 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540998491387" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541834862566" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../redis-test/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api-gateway/pom.xml" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -518,10 +573,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="io.ctsa.companymanagement.stream.messagepayload.warehousemodel" />
       <recent name="io.ctsa.careertrendservice.prediction.heuristicsearch.function" />
       <recent name="io.ctsa.resultssuggestionsservice.repository.centroid" />
       <recent name="io.ctsa.resultssuggestionsservice.exception" />
       <recent name="io.ctsa.resultssuggestionsservice.service" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="io.ctsa.apigateway" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice" />
@@ -560,7 +619,14 @@
     </option>
     <option name="contentProportion" value="0.22234273" />
   </component>
-  <component name="RunManager" selected="Spring Boot.CareersServiceApplication">
+  <component name="RunManager" selected="Spring Boot.WarehouseServiceApplication">
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="api-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.ctsa.apigateway.ApiGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CareerTrendServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="career-trend-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="io.ctsa.careertrendservice.CareerTrendServiceApplication" />
@@ -571,6 +637,13 @@
     <configuration name="CareersServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="careers-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="io.ctsa.careersservice.CareersServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CompanyManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="company-management" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.ctsa.companymanagement.CompanyManagementApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -626,6 +699,8 @@
       <item itemvalue="Spring Boot.VietnamworksScraperApplication" />
       <item itemvalue="Spring Boot.ResultsSuggestionsServiceApplication" />
       <item itemvalue="Spring Boot.CareerTrendServiceApplication" />
+      <item itemvalue="Spring Boot.CompanyManagementApplication" />
+      <item itemvalue="Spring Boot.ApiGatewayApplication" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -699,7 +774,19 @@
       <workItem from="1540889693856" duration="612000" />
       <workItem from="1540949758568" duration="739000" />
       <workItem from="1540954767937" duration="2155000" />
-      <workItem from="1540996906022" duration="1126000" />
+      <workItem from="1540996906022" duration="1265000" />
+      <workItem from="1541054392355" duration="10824000" />
+      <workItem from="1541113867743" duration="599000" />
+      <workItem from="1541128745381" duration="1807000" />
+      <workItem from="1541223371973" duration="829000" />
+      <workItem from="1541321851921" duration="4611000" />
+      <workItem from="1541339111378" duration="952000" />
+      <workItem from="1541387573359" duration="1015000" />
+      <workItem from="1541562696168" duration="13147000" />
+      <workItem from="1541581596579" duration="3037000" />
+      <workItem from="1541660930220" duration="1264000" />
+      <workItem from="1541745467293" duration="1402000" />
+      <workItem from="1541827452534" duration="7261000" />
     </task>
     <task id="LOCAL-00001" summary="Remove unnecessary @NonNull annotations in models. Create results-suggestions-service in replacement for students-results-service.">
       <created>1539141464571</created>
@@ -752,13 +839,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251186000" />
+    <option name="totallyTimeSpent" value="298073000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="28" width="1920" height="1052" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8067318" visible="true" weight="0.30929488" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8067318" visible="true" weight="0.30235043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -777,18 +864,18 @@
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946582" weight="0.44047618" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005342" side_tool="true" weight="0.32790446" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32899022" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32822758" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="12" sideWeight="0.49946582" weight="0.32899022" />
       <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49946582" weight="0.32790446" />
-      <window_info anchor="bottom" id="Run Dashboard" order="14" visible="true" weight="0.4169381" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="14" visible="true" weight="0.39059082" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32899022" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32959402" />
       <window_info anchor="right" id="Database" order="6" weight="0.32959402" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -866,38 +953,10 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/repository/SkillRepository.java">
+    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/service/SkillTypeService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/service/BusinessFieldService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/service/SkillService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/model/RequiredSkill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        <state relative-caret-position="276">
+          <caret line="18" column="74" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -908,163 +967,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vietnamworks-scraper/src/main/java/io/anhkhue/ctsa/vietnamworksscraper/model/Keyword.java">
+    <entry file="file://$PROJECT_DIR$/elasticsearch-service/src/main/java/io/ctsa/elasticsearchservice/controller/ElasticsearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vietnamworks-scraper/src/main/java/io/anhkhue/ctsa/vietnamworksscraper/communicator/careersservice/CareersServiceWebClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vietnamworks-scraper/src/main/java/io/anhkhue/ctsa/vietnamworksscraper/scraper/datacleaner/DataCleaner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/model/SkillType.java" />
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/communicator/communicator/elasticsearch/ElasticsearchWebClient.java" />
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/communicator/communicator/warehouseservice/WarehouseCommunicator.java" />
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/communicator/communicator/Communicator.java" />
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/communicator/communicator/elasticsearch/ElasticsearchCommunicator.java" />
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/communicator/communicator/warehouseservice/WarehouseWebClient.java" />
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/model/Skill.java" />
-    <entry file="file://$PROJECT_DIR$/vietnamworks-scraper/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="35" column="21" selection-start-line="32" selection-start-column="8" selection-end-line="35" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warehouse-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/communicator/careersservice/CareersServiceCommunicator.java" />
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/exception/NoKeywordFoundException.java" />
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/exception/NoPositionFoundException.java" />
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/exception/NoSkillFoundException.java" />
-    <entry file="file://$PROJECT_DIR$/career-trend-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/communicator/Communicator.java" />
-    <entry file="file://$PROJECT_DIR$/vietnamworks-scraper/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="52" lean-forward="true" selection-start-line="2" selection-end-line="3" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/model/Keyword.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/model/SkillType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/service/KeywordService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vietnamworks-scraper/src/main/java/io/anhkhue/ctsa/vietnamworksscraper/scraper/collector/VietnamworksCollector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="107" column="34" lean-forward="true" selection-start-line="107" selection-start-column="34" selection-end-line="107" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/communicator/careersservice/CareersServiceWebClient.java" />
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/controller/SkillController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/repository/SkillTypeRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/service/SkillTypeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="18" column="74" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/controller/SkillTypeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="25" column="29" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/service/PositionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/controller/PositionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/repository/RecruitmentRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/model/Position.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/controller/KeywordController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/controller/BusinessFieldController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="414">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1075,84 +981,366 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/repository/RequiredSkillRepository.java">
+    <entry file="file://$PROJECT_DIR$/vietnamworks-scraper/src/main/java/io/anhkhue/ctsa/vietnamworksscraper/scraper/converter/CtsaConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        <state relative-caret-position="92">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/model/Skill.java">
+    <entry file="file://$PROJECT_DIR$/vietnamworks-scraper/src/main/java/io/anhkhue/ctsa/vietnamworksscraper/scraper/datacleaner/DataCleaner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        <state relative-caret-position="690">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/repository/KeywordRepository.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.10.RELEASE/spring-data-commons-2.0.10.RELEASE.jar!/org/springframework/data/domain/PageRequest.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="276">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/service/RequiredSkillService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/controller/RequiredSkillController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="621">
+          <caret line="32" column="87" selection-start-line="32" selection-start-column="87" selection-end-line="32" selection-end-column="87" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/WarehouseServiceApplication.java">
+    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/repository/RequiredSkillRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#263#264#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="529">
+          <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/controller/CompanyController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///opt/java/jdk1.8.0_181/src.zip!/java/util/Date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="176" column="11" selection-start-line="176" selection-start-column="11" selection-end-line="176" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/controller/RecruitmentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/model/Recruitment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="51" column="43" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="51" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/CompanyManagementApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/service/RecruitmentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company-management/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/stream/producer/ProducerChannels.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/stream/producer/StreamProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company-management/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1058">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/stream/consumer/ConsumerChannels.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/stream/consumer/StreamConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/model/RecruitmentHasSkill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/company-management/src/main/java/io/ctsa/companymanagement/stream/payload/warehouse/RecruitmentMessagePayload.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/service/RecruitmentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/model/Recruitment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="30" column="15" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/model/RequiredSkill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="634">
+          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <folding>
+            <element signature="e#881#882#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-service/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-service/src/main/java/io/ctsa/eurekaservice/EurekaServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding>
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="45" column="4" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/careers-service/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/CareersServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#259#260#0" expanded="true" />
+            <element signature="e#326#327#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticsearch-service/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticsearch-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="47" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/mvnw.cmd">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warehouse-service/src/main/java/io/ctsa/warehouseservice/WarehouseServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+        <state relative-caret-position="138">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warehouse-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa/resultssuggestionsservice/ResultsSuggestionsServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/career-trend-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/career-trend-service/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="44" selection-start-column="44" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/CareerTrendServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
-          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <caret line="11" column="64" lean-forward="true" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/careers-service/src/main/java/io/ctsa/careersservice/controller/SkillController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="40" column="98" selection-start-line="40" selection-start-column="98" selection-end-line="40" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/careers-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-213">
+          <caret line="11" column="59" lean-forward="true" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/io/ctsa/apigateway/GatewayDiscoveryConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-299">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api-gateway/src/main/java/io/ctsa/apigateway/ApiGatewayApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1173,7 +1361,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>JPA (results-suggestions-service)|JPA</last-edited>
+          <last-edited>Kotlin</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1208,11 +1396,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Kotlin|results-suggestions-service</last-edited>
+          <last-edited>api-gateway</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

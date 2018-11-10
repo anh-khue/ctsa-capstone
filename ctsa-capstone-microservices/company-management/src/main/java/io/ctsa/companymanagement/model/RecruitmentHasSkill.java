@@ -15,11 +15,10 @@ public class RecruitmentHasSkill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NonNull
     private int recruitmentId;
-    @NonNull
     private int skillId;
     private String skillName;
+    private int skillTypeId;
 
     @Override
     public boolean equals(Object o) {

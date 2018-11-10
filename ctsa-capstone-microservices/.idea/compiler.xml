@@ -7,8 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="api-gateway" />
         <module name="career-trend-service" />
         <module name="careers-service" />
+        <module name="company-management" />
         <module name="config-service" />
         <module name="elasticsearch-service" />
         <module name="eureka-service" />
@@ -18,8 +20,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api-gateway" target="1.8" />
       <module name="career-trend-service" target="1.8" />
       <module name="careers-service" target="1.8" />
+      <module name="company-management" target="1.8" />
       <module name="config-service" target="1.8" />
       <module name="elasticsearch-service" target="1.8" />
       <module name="eureka-service" target="1.8" />
