@@ -54,7 +54,7 @@ public class RecruitmentController {
                 : status(CONFLICT).build();
     }
 
-    @PutMapping(value = "/recruitment/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/recruitment/{id}", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public ResponseEntity updateRecruitment(@PathVariable("id") int recruitmentId,
                                             @RequestBody Recruitment modifiedData) {
         try {
@@ -64,11 +64,11 @@ public class RecruitmentController {
         }
     }
 
-    @PutMapping(value = "/recruitment/{id}/status", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/recruitment/{id}/publish", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public ResponseEntity updateStatus(@PathVariable("id") int recruitmentId,
-                                       @RequestParam("status") int status) {
+                                       @RequestParam("published") int published) {
         try {
-            return status(OK).body(recruitmentService.updateStatus(recruitmentId, status));
+            return status(OK).body(recruitmentService.updateStatus(recruitmentId, published));
         } catch (RecruitmentNotFoundException e) {
             return status(NO_CONTENT).build();
         }

@@ -39,7 +39,11 @@ public class RecruitmentService {
     }
 
     public List<Recruitment> getAll() {
-        return recruitmentRepository.findAll();
+        List<Recruitment> list = recruitmentRepository.findAll();
+        for (Recruitment recruitment : list) {
+            recruitment.setSkills(getRecruitmentSkills(recruitment.getId()));
+        }
+        return list;
     }
 
     public Page<Recruitment> getAllByPage(int pageNumber, int itemsPerPage) {
@@ -77,8 +81,7 @@ public class RecruitmentService {
 
     public Recruitment create(Recruitment recruitment) {
         try {
-//            recruitmentRepository.saveAndFlush(recruitment);
-            streamProducer.sendMessage(new RecruitmentMessagePayload(recruitment));
+            recruitmentRepository.saveAndFlush(recruitment);
 
             return recruitment;
         } catch (Exception e) {
@@ -90,10 +93,10 @@ public class RecruitmentService {
 
     public Recruitment updateStatus(int recruitmentId, int status) throws RecruitmentNotFoundException {
         return recruitmentRepository.findById(recruitmentId)
-                                    .map(recruitment -> {
-                                        recruitment.setPublished(status);
-                                        return recruitment;
-                                    }).orElseThrow(RecruitmentNotFoundException::new);
+                .map(recruitment -> {
+                    recruitment.setPublished(status);
+                    return recruitment;
+                }).orElseThrow(RecruitmentNotFoundException::new);
     }
 
     public Recruitment updateRecruitment(int recruitmentId, Recruitment modifiedData) throws RecruitmentNotFoundException {
@@ -141,10 +144,5 @@ public class RecruitmentService {
                                  return recruitment;
                              })
                              .orElseThrow(RecruitmentNotFoundException::new);
-    }
-
-    public Page<Recruitment> getByCompanyIdAndPublished(int companyId, int status, int pageNumber, int itemsPerPage) {
-        Pageable pageable = PageRequest.of(pageNumber - 1, itemsPerPage);
-        return recruitmentRepository.findByCompanyIdAndPublished(pageable, companyId, status);
     }
 }
