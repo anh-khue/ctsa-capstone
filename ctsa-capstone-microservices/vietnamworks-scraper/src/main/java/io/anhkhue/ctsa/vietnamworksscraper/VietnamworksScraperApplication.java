@@ -1,18 +1,15 @@
 package io.anhkhue.ctsa.vietnamworksscraper;
 
-import io.anhkhue.ctsa.vietnamworksscraper.scraper.collector.CollectedDataModel;
 import io.anhkhue.ctsa.vietnamworksscraper.scraper.collector.VietnamworksCollector;
 import io.anhkhue.ctsa.vietnamworksscraper.scraper.persistence.DataPersistence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
-
+@EnableEurekaClient
 @SpringBootApplication
 public class VietnamworksScraperApplication {
 

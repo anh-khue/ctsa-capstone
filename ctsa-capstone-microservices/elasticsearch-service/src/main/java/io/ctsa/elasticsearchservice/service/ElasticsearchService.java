@@ -3,11 +3,13 @@ package io.ctsa.elasticsearchservice.service;
 import io.ctsa.elasticsearchservice.communicator.careersservice.CareersServiceWebClient;
 import io.ctsa.elasticsearchservice.communicator.elasticsearch.ElasticsearchWebClient;
 import io.ctsa.elasticsearchservice.model.Keyword;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@EnableEurekaClient
 @Service
 public class ElasticsearchService {
 
