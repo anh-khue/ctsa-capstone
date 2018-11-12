@@ -1,22 +1,14 @@
 body {
     background-color: #ff7d1f !important;
-    /* background-color: #fff691 !important; */
     background: url("https://wallpaperlayer.com/img/2015/4/awesome-yellow-wallpaper-76-120-hd-wallpapers.jpg") no-repeat;
 }
 
 #content {
     border-radius: 20px 20px 20px 20px;
-    height: calc(100vh - 200px);
     top: 10px;
     margin-bottom: 50px;
-    /* min-height: 800px;  */
     height: 80%;
-    padding-left:2%;
-    padding-right:2%;
-    padding-top:1%;
-    padding-bottom:1%;
-    
-    
+    padding: 1% 2%;
 }
 
 .container-fluid {
@@ -25,36 +17,36 @@ body {
 }
 
 .folder {
-    /* background: url("../images/world-map.png") no-repeat; */
-    /* background-size: 95% 95%; */
     background-color: rgb(235, 231, 231);
-    /* background-attachment: fixed; */
-    /* background-position: center;  */
     background-position-y: 20%;
-    /* box-shadow: black 0 5px 10px 0; */
     z-index: 20;
 }
-.job-descript{
+
+.job-description {
     font-size: 1.2em;
 }
 
 .pagination {
-    margin-top:2%;
+    margin-top: 2%;
 }
+
 .page-link {
     color: #ff7d1f
 }
-.pagi-button-selected {
+
+.page-selected {
     color: white;
     background-color: #ff7d1f;
     outline: none
 }
+
 .page-link:hover {
     color: #ff7d1f;
     border: 1px solid #ff7d1f;
     background-color: white
 }
+
 .pagination > li > a {
-      border-radius: 50% !important;
-      margin: 0 5px;
+    border-radius: 50% !important;
+    margin: 0 5px;
 }

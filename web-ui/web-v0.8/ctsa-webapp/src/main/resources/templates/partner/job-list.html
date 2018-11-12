@@ -31,7 +31,7 @@
 
 <!-- Header -->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height: 45px">
-    <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand" href="../index.html">
         <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/logoctsa.png"
              width="90" height="27" class="d-inline-block align-top" alt="CTSA logo">
     </a>
@@ -63,7 +63,7 @@
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
-                        <li class="page-item"><a class="page-link pagi-button-selected" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link page-selected" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
                         <li class="page-item">
@@ -170,7 +170,7 @@
                         + '</div>'
                         + '<div class="col-md-7">'
                         + '' + (url + '<a href="/"><h2>' + list[i].id) + '' + list[i].title + '</h2></a>'
-                        + '<p class="job-descript">' + truncateText(list[i].jobDescription, 250) + '</p>'
+                        + '<p class="job-description">' + truncateText(list[i].jobDescription, 250) + '</p>'
                         + '<div class="pt-5">';
 
                     var j;

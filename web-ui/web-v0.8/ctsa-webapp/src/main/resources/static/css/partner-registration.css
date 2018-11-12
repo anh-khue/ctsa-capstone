@@ -6,17 +6,10 @@ body {
 
 #content {
     border-radius: 20px 20px 20px 20px;
-    height: calc(100vh - 200px);
     top: 10px;
     margin-bottom: 50px;
-    /* min-height: 800px;  */
     height: 80%;
-    padding-left:2%;
-    padding-right:2%;
-    padding-top:1%;
-    padding-bottom:1%;
-    
-    
+    padding: 1% 2%;
 }
 
 .container-fluid {
@@ -25,12 +18,7 @@ body {
 }
 
 .folder {
-    /* background: url("../images/world-map.png") no-repeat; */
-    /* background-size: 95% 95%; */
     background-color: rgb(235, 231, 231);
-    /* background-attachment: fixed; */
-    /* background-position: center;  */
     background-position-y: 20%;
-    /* box-shadow: black 0 5px 10px 0; */
     z-index: 20;
 }

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
 
 <head>
     <meta charset="utf-8"/>
@@ -18,8 +20,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
           rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet"
-          href=".\css\style.css">
+          th:href="@{css/style.css}">
+    <!-- Services Routes -->
+    <script th:src="@{js/services-routes.js}"></script>
 </head>
 
 <body id="homebody">
@@ -38,55 +43,20 @@
     });
 </script>
 <!-- Header -->
+<div th:replace="fragments/general.html :: header"></div>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark"
-     style="height: 45px">
-    <a class="navbar-brand"
-       href=".\index.html">
-        <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/logoctsa.png"
-             width="90"
-             height="27"
-             class="d-inline-block align-top"
-             alt="CTSA logo">
-    </a>
-
-    <div class="collapse navbar-collapse  justify-content-center  menu"
-         id="navbarSupportedContent">
-        <a class="mx-5"
-           href="#">Tuyển Dụng</a>
-        <a class="mx-5"
-           href=".\graph.html">Thống Kê</a>
-        <a class="mx-5"
-           href="#">Tuyển Dụng</a>
-        <a class="mx-5"
-           href="#">Thống Kê</a>
-
-    </div>
-    <span class="fa-stack">
-            <i class="	fa fa-user-circle-o fa-stack-1x"
-               style="font-size:36px; color:white"></i>
-        </span>
-</nav>
-<!-- End of Header -->
-
-<!-- Content DIV -->
+<!-- Content -->
 <div class="container-fluid">
     <div class="row justify-content-between">
         <!-- Company summary detail div -->
         <div class="col-md-6 img-logo">
-            <!-- <a href="#">
-                <img alt="Ranking Image"
-                     src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237111/demo-image/ranking2.png">
-            </a> -->
-
             <img alt="Ranking Image"
                  src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541714808/demo-image/slogan-ctsa.png">
-
         </div>
 
-        <div class="col-md-5 mr-3 forminput">
+        <div class="col-md-5 mr-3 form-input">
             <div style="text-align: right; margin-top:5%; margin-right: 8%">
-                <a href=".\index.html">
+                <a href="/trang-chu">
                     <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/logoctsa.png"
                          alt="CTSA logo">
                 </a>
@@ -124,7 +94,7 @@
                     </div>
                 </div>
             </div>
-            <div id="askform"
+            <div id="askForm"
                  class="hideaway">
                     <span class="head1 form-question"
                           style="font-size: 24px">
@@ -210,7 +180,7 @@
                 </div>
             </div>
 
-            <div id="ITAskform"
+            <div id="itAskForm"
                  class="hideaway">
                     <span class="head1 form-question"
                           style="font-size: 24px">
@@ -239,16 +209,16 @@
 <script>
     // Pupils clicked
     $("#student").on('click', () => {
-        $("#choose").hide(600);
-        $("#askform").show(600);
-        $(".role1").slideDown(600);
+        $("#choose").hide(600)
+        $("#askForm").show(600)
+        $(".role1").slideDown(600)
     })
 
     // Freshmen clicked
     $("#college").on('click', () => {
-        $("#choose").hide(600);
-        $("#ITAskform").show(600);
-        $(".role1").slideDown(600);
+        $("#choose").hide(600)
+        $("#itAskForm").show(600)
+        $(".role1").slideDown(600)
     })
 
     let count = 0;
@@ -271,13 +241,13 @@
             .then((response) => {
                 let subjects = response.data
                 subjects.forEach(subject => {
-                    let subjectButton = $('<button>', {
+                    $('<button>', {
                         class: 'btn btn-outline-dark my-2 mx-1 rolebtn',
                         value: subject.id,
                         text: subject.vietnamese,
                         onclick: 'chooseSubject(this)'
                     }).appendTo(subjectsSelector)
-                });
+                })
             })
 
         let positionsSelector = $('#choosePosition')
@@ -287,13 +257,13 @@
             .then((response) => {
                 let positions = response.data
                 positions.forEach(position => {
-                    let positionButton = $('<button>', {
+                    $('<button>', {
                         class: 'btn btn-outline-dark my-2 mx-1 rolebtn',
                         value: position.id,
                         text: position.name,
                         onclick: 'choosePosition(this)'
                     }).appendTo(positionsSelector)
-                });
+                })
             })
     })
 
@@ -303,7 +273,7 @@
                 sessionStorage.setItem('position', JSON.stringify(response.data))
             })
             .then(() => {
-                window.location = 'summary.html'
+                window.location = '/thong-tin'
             })
     }
 
@@ -318,7 +288,7 @@
             let subjectsMarks = $('#subjectsMarks')
             subjectsMarks.slideDown(600)
             subjectsMarks.empty()
-            for (var i = 0 in pupilInput.highSchoolTopInputs) {
+            for (let i = 0; i < pupilInput.highSchoolTopInputs.length; i++) {
                 subjectsMarks.append(createMarkInput(pupilInput.highSchoolTopInputs[i], highSchoolTopInputNames[i]))
             }
         }
@@ -343,12 +313,12 @@
             class: 'row mx-2'
         })
 
-        let name = $('<button>', {
+        $('<button>', {
             class: 'btn btn-outline-dark my-2 mx-1 selected col-md-2',
             text: vietnamese,
         }).appendTo(subjectDiv)
 
-        let markInput = $('<input>', {
+        $('<input>', {
             type: 'number',
             step: '0.1',
             id: 'mark' + subject.weight,
@@ -363,7 +333,7 @@
     }
 
     function retrieveMark(inputField) {
-        let mark = inputField.value;
+        let mark = inputField.value
         if (event.keyCode === 13 &&
             document.getElementById("mark1").value !== "" &&
             document.getElementById("mark2").value !== "" &&
@@ -373,10 +343,10 @@
                 subject.mark = $('#mark' + subject.weight).val()
             })
 
-            $(".role1").slideUp(600);
-            $(".role3").slideUp(600);
-            $("#confirm").hide(600);
-            $(".role2").slideDown(600);
+            $(".role1").slideUp(600)
+            $(".role3").slideUp(600)
+            $("#confirm").hide(600)
+            $(".role2").slideDown(600)
         }
     }
 
@@ -384,10 +354,10 @@
         if (event.keyCode === 13) {
             pupilInput.highSchoolAverage = inputAverage.value
 
-            $(".role1").slideUp(600);
-            $(".role2").slideUp(600);
-            $(".role3").slideDown(600);
-            $("#confirm").hide(600);
+            $(".role1").slideUp(600)
+            $(".role2").slideUp(600)
+            $(".role3").slideDown(600)
+            $("#confirm").hide(600)
         }
     }
 
@@ -402,7 +372,7 @@
             .then((response) => {
                 sessionStorage.setItem('suggestions', JSON.stringify(response.data))
                 sessionStorage.setItem('pupilInput', JSON.stringify(pupilInput))
-                window.location = 'result.html'
+                window.location = '/ket-qua'
             })
     }
 
@@ -410,45 +380,45 @@
         $(".role1").slideUp(600);
         $(".role2").slideUp(600);
         $("#confirm").show(600);
-    });
+    })
 
     $(".head1").click(function () {
-        $(".role2").slideUp(600);
-        $(".role3").slideUp(600);
-        $(".role1").slideDown(600);
+        $(".role2").slideUp(600)
+        $(".role3").slideUp(600)
+        $(".role1").slideDown(600)
 
-        $("#confirm").hide(600);
+        $("#confirm").hide(600)
     });
 
     $(".head2").click(function () {
-        $(".role1").slideUp(600);
-        $(".role3").slideUp(600);
-        $("#confirm").hide(600);
-        $(".role2").slideDown(600);
+        $(".role1").slideUp(600)
+        $(".role3").slideUp(600)
+        $("#confirm").hide(600)
+        $(".role2").slideDown(600)
     });
 
     $(".head3").click(function () {
-        $(".role1").slideUp(600);
-        $(".role2").slideUp(600);
-        $(".role3").slideDown(600);
-        $("#confirm").hide(600);
+        $(".role1").slideUp(600)
+        $(".role2").slideUp(600)
+        $(".role3").slideDown(600)
+        $("#confirm").hide(600)
     });
 
     function mouseOverIntrovert() {
         document.getElementById("description").innerHTML = "*<b>Hướng nội</b>: Khuynh "
             + "hướng quan tâm đến cuộc sống tinh thần của bản thân người đó, có xu hướng mở rộng khi"
-            + "suy nghĩ và suy nhược khi phải giao tiếp với những người khác.";
+            + "suy nghĩ và suy nhược khi phải giao tiếp với những người khác."
     }
 
     function mouseOverExtrovert() {
         document.getElementById("description").innerHTML = "*<b>Hướng ngoại</b>: Những "
             + "hành động, trạng thái hay thói quen chủ yếu quan tâm tới việc làm vừa lòng những"
             + " người khác, có xu hướng thích thú khi tương tác, giao tiếp với con người và nói "
-            + "chung là nói nhiều, nhiệt tình, thích giao lưu và quyết đoán";
+            + "chung là nói nhiều, nhiệt tình, thích giao lưu và quyết đoán"
     }
 
     function mouseOut() {
-        document.getElementById("description").innerHTML = "";
+        document.getElementById("description").innerHTML = ""
     }
 </script>
 </body>

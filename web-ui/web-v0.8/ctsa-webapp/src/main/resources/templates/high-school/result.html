@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="vn">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <title>Kết quả</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans"
+          rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet"
+          th:href="@{css/style.css}">
+    <link rel="stylesheet"
+          th:href="@{css/result.css}">
+    <!-- Services Routes -->
+    <script th:src="@{js/services-routes.js}"></script>
+    <!-- JavaScript -->
+    <script th:src="@{js/get-suggestions.js}"></script>
+    <script th:src="@{js/entrance-exam.js}"></script>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">  -->
+</head>
+
+<body>
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+<script>
+    $(window).ready(function () {
+        $('#loader').hide();
+    });
+</script>
+<!-- Header -->
+<div th:replace="fragments/general.html :: header"></div>
+
+<div class="container-fluid">
+    <div id="content-result"
+         class="tab-content col-md-12 folder text-center">
+        <div class="text-center pt-3">
+            <h2>Chào bạn!</h2>
+            <h4>Dựa theo thông tin bạn cung cấp</h4>
+            <h4>Đây là các ngành nghề có thể phù hợp nhất dành cho bạn</h4>
+
+            <!-- Better Suggestions Button -->
+            <button type="button"
+                    class="btn btn-lg selected"
+                    data-toggle="modal"
+                    data-target="#scoreInputModal">
+                Bạn muốn nhận gợi ý chính xác hơn?
+            </button>
+        </div>
+
+        <!-- Suggestions Results -->
+        <div class="row justify-content-around">
+            <div class="col-md-3 text-center result-smaller"
+                 data-toggle="modal"
+                 data-target="#JobDescriptionModal">
+                <span style="font-size: 45px; color:#ff6414; font-weight: bold;">2</span>
+                <div id="suggest2">
+
+                </div>
+            </div>
+            <div class="col-md-3 text-center result">
+                <span style="font-size: 45px; color:#ff6414; font-weight: bold;">1</span>
+                <div id="suggest1">
+
+                </div>
+            </div>
+            <div class="col-md-3 text-center result-smaller">
+                <span style="font-size: 45px; color:#ff6414; font-weight: bold;">3</span>
+                <div id="suggest3">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Entrance Exam Modal -->
+<div class="modal fade"
+     id="scoreInputModal"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="scoreInputModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg"
+         role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"
+                    id="scoreInputModalLabel">Vui lòng chọn <b>điểm thi Đại học</b> dự tính của
+                    bạn phía bên dưới</h4>
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div id="entranceExamInput"
+                 class="row modal-body justify-content-between">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal">Huỷ
+                </button>
+                <button type="button"
+                        class="btn selected"
+                        onclick='getSuggestions()'>Nhận thêm gợi ý
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade"
+     id="jobDescriptionModal"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="jobDescription"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg"
+         role="document">
+        <div class="modal-content">
+            <div class="px-5 pt-4 text-center">
+                <h4>Mô tả</h4>
+                <h5 style="text-align: justify"
+                    id="jobDescription">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-7 ml-3 mb-4">
+                        <h2>Mức lương khởi điểm</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="triangle-left"></div>
+                    <div class="row banner-description justify-content-between my-auto"
+                         style="font-size: 1.8em; font-style: italic">
+                        <div class="col-md-3 ml-5"
+                             style="margin-top:-40px;">
+                            <div class="latest-result-text">
+                                <b id="latestSalaryYear"
+                                   style="color:rgb(240, 240, 240) ">
+
+                                </b>
+                            </div>
+                            <b id="latestSalary"
+                               style="color:rgb(240, 240, 240)">
+
+                            </b>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/money-icon.png"
+                                 alt="Money Icon"
+                                 width="155"
+                                 height="155"
+                                 style="margin-top:-25px; margin-bottom:-20px;">
+                        </div>
+                        <div class="col-md-3 mr-5"
+                             style="text-align: right;margin-top:-40px">
+                            <div class="predict-result-text">
+                                <b id="predictedSalaryYear">
+
+                                </b>
+                            </div>
+                            <b id="predictedSalary">
+
+                            </b>
+                        </div>
+                    </div>
+                    <div class="triangle-right"></div>
+                </div>
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-7 ml-3 mb-4">
+                        <h2>Tổng số nhân lực</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="triangle-left"></div>
+                    <div class="row banner-description justify-content-between my-auto"
+                         style="font-size: 1.8em; font-style: italic">
+                        <div class="col-md-3 ml-5"
+                             style="margin-top:-40px;">
+                            <div class="latest-result-text">
+                                <b id="latestHumanResourceYear"
+                                   style="color:rgb(240, 240, 240) ">
+
+                                </b>
+                            </div>
+                            <b id="latestHumanResource"
+                               style="color:rgb(240, 240, 240)">
+
+                            </b>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237096/demo-image/human-resources.png"
+                                 alt="Money Icon"
+                                 width="155"
+                                 height="155"
+                                 style="margin-top:-25px; margin-bottom:-20px;">
+                        </div>
+                        <div class="col-md-3 mr-5"
+                             style="text-align: right;margin-top:-40px">
+                            <div class="predict-result-text">
+                                <b id="predictedHumanResourceYear">
+
+                                </b>
+                            </div>
+                            <b id="predictedHumanResource">
+
+                            </b>
+                        </div>
+                    </div>
+                    <div class="triangle-right"></div>
+                </div>
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-7 ml-3 mb-4">
+                        <h2>Thông tin bổ sung</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="triangle-left"></div>
+                    <div class="row banner-description justify-content-between my-auto"
+                         style="font-size: 1.8em; font-style: italic">
+                        <div class="col-md-3 ml-5"
+                             style="margin-top:-40px;">
+                            <div class="latest-result-text">
+                                <b id="latestSupportingInformationYear">
+
+                                </b>
+                            </div>
+                            <b id="latestSupportingInformation"
+                               style="color:rgb(240, 240, 240)">
+
+                            </b>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237119/demo-image/additional.png"
+                                 alt="Money Icon"
+                                 width="155"
+                                 height="155"
+                                 style="margin-top:-25px; margin-bottom:-20px;">
+                        </div>
+                        <div class="col-md-3 mr-5"
+                             style="text-align: right;margin-top:-40px">
+                            <div class="predict-result-text">
+                                <b id="predictedSupportingInformationYear">
+
+                                </b>
+                            </div>
+                            <b id="predictedSupportingInformation">
+
+                            </b>
+                        </div>
+                    </div>
+                    <div class="triangle-right"></div>
+                </div>
+            </div>
+            <div class="py-3 text-center text-conclusion ">
+                <h4 class=" py-2 mb-2">Kết luận</h4>
+                <h5 style="text-align:justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+        retrieveSubjects('entranceExamInput')
+
+        let suggestions = JSON.parse(sessionStorage.getItem('suggestions'));
+        showSuggestions(suggestions)
+    }
+
+    function showSuggestions(suggestions) {
+        for (let i = 0; i < 3;) {
+            let suggestion = suggestions[i++]
+
+            let suggestionDiv = $('#suggest' + i)
+            suggestionDiv.empty()
+            suggestionDiv.attr('onclick', 'showInfoModal(' + suggestion.major.id + ')')
+
+            $('<br>').appendTo(suggestionDiv)
+            $('<br>').appendTo(suggestionDiv)
+
+            let wrapper = $('<div>', {
+                class: 'job-result'
+            })
+
+            $('<b>', {
+                text: suggestion.major.vietnamese,
+                style: 'font-size:2em;color:rgb(235, 231, 231)'
+            }).appendTo(wrapper)
+
+            wrapper.appendTo(suggestionDiv)
+
+            $('<br>').appendTo(suggestionDiv)
+            $('<br>').appendTo(suggestionDiv)
+
+            $('<img>', {
+                src: suggestion.major.imageUrl,
+                alt: suggestion.major.vietnamese,
+            }).appendTo(suggestionDiv)
+        }
+    }
+
+    async function showInfoModal(majorId) {
+        let jobPredictionModal = $("#jobDescriptionModal")
+
+        /* Salary */
+        // Latest
+        let latestSalary = $('#latestSalary')
+        let latestSalaryResponse = await axios.get(API_GATEWAY + CAREER_TREND_SERVICE + '/salaries/latest?majorId=' + majorId)
+
+        let latestSalaryYear = $('#latestSalaryYear')
+        latestSalaryYear.empty()
+        latestSalaryYear.html("Số liệu " + latestSalaryResponse.data.year)
+
+        latestSalary.empty()
+        latestSalary.html(numberWithCommas(latestSalaryResponse.data.actual) + '<br/>VNĐ')
+        // Prediction
+        let predictedSalary = $('#predictedSalary')
+        let predictedSalaryResponse = await axios.get(API_GATEWAY + CAREER_TREND_SERVICE + '/salaries/predictions?year=2021&majorId=' + majorId)
+
+        let predictedSalaryYear = $('#predictedSalaryYear')
+        predictedSalaryYear.empty()
+        predictedSalaryYear.html("Dự đoán " + predictedSalaryResponse.data.year)
+
+        predictedSalary.empty()
+        predictedSalary.html(numberWithCommas(predictedSalaryResponse.data.forecast) + '<br/>VNĐ')
+
+        /* Human Resource */
+        // Latest
+        let latestHumanResource = $('#latestHumanResource')
+        let latestHumanResourceResponse = await axios.get(API_GATEWAY + CAREER_TREND_SERVICE + '/human-resources/latest?majorId=' + majorId)
+
+        let latestHumanResourceYear = $('#latestHumanResourceYear')
+        latestHumanResourceYear.empty()
+        latestHumanResourceYear.html("Số liệu " + latestHumanResourceResponse.data.year)
+
+        latestHumanResource.empty()
+        latestHumanResource.html(numberWithCommas(latestHumanResourceResponse.data.actual) + '<br/>người')
+        // Prediction
+        let predictedHumanResource = $('#predictedHumanResource')
+        let predictedHumanResourceResponse = await axios.get(API_GATEWAY + CAREER_TREND_SERVICE + '/human-resources/predictions?year=2021&majorId=' + majorId)
+
+        let predictedHumanResourceYear = $('#predictedHumanResourceYear')
+        predictedHumanResourceYear.empty()
+        predictedHumanResourceYear.html("Dự đoán " + predictedHumanResourceResponse.data.year)
+
+        predictedHumanResource.empty()
+        predictedHumanResource.html(numberWithCommas(Math.round(predictedHumanResourceResponse.data.forecast)) + '<br/>người')
+
+        /* Supporting Information */
+        // Latest
+        let latestSupportingInformation = $('#latestSupportingInformation')
+        let latestSupportingInformationResponse = await axios.get(API_GATEWAY + CAREER_TREND_SERVICE + '/supporting-information/latest?majorId=' + majorId)
+
+        let latestSupportingInformationYear = $('#latestSupportingInformationYear')
+        latestSupportingInformationYear.empty()
+        latestSupportingInformationYear.html("Số liệu " + latestSupportingInformationResponse.data.year)
+
+        latestSupportingInformation.empty()
+        latestSupportingInformation.html(numberWithCommas(latestSupportingInformationResponse.data.actual) + '<br/>'
+            + latestSupportingInformationResponse.data.unit)
+        // Prediction
+        let predictedSupportingInformation = $('#predictedSupportingInformation')
+        let predictedSupportingInformationResponse = await axios.get(API_GATEWAY + CAREER_TREND_SERVICE + '/supporting-information/predictions?year=2021&majorId=' + majorId)
+
+        let predictedSupportingInformationYear = $('#predictedSupportingInformationYear')
+        predictedSupportingInformationYear.empty()
+        predictedSupportingInformationYear.html("Dự đoán " + predictedSupportingInformationResponse.data.year)
+
+        predictedSupportingInformation.empty()
+        predictedSupportingInformation.html(numberWithCommas(Math.round(predictedSupportingInformationResponse.data.forecast)) + '<br/>'
+            + predictedSupportingInformationResponse.data.unit)
+
+        jobPredictionModal.modal("toggle")
+    }
+
+    const numberWithCommas = (x) => {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    }
+
+    function disableScoreInput(obj) {
+        let parent = obj.parentNode.parentNode;
+        let section = parent.getElementsByTagName("section")
+        if ($(obj).is(":checked")) {
+            //disable range input
+            $(section).children().prop('disabled', true)
+            //disable text input
+            $(parent).children().prop('disabled', true)
+            $(parent).addClass("grey-out")
+        } else {
+            $(parent).removeClass("grey-out")
+            $(parent).children().prop('disabled', false)
+            $(parent).children().children().prop('disabled', false);
+        }
+    }
+</script>
+</body>
+
+</html>

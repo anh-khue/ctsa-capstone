@@ -1,19 +1,8 @@
-/* body {
-  background-color: #e9e9e9;
-  margin-top: 2%;
-} */
-
-/* a:focus {
-  outline:0;
-} */
-
 html {
-  /* font-family: 'Muli', sans-serif !important; */
   font-family: 'Open Sans', sans-serif !important;
 }
 
 #homebody {
-  /* background: url("../images/background-ctsa.png") fixed no-repeat center; */
   background: url("https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237103/demo-image/orange-background.jpg") fixed no-repeat center;
   background-size: 100% 100%;
 }
@@ -40,11 +29,6 @@ html {
   transition: 0.3s;
 }
 
-/* .listjob {
-  background-color: white;
-  padding-top: 15px;
-} */
-
 .stylish-panel {
   border: 1px solid rgb(200, 200, 200);
   padding: 1%;
@@ -54,17 +38,13 @@ html {
 
 .hover-stylish-panel {
   margin-top: -5px;
-  /* border: 1px solid #5384cb; */
   box-shadow: #FF7D1F 1px 2px 2px 1px;
-  /* background: rgba(200, 200, 200, 0.1); */
   transition: 0.3s;
   background-color: white
 }
 
 .stylish-panel:hover {
   border: 1px solid #FF7D1F;
-  /* border: 1px solid #5384cb; */
-  /* box-shadow: 0 .5rem 1rem rgba(83, 132, 203, .15); */
   box-shadow: 0 1rem 3rem rgba(60, 74, 165, .175);
   transition: 0.3s;
   background-color: white
@@ -98,7 +78,6 @@ a:hover {
 
 .country-icon:before {
   content: "\2756";
-  /* &#9734; */
   margin-right: 6px;
 }
 
@@ -115,16 +94,14 @@ a:hover {
   display: none;
 }
 
-.forminput {
+.form-input {
   color: rgba(49, 50, 53, 0.76);
-  /* padding-top: 10%; */
 }
 
 #pencil-image {
   max-width: 100%;
   height: auto;
   width: auto\9;
-  /* ie8 */
 }
 
 .selected {
@@ -186,31 +163,12 @@ input {
   }
 }
 
-/* .spinner {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: calc(50% - 20px);
-  left: calc(50% - 20px);
-  background-color: #333;
-  border-radius: 100%;
-  -webkit-animation: sk-scaleout 1s infinite ease-in-out;
-  animation: sk-scaleout 1s infinite ease-in-out
-} */
-
 .spinner {
   background: url('https://res.cloudinary.com/ctsa-capstone/image/upload/v1541343719/demo-image/loader.gif') no-repeat center center;
   position: absolute;
   height: 100%;
   width: 100%;
 }
-
-/* .gif-check{
-  background: url('https://res.cloudinary.com/ctsa-capstone/image/upload/v1541559774/demo-image/button-tick.gif') no-repeat center center;
-   position: absolute;
-  height: 150px;
-  width: 250px;
-} */
 
 .switch {
   position: relative;
@@ -264,7 +222,6 @@ input:checked+.slider:before {
 }
 
 /* Rounded sliders */
-
 .slider.round {
   border-radius: 34px;
 }
