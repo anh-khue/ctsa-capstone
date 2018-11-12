@@ -236,65 +236,35 @@
             <div class="pt-3 pb-2 bg-orange text-white text-center shadow "
                  style="border-top-left-radius: 20px ;
         border-top-right-radius: 20px !important; ">
-                <h4>Xếp hạng</h4>
+                <h4>Chi tiết xếp hạng</h4>
             </div>
             <div class="row modal-body justify-content-between">
                 <table class="table table-bordered">
                     <thead>
                     <tr>
                         <th scope="col"
-                            class="text-center">#
+                            style="font-size: 1.2em"
+                            class="text-center">
+                            #
                         </th>
-                        <th scope="col">Kỹ năng</th>
+                        <th id="skillTypeName"
+                            class="text-center"
+                            style="font-size: 1.2em"
+                            scope="col">
+
+                        </th>
                     </tr>
                     </thead>
-                    <tbody id="skillRank">
-                    <tr>
-                        <th scope="row"
-                            class="text-center">1
-                        </th>
-                        <td>Mark</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"
-                            class="text-center">2
-                        </th>
-                        <td>Jacob</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"
-                            class="text-center">3
-                        </th>
-                        <td>Larry the Bird</td>
-                    </tr>
+                    <tbody id="skillRank"
+                           style="font-size: 1.2em">
+
                     </tbody>
                 </table>
             </div>
             <div class="modal-footer justify-content-center">
                 <ul class="pagination"
                     id="pagination">
-                    <li class="page-item">
-                        <a class="page-link"
-                           href="#"
-                           aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link page-selected"
-                                             href="#">1</a></li>
-                    <li class="page-item"><a class="page-link"
-                                             href="#">2</a></li>
-                    <li class="page-item"><a class="page-link"
-                                             href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link"
-                           href="#"
-                           aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -389,7 +359,7 @@
         if (direction === 'left') {
             let banner = $('<div>', {
                 class: "col-md-9 top-3 top-left",
-                onclick: 'showSkillRank(' + positionId + ',' + skills[0].skillType.id + ',1,5)'
+                onclick: 'openSkillRankModal(' + positionId + ',' + skills[0].skillType.id + ',5)'
             })
 
             let row = $('<div>', {
@@ -437,7 +407,7 @@
         } else {
             let banner = $('<div>', {
                 class: "col-md-9 top-3 top-right",
-                onclick: 'showSkillRank(' + positionId + ',' + skills[0].skillType.id + ',1,5)'
+                onclick: 'openSkillRankModal(' + positionId + ',' + skills[0].skillType.id + ',5)'
             })
 
             let row = $('<div>', {
@@ -485,7 +455,18 @@
         }
     }
 
+    async function openSkillRankModal(positionId, skillTypeId, skillsPerPage) {
+        generatePagination(positionId, skillTypeId, skillsPerPage)
+
+        showSkillRank(positionId, skillTypeId, 1, skillsPerPage)
+
+        $('#skillRankModal').modal("toggle")
+    }
+
     async function showSkillRank(positionId, skillTypeId, page, skillsPerPage) {
+        $('.page-selected').removeClass('page-selected')
+        $('#skillPage' + page).addClass('page-selected')
+
         let ids = []
 
         let idsResponse = await axios.get(API_GATEWAY + WAREHOUSE_SERVICE + '/required_skills/top?'
@@ -505,7 +486,11 @@
             let skillRank = $('#skillRank')
             skillRank.empty()
 
-            let count = 0
+            let skillTypeName = $('#skillTypeName')
+            skillTypeName.empty()
+            skillTypeName.html(skillsResponse.data[0].skillType.vietnamese)
+
+            let count = (page - 1) * skillsPerPage
             for (let skill of skillsResponse.data) {
                 let row = $('<tr>')
 
@@ -522,8 +507,6 @@
                 row.appendTo(skillRank)
             }
         }
-
-        $('#skillRankModal').modal("toggle")
     }
 
     async function generatePagination(positionId, skillTypeId, skillsPerPage) {
@@ -533,8 +516,75 @@
             + '&skillsPerPage=' + skillsPerPage)
 
         let totalPages = totalPagesResponse.data
+        if (totalPages > 0) {
+            let pagination = $('#pagination')
+            pagination.empty()
 
+            if (totalPages === 1) {
+                let pageItem = $('<li>', {
+                    class: 'page-item'
+                })
 
+                $('<a>', {
+                    id: 'skillPage' + totalPages,
+                    class: 'page-link page-selected',
+                    href: '#',
+                    onclick: 'showSkillRank(' + positionId + ',' + skillTypeId + ',' + totalPages + ',' + skillsPerPage + ')',
+                    html: totalPages
+                }).appendTo(pageItem)
+
+                pageItem.appendTo(pagination)
+            } else {
+                // First page
+                let firstPageItem = $('<li>', {
+                    class: 'page-item'
+                })
+
+                $('<a>', {
+                    class: 'page-link',
+                    href: '#',
+                    onclick: 'showSkillRank(' + positionId + ',' + skillTypeId + ',' + 1 + ',' + skillsPerPage + ')',
+                    html: 'First'
+                }).appendTo(firstPageItem)
+
+                firstPageItem.appendTo(pagination)
+
+                for (let i = 1; i <= totalPages; i++) {
+                    let pageItem = $('<li>', {
+                        class: 'page-item'
+                    })
+
+                    let pageLink = $('<a>', {
+                        id: 'skillPage' + i,
+                        class: 'page-link',
+                        href: '#',
+                        onclick: 'showSkillRank(' + positionId + ',' + skillTypeId + ',' + i + ',' + skillsPerPage + ')',
+                        html: i
+                    })
+                    if (i === 1) {
+                        pageLink.addClass('page-selected')
+                    }
+
+                    pageLink.appendTo(pageItem)
+
+                    pageItem.appendTo(pagination)
+                }
+
+                // Last page
+                let lastPageItem = $('<li>', {
+                    class: 'page-item'
+                })
+
+                $('<a>', {
+                    class: 'page-link',
+                    href: '#',
+                    onclick: 'showSkillRank(' + positionId + ',' + skillTypeId + ',' + totalPages + ',' + skillsPerPage + ')',
+                    html: 'Last'
+                }).appendTo(lastPageItem)
+
+                lastPageItem.appendTo(pagination)
+            }
+        }
     }
 
 </script>
