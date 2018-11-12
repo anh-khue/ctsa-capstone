@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import static org.springframework.http.HttpStatus.*;
+
 @CrossOrigin(origins = "*")
 @Slf4j
 @RestController
@@ -20,8 +22,20 @@ public class RequiredSkillController {
 
     @PostMapping("/required_skills")
     public ResponseEntity save(@RequestBody RequiredSkill requiredSkill) {
-        return ResponseEntity.status(HttpStatus.OK)
+        return ResponseEntity.status(OK)
                              .body(requiredSkillService.saveRequiredSkill(requiredSkill));
+    }
+
+    @GetMapping("/required_skills/total_pages/top")
+    public ResponseEntity findTotalPagesTopSkillsByPositionAndSkillType(
+            @RequestParam("position_id") Integer positionId,
+            @RequestParam("skill_type_id") Integer skillTypeId,
+            @RequestParam("skillsPerPage") Integer skillsPerPage) {
+        return ResponseEntity.status(OK)
+                             .body(requiredSkillService
+                                           .findTotalPagesTopSkillsByPositionAndSkillType(positionId,
+                                                                                          skillTypeId,
+                                                                                          skillsPerPage));
     }
 
     @GetMapping("/required_skills/top")
@@ -29,7 +43,7 @@ public class RequiredSkillController {
                                                               @RequestParam("skill_type_id") Integer skillTypeId,
                                                               @RequestParam("page") Integer page,
                                                               @RequestParam("skillsPerPage") Integer skillsPerPage) {
-        return ResponseEntity.status(HttpStatus.OK)
+        return ResponseEntity.status(OK)
                              .body(requiredSkillService.findTopSkillsByPositionAndSkillType(positionId, skillTypeId,
                                                                                             page, skillsPerPage));
     }
@@ -38,7 +52,7 @@ public class RequiredSkillController {
     public ResponseEntity findTopSkillsByPosition(@PathVariable String positionId,
                                                   @RequestParam(value = "escape-skill-type-id",
                                                                 required = false) Integer escapedSkillTypeId) {
-        return ResponseEntity.status(HttpStatus.OK)
+        return ResponseEntity.status(OK)
                              .body(requiredSkillService.findTopSkillTypesByPositionEscape(
                                      Integer.parseInt(positionId),
                                      escapedSkillTypeId)

@@ -21,11 +21,21 @@ public class RequiredSkillService {
         return requiredSkill;
     }
 
+    public Integer findTotalPagesTopSkillsByPositionAndSkillType(Integer positionId,
+                                                                 Integer skillTypeId,
+                                                                 Integer skillsPerPage) {
+        List<Integer> allSkills = requiredSkillRepository.findAllTopSkillsByPositionAndSkillType(positionId,
+                                                                                                 skillTypeId);
+
+        return (int) Math.ceil((double) allSkills.size() / skillsPerPage);
+    }
+
     public List<Integer> findTopSkillsByPositionAndSkillType(Integer positionId,
                                                              Integer skillTypeId,
                                                              Integer page,
                                                              Integer skillsPerPage) {
-        return requiredSkillRepository.findTopSkillsByPositionAndSkillType(positionId, skillTypeId,
+        return requiredSkillRepository.findTopSkillsByPositionAndSkillType(positionId,
+                                                                           skillTypeId,
                                                                            skillsPerPage,
                                                                            (page - 1) * skillsPerPage);
     }
