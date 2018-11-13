@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <title>Thống kê</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans"
+          rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet"
+          th:href="@{css/style.css}">
+    <link rel="stylesheet"
+          th:href="@{css/tab.css}">
+    <!-- Services Routes -->
+    <script th:src="@{js/services-routes.js}"></script>
+</head>
+
+
+<body>
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+<script>
+    $(window).ready(function () {
+        $('#loader').hide();
+    });
+</script>
+<!-- Header -->
+<div th:replace="fragments/general.html :: header"></div>
+
+<!-- Content -->
+<div class="container-fluid">
+    <div class="row">
+        <ul class="nav col-md-12"
+            id="myTab"
+            role="tablist">
+            <li class="nav-item tab tab-active"
+                id="home-tab">
+                <a class="nav-link active"
+                   data-toggle="tab"
+                   href="#home"
+                   role="tab"
+                   aria-controls="home"
+                   aria-selected="true">Tổng hợp</a>
+            </li>
+            <li class="nav-item tab"
+                id="stats-tab">
+                <a class="nav-link"
+                   data-toggle="tab"
+                   href="#stats"
+                   role="tab"
+                   aria-controls="profile"
+                   aria-selected="false">Thống kê</a>
+            </li>
+            <li class="nav-item tab"
+                id="recruit-tab">
+                <a class="nav-link"
+                   data-toggle="tab"
+                   href="#recruit"
+                   role="tab"
+                   aria-controls="contact"
+                   aria-selected="false">Tuyển dụng</a>
+            </li>
+        </ul>
+    </div>
+    <div class="row">
+        <div id="content"
+             class="tab-content col-md-12 folder">
+            <div class="tab-pane fade show active"
+                 id="home"
+                 role="tabpanel"
+                 aria-labelledby="home-tab">
+
+            </div>
+
+            <div class="tab-pane fade"
+                 id="stats"
+                 role="tabpanel"
+                 aria-labelledby="profile-tab">
+                <div class="row">
+                    <div class="col-md-4"
+                         style="text-align: right">
+                        <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237096/demo-image/java.png"
+                             alt="Java"
+                             height="60"
+                             width="150"><br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et
+                            dolore magna aliqua.</p>
+                    </div>
+                    <div class="col-md-2 text-center ">
+                        <div class="statistic1">
+                            <span style="color:rgb(235, 226, 226); font-size:5em">08</span><br>
+                            <span style="color:rgb(235, 226, 226); font-size:1.4em">Công ty ABC</span><br><br><br><br>
+                        </div>
+
+                    </div>
+                    <div class="col-md-2 text-center ">
+                        <div class="statistic2">
+                            <span style="color:rgb(235, 226, 226); font-size:5em">08</span><br>
+                            <span style="color:#ff6215; font-size:1.4em">Công ty XYZ</span><br><br><br><br>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/nest.svg"
+                             alt="Nest"
+                             height="60"
+                             width="150"><br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et
+                            dolore magna aliqua.</p>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"
+                         style="text-align: right">
+                        <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237097/demo-image/javascript.png"
+                             alt="javascript"
+                             height="60"
+                             width="150"><br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et
+                            dolore magna aliqua.</p>
+
+                    </div>
+                    <div class="col-md-2 text-center ">
+                        <div class="statistic1">
+                            <span style="color:rgb(235, 226, 226); font-size:5em">05</span><br>
+                            <span style="color:rgb(235, 226, 226); font-size:1.4em">Công ty Hải</span><br><br><br><br>
+                        </div>
+
+                    </div>
+                    <div class="col-md-2 text-center ">
+                        <div class="statistic2">
+                            <span style="color:rgb(235, 226, 226); font-size:5em">002</span><br>
+                            <span style="color:#ff6215; font-size:1.4em">Công ty Fsoft</span><br><br><br><br>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237102/demo-image/node-js.png"
+                             alt="NodeJS"
+                             height="60"
+                             width="150"><br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et
+                            dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade"
+                 id="recruit"
+                 role="tabpanel"
+                 aria-labelledby="contact-tab">
+                <div class="row justify-content-center ">
+                    <div class="col-md-3 text-center banner ">
+                        <span style="font-size: 55px; color:#ff6414">2</span>
+                        <br><br>
+                        <b style="color:rgb(241, 236, 236); font-size:3em">Amazon</b><br>
+                        <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237095/demo-image/companyA.png"
+                             alt="Hình công ty"
+                             height="120"
+                             width="220"
+                             class="img-recruitment">
+                        <div class="info-recruitment">
+                            <h3> 15 vị trí</h3>
+                            <h3>Đang tuyển dụng</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 text-center banner"
+                         style="height:700px; width:280px;">
+                        <span style="font-size: 70px; color:#ff6414">1</span><br><br>
+                        <b style="color:rgb(241, 236, 236); font-size:5em">Grab</b><br>
+                        <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237096/demo-image/companyB.svg"
+                             alt="Hình công ty"
+                             height="140"
+                             width="240"
+                             class="img-recruitment">
+                        <div class="info-recruitment">
+                            <h3> 15 vị trí</h3>
+                            <h3>Đang tuyển dụng</h3>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3 text-center banner">
+                        <span style="font-size: 55px; color:#ff6414">3</span><br><br>
+                        <b style="color:rgb(241, 236, 236); font-size:3em">RXR</b><br>
+                        <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237096/demo-image/companyC.png"
+                             alt="Hình công ty"
+                             height="120"
+                             width="220"
+                             class="img-recruitment">
+                        <div class="info-recruitment">
+                            <h3> 15 vị trí</h3>
+                            <h3>Đang tuyển dụng</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade rounded"
+     id="skillRankModal"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="skillModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xm"
+         role="document">
+        <div class="modal-content">
+            <div class="pt-3 pb-2 bg-orange text-white text-center shadow "
+                 style="border-top-left-radius: 20px ;
+        border-top-right-radius: 20px !important; ">
+                <h4>Chi tiết xếp hạng</h4>
+            </div>
+            <div class="row modal-body justify-content-between">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col"
+                            style="font-size: 1.2em"
+                            class="text-center">
+                            #
+                        </th>
+                        <th id="skillTypeName"
+                            class="text-center"
+                            style="font-size: 1.2em"
+                            scope="col">
+
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody id="skillRank"
+                           style="font-size: 1.2em">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <ul class="pagination"
+                    id="pagination">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script>
+    $("#home-tab").click(function () {
+        $(this).addClass("tab-active");
+        $("#stats-tab").removeClass("tab-active");
+        $("#recruit-tab").removeClass("tab-active");
+    });
+    $("#stats-tab").click(function () {
+        $(this).addClass("tab-active");
+        $("#home-tab").removeClass("tab-active");
+        $("#recruit-tab").removeClass("tab-active");
+    });
+    $("#recruit-tab").click(function () {
+        $(this).addClass("tab-active");
+        $("#home-tab").removeClass("tab-active");
+        $("#stats-tab").removeClass("tab-active");
+    });
+
+    window.onload = async function () {
+        let position = JSON.parse(sessionStorage.getItem('position'))
+
+        let homeDiv = $('#home')
+        homeDiv.empty()
+        $('<h3>', {
+            class: 'text-center',
+            style: 'margin-top: 1%',
+            html: 'Top các nhóm kỹ năng thông dụng nhất cho vị trí<br>' +
+                '<h1 style="font-weight: bold; margin-top: 1%">' + position.name + '</h1>'
+        }).appendTo(homeDiv)
+
+        let skillTypes = []
+        let response
+        if (position.mainSkillTypeId !== null) {
+            skillTypes.push(position.mainSkillTypeId)
+            response = await axios.get("http://localhost:8003/required_skills/position_id=" + position.id + "/top-skill-types?escape-skill-type-id=" + position.mainSkillTypeId)
+        } else {
+            response = await axios.get("http://localhost:8003/required_skills/position_id=" + position.id + "/top-skill-types")
+        }
+
+        let topSkills = []
+
+        for (let skillType of response.data) {
+            skillTypes.push(skillType)
+        }
+
+        for (let skillType of skillTypes) {
+            let skills = await getITSoftwareTrendByPositionAndSkillType(position.id, skillType);
+
+            if (skills) {
+                topSkills.push(skills)
+            }
+        }
+
+        let count = 0
+        for (let skillsWithType of topSkills) {
+            if (count % 2 === 0) {
+                generateUI(position.id, skillsWithType, 'left')
+            } else {
+                generateUI(position.id, skillsWithType, 'right')
+            }
+            count++
+        }
+    }
+
+    async function getITSoftwareTrendByPositionAndSkillType(positionId, skillTypeId) {
+        let ids = []
+        let response = await axios.get('http://localhost:8003/required_skills/top?position_id=' + positionId + '&skill_type_id=' + skillTypeId + "&page=1&skillsPerPage=3");
+        if (response) {
+
+            await response.data.forEach((id) => {
+                ids.push(id)
+            })
+
+            if (ids.length > 0) {
+                let postData = await axios.post('http://localhost:8001/skills/list', ids)
+                return postData.data
+            }
+        }
+
+        return null
+    }
+
+    function generateUI(positionId, skills, direction) {
+        let homeDiv = $('#home')
+
+        if (direction === 'left') {
+            let banner = $('<div>', {
+                class: "col-md-9 top-3 top-left",
+                onclick: 'openSkillRankModal(' + positionId + ',' + skills[0].skillType.id + ',5)'
+            })
+
+            let row = $('<div>', {
+                class: "row justify-content-between"
+            })
+
+            let skillTypeName = $('<div>', {
+                class: "col-md-5 my-auto pl-5"
+            })
+
+            $('<b>', {
+                style: "color: white; font-size: 40px;font-style: italic",
+                html: "TOP<br>" + skills[0].skillType.vietnamese
+            }).appendTo(skillTypeName)
+
+            skillTypeName.appendTo(row)
+
+            let skillItems = $('<div>', {
+                class: "col-md-6 row justify-content-around top-icons-left"
+            })
+
+            for (let i = 0; i < 3; i++) {
+                if (skills[i]) {
+                    let skillItem = $('<div>', {
+                        class: "col-md-3 text-center",
+                        style: "font-size: 1.1em; font-weight: bold"
+                    })
+
+                    $('<img>', {
+                        src: skills[i].imageUrl
+                    }).appendTo(skillItem)
+                    skillItem.append(skills[i].vietnamese)
+
+                    skillItem.appendTo(skillItems)
+                }
+            }
+
+            skillItems.appendTo(row)
+            row.appendTo(banner)
+            banner.appendTo(homeDiv)
+
+            $('<div>', {
+                class: "left-triangle"
+            }).appendTo(homeDiv)
+        } else {
+            let banner = $('<div>', {
+                class: "col-md-9 top-3 top-right",
+                onclick: 'openSkillRankModal(' + positionId + ',' + skills[0].skillType.id + ',5)'
+            })
+
+            let row = $('<div>', {
+                class: "row justify-content-between"
+            })
+
+            let skillItems = $('<div>', {
+                class: "col-md-6 row justify-content-around top-icons-left"
+            })
+
+            for (let i = 0; i < 3; i++) {
+                if (skills[i]) {
+                    let skillItem = $('<div>', {
+                        class: "col-md-3 text-center",
+                        style: "font-size: 1.1em; font-weight: bold"
+                    })
+
+                    $('<img>', {
+                        src: skills[i].imageUrl
+                    }).appendTo(skillItem)
+                    skillItem.append(skills[i].vietnamese)
+
+                    skillItem.appendTo(skillItems)
+                }
+            }
+
+            skillItems.appendTo(row)
+            let skillTypeName = $('<div>', {
+                class: "col-md-5 my-auto pl-5"
+            })
+
+            $('<b>', {
+                style: "color: white; font-size: 40px;font-style: italic",
+                html: "TOP<br>" + skills[0].skillType.vietnamese
+            }).appendTo(skillTypeName)
+            skillTypeName.appendTo(row)
+
+            row.appendTo(banner)
+
+            banner.appendTo(homeDiv)
+
+            $('<div>', {
+                class: "right-triangle"
+            }).appendTo(homeDiv)
+        }
+    }
+
+    async function openSkillRankModal(positionId, skillTypeId, skillsPerPage) {
+        generatePagination(positionId, skillTypeId, skillsPerPage)
+
+        showSkillRank(positionId, skillTypeId, 1, skillsPerPage)
+
+        $('#skillRankModal').modal("toggle")
+    }
+
+    async function showSkillRank(positionId, skillTypeId, page, skillsPerPage) {
+        $('.page-selected').removeClass('page-selected')
+        $('#skillPage' + page).addClass('page-selected')
+
+        let ids = []
+
+        let idsResponse = await axios.get(API_GATEWAY + WAREHOUSE_SERVICE + '/required_skills/top?'
+            + 'position_id=' + positionId
+            + '&skill_type_id=' + skillTypeId
+            + '&page=' + page
+            + '&skillsPerPage=' + skillsPerPage)
+        if (idsResponse) {
+            for (let id of idsResponse.data) {
+                ids.push(id)
+            }
+        }
+
+        if (ids.length > 0) {
+            let skillsResponse = await axios.post('http://localhost:8001/skills/list', ids)
+
+            let skillRank = $('#skillRank')
+            skillRank.empty()
+
+            let skillTypeName = $('#skillTypeName')
+            skillTypeName.empty()
+            skillTypeName.html(skillsResponse.data[0].skillType.vietnamese)
+
+            let count = (page - 1) * skillsPerPage
+            for (let skill of skillsResponse.data) {
+                let row = $('<tr>')
+
+                $('<th>', {
+                    scope: 'row',
+                    class: 'text-center',
+                    html: ++count
+                }).appendTo(row)
+
+                $('<td>', {
+                    html: skill.vietnamese
+                }).appendTo(row)
+
+                row.appendTo(skillRank)
+            }
+        }
+    }
+
+    async function generatePagination(positionId, skillTypeId, skillsPerPage) {
+        let totalPagesResponse = await axios.get(API_GATEWAY + WAREHOUSE_SERVICE + '/required_skills/total_pages/top?'
+            + 'position_id=' + positionId
+            + '&skill_type_id=' + skillTypeId
+            + '&skillsPerPage=' + skillsPerPage)
+
+        let totalPages = totalPagesResponse.data
+        if (totalPages > 0) {
+            let pagination = $('#pagination')
+            pagination.empty()
+
+            if (totalPages === 1) {
+                let pageItem = $('<li>', {
+                    class: 'page-item'
+                })
+
+                $('<a>', {
+                    id: 'skillPage' + totalPages,
+                    class: 'page-link page-selected',
+                    href: '#',
+                    onclick: 'showSkillRank(' + positionId + ',' + skillTypeId + ',' + totalPages + ',' + skillsPerPage + ')',
+                    html: totalPages
+                }).appendTo(pageItem)
+
+                pageItem.appendTo(pagination)
+            } else {
+                // First page
+                let firstPageItem = $('<li>', {
+                    class: 'page-item'
+                })
+
+                $('<a>', {
+                    class: 'page-link',
+                    href: '#',
+                    onclick: 'showSkillRank(' + positionId + ',' + skillTypeId + ',' + 1 + ',' + skillsPerPage + ')',
+                    html: 'First'
+                }).appendTo(firstPageItem)
+
+                firstPageItem.appendTo(pagination)
+
+                for (let i = 1; i <= totalPages; i++) {
+                    let pageItem = $('<li>', {
+                        class: 'page-item'
+                    })
+
+                    let pageLink = $('<a>', {
+                        id: 'skillPage' + i,
+                        class: 'page-link',
+                        href: '#',
+                        onclick: 'showSkillRank(' + positionId + ',' + skillTypeId + ',' + i + ',' + skillsPerPage + ')',
+                        html: i
+                    })
+                    if (i === 1) {
+                        pageLink.addClass('page-selected')
+                    }
+
+                    pageLink.appendTo(pageItem)
+
+                    pageItem.appendTo(pagination)
+                }
+
+                // Last page
+                let lastPageItem = $('<li>', {
+                    class: 'page-item'
+                })
+
+                $('<a>', {
+                    class: 'page-link',
+                    href: '#',
+                    onclick: 'showSkillRank(' + positionId + ',' + skillTypeId + ',' + totalPages + ',' + skillsPerPage + ')',
+                    html: 'Last'
+                }).appendTo(lastPageItem)
+
+                lastPageItem.appendTo(pagination)
+            }
+        }
+    }
+
+</script>
+</body>
+
+</html>

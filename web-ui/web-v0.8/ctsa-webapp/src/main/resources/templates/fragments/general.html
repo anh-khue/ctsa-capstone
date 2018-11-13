@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!-- Header -->
+<nav th:fragment="header"
+     class="navbar navbar-expand-md navbar-dark bg-dark"
+     style="height: 45px">
+    <a class="navbar-brand"
+       href="/trang-chu">
+        <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/logoctsa.png"
+             width="90"
+             height="27"
+             class="d-inline-block align-top"
+             alt="CTSA logo">
+    </a>
+    <div class="collapse navbar-collapse  justify-content-center  menu"
+         id="navbarSupportedContent">
+        <a class="mx-5"
+           href="#">Tuyển Dụng</a>
+        <a class="mx-5"
+           href="/ket-qua">Thống Kê</a>
+        <a class="mx-5"
+           href="#">Tuyển Dụng</a>
+        <a class="mx-5"
+           href="#">Thống Kê</a>
+    </div>
+    <span class="fa-stack">
+            <i class="fa fa-user-circle-o fa-stack-1x"
+               style="font-size:36px; color:white"></i>
+        </span>
+</nav>
+</body>
+</html>

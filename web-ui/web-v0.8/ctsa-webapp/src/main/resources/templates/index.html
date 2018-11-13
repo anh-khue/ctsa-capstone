@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <title>Trang chủ</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans"
+          rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet"
+          th:href="@{css/style.css}">
+    <!-- Services Routes -->
+    <script th:src="@{js/services-routes.js}"></script>
+</head>
+
+<body id="homebody">
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+<script>
+    // window.addEventListener('load', () => {
+    //     const loader = document.getElementById('loader');
+    //     setTimeout(() => {
+    //         loader.classList.add('fadeOut');
+    //     }, 300);
+    // });
+    $(window).ready(function () {
+        $('#loader').hide();
+    });
+</script>
+<!-- Header -->
+<div th:replace="fragments/general.html :: header"></div>
+
+<!-- Content -->
+<div class="container-fluid">
+    <div class="row justify-content-between">
+        <!-- Company summary detail div -->
+        <div class="col-md-6 img-logo">
+            <img alt="Ranking Image"
+                 src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541714808/demo-image/slogan-ctsa.png">
+        </div>
+
+        <div class="col-md-5 mr-3 form-input">
+            <div style="text-align: right; margin-top:5%; margin-right: 8%">
+                <a href="/trang-chu">
+                    <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/logoctsa.png"
+                         alt="CTSA logo">
+                </a>
+                <br/>
+                <span style="font-size: 55px">Career Trend Suggestions</span><br><br><br>
+            </div>
+
+            <span style="font-size: 28px;">Hãy cho chúng tôi biết thêm về bạn</span><br>
+            <div id="choose">
+                <span style="font-size:24px">Bạn là?</span>
+                <div class="row justify-content-around trait">
+                    <div class="col-md-4 text-center trait">
+                        <a href="#"
+                           class="trait">
+                            <img id="student"
+                                 alt="Student"
+                                 src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237115/demo-image/student.png"
+                                 width="180"
+                                 height="180">
+                            <br/>
+                            Học sinh cấp 3
+                        </a>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <a href="#"
+                           class="trait">
+                            <img id="college"
+                                 alt="College"
+                                 src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237095/demo-image/college.png"
+                                 width="180"
+                                 height="180">
+                            <br/>
+                            Tân sinh viên ngành IT
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="askForm"
+                 class="hideaway">
+                    <span class="head1 form-question"
+                          style="font-size: 24px">
+                        <span class="fa-stack">
+                            <span class="fa fa-circle fa-stack-2x"
+                                  style="color: #ff6414"></span>
+                            <span class="fa-stack-1x"
+                                  style="font-size: 20px;color:rgb(243, 243, 243);">
+                                1
+                            </span>
+                        </span>- 3 môn bạn tự tin nhất là gì?
+                    </span>
+                <br>
+                <div class="role1 hideaway mx-4 pl-4 my-2"
+                     style="border-left-style: dashed; border-width:3px;">
+                    <div id="chooseSubjects">
+
+                    </div>
+                    <div id="subjectsMarks"
+                         class="hideaway">
+
+                    </div>
+                </div>
+                <span style="font-size: 24px"
+                      class="head2 form-question">
+                        <span class="fa-stack">
+                            <span class="fa fa-circle fa-stack-2x"
+                                  style="color: #ff6414"></span>
+                            <span class="fa-stack-1x"
+                                  style="font-size: 20px;color:rgb(243, 243, 243);">
+                                2
+                            </span>
+                        </span>- Điểm trung bình tất cả các môn trong năm học lớp 12?</span><br>
+                <div class="hideaway role2 mx-4 pl-4 my-2"
+                     style="border-left-style: dashed; border-width:3px">
+
+                    <input type="number"
+                           class="my-2 mx-1"
+                           id="highSchoolAverage"
+                           placeholder="Điểm trung bình của bạn..."
+                           onkeypress="retrieveAverage(this)"
+                           style="width: 300px"
+                           step="0.1">
+
+                </div>
+                <span style="font-size: 24px"
+                      class="head3 form-question">
+                        <span class="fa-stack">
+                            <span class="fa fa-circle fa-stack-2x"
+                                  style="color: #ff6414"></span>
+                            <span class="fa-stack-1x"
+                                  style="font-size: 20px;color:rgb(243, 243, 243);">
+                                3
+                            </span>
+                        </span>- Bạn là người hướng ngoại hay hướng nội?</span><br>
+                <div class="role3 hideaway mx-4 pl-4 my-2"
+                     style="height: 130px">
+                    <div class="row justify-content-center">
+                        <button value="1"
+                                class="characteristic btn btn-outline-dark btn-lg btn-block col-md-4 my-2 mx-2"
+                                onclick="retrieveCharacteristic(this)"
+                                onmouseover="mouseOverIntrovert()"
+                                onmouseout="mouseOut()">
+                            Hướng nội
+                        </button>
+                        <button value="2"
+                                class="characteristic btn btn-outline-dark btn-lg btn-block col-md-4 my-2 mx-2"
+                                onclick="retrieveCharacteristic(this)"
+                                onmouseover="mouseOverExtrovert()"
+                                onmouseout="mouseOut()">
+                            Hướng ngoại
+                        </button>
+                        <p id="description"
+                           style="font-style:italic;color: #ff6414; "></p>
+                    </div>
+                </div>
+                <div id="confirm"
+                     class="hideaway text-center pl-3">
+                    <button class="btn btn-lg my-3 selected"
+                            onclick="sendInputForSuggestion()">
+                        Nhận gợi ý
+                    </button>
+                </div>
+            </div>
+
+            <div id="itAskForm"
+                 class="hideaway">
+                    <span class="head1 form-question"
+                          style="font-size: 24px">
+                        <span class="fa-stack">
+                            <span class="fa fa-circle fa-stack-2x"
+                                  style="color: #ff6414"></span>
+                            <span class="fa-stack-1x"
+                                  style="font-size: 20px;color:rgb(243, 243, 243);">
+                                1
+                            </span>
+                        </span>- Bạn có muốn xem thông tin xu hướng của vị trí nào?
+                    </span>
+                <br>
+                <div class="role1 hideaway mx-4 pl-4 my-2"
+                     style="border-left-style: dashed; border-width:3px;">
+                    <div id="choosePosition">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script>
+    // Pupils clicked
+    $("#student").on('click', () => {
+        $("#choose").hide(600)
+        $("#askForm").show(600)
+        $(".role1").slideDown(600)
+    })
+
+    // Freshmen clicked
+    $("#college").on('click', () => {
+        $("#choose").hide(600)
+        $("#itAskForm").show(600)
+        $(".role1").slideDown(600)
+    })
+
+    let count = 0;
+
+    let pupilInput = {
+        id: 0,
+        characteristic: 0,
+        highSchoolAverage: 0,
+        entranceExamInput: null,
+        highSchoolTopInputs: []
+    }
+
+    let highSchoolTopInputNames = []
+
+    $(() => {
+        let subjectsSelector = $('#chooseSubjects')
+        subjectsSelector.empty()
+
+        axios.get(API_GATEWAY + RESULTS_SUGGESTIONS_SERVICE + '/high-school-subjects')
+            .then((response) => {
+                let subjects = response.data
+                subjects.forEach(subject => {
+                    $('<button>', {
+                        class: 'btn btn-outline-dark my-2 mx-1 rolebtn',
+                        value: subject.id,
+                        text: subject.vietnamese,
+                        onclick: 'chooseSubject(this)'
+                    }).appendTo(subjectsSelector)
+                })
+            })
+
+        let positionsSelector = $('#choosePosition')
+        positionsSelector.empty()
+
+        axios.get(API_GATEWAY + CAREERS_SERVICES + '/positions')
+            .then((response) => {
+                let positions = response.data
+                positions.forEach(position => {
+                    $('<button>', {
+                        class: 'btn btn-outline-dark my-2 mx-1 rolebtn',
+                        value: position.id,
+                        text: position.name,
+                        onclick: 'choosePosition(this)'
+                    }).appendTo(positionsSelector)
+                })
+            })
+    })
+
+    function choosePosition(position) {
+        axios.get(API_GATEWAY + CAREERS_SERVICES + "/positions/" + position.value)
+            .then((response) => {
+                sessionStorage.setItem('position', JSON.stringify(response.data))
+            })
+            .then(() => {
+                window.location = '/thong-tin'
+            })
+    }
+
+    function chooseSubject(subject) {
+        count++
+        subject.classList.add("selected")
+        addToTopSubjects(subject, count)
+        highSchoolTopInputNames.push(subject.textContent)
+        if (count > 2) {
+            $("#chooseSubjects").slideUp(600)
+
+            let subjectsMarks = $('#subjectsMarks')
+            subjectsMarks.slideDown(600)
+            subjectsMarks.empty()
+            for (let i = 0; i < pupilInput.highSchoolTopInputs.length; i++) {
+                subjectsMarks.append(createMarkInput(pupilInput.highSchoolTopInputs[i], highSchoolTopInputNames[i]))
+            }
+        }
+    }
+
+    function addToTopSubjects(subject, weight) {
+        let topSubject = {
+            id: 0,
+            suggestedMajorId: 0,
+            subjectId: subject.value,
+            mark: 0,
+            weight: weight
+        }
+
+        pupilInput.highSchoolTopInputs.push(topSubject)
+    }
+
+    function createMarkInput(subject, vietnamese) {
+        let subjectDiv = $('<div>', {
+            id: 'topSubject' + subject.weight,
+            value: subject.weight,
+            class: 'row mx-2'
+        })
+
+        $('<button>', {
+            class: 'btn btn-outline-dark my-2 mx-1 selected col-md-2',
+            text: vietnamese,
+        }).appendTo(subjectDiv)
+
+        $('<input>', {
+            type: 'number',
+            step: '0.1',
+            id: 'mark' + subject.weight,
+            value: '',
+            class: 'my-2 mx-3 col-md-6',
+            placeholder: 'Điểm của bạn...',
+            onkeypress: 'retrieveMark(this)',
+            style: 'width: 300px'
+        }).appendTo(subjectDiv)
+
+        return subjectDiv
+    }
+
+    function retrieveMark(inputField) {
+        let mark = inputField.value
+        if (event.keyCode === 13 &&
+            document.getElementById("mark1").value !== "" &&
+            document.getElementById("mark2").value !== "" &&
+            document.getElementById("mark3").value !== ""
+        ) {
+            pupilInput.highSchoolTopInputs.forEach((subject) => {
+                subject.mark = $('#mark' + subject.weight).val()
+            })
+
+            $(".role1").slideUp(600)
+            $(".role3").slideUp(600)
+            $("#confirm").hide(600)
+            $(".role2").slideDown(600)
+        }
+    }
+
+    function retrieveAverage(inputAverage) {
+        if (event.keyCode === 13) {
+            pupilInput.highSchoolAverage = inputAverage.value
+
+            $(".role1").slideUp(600)
+            $(".role2").slideUp(600)
+            $(".role3").slideDown(600)
+            $("#confirm").hide(600)
+        }
+    }
+
+    function retrieveCharacteristic(characteristic) {
+        $('.characteristic').removeClass('selected')
+        characteristic.classList.add('selected')
+        pupilInput.characteristic = characteristic.value
+    }
+
+    function sendInputForSuggestion() {
+        axios.post(API_GATEWAY + RESULTS_SUGGESTIONS_SERVICE + '/suggestions/pupils', pupilInput)
+            .then((response) => {
+                sessionStorage.setItem('suggestions', JSON.stringify(response.data))
+                sessionStorage.setItem('pupilInput', JSON.stringify(pupilInput))
+                window.location = '/ket-qua'
+            })
+    }
+
+    $(".role3").click(function () {
+        $(".role1").slideUp(600);
+        $(".role2").slideUp(600);
+        $("#confirm").show(600);
+    })
+
+    $(".head1").click(function () {
+        $(".role2").slideUp(600)
+        $(".role3").slideUp(600)
+        $(".role1").slideDown(600)
+
+        $("#confirm").hide(600)
+    });
+
+    $(".head2").click(function () {
+        $(".role1").slideUp(600)
+        $(".role3").slideUp(600)
+        $("#confirm").hide(600)
+        $(".role2").slideDown(600)
+    });
+
+    $(".head3").click(function () {
+        $(".role1").slideUp(600)
+        $(".role2").slideUp(600)
+        $(".role3").slideDown(600)
+        $("#confirm").hide(600)
+    });
+
+    function mouseOverIntrovert() {
+        document.getElementById("description").innerHTML = "*<b>Hướng nội</b>: Khuynh "
+            + "hướng quan tâm đến cuộc sống tinh thần của bản thân người đó, có xu hướng mở rộng khi"
+            + "suy nghĩ và suy nhược khi phải giao tiếp với những người khác."
+    }
+
+    function mouseOverExtrovert() {
+        document.getElementById("description").innerHTML = "*<b>Hướng ngoại</b>: Những "
+            + "hành động, trạng thái hay thói quen chủ yếu quan tâm tới việc làm vừa lòng những"
+            + " người khác, có xu hướng thích thú khi tương tác, giao tiếp với con người và nói "
+            + "chung là nói nhiều, nhiệt tình, thích giao lưu và quyết đoán"
+    }
+
+    function mouseOut() {
+        document.getElementById("description").innerHTML = ""
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+body {
+    background-color: #ff7d1f !important;
+    background: url("https://wallpaperlayer.com/img/2015/4/awesome-yellow-wallpaper-76-120-hd-wallpapers.jpg") no-repeat;
+}
+
+#content {
+    border-radius: 20px 20px 20px 20px;
+    top: 10px;
+    margin-bottom: 50px;
+    height: 80%;
+    padding: 1% 2%;
+}
+
+.container-fluid {
+    width: 80vw !important;
+    margin-top: 2%
+}
+
+.folder {
+    background-color: rgb(235, 231, 231);
+    background-position-y: 20%;
+    z-index: 20;
+}
+
+.job-description {
+    font-size: 1.2em;
+}
+
+.pagination {
+    margin-top: 2%;
+}
+
+.page-link {
+    color: #ff7d1f
+}
+
+.page-selected {
+    color: white;
+    background-color: #ff7d1f;
+    outline: none
+}
+
+.page-link:hover {
+    color: #ff7d1f;
+    border: 1px solid #ff7d1f;
+    background-color: white
+}
+
+.pagination > li > a {
+    border-radius: 50% !important;
+    margin: 0 5px;
+}
