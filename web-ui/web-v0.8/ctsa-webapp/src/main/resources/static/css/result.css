@@ -173,7 +173,7 @@ section.range-slider input[type=range]::-moz-focus-outer {
     color: rgb(238, 237, 237);
     margin-left: -63px !important;
     margin-right: -63px !important;
-    margin-top: 100px !important;
+    /*margin-top: 100px !important;*/
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -198,4 +198,9 @@ section.range-slider input[type=range]::-moz-focus-outer {
     margin-top: -5%;
     margin-bottom: 8%;
     color: rgb(240, 240, 240)
+}
+
+.prediction-modal-header {
+    background-color: #ff6215;
+    color: rgb(238, 237, 237);
 }

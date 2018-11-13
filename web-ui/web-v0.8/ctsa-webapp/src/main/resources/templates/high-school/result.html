@@ -137,18 +137,18 @@
      id="jobDescriptionModal"
      tabindex="-1"
      role="dialog"
-     aria-labelledby="jobDescription"
+     aria-labelledby="majorDescription"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg"
          role="document">
         <div class="modal-content">
-            <div class="px-5 pt-4 text-center">
-                <h4>Mô tả</h4>
-                <h5 style="text-align: justify"
-                    id="jobDescription">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+            <div class="px-5 pt-4 text-center prediction-modal-header">
+                <h4>
+                    Dự đoán tổng quan ngành
+                </h4>
+                <h2 id="majorName">
+
+                </h2>
             </div>
             <div class="modal-body">
                 <div class="row justify-content-center text-center">
@@ -281,10 +281,13 @@
                 </div>
             </div>
             <div class="py-3 text-center text-conclusion ">
-                <h4 class=" py-2 mb-2">Kết luận</h4>
-                <h5 style="text-align:justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+                <h4 class=" py-2 mb-2">
+                    Dự đoán xu hướng
+                </h4>
+                <h5 style="text-align:justify"
+                    id="final-prediction">
+
+                </h5>
             </div>
         </div>
     </div>
@@ -333,6 +336,12 @@
     async function showInfoModal(majorId) {
         let jobPredictionModal = $("#jobDescriptionModal")
 
+        let majorInformation = await axios.get(API_GATEWAY + CAREERS_SERVICES + '/majors/' + majorId)
+
+        let majorName = $('#majorName')
+        majorName.empty()
+        majorName.html(majorInformation.data.vietnamese)
+
         /* Salary */
         // Latest
         let latestSalary = $('#latestSalary')
@@ -375,7 +384,8 @@
         predictedHumanResourceYear.html("Dự đoán " + predictedHumanResourceResponse.data.year)
 
         predictedHumanResource.empty()
-        predictedHumanResource.html(numberWithCommas(Math.round(predictedHumanResourceResponse.data.forecast)) + '<br/>người')
+        let predictedHumanResourceData = numberWithCommas(Math.round(predictedHumanResourceResponse.data.forecast))
+        predictedHumanResource.html(predictedHumanResourceData + '<br/>người')
 
         /* Supporting Information */
         // Latest
@@ -398,14 +408,79 @@
         predictedSupportingInformationYear.html("Dự đoán " + predictedSupportingInformationResponse.data.year)
 
         predictedSupportingInformation.empty()
-        predictedSupportingInformation.html(numberWithCommas(Math.round(predictedSupportingInformationResponse.data.forecast)) + '<br/>'
+        let predictedSupportingInformationData = numberWithCommas(Math.round(predictedSupportingInformationResponse.data.forecast))
+        predictedSupportingInformation.html(predictedSupportingInformationData + '<br/>'
             + predictedSupportingInformationResponse.data.unit)
+
+        getFinalPrediction(majorId, majorInformation.data.vietnamese,
+            2021,
+            Math.round(predictedHumanResourceResponse.data.forecast),
+            Math.round(predictedSupportingInformationResponse.data.forecast))
 
         jobPredictionModal.modal("toggle")
     }
 
     const numberWithCommas = (x) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    }
+
+    async function getFinalPrediction(majorId, majorName, year, predictedHumanResource, predictedSupportingInformation) {
+        let majorStandardResponse = await axios.get(API_GATEWAY + CAREER_TREND_SERVICE + '/major_standards?majorId=' + majorId)
+
+        let result
+        let rawResult
+        if (majorStandardResponse.data.unit.split("/")[1] === 'người') {
+            rawResult = Math.round(predictedSupportingInformation / predictedHumanResource)
+        } else {
+            rawResult = Math.round(predictedHumanResource / predictedSupportingInformation)
+        }
+
+        let percentage = (Math.abs(rawResult - majorStandardResponse.data.standard) / majorStandardResponse.data.standard)
+        console.log(percentage)
+        result = numberWithCommas(rawResult)
+
+        let finalResponse = 'Với chỉ tiêu ' + majorStandardResponse.data.standard + ' ' + majorStandardResponse.data.unit
+            + '<br/>Đến năm ' + year + ', với số liệu dự đoán là ' + result + ' ' + majorStandardResponse.data.unit
+            + ', ngành ' + majorName + ' có xu hướng '
+
+        // information / human resource
+        if (majorStandardResponse.data.unit.split("/")[1] === 'người') {
+            if (rawResult < majorStandardResponse.data.standard && percentage > 0.2) {
+                if (percentage > 1) {
+                    finalResponse += 'dư thừa rất nhiều nhân lực.'
+                } else {
+                    finalResponse += 'dư thừa nhân lực.'
+                }
+            } else if (rawResult > majorStandardResponse.data.standard && percentage > 0.2) {
+                if (percentage > 1) {
+                    finalResponse += 'thiếu hụt nhân lực trầm trọng.'
+                } else {
+                    finalResponse += 'thiếu hụt nhân lực.'
+                }
+            } else {
+                finalResponse += 'được đáp ứng đủ nhân lực.'
+            }
+        } else { // human resource / information
+            if (rawResult > majorStandardResponse.data.standard && percentage > 0.2) {
+                if (percentage > 1) {
+                    finalResponse += 'bị dư thừa rất nhiều nhân lực.'
+                } else {
+                    finalResponse += 'bị dư thừa nhân lực.'
+                }
+            } else if (rawResult < majorStandardResponse.data.standard && percentage > 0.2) {
+                if (percentage > 1) {
+                    finalResponse += 'bị thiếu hụt nhân lực trầm trọng.'
+                } else {
+                    finalResponse += 'bị thiếu hụt nhân lực.'
+                }
+            } else {
+                finalResponse += 'được đáp ứng đủ nhân lực.'
+            }
+        }
+
+        let finalPrediction = $('#final-prediction')
+        finalPrediction.empty()
+        finalPrediction.html('' + finalResponse + '')
     }
 
     function disableScoreInput(obj) {
