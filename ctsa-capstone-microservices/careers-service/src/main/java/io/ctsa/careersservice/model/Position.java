@@ -2,10 +2,7 @@ package io.ctsa.careersservice.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -18,9 +15,19 @@ public class Position {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NonNull
+    @Column(name = "name")
     private String name;
+    @Column(name = "business_field_id")
     private int businessFieldId;
+    @Column(name = "image_url")
+    private String imageUrl;
+    @Column(name = "main_skill_type_id")
+    private Integer mainSkillTypeId;
+
+    @ManyToOne
+    @JoinColumn(name = "business_field_id", referencedColumnName = "id", nullable = false,
+                insertable = false, updatable = false)
+    private BusinessField businessField;
 
     @Override
     public boolean equals(Object o) {
@@ -30,10 +37,5 @@ public class Position {
         return id == position.id &&
                 businessFieldId == position.businessFieldId &&
                 Objects.equals(name, position.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, businessFieldId);
     }
 }

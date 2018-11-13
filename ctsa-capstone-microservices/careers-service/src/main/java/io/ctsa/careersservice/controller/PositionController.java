@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import static org.springframework.http.HttpStatus.*;
 
+@CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/positions")
 public class PositionController {
 
     private final PositionService positionService;
@@ -18,7 +18,7 @@ public class PositionController {
         this.positionService = positionService;
     }
 
-    @PostMapping
+    @PostMapping("/positions")
     public ResponseEntity insertPosition(@RequestBody Position position) {
         try {
             positionService.insertPosition(position);
@@ -30,7 +30,7 @@ public class PositionController {
         }
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/positions/{id}")
     public ResponseEntity getById(@PathVariable String id) {
         try {
             return ResponseEntity.status(OK)
@@ -39,5 +39,11 @@ public class PositionController {
         } catch (NotFoundInDatasetException e) {
             return ResponseEntity.status(NOT_FOUND).build();
         }
+    }
+
+    @GetMapping("/positions")
+    public ResponseEntity getAll() {
+        return ResponseEntity.status(OK)
+                             .body(positionService.findAll());
     }
 }

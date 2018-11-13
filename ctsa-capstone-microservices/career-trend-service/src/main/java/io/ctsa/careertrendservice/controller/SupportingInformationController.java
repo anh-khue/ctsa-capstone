@@ -19,7 +19,7 @@ public class SupportingInformationController {
     }
 
     @GetMapping("supporting-information/latest")
-    public ResponseEntity getPrediction(@RequestParam int majorId) {
+    public ResponseEntity getLatest(@RequestParam int majorId) {
         return ResponseEntity.status(HttpStatus.OK)
                              .body(supportingInformationService.getLatest(majorId));
     }

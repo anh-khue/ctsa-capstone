@@ -4,6 +4,8 @@ import io.ctsa.warehouseservice.model.RequiredSkill;
 import io.ctsa.warehouseservice.repository.RequiredSkillRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RequiredSkillService {
 
@@ -17,5 +19,38 @@ public class RequiredSkillService {
         requiredSkillRepository.save(requiredSkill);
         requiredSkillRepository.flush();
         return requiredSkill;
+    }
+
+    public Integer findTotalPagesTopSkillsByPositionAndSkillType(Integer positionId,
+                                                                 Integer skillTypeId,
+                                                                 Integer skillsPerPage) {
+        List<Integer> allSkills = requiredSkillRepository.findAllTopSkillsByPositionAndSkillType(positionId,
+                                                                                                 skillTypeId);
+
+        return (int) Math.ceil((double) allSkills.size() / skillsPerPage);
+    }
+
+    public List<Integer> findTopSkillsByPositionAndSkillType(Integer positionId,
+                                                             Integer skillTypeId,
+                                                             Integer page,
+                                                             Integer skillsPerPage) {
+        return requiredSkillRepository.findTopSkillsByPositionAndSkillType(positionId,
+                                                                           skillTypeId,
+                                                                           skillsPerPage,
+                                                                           (page - 1) * skillsPerPage);
+    }
+
+    public List<Integer> findTopSkillTypesByPositionEscape(Integer positionId, Integer skillTypeId) {
+        if (skillTypeId == null) {
+            return requiredSkillRepository.findTopSkillTypesByPosition(positionId);
+        }
+        return requiredSkillRepository.findTopSkillTypesByPositionEscapeSkillType(positionId, skillTypeId);
+    }
+
+    public List<Integer> findTopSkillTypesByPosition(Integer positionId, Integer exceptedSkillTypeId) {
+        if (exceptedSkillTypeId == null) {
+            return requiredSkillRepository.findTopSkillTypesByPosition(positionId);
+        }
+        return requiredSkillRepository.findTopSkillTypesByPositionEscapeSkillType(positionId, exceptedSkillTypeId);
     }
 }

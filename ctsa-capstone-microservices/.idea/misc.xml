@@ -14,6 +14,8 @@
         <option value="$PROJECT_DIR$/vietnamworks-scraper/pom.xml" />
         <option value="$PROJECT_DIR$/results-suggestions-service/pom.xml" />
         <option value="$PROJECT_DIR$/career-trend-service/pom.xml" />
+        <option value="$PROJECT_DIR$/company-management/pom.xml" />
+        <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
       </list>
     </option>
   </component>

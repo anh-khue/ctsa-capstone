@@ -19,7 +19,7 @@ public class SalaryController {
     }
 
     @GetMapping("salaries/latest")
-    public ResponseEntity getPrediction(@RequestParam int majorId) {
+    public ResponseEntity getLatest(@RequestParam int majorId) {
         return ResponseEntity.status(HttpStatus.OK)
                              .body(salaryService.getLatest(majorId));
     }

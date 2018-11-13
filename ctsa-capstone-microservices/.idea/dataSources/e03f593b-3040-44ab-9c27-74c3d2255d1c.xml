@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="ctsa_results_suggestions_db@0.0.0.0">
+<dataSource name="ctsa_warehouse_db@0.0.0.0">
   <database-model serializer="dbm" rdbms="MYSQL" format-version="4.11">
     <root id="1">
       <ServerVersion>5.7.23</ServerVersion>
@@ -26,6 +26,8 @@
       <Collation>latin1_swedish_ci</Collation>
     </schema>
     <schema id="8" parent="1" name="ctsa_careers_db">
+      <Current>1</Current>
+      <Visible>1</Visible>
       <Collation>latin1_swedish_ci</Collation>
     </schema>
     <schema id="9" parent="1" name="ctsa_mywork_db">
@@ -40,6 +42,8 @@
       <Collation>latin1_swedish_ci</Collation>
     </schema>
     <schema id="12" parent="1" name="ctsa_warehouse_db">
+      <Current>1</Current>
+      <Visible>1</Visible>
       <Collation>latin1_swedish_ci</Collation>
     </schema>
     <schema id="13" parent="1" name="information_schema">
@@ -942,640 +946,610 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="239" parent="10" name="academic_type"/>
-    <table id="240" parent="10" name="entrance_exam_centroid"/>
-    <table id="241" parent="10" name="entrance_exam_centroid_detail"/>
-    <table id="242" parent="10" name="entrance_exam_input"/>
-    <table id="243" parent="10" name="entrance_exam_input_detail"/>
-    <table id="244" parent="10" name="entrance_exam_sample"/>
-    <table id="245" parent="10" name="entrance_exam_sample_detail"/>
-    <table id="246" parent="10" name="entrance_exam_subject"/>
-    <table id="247" parent="10" name="high_school_subject"/>
-    <table id="248" parent="10" name="high_school_top_centroid"/>
-    <table id="249" parent="10" name="high_school_top_input"/>
-    <table id="250" parent="10" name="high_school_top_sample"/>
-    <table id="251" parent="10" name="major"/>
-    <table id="252" parent="10" name="major_centroid"/>
-    <table id="253" parent="10" name="major_sample"/>
-    <table id="254" parent="10" name="person"/>
-    <table id="255" parent="10" name="suggested_major_input"/>
-    <column id="256" parent="239" name="id">
+    <table id="239" parent="8" name="business_field"/>
+    <table id="240" parent="8" name="keyword"/>
+    <table id="241" parent="8" name="position"/>
+    <table id="242" parent="8" name="skill"/>
+    <table id="243" parent="8" name="skill_type"/>
+    <table id="244" parent="10" name="academic_type"/>
+    <table id="245" parent="10" name="entrance_exam_centroid"/>
+    <table id="246" parent="10" name="entrance_exam_centroid_detail"/>
+    <table id="247" parent="10" name="entrance_exam_input"/>
+    <table id="248" parent="10" name="entrance_exam_input_detail"/>
+    <table id="249" parent="10" name="entrance_exam_sample"/>
+    <table id="250" parent="10" name="entrance_exam_sample_detail"/>
+    <table id="251" parent="10" name="entrance_exam_subject"/>
+    <table id="252" parent="10" name="high_school_subject"/>
+    <table id="253" parent="10" name="high_school_top_centroid"/>
+    <table id="254" parent="10" name="high_school_top_input"/>
+    <table id="255" parent="10" name="high_school_top_sample"/>
+    <table id="256" parent="10" name="major"/>
+    <table id="257" parent="10" name="major_centroid"/>
+    <table id="258" parent="10" name="major_sample"/>
+    <table id="259" parent="10" name="person"/>
+    <table id="260" parent="10" name="suggested_major_input"/>
+    <table id="261" parent="12" name="recruitment"/>
+    <table id="262" parent="12" name="required_skill"/>
+    <column id="263" parent="239" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="239" name="name">
+    <column id="264" parent="239" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <index id="258" parent="239" name="name">
+    <index id="265" parent="239" name="name">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="259" parent="239" name="PRIMARY">
+    <key id="266" parent="239" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="260" parent="239" name="name">
+    <key id="267" parent="239" name="name">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>name</UnderlyingIndexName>
     </key>
-    <column id="261" parent="240" name="id">
+    <column id="268" parent="240" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="262" parent="240" name="PRIMARY">
+    <column id="269" parent="240" name="word">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <column id="270" parent="240" name="is_synonym">
+      <Position>3</Position>
+      <DataType>bit(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="271" parent="240" name="main_keyword_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="272" parent="240" name="position_id">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="273" parent="240" name="skill_id">
+      <Position>6</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="274" parent="240" name="pushed_to_elasticsearch">
+      <Position>7</Position>
+      <DataType>bit(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>b&apos;0&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="275" parent="240" name="word">
+      <ColNames>word</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="276" parent="240" name="position_id">
+      <ColNames>position_id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="277" parent="240" name="skill_id">
+      <ColNames>skill_id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="278" parent="240" name="main_keyword_id">
+      <ColNames>main_keyword_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="279" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="263" parent="241" name="id">
+    <key id="280" parent="240" name="word">
+      <ColNames>word</ColNames>
+      <UnderlyingIndexName>word</UnderlyingIndexName>
+    </key>
+    <key id="281" parent="240" name="position_id">
+      <ColNames>position_id</ColNames>
+      <UnderlyingIndexName>position_id</UnderlyingIndexName>
+    </key>
+    <key id="282" parent="240" name="skill_id">
+      <ColNames>skill_id</ColNames>
+      <UnderlyingIndexName>skill_id</UnderlyingIndexName>
+    </key>
+    <foreign-key id="283" parent="240" name="keyword_ibfk_1">
+      <ColNames>main_keyword_id</ColNames>
+      <RefSchemaName>ctsa_careers_db</RefSchemaName>
+      <RefTableName>keyword</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="284" parent="240" name="keyword_ibfk_2">
+      <ColNames>position_id</ColNames>
+      <RefSchemaName>ctsa_careers_db</RefSchemaName>
+      <RefTableName>position</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="285" parent="240" name="keyword_ibfk_3">
+      <ColNames>skill_id</ColNames>
+      <RefSchemaName>ctsa_careers_db</RefSchemaName>
+      <RefTableName>skill</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="286" parent="241" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="241" name="entrance_exam_centroid_id">
+    <column id="287" parent="241" name="name">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
     </column>
-    <column id="265" parent="241" name="entrance_exam_subject_id">
+    <column id="288" parent="241" name="business_field_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="241" name="mark">
+    <column id="289" parent="241" name="image_url">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="290" parent="241" name="name">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="291" parent="241" name="business_field_id">
+      <ColNames>business_field_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="292" parent="241" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="293" parent="241" name="name">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name</UnderlyingIndexName>
+    </key>
+    <foreign-key id="294" parent="241" name="position_ibfk_1">
+      <ColNames>business_field_id</ColNames>
+      <RefSchemaName>ctsa_careers_db</RefSchemaName>
+      <RefTableName>business_field</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="295" parent="242" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="296" parent="242" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <column id="297" parent="242" name="image_url">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="298" parent="242" name="skill_type_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="299" parent="242" name="skill_skill_type_id_fk">
+      <ColNames>skill_type_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="300" parent="242" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="301" parent="242" name="skill_skill_type_id_fk">
+      <ColNames>skill_type_id</ColNames>
+      <RefSchemaName>ctsa_careers_db</RefSchemaName>
+      <RefTableName>skill_type</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="302" parent="243" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="303" parent="243" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <column id="304" parent="243" name="vietnamese">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <column id="305" parent="243" name="business_field_id">
+      <Position>4</Position>
+      <DataType>int(10) unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="306" parent="243" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="307" parent="244" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="308" parent="244" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <index id="309" parent="244" name="name">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="310" parent="244" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="311" parent="244" name="name">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name</UnderlyingIndexName>
+    </key>
+    <column id="312" parent="245" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="313" parent="245" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="314" parent="246" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="315" parent="246" name="entrance_exam_centroid_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="316" parent="246" name="entrance_exam_subject_id">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="317" parent="246" name="mark">
       <Position>4</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="241" name="weight">
+    <column id="318" parent="246" name="weight">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="268" parent="241" name="entrance_exam_result_detail_centroid_ibfk_1">
+    <index id="319" parent="246" name="entrance_exam_result_detail_centroid_ibfk_1">
       <ColNames>entrance_exam_centroid_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="269" parent="241" name="entrance_exam_subject_id">
+    <index id="320" parent="246" name="entrance_exam_subject_id">
       <ColNames>entrance_exam_subject_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="270" parent="241" name="PRIMARY">
+    <key id="321" parent="246" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="271" parent="241" name="entrance_exam_centroid_detail_ibfk_1">
+    <foreign-key id="322" parent="246" name="entrance_exam_centroid_detail_ibfk_1">
       <ColNames>entrance_exam_centroid_id</ColNames>
       <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
       <RefTableName>entrance_exam_centroid</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="272" parent="241" name="entrance_exam_centroid_detail_ibfk_2">
+    <foreign-key id="323" parent="246" name="entrance_exam_centroid_detail_ibfk_2">
       <ColNames>entrance_exam_subject_id</ColNames>
       <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
       <RefTableName>entrance_exam_subject</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="273" parent="242" name="id">
+    <column id="324" parent="247" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="274" parent="242" name="PRIMARY">
+    <key id="325" parent="247" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="275" parent="243" name="id">
+    <column id="326" parent="248" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="276" parent="243" name="entrance_exam_input_id">
+    <column id="327" parent="248" name="entrance_exam_input_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="277" parent="243" name="entrance_exam_subject_id">
+    <column id="328" parent="248" name="entrance_exam_subject_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="243" name="mark">
+    <column id="329" parent="248" name="mark">
       <Position>4</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="279" parent="243" name="weight">
-      <Position>5</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>&apos;1&apos;</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="280" parent="243" name="entrance_exam_input_detail_ibfk_1">
+    <index id="330" parent="248" name="entrance_exam_input_detail_ibfk_1">
       <ColNames>entrance_exam_input_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="281" parent="243" name="entrance_exam_subject_id">
+    <index id="331" parent="248" name="entrance_exam_subject_id">
       <ColNames>entrance_exam_subject_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="282" parent="243" name="PRIMARY">
+    <key id="332" parent="248" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="283" parent="243" name="entrance_exam_input_detail_ibfk_1">
+    <foreign-key id="333" parent="248" name="entrance_exam_input_detail_ibfk_1">
       <ColNames>entrance_exam_input_id</ColNames>
       <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
       <RefTableName>entrance_exam_input</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="284" parent="243" name="entrance_exam_input_detail_ibfk_2">
+    <foreign-key id="334" parent="248" name="entrance_exam_input_detail_ibfk_2">
       <ColNames>entrance_exam_subject_id</ColNames>
       <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
       <RefTableName>entrance_exam_subject</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="285" parent="244" name="id">
+    <column id="335" parent="249" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="286" parent="244" name="PRIMARY">
+    <key id="336" parent="249" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="287" parent="245" name="id">
+    <column id="337" parent="250" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="245" name="entrance_exam_sample_id">
+    <column id="338" parent="250" name="entrance_exam_sample_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="245" name="entrance_exam_subject_id">
+    <column id="339" parent="250" name="entrance_exam_subject_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="245" name="mark">
+    <column id="340" parent="250" name="mark">
       <Position>4</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="291" parent="245" name="entrance_exam_result_id">
+    <index id="341" parent="250" name="entrance_exam_result_id">
       <ColNames>entrance_exam_sample_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="292" parent="245" name="entrance_exam_subject_id">
+    <index id="342" parent="250" name="entrance_exam_subject_id">
       <ColNames>entrance_exam_subject_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="293" parent="245" name="PRIMARY">
+    <key id="343" parent="250" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="294" parent="245" name="entrance_exam_sample_detail_ibfk_1">
+    <foreign-key id="344" parent="250" name="entrance_exam_sample_detail_ibfk_1">
       <ColNames>entrance_exam_sample_id</ColNames>
       <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
       <RefTableName>entrance_exam_sample</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="295" parent="245" name="entrance_exam_sample_detail_ibfk_2">
+    <foreign-key id="345" parent="250" name="entrance_exam_sample_detail_ibfk_2">
       <ColNames>entrance_exam_subject_id</ColNames>
       <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
       <RefTableName>entrance_exam_subject</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="296" parent="246" name="id">
+    <column id="346" parent="251" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="246" name="name">
+    <column id="347" parent="251" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <column id="298" parent="246" name="vietnamese">
+    <column id="348" parent="251" name="vietnamese">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <column id="299" parent="246" name="is_required">
+    <column id="349" parent="251" name="is_required">
       <Position>4</Position>
       <DataType>bit(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>b&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="300" parent="246" name="PRIMARY">
+    <key id="350" parent="251" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="301" parent="247" name="id">
+    <column id="351" parent="252" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="302" parent="247" name="name">
+    <column id="352" parent="252" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <column id="303" parent="247" name="vietnamese">
+    <column id="353" parent="252" name="vietnamese">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <key id="304" parent="247" name="PRIMARY">
+    <key id="354" parent="252" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="305" parent="248" name="id">
+    <column id="355" parent="253" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="306" parent="248" name="major_centroid_id">
+    <column id="356" parent="253" name="major_centroid_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="307" parent="248" name="subject_id">
+    <column id="357" parent="253" name="subject_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="308" parent="248" name="mark">
+    <column id="358" parent="253" name="mark">
       <Position>4</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="309" parent="248" name="weight">
+    <column id="359" parent="253" name="weight">
       <Position>5</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="310" parent="248" name="major_centroid_id">
+    <index id="360" parent="253" name="major_centroid_id">
       <ColNames>major_centroid_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="311" parent="248" name="subject_id">
+    <index id="361" parent="253" name="subject_id">
       <ColNames>subject_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="312" parent="248" name="PRIMARY">
+    <key id="362" parent="253" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="313" parent="248" name="high_school_top_centroid_ibfk_1">
+    <foreign-key id="363" parent="253" name="high_school_top_centroid_ibfk_1">
       <ColNames>major_centroid_id</ColNames>
       <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
       <RefTableName>major_centroid</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="314" parent="248" name="high_school_top_centroid_ibfk_2">
+    <foreign-key id="364" parent="253" name="high_school_top_centroid_ibfk_2">
       <ColNames>subject_id</ColNames>
       <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
       <RefTableName>high_school_subject</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="315" parent="249" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="316" parent="249" name="suggested_major_input_id">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="317" parent="249" name="subject_id">
-      <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="318" parent="249" name="mark">
-      <Position>4</Position>
-      <DataType>double|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="319" parent="249" name="weight">
-      <Position>5</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="320" parent="249" name="suggested_major_id">
-      <ColNames>suggested_major_input_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="321" parent="249" name="subject_id">
-      <ColNames>subject_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="322" parent="249" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="323" parent="249" name="high_school_top_input_ibfk_1">
-      <ColNames>suggested_major_input_id</ColNames>
-      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
-      <RefTableName>suggested_major_input</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="324" parent="249" name="high_school_top_input_ibfk_2">
-      <ColNames>subject_id</ColNames>
-      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
-      <RefTableName>high_school_subject</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="325" parent="250" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="326" parent="250" name="major_sample_id">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="327" parent="250" name="subject_id">
-      <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="328" parent="250" name="mark">
-      <Position>4</Position>
-      <DataType>double|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="329" parent="250" name="weight">
-      <Position>5</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="330" parent="250" name="major_result_id">
-      <ColNames>major_sample_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="331" parent="250" name="subject_id">
-      <ColNames>subject_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="332" parent="250" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="333" parent="250" name="high_school_top_sample_ibfk_1">
-      <ColNames>major_sample_id</ColNames>
-      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
-      <RefTableName>major_sample</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="334" parent="250" name="high_school_top_sample_ibfk_2">
-      <ColNames>subject_id</ColNames>
-      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
-      <RefTableName>high_school_subject</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="335" parent="251" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="336" parent="251" name="name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-      <Collation>utf8_general_ci</Collation>
-    </column>
-    <column id="337" parent="251" name="image_url">
-      <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-      <Collation>utf8_general_ci</Collation>
-    </column>
-    <column id="338" parent="251" name="vietnamese">
-      <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-      <Collation>utf8_general_ci</Collation>
-    </column>
-    <index id="339" parent="251" name="name">
-      <ColNames>name</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <key id="340" parent="251" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="341" parent="251" name="name">
-      <ColNames>name</ColNames>
-      <UnderlyingIndexName>name</UnderlyingIndexName>
-    </key>
-    <column id="342" parent="252" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="343" parent="252" name="major_id">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="344" parent="252" name="characteristic">
-      <Position>3</Position>
-      <DataType>double|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="345" parent="252" name="entrance_exam_centroid_id">
-      <Position>4</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="346" parent="252" name="high_school_average">
-      <Position>5</Position>
-      <DataType>double|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="347" parent="252" name="major_id">
-      <ColNames>major_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="348" parent="252" name="entrance_exam_result_centroid_id">
-      <ColNames>entrance_exam_centroid_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="349" parent="252" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="350" parent="252" name="major_centroid_ibfk_1">
-      <ColNames>major_id</ColNames>
-      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
-      <RefTableName>major</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="351" parent="252" name="major_centroid_ibfk_2">
-      <ColNames>entrance_exam_centroid_id</ColNames>
-      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
-      <RefTableName>entrance_exam_centroid</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="352" parent="253" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="353" parent="253" name="person_id">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="354" parent="253" name="characteristic">
-      <Position>3</Position>
-      <DataType>double|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="355" parent="253" name="entrance_exam_sample_id">
-      <Position>4</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="356" parent="253" name="major_id">
-      <Position>5</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="357" parent="253" name="high_school_average">
-      <Position>6</Position>
-      <DataType>double|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="358" parent="253" name="person_id">
-      <ColNames>person_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="359" parent="253" name="entrance_exam_result_id">
-      <ColNames>entrance_exam_sample_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="360" parent="253" name="major_id">
-      <ColNames>major_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="361" parent="253" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="362" parent="253" name="major_sample_ibfk_1">
-      <ColNames>person_id</ColNames>
-      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
-      <RefTableName>person</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="363" parent="253" name="major_sample_ibfk_2">
-      <ColNames>entrance_exam_sample_id</ColNames>
-      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
-      <RefTableName>entrance_exam_sample</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="364" parent="253" name="major_sample_ibfk_3">
-      <ColNames>major_id</ColNames>
-      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
-      <RefTableName>major</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="365" parent="254" name="id">
@@ -1585,127 +1559,504 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="366" parent="254" name="username">
+    <column id="366" parent="254" name="suggested_major_input_id">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="367" parent="254" name="password">
+    <column id="367" parent="254" name="subject_id">
       <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="368" parent="254" name="full_name">
+    <column id="368" parent="254" name="mark">
       <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
-      <Collation>utf8_general_ci</Collation>
     </column>
-    <column id="369" parent="254" name="birth_year">
+    <column id="369" parent="254" name="weight">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="370" parent="254" name="academic_type_id">
-      <Position>6</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="371" parent="254" name="username">
-      <ColNames>username</ColNames>
-      <Unique>1</Unique>
+    <index id="370" parent="254" name="suggested_major_id">
+      <ColNames>suggested_major_input_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="372" parent="254" name="academic_type_id">
-      <ColNames>academic_type_id</ColNames>
+    <index id="371" parent="254" name="subject_id">
+      <ColNames>subject_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="373" parent="254" name="PRIMARY">
+    <key id="372" parent="254" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="374" parent="254" name="username">
-      <ColNames>username</ColNames>
-      <UnderlyingIndexName>username</UnderlyingIndexName>
-    </key>
-    <foreign-key id="375" parent="254" name="person_ibfk_1">
-      <ColNames>academic_type_id</ColNames>
+    <foreign-key id="373" parent="254" name="high_school_top_input_ibfk_1">
+      <ColNames>suggested_major_input_id</ColNames>
       <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
-      <RefTableName>academic_type</RefTableName>
+      <RefTableName>suggested_major_input</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="376" parent="255" name="id">
+    <foreign-key id="374" parent="254" name="high_school_top_input_ibfk_2">
+      <ColNames>subject_id</ColNames>
+      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
+      <RefTableName>high_school_subject</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="375" parent="255" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="377" parent="255" name="person_id">
+    <column id="376" parent="255" name="major_sample_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="378" parent="255" name="characteristic">
+    <column id="377" parent="255" name="subject_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="379" parent="255" name="entrance_exam_input_id">
+    <column id="378" parent="255" name="mark">
       <Position>4</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="380" parent="255" name="major_id">
+    <column id="379" parent="255" name="weight">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="381" parent="255" name="high_school_average">
-      <Position>6</Position>
-      <DataType>double|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="382" parent="255" name="person_id">
-      <ColNames>person_id</ColNames>
+    <index id="380" parent="255" name="major_result_id">
+      <ColNames>major_sample_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="383" parent="255" name="entrance_exam_input_id">
-      <ColNames>entrance_exam_input_id</ColNames>
+    <index id="381" parent="255" name="subject_id">
+      <ColNames>subject_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="384" parent="255" name="major_id">
-      <ColNames>major_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="385" parent="255" name="PRIMARY">
+    <key id="382" parent="255" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="386" parent="255" name="suggested_major_input_ibfk_1">
+    <foreign-key id="383" parent="255" name="high_school_top_sample_ibfk_1">
+      <ColNames>major_sample_id</ColNames>
+      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
+      <RefTableName>major_sample</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="384" parent="255" name="high_school_top_sample_ibfk_2">
+      <ColNames>subject_id</ColNames>
+      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
+      <RefTableName>high_school_subject</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="385" parent="256" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="386" parent="256" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <column id="387" parent="256" name="image_url">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <column id="388" parent="256" name="vietnamese">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <index id="389" parent="256" name="name">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="390" parent="256" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="391" parent="256" name="name">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name</UnderlyingIndexName>
+    </key>
+    <column id="392" parent="257" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="393" parent="257" name="major_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="394" parent="257" name="characteristic">
+      <Position>3</Position>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="395" parent="257" name="entrance_exam_centroid_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="396" parent="257" name="high_school_average">
+      <Position>5</Position>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="397" parent="257" name="major_id">
+      <ColNames>major_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="398" parent="257" name="entrance_exam_result_centroid_id">
+      <ColNames>entrance_exam_centroid_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="399" parent="257" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="400" parent="257" name="major_centroid_ibfk_1">
+      <ColNames>major_id</ColNames>
+      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
+      <RefTableName>major</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="401" parent="257" name="major_centroid_ibfk_2">
+      <ColNames>entrance_exam_centroid_id</ColNames>
+      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
+      <RefTableName>entrance_exam_centroid</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="402" parent="258" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="403" parent="258" name="person_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="404" parent="258" name="characteristic">
+      <Position>3</Position>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="405" parent="258" name="entrance_exam_sample_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="406" parent="258" name="major_id">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="407" parent="258" name="high_school_average">
+      <Position>6</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="408" parent="258" name="person_id">
+      <ColNames>person_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="409" parent="258" name="entrance_exam_result_id">
+      <ColNames>entrance_exam_sample_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="410" parent="258" name="major_id">
+      <ColNames>major_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="411" parent="258" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="412" parent="258" name="major_sample_ibfk_1">
       <ColNames>person_id</ColNames>
       <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
       <RefTableName>person</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="387" parent="255" name="suggested_major_input_ibfk_2">
+    <foreign-key id="413" parent="258" name="major_sample_ibfk_2">
+      <ColNames>entrance_exam_sample_id</ColNames>
+      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
+      <RefTableName>entrance_exam_sample</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="414" parent="258" name="major_sample_ibfk_3">
+      <ColNames>major_id</ColNames>
+      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
+      <RefTableName>major</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="415" parent="259" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="416" parent="259" name="username">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="417" parent="259" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="418" parent="259" name="full_name">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <column id="419" parent="259" name="birth_year">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="420" parent="259" name="academic_type_id">
+      <Position>6</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="421" parent="259" name="username">
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="422" parent="259" name="academic_type_id">
+      <ColNames>academic_type_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="423" parent="259" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="424" parent="259" name="username">
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>username</UnderlyingIndexName>
+    </key>
+    <foreign-key id="425" parent="259" name="person_ibfk_1">
+      <ColNames>academic_type_id</ColNames>
+      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
+      <RefTableName>academic_type</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="426" parent="260" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="427" parent="260" name="person_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="428" parent="260" name="characteristic">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="429" parent="260" name="entrance_exam_input_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="430" parent="260" name="major_id">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="431" parent="260" name="high_school_average">
+      <Position>6</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="432" parent="260" name="person_id">
+      <ColNames>person_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="433" parent="260" name="entrance_exam_input_id">
+      <ColNames>entrance_exam_input_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="434" parent="260" name="major_id">
+      <ColNames>major_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="435" parent="260" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="436" parent="260" name="suggested_major_input_ibfk_1">
+      <ColNames>person_id</ColNames>
+      <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
+      <RefTableName>person</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="437" parent="260" name="suggested_major_input_ibfk_2">
       <ColNames>entrance_exam_input_id</ColNames>
       <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
       <RefTableName>entrance_exam_input</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="388" parent="255" name="suggested_major_input_ibfk_3">
+    <foreign-key id="438" parent="260" name="suggested_major_input_ibfk_3">
       <ColNames>major_id</ColNames>
       <RefSchemaName>ctsa_results_suggestions_db</RefSchemaName>
       <RefTableName>major</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="439" parent="261" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="440" parent="261" name="start_date">
+      <Position>2</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="441" parent="261" name="end_date">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="442" parent="261" name="source">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <column id="443" parent="261" name="link">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8_general_ci</Collation>
+    </column>
+    <column id="444" parent="261" name="position_id">
+      <Position>6</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="445" parent="261" name="number">
+      <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="446" parent="261" name="link">
+      <ColNames>link</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="447" parent="261" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="448" parent="261" name="link">
+      <ColNames>link</ColNames>
+      <UnderlyingIndexName>link</UnderlyingIndexName>
+    </key>
+    <column id="449" parent="262" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="450" parent="262" name="recruitment_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="451" parent="262" name="skill_id">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="452" parent="262" name="skill_type_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="453" parent="262" name="recruitment_id">
+      <ColNames>recruitment_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="454" parent="262" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="455" parent="262" name="required_skill_ibfk_1">
+      <ColNames>recruitment_id</ColNames>
+      <RefSchemaName>ctsa_warehouse_db</RefSchemaName>
+      <RefTableName>recruitment</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
   </database-model>

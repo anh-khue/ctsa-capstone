@@ -14,7 +14,6 @@ import static org.springframework.http.HttpStatus.*;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/keywords")
 public class KeywordController {
 
     private final KeywordService keywordService;
@@ -23,13 +22,13 @@ public class KeywordController {
         this.keywordService = keywordService;
     }
 
-    @GetMapping
+    @GetMapping("/keywords")
     public ResponseEntity getKeywordsMap() {
         return ResponseEntity.status(OK)
                              .body(keywordService.getKeywords());
     }
 
-    @PostMapping
+    @PostMapping("/keywords")
     public ResponseEntity insertSynonyms(@RequestBody SynonymsWrapper synonymsWrapper) {
         try {
             keywordService.insertSynonyms(synonymsWrapper.getSynonyms(),
@@ -41,7 +40,7 @@ public class KeywordController {
         }
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/keywords/{id}")
     public ResponseEntity getById(@PathVariable String id) {
         try {
             return ResponseEntity.status(OK)
@@ -52,7 +51,7 @@ public class KeywordController {
         }
     }
 
-    @PostMapping("/word")
+    @PostMapping("/keywords/word")
     public ResponseEntity getByWord(@RequestBody String word) {
         try {
             return ResponseEntity.status(OK)
@@ -63,13 +62,13 @@ public class KeywordController {
         }
     }
 
-    @GetMapping("/elasticsearch={status}")
+    @GetMapping("/keywords/elasticsearch={status}")
     public ResponseEntity getByPushedToElasticsearch(@PathVariable String status) {
         return ResponseEntity.status(OK)
                              .body(keywordService.getByPushedToElasticsearch(Boolean.parseBoolean(status)));
     }
 
-    @PutMapping("/elasticsearch")
+    @PutMapping("/keywords/elasticsearch")
     public ResponseEntity pushToElasticsearch(@RequestBody List<String> words) {
         words.forEach(keywordService::pushedToElasticsearch);
         return ResponseEntity.status(OK)

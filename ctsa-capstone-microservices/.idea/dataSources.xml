@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="ctsa_results_suggestions_db@0.0.0.0" uuid="e03f593b-3040-44ab-9c27-74c3d2255d1c">
+    <data-source source="LOCAL" name="ctsa_warehouse_db@0.0.0.0" uuid="e03f593b-3040-44ab-9c27-74c3d2255d1c">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://0.0.0.0:3306/ctsa_results_suggestions_db</jdbc-url>
+      <jdbc-url>jdbc:mysql://0.0.0.0:3306/ctsa_warehouse_db</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />

@@ -28,7 +28,8 @@ public class DataPersistence {
                                              .link(dataModel.getLink())
                                              .source("Vietnamworks")
                                              .startDate(Date.valueOf(dataModel.getPostedDate()))
-                                             .endDate(Date.valueOf(dataModel.getPostedDate().plusDays(dataModel.getDuration())))
+                                             .endDate(Date.valueOf(dataModel.getPostedDate()
+                                                                            .plusDays(dataModel.getDuration())))
                                              .positionId(dataModel.getPosition().getId())
                                              .number(number)
                                              .build();
@@ -36,7 +37,8 @@ public class DataPersistence {
         int recruitmentId = warehouseWebClient.saveRecruitment(recruitment).getId();
         recruitment.setId(recruitmentId);
 
-        List<RequiredSkill> requiredSkills = dataModel.getSkills().stream()
+        List<RequiredSkill> requiredSkills = dataModel.getSkills()
+                                                      .stream()
                                                       .map(skill -> RequiredSkill.builder()
                                                                                  .recruitmentId(recruitmentId)
                                                                                  .skillId(skill.getId())

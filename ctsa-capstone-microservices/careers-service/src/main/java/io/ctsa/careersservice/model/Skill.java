@@ -1,39 +1,31 @@
 package io.ctsa.careersservice.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Data
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Skill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NonNull
+    @Column(name = "name")
     private String name;
+    @Column(name = "vietnamese")
+    private String vietnamese;
+    @Column(name = "image_url")
+    private String imageUrl;
+    @Column(name = "skill_type_id")
+    private int skillTypeId;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Skill skill = (Skill) o;
-        return id == skill.id &&
-                Objects.equals(name, skill.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name);
-    }
+    @ManyToOne
+    @JoinColumn(name = "skill_type_id", referencedColumnName = "id", nullable = false,
+                insertable = false, updatable = false)
+    private SkillType skillType;
 }

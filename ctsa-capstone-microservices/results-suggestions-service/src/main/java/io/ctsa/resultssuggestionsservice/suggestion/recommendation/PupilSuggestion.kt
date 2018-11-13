@@ -67,7 +67,8 @@ class PupilSuggestion(private val majorCentroidRepository: MajorCentroidReposito
                 squaredDistance += if (input.subjectId == centroid.subjectId) {
                     pow(input.mark - centroid.mark * centroid.weight, 2.0)
                 } else {
-                    pow(centroid.mark * centroid.weight, 2.0)
+//                    pow(centroid.mark * centroid.weight, 2.0)
+                    0.0
                 }
             }
         }
@@ -84,6 +85,7 @@ class PupilSuggestion(private val majorCentroidRepository: MajorCentroidReposito
                     pow(inputDetail.mark - centroidDetail.mark * centroidDetail.weight, 2.0)
                 } else {
                     pow(centroidDetail.mark * centroidDetail.weight, 2.0)
+//                    0.0
                 }
             }
         }

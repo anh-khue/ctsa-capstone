@@ -6,10 +6,13 @@ import io.ctsa.careersservice.service.SkillService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static org.springframework.http.HttpStatus.*;
 
+@CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/skills")
 public class SkillController {
 
     private final SkillService skillService;
@@ -30,7 +33,7 @@ public class SkillController {
         }
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/skills/{id}")
     public ResponseEntity getById(@PathVariable String id) {
         try {
             return ResponseEntity.status(OK)
@@ -39,5 +42,13 @@ public class SkillController {
         } catch (NotFoundInDatasetException e) {
             return ResponseEntity.status(NOT_FOUND).build();
         }
+    }
+
+    @PostMapping("/skills/list")
+    public ResponseEntity getListByIds(@RequestBody List<Integer> ids) {
+        return ResponseEntity.status(OK)
+                             .body(ids.stream()
+                                      .map(skillService::findById)
+                                      .collect(Collectors.toList()));
     }
 }

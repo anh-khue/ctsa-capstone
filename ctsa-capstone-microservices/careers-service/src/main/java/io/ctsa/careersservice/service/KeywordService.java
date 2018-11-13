@@ -2,16 +2,10 @@ package io.ctsa.careersservice.service;
 
 import io.ctsa.careersservice.model.Keyword;
 import io.ctsa.careersservice.repository.KeywordRepository;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class KeywordService {
@@ -23,17 +17,7 @@ public class KeywordService {
     }
 
     public List<Keyword> getKeywords() {
-        List<Keyword> keywords = keywordRepository.findByIsSynonym(false);
-        return keywords.stream()
-                       .peek(keyword -> keyword.setSynonyms(this.getSynonyms(keyword)))
-                       .collect(Collectors.toList());
-    }
-
-    private List<String> getSynonyms(Keyword keyword) {
-        return keywordRepository.findByMainKeywordId(keyword.getId())
-                                .stream()
-                                .map(Keyword::getWord)
-                                .collect(Collectors.toList());
+        return keywordRepository.findByIsSynonym(false);
     }
 
     public void insertSynonyms(List<String> words, Integer mainKeywordId)
@@ -80,15 +64,4 @@ public class KeywordService {
             keywordRepository.save(keyword);
         });
     }
-}
-
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-class SynonymsWrapper {
-
-    private Keyword keyword;
-    private List<String> synonyms;
 }

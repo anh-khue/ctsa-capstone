@@ -1,9 +1,13 @@
 package io.ctsa.careersservice.model;
 
-import lombok.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -16,15 +20,37 @@ public class Keyword {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NonNull
+    @Column(name = "word")
     private String word;
+    @Column(name = "is_synonym")
     private boolean isSynonym;
+    @Column(name = "main_keyword_id")
     private Integer mainKeywordId;
+    @Column(name = "position_id")
     private Integer positionId;
+    @Column(name = "skill_id")
     private Integer skillId;
+    @Column(name = "pushed_to_elasticsearch")
     private boolean pushedToElasticsearch;
-    @Transient
-    private List<String> synonyms;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "main_keyword_id", referencedColumnName = "id",
+                updatable = false, insertable = false)
+    private Keyword mainKeyword;
+
+    @OneToMany(mappedBy = "mainKeyword")
+    private Collection<Keyword> synonyms;
+
+    @ManyToOne
+    @JoinColumn(name = "position_id", referencedColumnName = "id",
+                updatable = false, insertable = false)
+    private Position positionByPositionId;
+
+    @ManyToOne
+    @JoinColumn(name = "skill_id", referencedColumnName = "id",
+                updatable = false, insertable = false)
+    private Skill skillBySkillId;
 
     @Override
     public boolean equals(Object o) {

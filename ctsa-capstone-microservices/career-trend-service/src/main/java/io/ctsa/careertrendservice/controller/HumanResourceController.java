@@ -19,7 +19,7 @@ public class HumanResourceController {
     }
 
     @GetMapping("human-resources/latest")
-    public ResponseEntity getPrediction(@RequestParam int majorId) {
+    public ResponseEntity getLatest(@RequestParam int majorId) {
         return ResponseEntity.status(HttpStatus.OK)
                              .body(humanResourcesService.getLatest(majorId));
     }

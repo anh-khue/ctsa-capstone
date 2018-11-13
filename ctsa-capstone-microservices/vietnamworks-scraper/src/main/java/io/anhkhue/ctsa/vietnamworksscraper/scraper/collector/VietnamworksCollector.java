@@ -81,41 +81,21 @@ public class VietnamworksCollector implements Collector {
         log.info("Total urls: " + detailUrls.size());
         List<CollectedDataModel> collectedData = new ArrayList<>();
 
-        /*detailUrls.forEach(link -> {
+        detailUrls.forEach(link -> {
             try {
-                this.driver.get(link.getUrl());
-                collectedData.add(retrieveDetail(link.getUrl()));
-                link.setCrawled(true);
-                linkRepository.save(link);
-            } catch (NoKeywordFoundException e) {
-                log.info("Skipped 1 link");
-            } finally {
-                closeDriver();
-            }
-        });*/
-
-        for (Link link : detailUrls) {
-            try {
-                CollectedDataModel dataModel = retrieveDetail(link.getUrl());
-                if (dataModel != null && !dataModel.getSkills().isEmpty()) {
-                    dataPersistence.persist(dataModel);
+                if (!link.isCrawled()) {
+                    CollectedDataModel dataModel = retrieveDetail(link.getUrl());
+                    if (dataModel != null && !dataModel.getSkills().isEmpty()) {
+                        dataPersistence.persist(dataModel);
+                    }
+                    collectedData.add(dataModel);
+                    link.setCrawled(true);
+                    linkRepository.save(link);
                 }
-                collectedData.add(dataModel);
-                link.setCrawled(true);
-                linkRepository.save(link);
             } catch (NoKeywordFoundException e) {
                 log.info("Skipped 1 link");
             }
-        }
-
-        // For testing
-        /*for (int i = 0; i < 3; i++) {
-            try {
-                collectedData.add(retrieveDetail(detailUrls.get(i).getUrl()));
-            } catch (NoKeywordFoundException e) {
-                log.info("Skipped 1 link");
-            }
-        }*/
+        });
 
         return collectedData;
     }
