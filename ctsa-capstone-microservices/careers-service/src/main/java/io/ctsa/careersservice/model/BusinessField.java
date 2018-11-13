@@ -21,17 +21,25 @@ public class BusinessField {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "vietnamese")
+    private String vietnamese;
+
+    @Column(name = "description")
+    private String description;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BusinessField that = (BusinessField) o;
         return id == that.id &&
-                Objects.equals(name, that.name);
+                Objects.equals(name, that.name) &&
+                Objects.equals(vietnamese, that.vietnamese) &&
+                Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(id, name, vietnamese, description);
     }
 }
