@@ -22,9 +22,9 @@
           rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet"
-          th:href="@{css/style.css}">
+          th:href="@{/css/style.css}">
     <!-- Services Routes -->
-    <script th:src="@{js/services-routes.js}"></script>
+    <script th:src="@{/js/services-routes.js}"></script>
 </head>
 
 <body id="homebody">
@@ -32,15 +32,15 @@
     <div class="spinner"></div>
 </div>
 <script>
-    // window.addEventListener('load', () => {
-    //     const loader = document.getElementById('loader');
-    //     setTimeout(() => {
-    //         loader.classList.add('fadeOut');
-    //     }, 300);
-    // });
-    $(window).ready(function () {
-        $('#loader').hide();
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+            loader.classList.add('fadeOut');
+        }, 300);
     });
+    // $(window).ready(function () {
+    //     $('#loader').hide();
+    // });
 </script>
 <!-- Header -->
 <div th:replace="fragments/general.html :: header"></div>
