@@ -50,17 +50,17 @@
                  class="d-inline-block align-top"
                  alt="CTSA logo">
         </a>
+        <span class="title-header">Career Trend Suggestions</span>
 
-        <div class="collapse navbar-collapse  justify-content-center  menu"
-             id="navbarSupportedContent">
-            <a class="mx-5"
+        <div class="collapse navbar-collapse  justify-content-center  menu">
+            <!-- <a class="mx-5"
                href="#">Tuyển Dụng</a>
             <a class="mx-5"
                href=".\graph.html">Thống Kê</a>
             <a class="mx-5"
                href="#">Tuyển Dụng</a>
             <a class="mx-5"
-               href="#">Thống Kê</a>
+               href="#">Thống Kê</a> -->
 
         </div>
         <span class="fa-stack">
@@ -81,7 +81,7 @@
                 </a> -->
 
                 <img alt="Ranking Image"
-                     src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541714808/demo-image/slogan-ctsa.png">
+                     src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1542345727/demo-image/slogan-ctsa.png">
 
             </div>
 
@@ -142,7 +142,33 @@
                     <div class="role1 hideaway mx-4 pl-4 my-2"
                          style="border-left-style: dashed; border-width:3px;">
                         <div id="chooseSubjects">
-
+                            <!-- <button class="btn btn-outline-dark my-2 mx-1 rolebtn"
+                                    value="1"
+                                    onclick="chooseSubject(this)">Toán học</button>
+                            <button class="btn btn-outline-dark my-2 mx-1 rolebtn"
+                                    value="2"
+                                    onclick="chooseSubject(this)">Ngữ văn</button>
+                            <button class="btn btn-outline-dark my-2 mx-1 rolebtn"
+                                    value="3"
+                                    onclick="chooseSubject(this)">Tiếng Anh</button>
+                            <button class="btn btn-outline-dark my-2 mx-1 rolebtn"
+                                    value="4"
+                                    onclick="chooseSubject(this)">Vật Lý</button>
+                            <button class="btn btn-outline-dark my-2 mx-1 rolebtn"
+                                    value="5"
+                                    onclick="chooseSubject(this)">Hóa học</button>
+                            <button class="btn btn-outline-dark my-2 mx-1 rolebtn"
+                                    value="6"
+                                    onclick="chooseSubject(this)">Sinh học</button>
+                            <button class="btn btn-outline-dark my-2 mx-1 rolebtn"
+                                    value="7"
+                                    onclick="chooseSubject(this)">Lịch sử</button>
+                            <button class="btn btn-outline-dark my-2 mx-1 rolebtn"
+                                    value="8"
+                                    onclick="chooseSubject(this)">Địa Lý</button>
+                            <button class="btn btn-outline-dark my-2 mx-1 rolebtn"
+                                    value="9"
+                                    onclick="chooseSubject(this)">Tin học</button> -->
                         </div>
                         <div id="subjectsMarks"
                              class="hideaway">
@@ -163,11 +189,9 @@
                          style="border-left-style: dashed; border-width:3px">
 
                         <input type="number"
-                               class="my-2 mx-1"
+                               class="my-2 mx-1 text-right col-md-2"
                                id="highSchoolAverage"
-                               placeholder="Điểm trung bình của bạn..."
                                onkeypress="retrieveAverage(this)"
-                               style="width: 300px"
                                step="0.1">
 
                     </div>
@@ -353,7 +377,7 @@
             })
 
             let name = $('<button>', {
-                class: 'btn btn-outline-dark my-2 mx-1 selected col-md-2',
+                class: 'btn btn-outline-dark my-2 mx-1 selected col-md-3',
                 text: vietnamese,
             }).appendTo(subjectDiv)
 
@@ -362,8 +386,8 @@
                 step: '0.1',
                 id: 'mark' + subject.weight,
                 value: '',
-                class: 'my-2 mx-3 col-md-6',
-                placeholder: 'Điểm của bạn...',
+                class: 'my-2 mx-3 col-md-2 text-right',
+                // placeholder: 'Điểm của bạn...',
                 onkeypress: 'retrieveMark(this)',
                 style: 'width: 300px'
             }).appendTo(subjectDiv)

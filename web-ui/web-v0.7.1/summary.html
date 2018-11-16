@@ -30,14 +30,14 @@
 
 
 <body>
-    <div id="loader">
-        <div class="spinner"></div>
-    </div>
-    <script>
-        $(window).ready(function () {
-            $('#loader').hide();
-        });
-    </script>
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+  <script>
+    $(window).ready(function () {
+      $('#loader').hide();
+    });
+  </script>
   <!-- Header -->
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark"
@@ -46,21 +46,21 @@
        href=".\index.html">
       <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/logoctsa.png"
            width="90"
-           height="30"
+           height="27"
            class="d-inline-block align-top"
            alt="CTSA logo">
     </a>
+    <span class="title-header">Career Trend Suggestions</span>
 
-    <div class="collapse navbar-collapse justify-content-center menu "
-         id="navbarSupportedContent">
-      <a class="mx-5"
-         href="#">Tuyển Dụng</a>
-      <a class="mx-5"
-         href=".\graph.html">Thống Kê</a>
-      <a class="mx-5"
-         href="#">Tuyển Dụng</a>
-      <a class="mx-5"
-         href="#">Thống Kê</a>
+    <div class="collapse navbar-collapse  justify-content-center  menu">
+      <!-- <a class="mx-5"
+        href="#">Tuyển Dụng</a>
+     <a class="mx-5"
+        href=".\graph.html">Thống Kê</a>
+     <a class="mx-5"
+        href="#">Tuyển Dụng</a>
+     <a class="mx-5"
+        href="#">Thống Kê</a> -->
 
     </div>
     <span class="fa-stack">
@@ -201,73 +201,87 @@
              id="statistic"
              role="tabpanel"
              aria-labelledby="profile-tab">
-          <div class="row">
-            <div class="col-md-4"
-                 style="text-align: right">
-              <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237096/demo-image/java.png"
-                   alt="Java"
-                   height="60"
-                   width="150"><br>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
+          <div class="row justify-content-center">
+            <div class="col-md-5">
+              <!-- Each Statistic banner -->
+              <div class="row justify-content-center">
+                <div class="col-md-3 statistic1 text-center ">
 
-            </div>
-            <div class="col-md-2 text-center ">
-              <div class="statistic1">
-                <span style="color:rgb(235, 226, 226); font-size:5em">08</span><br>
-                <span style="color:rgb(235, 226, 226); font-size:1.4em">Công ty ABC</span><br><br><br><br>
+                  <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/nest.svg"
+                       alt="javascript"
+                       height="110"
+                       width="180">
+
+                </div>
+                <div class="col-md-5 statistic-description text-center">
+                    <div class="vertical-middle">
+                  <b>Artificial Intelligence</b>
+                  </div>
+                </div>
               </div>
-
+              <!-- End Each Statistic banner -->
             </div>
-            <div class="col-md-2 text-center ">
-              <div class="statistic2">
-                <span style="color:rgb(235, 226, 226); font-size:5em">08</span><br>
-                <span style="color:#ff6215; font-size:1.4em">Công ty XYZ</span><br><br><br><br>
+            <div class="col-md-5">
+              <!-- Each Statistic banner -->
+              <div class="row  justify-content-center">
+                <div class="col-md-3 statistic1 text-center">
+
+                  <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237096/demo-image/java.png"
+                       alt="javascript"
+                       height="110"
+                       width="180">
+
+                </div>
+                <div class="col-md-5 statistic-description  text-center">
+                    <div class="vertical-middle ">
+                  <b>NodeJS</b>
+                  </div>
+                </div>
               </div>
-
-            </div>
-            <div class="col-md-4">
-              <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/nest.svg"
-                   alt="Nest"
-                   height="60"
-                   width="150"><br>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
-
+              <!-- End Each Statistic banner -->
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-4"
-                 style="text-align: right">
-              <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237097/demo-image/javascript.png"
-                   alt="javascript"
-                   height="60"
-                   width="150"><br>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
+          <div class="row justify-content-center">
+            <div class="col-md-5">
+              <!-- Each Statistic banner -->
+              <div class="row justify-content-center">
+                <div class="col-md-3 statistic1 text-center ">
 
-            </div>
-            <div class="col-md-2 text-center ">
-              <div class="statistic1">
-                <span style="color:rgb(235, 226, 226); font-size:5em">05</span><br>
-                <span style="color:rgb(235, 226, 226); font-size:1.4em">Công ty Hải</span><br><br><br><br>
+                  <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237102/demo-image/node-js.png"
+                       alt="javascript"
+                       height="110"
+                       width="180">
+
+                </div>
+                <div class="col-md-5 statistic-description text-center">
+                  <div class="vertical-middle ">
+                    <b>Performance testing</b>
+                  </div>
+                  <!-- Performance testing -->
+                </div>
               </div>
-
+              <!-- End Each Statistic banner -->
             </div>
-            <div class="col-md-2 text-center ">
-              <div class="statistic2">
-                <span style="color:rgb(235, 226, 226); font-size:5em">002</span><br>
-                <span style="color:#ff6215; font-size:1.4em">Công ty Fsoft</span><br><br><br><br>
+            <div class="col-md-5">
+              <!-- Each Statistic banner -->
+              <div class="row  justify-content-center">
+                <div class="col-md-3 statistic1 text-center">
+
+                  <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237102/demo-image/node-js.png"
+                       alt="javascript"
+                       height="110"
+                       width="180">
+
+                </div>
+                <div class="col-md-5 statistic-description text-center">
+                  <!-- <span class="align-middle">NodeJS</span> -->
+                  <div class="vertical-middle ">
+                      <b>NodeJS</b>
+                  </div>
+                  <!-- NodeJS -->
+                </div>
               </div>
-
-            </div>
-            <div class="col-md-4">
-              <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237102/demo-image/node-js.png"
-                   alt="NodeJS"
-                   height="60"
-                   width="150"><br>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
+              <!-- End Each Statistic banner -->
             </div>
           </div>
         </div>
