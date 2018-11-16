@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="vn">
+
+<head>
+    <title>Thông tin tuyển dụng</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+
+    <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <!-- Custom -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/recruitment.css}">
+    <link rel="stylesheet" th:href="@{/css/job-list.css}">
+
+    <style>
+        .description > p {
+            padding: 0.5% 2% 0 2%;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body onload="getRecruitmentById(5)">
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+
+<script>
+    window.addEventListener("load", () => {
+        const loader = document.getElementById("loader");
+        setTimeout(() => {
+            loader.classList.add("fadeOut");
+        }, 500);
+    });
+</script>
+
+<!-- Header -->
+<div th:replace="fragments/general.html :: header"></div>
+
+<div class="container-fluid">
+    <div id="content" class="tab-content col-md-12 folder">
+        <div class="top-background">
+            <div class="row justify-content-center">
+                <div
+                        id="company-logo"
+                        style="background-color: white; margin-top:-50px; border-radius:20px"
+                >
+                    <a href="#">
+                        <img id="major-image"
+                             alt=""
+                             src=""
+                             style="margin: 15px"
+                             width="250"
+                             height="250"/>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <div class="row justify-content-center">
+                            <table class="table text-center col-md-10 bg-white table-bordered">
+                                <thead>
+                                <tr>
+                                    <th class="bg-orange text-white">
+                                        <h3 id="major-title">
+
+                                        </h3>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <div id="major-description"
+                                             class="row justify-content-around my-auto description">
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="row">
+                <div class="job-detail1 col-md-12">
+                    <div>
+                        <h2 class="text-center">
+                            <img
+                                    src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541484328/contact.png"
+                                    alt=""
+                                    width="50"
+                            />
+                            Tin tuyển dụng
+                        </h2>
+                        <hr/>
+                        <!-- Tin 1 -->
+                        <div class="row justify-content-around stylish-panel">
+                            <div class="col-md-2 text-center my-auto">
+                                <a href="http://localhost:8007/recruitment/2"
+                                ><img
+                                        src="https://cdn.itviec.com/employers/fpt-software/logo/social/3reFYvb7XKV1a8g4aKiDDke8/fpt-software-logo.png"
+                                        width="200"
+                                        height="200"
+                                /></a>
+                            </div>
+                            <div class="col-md-7">
+                                <a href="http://localhost:8007/recruitment/2"
+                                ><h2>
+                                    20 junior/senior Developers – signing bonus up to 18M
+                                </h2></a
+                                >
+                                <p class="job-descript">
+                                    Work with project members, responsible for the code
+                                    review, development, and investigation of Java Web
+                                    technologies. Implement task lists, estimate deliver
+                                    assignments as functional specifications, quality
+                                    standards and project schedules. Consistently...
+                                </p>
+                                <div class="pt-5">
+                                    <a href="#" class="btn btn-outline-dark">Java</a>&nbsp;<a
+                                        href="#"
+                                        class="btn btn-outline-dark"
+                                >Javascript</a
+                                >&nbsp;
+                                </div>
+                            </div>
+                            <div class="col-md-2 my-auto" style="text-align: right">
+                                <div class="btn bg-orange text-white my-2">Hot</div>
+                                &nbsp;
+                                <div class="btn btn-primary my-2">New</div>
+                                <div class="my-4"><span>12 ngày trước</span></div>
+                                <div class="my-4"><span>Hà Nội, Đà Nẵng, HCM</span></div>
+                            </div>
+                        </div>
+                        <!-- Tin 2 -->
+                        <div class="row justify-content-around stylish-panel">
+                            <div class="col-md-2 text-center my-auto">
+                                <a href="http://localhost:8007/recruitment/2"
+                                ><img
+                                        src="https://cdn.itviec.com/employers/fpt-software/logo/social/3reFYvb7XKV1a8g4aKiDDke8/fpt-software-logo.png"
+                                        width="200"
+                                        height="200"
+                                /></a>
+                            </div>
+                            <div class="col-md-7">
+                                <a href="http://localhost:8007/recruitment/2"
+                                ><h2>
+                                    20 junior/senior Developers – signing bonus up to 18M
+                                </h2></a
+                                >
+                                <p class="job-descript">
+                                    Work with project members, responsible for the code
+                                    review, development, and investigation of Java Web
+                                    technologies. Implement task lists, estimate deliver
+                                    assignments as functional specifications, quality
+                                    standards and project schedules. Consistently...
+                                </p>
+                                <div class="pt-5">
+                                    <a href="#" class="btn btn-outline-dark">Java</a>&nbsp;<a
+                                        href="#"
+                                        class="btn btn-outline-dark"
+                                >Javascript</a
+                                >&nbsp;
+                                </div>
+                            </div>
+                            <div class="col-md-2 my-auto" style="text-align: right">
+                                <div class="btn bg-orange text-white my-2">Hot</div>
+                                &nbsp;
+                                <div class="btn btn-primary my-2">New</div>
+                                <div class="my-4"><span>12 ngày trước</span></div>
+                                <div class="my-4"><span>Hà Nội, Đà Nẵng, HCM</span></div>
+                            </div>
+                        </div>
+                        <!-- Tin 3 -->
+                        <div class="row justify-content-around stylish-panel">
+                            <div class="col-md-2 text-center my-auto">
+                                <a href="http://localhost:8007/recruitment/2"
+                                ><img
+                                        src="https://cdn.itviec.com/employers/fpt-software/logo/social/3reFYvb7XKV1a8g4aKiDDke8/fpt-software-logo.png"
+                                        width="200"
+                                        height="200"
+                                /></a>
+                            </div>
+                            <div class="col-md-7">
+                                <a href="http://localhost:8007/recruitment/2"
+                                ><h2>
+                                    20 junior/senior Developers – signing bonus up to 18M
+                                </h2></a
+                                >
+                                <p class="job-descript">
+                                    Work with project members, responsible for the code
+                                    review, development, and investigation of Java Web
+                                    technologies. Implement task lists, estimate deliver
+                                    assignments as functional specifications, quality
+                                    standards and project schedules. Consistently...
+                                </p>
+                                <div class="pt-5">
+                                    <a href="#" class="btn btn-outline-dark">Java</a>&nbsp;<a
+                                        href="#"
+                                        class="btn btn-outline-dark"
+                                >Javascript</a
+                                >&nbsp;
+                                </div>
+                            </div>
+                            <div class="col-md-2 my-auto" style="text-align: right">
+                                <div class="btn bg-orange text-white my-2">Hot</div>
+                                &nbsp;
+                                <div class="btn btn-primary my-2">New</div>
+                                <div class="my-4"><span>12 ngày trước</span></div>
+                                <div class="my-4"><span>Hà Nội, Đà Nẵng, HCM</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-justify">
+                        <ul id="job-contact"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/js/scroll-animate.js}"></script>
+<script th:src="@{/js/services-routes.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+
+<script th:inline="javascript">
+    window.onload = function () {
+        /*[+
+
+            let majorId  = [[${majorId}]];
+
+        +]*/
+        getMajorDescription(majorId)
+    }
+
+    async function getMajorDescription(majorId) {
+        let majorResponse = await axios.get(API_GATEWAY + CAREERS_SERVICES + '/majors/' + majorId)
+
+        $('#major-image').attr("src", majorResponse.data.imageUrl)
+        $('#major-title').html(majorResponse.data.vietnamese)
+        $('#major-description').html(majorResponse.data.description)
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Thông tin tuyển dụng</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href=".\css\style.css" />
+    <link rel="stylesheet" href=".\css\job-recruit-alternative.css" />
+    <link rel="stylesheet" href="./css/listjob.css" />
+
+    <style>
+      .description > p {
+        padding: 0.5% 2% 0 2%;
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+
+  <body onload="getRecruitmentById(5)">
+    <div id="loader"><div class="spinner"></div></div>
+
+    <script>
+      window.addEventListener("load", () => {
+        const loader = document.getElementById("loader");
+        setTimeout(() => {
+          loader.classList.add("fadeOut");
+        }, 500);
+      });
+    </script>
+
+    <!-- Header -->
+    <nav
+      class="navbar navbar-expand-md navbar-dark bg-dark"
+      style="height: 45px"
+    >
+      <a class="navbar-brand" href=".\index.html">
+        <img
+          src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/logoctsa.png"
+          width="90"
+          height="27"
+          class="d-inline-block align-top"
+          alt="CTSA logo"
+        />
+      </a>
+
+      <div
+        class="collapse navbar-collapse  justify-content-center  menu"
+        id="navbarSupportedContent"
+      >
+        <a class="mx-5" href="#">Tuyển Dụng</a>
+        <a class="mx-5" href=".\graph.html">Thống Kê</a>
+        <a class="mx-5" href="#">Tuyển Dụng</a>
+        <a class="mx-5" href="#">Thống Kê</a>
+      </div>
+      <span class="fa-stack">
+        <i
+          class="	fa fa-user-circle-o fa-stack-1x"
+          style="font-size:36px; color:white"
+        ></i>
+      </span>
+    </nav>
+    <!-- End of Header -->
+
+    <div class="container-fluid">
+      <div id="content" class="tab-content col-md-12 folder">
+        <div class="top-background">
+          <div class="row justify-content-center">
+            <div
+              id="company-logo"
+              style="background-color: white; margin-top:-50px; border-radius:20px"
+            >
+              <a href="#">
+                <img
+                  alt=""
+                  src="https://cdn4.iconfinder.com/data/icons/creative-process-16/512/Logo_Design-512.png"
+                  style="margin: 15px"
+                  width="250"
+                  height="250"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div>
+                <div class="row justify-content-center">
+                  <table
+                    class="table text-center col-md-10 bg-white table-bordered"
+                  >
+                    <thead>
+                      <tr>
+                        <th class="bg-orange text-white">
+                          <h3 id="job-title">Công nghệ thông tin</h3>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div
+                            class="row justify-content-around my-auto description"
+                          >
+                            <p>
+                              Trong Cách mạng Công Nghiệp 4.0, những yếu tố mà
+                              các nước đang phát triển tự hào là ưu thế như lực
+                              lượng lao động trẻ, dồi dào sẽ không còn là thế
+                              mạnh hơn nữa còn có thể sớm bị thay thế bởi Trí
+                              tuệ nhân tạo.
+                            </p>
+                            <p>
+                              Trong tương lai, lực lượng lao động trong mọi lĩnh
+                              vực đều có thể mất việc làm bởi công nghệ robot có
+                              thể tác động tới tất cả các ngành nghề từ dệt may,
+                              dịch vụ, giải trí đến y tế, giao thông, giáo
+                              dục... Chính vì vậy, đây là thời kỳ thuận lợi để
+                              sinh viên học Công nghệ thông tin: Lập trình, Quản
+                              trị mạng, Bảo mật,.. thể hiện kiến thức, kỹ năng
+                              và bản lĩnh trong thời đại mới – thời đại 4.0.
+                            </p>
+                            <p>
+                              Theo nhận định của VietnamWorks, hiện nay Việt Nam
+                              đang có “Nhu cầu tuyển dụng nhân lực ngành CNTT
+                              cao nhất trong lịch sử".
+                            </p>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Information -->
+          <div class="row">
+            <div class="job-detail1 col-md-12">
+              <div>
+                <h2 class="text-center">
+                  <img
+                    src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541484328/contact.png"
+                    alt=""
+                    width="50"
+                    width="50"
+                  />
+                  Tin tuyển dụng
+                </h2>
+                <hr />
+                <!-- Tin 1 -->
+                <div class="row justify-content-around stylish-panel">
+                  <div class="col-md-2 text-center my-auto">
+                    <a href="http://localhost:8007/recruitment/2"
+                      ><img
+                        src="https://cdn.itviec.com/employers/fpt-software/logo/social/3reFYvb7XKV1a8g4aKiDDke8/fpt-software-logo.png"
+                        width="200"
+                        height="200"
+                    /></a>
+                  </div>
+                  <div class="col-md-7">
+                    <a href="http://localhost:8007/recruitment/2"
+                      ><h2>
+                        20 junior/senior Developers – signing bonus up to 18M
+                      </h2></a
+                    >
+                    <p class="job-descript">
+                      Work with project members, responsible for the code
+                      review, development, and investigation of Java Web
+                      technologies. Implement task lists, estimate deliver
+                      assignments as functional specifications, quality
+                      standards and project schedules. Consistently...
+                    </p>
+                    <div class="pt-5">
+                      <a href="#" class="btn btn-outline-dark">Java</a>&nbsp;<a
+                        href="#"
+                        class="btn btn-outline-dark"
+                        >Javascript</a
+                      >&nbsp;
+                    </div>
+                  </div>
+                  <div class="col-md-2 my-auto" style="text-align: right">
+                    <div class="btn bg-orange text-white my-2">Hot</div>
+                    &nbsp;
+                    <div class="btn btn-primary my-2">New</div>
+                    <div class="my-4"><span>12 ngày trước</span></div>
+                    <div class="my-4"><span>Hà Nội, Đà Nẵng, HCM</span></div>
+                  </div>
+                </div>
+                <!-- Tin 2 -->
+                <div class="row justify-content-around stylish-panel">
+                  <div class="col-md-2 text-center my-auto">
+                    <a href="http://localhost:8007/recruitment/2"
+                      ><img
+                        src="https://cdn.itviec.com/employers/fpt-software/logo/social/3reFYvb7XKV1a8g4aKiDDke8/fpt-software-logo.png"
+                        width="200"
+                        height="200"
+                    /></a>
+                  </div>
+                  <div class="col-md-7">
+                    <a href="http://localhost:8007/recruitment/2"
+                      ><h2>
+                        20 junior/senior Developers – signing bonus up to 18M
+                      </h2></a
+                    >
+                    <p class="job-descript">
+                      Work with project members, responsible for the code
+                      review, development, and investigation of Java Web
+                      technologies. Implement task lists, estimate deliver
+                      assignments as functional specifications, quality
+                      standards and project schedules. Consistently...
+                    </p>
+                    <div class="pt-5">
+                      <a href="#" class="btn btn-outline-dark">Java</a>&nbsp;<a
+                        href="#"
+                        class="btn btn-outline-dark"
+                        >Javascript</a
+                      >&nbsp;
+                    </div>
+                  </div>
+                  <div class="col-md-2 my-auto" style="text-align: right">
+                    <div class="btn bg-orange text-white my-2">Hot</div>
+                    &nbsp;
+                    <div class="btn btn-primary my-2">New</div>
+                    <div class="my-4"><span>12 ngày trước</span></div>
+                    <div class="my-4"><span>Hà Nội, Đà Nẵng, HCM</span></div>
+                  </div>
+                </div>
+                <!-- Tin 3 -->
+                <div class="row justify-content-around stylish-panel">
+                  <div class="col-md-2 text-center my-auto">
+                    <a href="http://localhost:8007/recruitment/2"
+                      ><img
+                        src="https://cdn.itviec.com/employers/fpt-software/logo/social/3reFYvb7XKV1a8g4aKiDDke8/fpt-software-logo.png"
+                        width="200"
+                        height="200"
+                    /></a>
+                  </div>
+                  <div class="col-md-7">
+                    <a href="http://localhost:8007/recruitment/2"
+                      ><h2>
+                        20 junior/senior Developers – signing bonus up to 18M
+                      </h2></a
+                    >
+                    <p class="job-descript">
+                      Work with project members, responsible for the code
+                      review, development, and investigation of Java Web
+                      technologies. Implement task lists, estimate deliver
+                      assignments as functional specifications, quality
+                      standards and project schedules. Consistently...
+                    </p>
+                    <div class="pt-5">
+                      <a href="#" class="btn btn-outline-dark">Java</a>&nbsp;<a
+                        href="#"
+                        class="btn btn-outline-dark"
+                        >Javascript</a
+                      >&nbsp;
+                    </div>
+                  </div>
+                  <div class="col-md-2 my-auto" style="text-align: right">
+                    <div class="btn bg-orange text-white my-2">Hot</div>
+                    &nbsp;
+                    <div class="btn btn-primary my-2">New</div>
+                    <div class="my-4"><span>12 ngày trước</span></div>
+                    <div class="my-4"><span>Hà Nội, Đà Nẵng, HCM</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-justify"><ul id="job-contact"></ul></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src=".\js\scroll-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+
+    <script>
+      function getRecruitmentById(recruitmentId) {
+        axios
+          .get("http://localhost:8080/recruitment/" + recruitmentId)
+          .then(response => {
+            let recruitment = response.data;
+            console.log(recruitment);
+
+            var imgTag =
+              '<a href="#"><img alt="" src="' +
+              recruitment.image +
+              '" style="margin: 15px" width="250" height="250"></a>';
+            $("#company-logo").append(imgTag);
+
+            $("#job-title").append(recruitment.title);
+            $("#job-start").append(
+              new Date(recruitment.startDate).toLocaleDateString("vi-VN")
+            );
+            $("#job-due").append(
+              new Date(recruitment.endDate).toLocaleDateString("vi-VN")
+            );
+            $("#job-number").append(recruitment.number);
+            $("#job-description").append(recruitment.jobDescription);
+            $("#job-requirement").append(recruitment.jobRequirement);
+
+            $("#job-skills").append("<ul>");
+            var i;
+            for (i = 0; i < recruitment.skills.length; i++) {
+              var liTag =
+                '<li class="btn bg-orange text-white mb-1">' +
+                recruitment.skills[i].skillName +
+                "</li>&nbsp;";
+              $("#job-skills").append(liTag);
+            }
+            $("#job-skills").append("</ul>");
+
+            $("#job-contact").append(
+              '<li class="mb-4"><img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541484328/location.png" alt="" width="20" width="20">&emsp;' +
+                recruitment.address +
+                "</li>"
+            );
+            $("#job-contact").append(
+              '<li class="mb-4"><img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541484329/mail.png" alt="" width="20" width="20">&emsp;' +
+                recruitment.email +
+                "</li>"
+            );
+            $("#job-contact").append(
+              '<li class="mb-4"><img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541477752/demo-image/phone.png" alt="" width="20" width="20">&emsp;' +
+                recruitment.phone +
+                "</li>"
+            );
+
+            $("#job-info").append("<ul>");
+            var map = Object.keys(recruitment.attributes);
+            map.forEach(key => {
+              // console.log(key + ': ' + recruitment.attributes[key]);
+              $("#job-info").append(
+                '<li class="mb-3">' +
+                  key +
+                  ": " +
+                  recruitment.attributes[key] +
+                  "</li>"
+              );
+            });
+            $("#job-info").append("</ul>");
+          });
+      }
+    </script>
+  </body>
+</html>
