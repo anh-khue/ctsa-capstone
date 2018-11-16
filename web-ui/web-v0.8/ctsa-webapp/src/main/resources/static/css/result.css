@@ -204,3 +204,7 @@ section.range-slider input[type=range]::-moz-focus-outer {
     background-color: #ff6215;
     color: rgb(238, 237, 237);
 }
+
+.modal-backdrop.show {
+    opacity: 0.85;
+}

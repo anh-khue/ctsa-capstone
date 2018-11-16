@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div th:fragment="stats-tab"
+     class="tab-pane fade show active"
+     id="stats"
+     role="tabpanel"
+     aria-labelledby="home-tab">
+
+</div>
+
+<div th:fragment="predictions-tab"
+     class="tab-pane fade"
+     id="predictions"
+     role="tabpanel"
+     aria-labelledby="profile-tab">
+    <div class="row">
+        <!-- Left -->
+        <div class="col-md-4"
+             style="text-align: right">
+            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237096/demo-image/java.png"
+                 alt="Java"
+                 height="60"
+                 width="150"><br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et
+                dolore magna aliqua.
+            </p>
+        </div>
+        <div class="col-md-2 text-center ">
+            <div class="statistic1">
+                <span style="color:rgb(235, 226, 226); font-size:5em">08</span><br>
+                <span style="color:rgb(235, 226, 226); font-size:1.4em">Công ty ABC</span><br><br><br><br>
+            </div>
+        </div>
+
+        <!-- Right -->
+        <div class="col-md-2 text-center ">
+            <div class="statistic2">
+                <span style="color:#ff6215; font-size:5em">08</span><br>
+                <span style="color:#ff6215; font-size:1.4em">Công ty XYZ</span><br><br><br><br>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/nest.svg"
+                 alt="Nest"
+                 height="150"
+                 width="150"><br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et
+                dolore magna aliqua.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"
+             style="text-align: right">
+            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237097/demo-image/javascript.png"
+                 alt="javascript"
+                 height="150"
+                 width="150"><br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et
+                dolore magna aliqua.</p>
+
+        </div>
+        <div class="col-md-2 text-center ">
+            <div class="statistic1">
+                <span style="color:rgb(235, 226, 226); font-size:5em">05</span><br>
+                <span style="color:rgb(235, 226, 226); font-size:1.4em">Công ty Hải</span><br><br><br><br>
+            </div>
+
+        </div>
+        <div class="col-md-2 text-center ">
+            <div class="statistic2">
+                <span style="color:rgb(235, 226, 226); font-size:5em">002</span><br>
+                <span style="color:#ff6215; font-size:1.4em">Công ty Fsoft</span><br><br><br><br>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237102/demo-image/node-js.png"
+                 alt="NodeJS"
+                 height="60"
+                 width="150"><br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et
+                dolore magna aliqua.</p>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="recruitment-tab"
+     class="tab-pane fade"
+     id="recruitment"
+     role="tabpanel"
+     aria-labelledby="contact-tab">
+    <div class="row justify-content-center ">
+        <div class="col-md-3 text-center banner ">
+            <span style="font-size: 55px; color:#ff6414">2</span>
+            <br><br>
+            <b style="color:rgb(241, 236, 236); font-size:3em">Amazon</b><br>
+            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237095/demo-image/companyA.png"
+                 alt="Hình công ty"
+                 height="120"
+                 width="220"
+                 class="img-recruitment">
+            <div class="info-recruitment">
+                <h3> 15 vị trí</h3>
+                <h3>Đang tuyển dụng</h3>
+            </div>
+        </div>
+
+        <div class="col-md-4 text-center banner"
+             style="height:700px; width:280px;">
+            <span style="font-size: 70px; color:#ff6414">1</span><br><br>
+            <b style="color:rgb(241, 236, 236); font-size:5em">Grab</b><br>
+            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237096/demo-image/companyB.svg"
+                 alt="Hình công ty"
+                 height="140"
+                 width="240"
+                 class="img-recruitment">
+            <div class="info-recruitment">
+                <h3> 15 vị trí</h3>
+                <h3>Đang tuyển dụng</h3>
+            </div>
+
+        </div>
+
+        <div class="col-md-3 text-center banner">
+            <span style="font-size: 55px; color:#ff6414">3</span><br><br>
+            <b style="color:rgb(241, 236, 236); font-size:3em">RXR</b><br>
+            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237096/demo-image/companyC.png"
+                 alt="Hình công ty"
+                 height="120"
+                 width="220"
+                 class="img-recruitment">
+            <div class="info-recruitment">
+                <h3> 15 vị trí</h3>
+                <h3>Đang tuyển dụng</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
