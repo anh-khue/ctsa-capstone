@@ -65,11 +65,11 @@ body {
   position: relative;
   top: 25px;
   background-color: #343a40;
-
   display: inline-block;
   z-index: 2;
   color: #eee;
 }
+
 .tab:before {
   height: 50px;
   width: 70px;
@@ -84,7 +84,7 @@ body {
   z-index: -1;
 }
 
-#myTab > li > a {
+#myTab>li>a {
   color: rgb(214, 213, 213);
   padding: 10px;
   font-size: 1.4em;
@@ -96,7 +96,7 @@ body {
   /* color: rgb(226, 220, 220) ; */
 }
 
-.tabactive > a {
+.tabactive>a {
   color: #161616 !important;
   font-size: 1.4em;
   font-weight: bold;
@@ -142,8 +142,7 @@ body {
   margin-left: 20px;
 }
 
-.top-icons-left > div > img,
-.top-icons-right > div > img {
+.top-icons-left>div>img, .top-icons-right>div>img {
   height: 110px;
   width: 110px;
 }
@@ -178,46 +177,77 @@ body {
   padding-top: 1%;
 }
 
-.statistic1 {
-  background: url("https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237114/demo-image/statistic1.png") no-repeat center;
+.statistic-description {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  height: 125px;
+  /* z-index: -1; */
+  font-size: 2.5em;
+  /* padding-top: 30px; */
+  background: url("https://res.cloudinary.com/ctsa-capstone/image/upload/v1542352746/demo-image/statistic-description.png") no-repeat;
   background-size: 100% 100%;
+  line-height: 1;
+  /* padding: 5% 0; */
+}
+
+.vertical-middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+}
+
+.statistic1 {
+  background: url("https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237114/demo-image/statistic1.png") no-repeat;
+  background-size: 100% 100%;
+  height: 180px;
+  /* width: 200px; */
 }
 
 .statistic2 {
-  background: url("https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237114/demo-image/statistic2.png") no-repeat center;
+  background: url("https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237114/demo-image/statistic2.png") no-repeat;
   background-size: 100% 100%;
-}
-.modal-content  {
-  -webkit-border-radius: 20px !important;
-  -moz-border-radius: 20px !important;
-  border-top-left-radius: 20px !important; 
-  border-top-right-radius: 20px !important; 
+  height: 200px;
+  width: 200px;
 }
 
+.modal-content {
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  border-top-left-radius: 20px !important;
+  border-top-right-radius: 20px !important;
+}
 
 /* .pagi-button{
   color: rgb(240, 240, 240);
   border: 1px solid #ff7d1f;
 } */
-.page-link{
+
+.page-link {
   color: #ff7d1f;
   border: 1px solid #ff7d1f;
 }
-.pagi-button-selected{
+
+.pagi-button-selected {
   color: rgb(240, 240, 240);
   background-color: #ff7d1f;
 }
-.pagi-button-selected:hover{
+
+.pagi-button-selected:hover {
   color: rgb(240, 240, 240) !important;
   background-color: #ff7d1f !important;
 }
-.page-link:hover{
+
+.page-link:hover {
   color: #ff7d1f;
   border: 1px solid #ff7d1f;
 }
-.img-recruitment{
-  margin-top:5%;
+
+.img-recruitment {
+  margin-top: 5%;
 }
-.info-recruitment{
-  margin-top:17%;
+
+.info-recruitment {
+  margin-top: 17%;
 }

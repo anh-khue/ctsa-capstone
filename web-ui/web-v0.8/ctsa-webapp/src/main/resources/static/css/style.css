@@ -1,231 +1,245 @@
 html {
-  font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Open Sans', sans-serif !important;
 }
 
 #homebody {
-  background: url("https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237103/demo-image/orange-background.jpg") fixed no-repeat center;
-  background-size: 100% 100%;
+    background: url("https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237103/demo-image/orange-background.jpg") fixed no-repeat center;
+    background-size: 100% 100%;
 }
 
 .img-logo {
-  margin-top: 10%;
-  margin-left: -20px
+    margin-top: 10%;
+    margin-left: -20px
 }
 
 .row {
-  margin-top: 15px;
+    margin-top: 15px;
 }
-.form-question{
-  cursor: pointer;
+
+.form-question {
+    cursor: pointer;
 }
+
 .trait {
-  color: rgb(39, 39, 39);
-  font-size: 20px;
+    color: rgb(39, 39, 39);
+    font-size: 20px;
 }
 
 .trait:hover {
-  color: rgb(39, 39, 39);
-  font-size: 22px;
-  transition: 0.3s;
+    color: rgb(39, 39, 39);
+    font-size: 22px;
+    transition: 0.3s;
 }
 
 .stylish-panel {
-  border: 1px solid rgb(200, 200, 200);
-  padding: 1%;
-  margin: 1%;
-  background-color: white
+    border: 1px solid rgb(200, 200, 200);
+    padding: 1%;
+    margin: 1%;
+    background-color: white
 }
 
 .hover-stylish-panel {
-  margin-top: -5px;
-  box-shadow: #FF7D1F 1px 2px 2px 1px;
-  transition: 0.3s;
-  background-color: white
+    margin-top: -5px;
+    box-shadow: #FF7D1F 1px 2px 2px 1px;
+    transition: 0.3s;
+    background-color: white
 }
 
 .stylish-panel:hover {
-  border: 1px solid #FF7D1F;
-  box-shadow: 0 1rem 3rem rgba(60, 74, 165, .175);
-  transition: 0.3s;
-  background-color: white
+    border: 1px solid #FF7D1F;
+    box-shadow: 0 1rem 3rem rgba(60, 74, 165, .175);
+    transition: 0.3s;
+    background-color: white
 }
 
 #address {
-  padding-top: 30px
+    padding-top: 30px
 }
 
-.menu>a {
-  color: white !important;
+.menu > a {
+    color: white !important;
 }
 
 a:hover {
-  text-decoration: none !important;
+    text-decoration: none !important;
 }
 
 .icon-background {
-  color: white;
+    color: white;
 }
 
 .gear-icon:before {
-  content: "\2605";
-  margin-right: 6px;
+    content: "\2605";
+    margin-right: 6px;
 }
 
 .group-icon:before {
-  content: "\2666";
-  margin-right: 6px;
+    content: "\2666";
+    margin-right: 6px;
 }
 
 .country-icon:before {
-  content: "\2756";
-  margin-right: 6px;
+    content: "\2756";
+    margin-right: 6px;
 }
 
 .working-date::before {
-  content: "\2665";
-  margin-right: 6px;
+    content: "\2665";
+    margin-right: 6px;
 }
 
 .img-border {
-  margin: 50px;
+    margin: 50px;
 }
 
 .hideaway {
-  display: none;
+    display: none;
 }
 
 .form-input {
-  color: rgba(49, 50, 53, 0.76);
+    color: rgba(49, 50, 53, 0.76);
 }
 
 #pencil-image {
-  max-width: 100%;
-  height: auto;
-  width: auto\9;
+    max-width: 100%;
+    height: auto;
+    width: auto \9;
 }
 
 .selected {
-  background-color: #ff6215 !important;
-  color: rgb(240, 240, 240) !important;
-  border: none !important;
-  padding: .375rem .75rem !important;
+    background-color: #ff6215 !important;
+    color: rgb(240, 240, 240) !important;
+    border: none !important;
+    padding: .375rem .75rem !important;
+    font-size: 1.4em;
+    font-weight: bold;
 }
 
 input {
-  border: 1px solid black;
-  border-radius: 4px;
-  padding: 6px;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 6px;
 }
 
 .bg-orange {
-  background-color: #FF7D1F;
+    background-color: #FF7D1F;
 }
 
 .text-white {
-  color: rgb(240, 240, 240);
+    color: rgb(240, 240, 240);
 }
 
 #loader {
-  transition: all .3s ease-in-out;
-  opacity: 1;
-  visibility: visible;
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  background: #fff;
-  z-index: 90000
+    transition: all .3s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: #fff;
+    z-index: 90000
 }
 
 #loader.fadeOut {
-  opacity: 0;
-  visibility: hidden
+    opacity: 0;
+    visibility: hidden
 }
 
 @-webkit-keyframes sk-scaleout {
-  0% {
-    -webkit-transform: scale(0)
-  }
-  100% {
-    -webkit-transform: scale(1);
-    opacity: 0
-  }
+    0% {
+        -webkit-transform: scale(0)
+    }
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 0
+    }
 }
 
 @keyframes sk-scaleout {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0)
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 0
-  }
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0)
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0
+    }
 }
 
 .spinner {
-  background: url('https://res.cloudinary.com/ctsa-capstone/image/upload/v1541343719/demo-image/loader.gif') no-repeat center center;
-  position: absolute;
-  height: 100%;
-  width: 100%;
+    background: url('https://res.cloudinary.com/ctsa-capstone/image/upload/v1541343719/demo-image/loader.gif') no-repeat center center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
 }
 
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
-input:checked+.slider {
-  background-color: #2196F3;
+input:checked + .slider {
+    background-color: #2196F3;
 }
 
-input:focus+.slider {
-  box-shadow: 0 0 1px #2196F3;
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
 }
 
-input:checked+.slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
 }
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+    border-radius: 34px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+    border-radius: 50%;
+}
+
+.title-header {
+    color: #F28D5A;
+    font-size: 1.8em;
+    margin-left: 20px
+}
+
+.btn-role {
+    font-size: 1.4em;
 }

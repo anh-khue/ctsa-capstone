@@ -1,7 +1,9 @@
 package io.ctsa.ctsawebapp.router;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class MainRouter {
@@ -16,14 +18,16 @@ public class MainRouter {
         return "high-school/result";
     }
 
+    @GetMapping("/nghe-nghiep/{id}")
+    public String majorDetail(@PathVariable String id,
+                              Model model) {
+        model.addAttribute("majorId", id);
+        return "major-detail";
+    }
+
     @GetMapping("/thong-tin-tuyen-dung")
     public String jobDetail() {
         return "job-detail";
-    }
-
-    @GetMapping("/danh-sach-tuyen-dung")
-    public String listJob() {
-        return "job-list";
     }
 
     @GetMapping("/thong-tin")

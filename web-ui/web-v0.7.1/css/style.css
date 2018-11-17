@@ -17,12 +17,20 @@ html {
   background: url("https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237103/demo-image/orange-background.jpg") fixed no-repeat center;
   background-size: 100% 100%;
 }
+.rolebtn{
+  font-size:1.4em;
+  /* font-weight: bold; */
+}
 
 .img-logo {
   margin-top: 10%;
   margin-left: -20px
 }
-
+.title-header{
+  color: #F28D5A;
+  font-size:1.8em;
+  margin-left:20px
+}
 .row {
   margin-top: 15px;
 }
@@ -132,6 +140,8 @@ a:hover {
   color: rgb(240, 240, 240) !important;
   border: none !important;
   padding: .375rem .75rem !important;
+  font-size:1.4em;
+  font-weight: bold;
 }
 
 input {
