@@ -2,13 +2,30 @@ const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
-async function getSkillsTrends() {
+async function getPositionTrend() {
     let position = JSON.parse(sessionStorage.getItem('position'))
     let positionId = position.id
     let positionName = position.name
 
+    let positionHistoryResponse = await axios.get(API_GATEWAY + WAREHOUSE_SERVICE
+        + '/recruitment/history?positionId=' + positionId)
+    let positionHistory = positionHistoryResponse.data
+
+    let positionPredictionResponse = await axios.post(API_GATEWAY + CAREER_TREND_SERVICE
+        + '/position-trend?duration=4&positionId=' + positionId, positionHistory)
+    let positionPrediction = positionPredictionResponse.data
+
+    $("#position-prediction").html(numberWithCommas(Math.round(positionPrediction.forecast)) + ' ' + positionName)
+
+    getSkillsTrends(position)
+}
+
+async function getSkillsTrends(position) {
+    let positionId = position.id
+    let positionName = position.name
+
     let topSkillsResponse = await axios.get(API_GATEWAY + WAREHOUSE_SERVICE
-        + '/required_skills?positionId=' + positionId + '&top=6')
+        + '/required_skills?positionId=' + positionId + '&top=10')
     let topSkills = topSkillsResponse.data
 
     let predictionRequestBody = []
@@ -29,109 +46,86 @@ async function getSkillsTrends() {
     let prediction = predictionResponse.data
 
     generatePredictionsUI(positionName, prediction)
+    generateAdvantages(prediction)
 }
 
 async function generatePredictionsUI(positionName, prediction) {
-    let predictionsDiv = $('#predictions')
-    predictionsDiv.empty()
+    let topSkillsDiv = $('#top-skills')
+    topSkillsDiv.empty()
 
-    predictionsDiv.append(
-        '<h3 class="text-center" style="margin-top: 1%">' +
-        'Dự đoán trong 4 tháng tới<br/>Đây là các kỹ năng sẽ có nhu cầu tuyển dụng cao nhất<br/>đối với vị trí<br/>' +
-        '<h1 class="text-center" style="font-weight: bold; margin-top: 1%">' + positionName + '</h1>' +
-        '</h3>'
-    )
+    let row
+    for (let i = 0; i < 4; i++) {
+        if (i % 2 === 0) {
+            row = $('<div>', {
+                class: 'row justify-content-center',
+            })
+        }
 
-    for (let i = 0; i < prediction.length; i = i + 2) {
-        let row = $('<div>', {
-            class: 'row',
-            style: 'padding-top: 1%'
+        let skillTrend = prediction[i]
+
+        let skillId = skillTrend.skillId
+
+        let skillResponse = await axios.get(API_GATEWAY + CAREERS_SERVICES + '/skills/' + skillId)
+        let skill = skillResponse.data
+
+        let skillCol = $('<div>', {
+            class: 'col-md-6'
         })
-
-        let trendLeft = prediction[i]
-        let trendRight = prediction[i + 1]
-
-        // Left item
-        let skillLeftId = trendLeft.skillId
-
-        let skillLeftResponse = await axios.get(API_GATEWAY + CAREERS_SERVICES + '/skills/' + skillLeftId)
-        let skillLeft = skillLeftResponse.data
-        let leftSkillInfo = $('<div>', {
-            class: "col-md-4",
-            style: "text-align: right; padding-right: 4%;"
+        let skillRow = $('<div>', {
+            class: 'row justify-content-center'
         })
-        $('<img>', {
-            src: skillLeft.imageUrl,
-            height: 120,
-            width: 120
-        }).appendTo(leftSkillInfo)
-        $('<p>', {
-            style: "font-size: 1.5em",
-            html: skillLeft.skillType.vietnamese + ' ' + skillLeft.vietnamese
-        }).appendTo(leftSkillInfo)
-        leftSkillInfo.appendTo(row)
-
-        let leftRecruitmentNumber = numberWithCommas(Math.round(trendLeft.predictedNumberOfRecruitment))
-        let leftRecruitmentInfo = $('<div>', {
-            class: "col-md-2 text-center"
+        let skillImage = $('<div>', {
+            class: 'col-md-3 statistic1 text-center'
         })
-        let leftImage = $('<div>', {
-            class: "statistic1"
-        })
-        $('<span>', {
-            style: "color:rgb(235, 226, 226); font-size:5em",
-            html: leftRecruitmentNumber
-        }).appendTo(leftImage)
-        $('<br/>').appendTo(leftImage)
-        $('<span>', {
-            style: "color:rgb(235, 226, 226); font-size:1.4em",
-            html: 'Vị trí cần tuyển'
-        }).appendTo(leftImage)
-        leftImage.append('<br><br><br><br>')
-        leftImage.appendTo(leftRecruitmentInfo)
-        leftRecruitmentInfo.appendTo(row)
-
-
-        // Right item
-        let rightRecruitmentNumber = numberWithCommas(Math.round(trendRight.predictedNumberOfRecruitment))
-        let rightRecruitmentInfo = $('<div>', {
-            class: "col-md-2 text-center"
-        })
-        let rightImage = $('<div>', {
-            class: "statistic2"
-        })
-        $('<span>', {
-            style: "color:#212529; font-size:5em",
-            html: rightRecruitmentNumber
-        }).appendTo(rightImage)
-        $('<br/>').appendTo(rightImage)
-        $('<span>', {
-            style: "color:#212529; font-size:1.4em",
-            html: 'Vị trí cần tuyển'
-        }).appendTo(rightImage)
-        rightImage.append('<br><br><br><br>')
-        rightImage.appendTo(rightRecruitmentInfo)
-        rightRecruitmentInfo.appendTo(row)
-
-        let skillRightId = trendRight.skillId
-
-        let skillRightResponse = await axios.get(API_GATEWAY + CAREERS_SERVICES + '/skills/' + skillRightId)
-        let skillRight = skillRightResponse.data
-        let rightSkillInfo = $('<div>', {
-            class: "col-md-4",
-            style: "padding-left: 4%;"
+        let imageVerticalAlign = $('<div>', {
+            class: 'vertical-middle',
+            style: 'padding-bottom: 20%'
         })
         $('<img>', {
-            src: skillRight.imageUrl,
-            height: 120,
-            width: 120
-        }).appendTo(rightSkillInfo)
-        $('<p>', {
-            style: "font-size: 1.5em",
-            html: skillRight.skillType.vietnamese + ' ' + skillRight.vietnamese
-        }).appendTo(rightSkillInfo)
-        rightSkillInfo.appendTo(row)
+            src: skill.imageUrl,
+            style: 'max-height: 140px; width: 90%'
+        }).appendTo(imageVerticalAlign)
+        imageVerticalAlign.appendTo(skillImage)
+        skillImage.appendTo(skillRow)
 
-        row.appendTo(predictionsDiv)
+        let skillDescription = $('<div>', {
+            class: 'col-md-6 statistic-description text-center'
+        })
+        $('<div>', {
+            class: 'vertical-middle',
+            html: skill.name
+        }).appendTo(skillDescription)
+        skillDescription.appendTo(skillRow)
+
+        skillRow.appendTo(skillCol)
+        skillCol.appendTo(row)
+
+        if (i % 2 === 0) {
+            row.appendTo(topSkillsDiv)
+        }
+    }
+}
+
+async function generateAdvantages(prediction) {
+    let advantagesDiv = $('#advantages')
+    advantagesDiv.empty()
+
+    for (let i = 4; i < 7; i++) {
+        let skillTrend = prediction[i]
+
+        let skillId = skillTrend.skillId
+
+        let skillResponse = await axios.get(API_GATEWAY + CAREERS_SERVICES + '/skills/' + skillId)
+        let skill = skillResponse.data
+
+        let skillItem = $('<div>', {
+            class: 'col-md-3 text-center',
+            style: 'font-size: 1.1em; font-weight: bold'
+        })
+        $('<img>', {
+            src: skill.imageUrl
+        }).appendTo(skillItem)
+        skillItem.append(skill.name)
+        skillItem.appendTo(advantagesDiv)
     }
 }
