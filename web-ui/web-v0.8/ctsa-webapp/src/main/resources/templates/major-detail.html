@@ -22,10 +22,18 @@
     <link rel="stylesheet" th:href="@{/css/recruitment.css}">
     <link rel="stylesheet" th:href="@{/css/job-list.css}">
 
+    <!-- CanvasJS -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
     <style>
         .description > p {
             padding: 0.5% 2% 0 2%;
-            font-size: 1.5em;
+            font-size: 1.3em;
+        }
+
+        .job-description > p {
+            padding: 2% 1% 1% 1%;
+            font-size: 1.3em;
         }
     </style>
 </head>
@@ -51,10 +59,8 @@
     <div id="content" class="tab-content col-md-12 folder">
         <div class="top-background">
             <div class="row justify-content-center">
-                <div
-                        id="company-logo"
-                        style="background-color: white; margin-top:-50px; border-radius:20px"
-                >
+                <div id="company-logo"
+                     style="background-color: white; margin-top:-50px; border-radius:20px">
                     <a href="#">
                         <img id="major-image"
                              alt=""
@@ -65,6 +71,7 @@
                     </a>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-md-12">
                     <div>
@@ -91,6 +98,53 @@
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="job-detail1 col-md-6">
+                    <div class="text-center">
+                        <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237108/demo-image/question.png"
+                             alt="" width="50"><br><br>
+                        <h2>Nhu cầu nhân lực</h2>
+                        <hr>
+                    </div>
+                    <div class="text-justify job-description">
+                        <p>
+                            Với dữ liệu thu thập được Sách trắng CNTT Việt Nam qua các năm 2010, 2012, 2013, thể hiện
+                            qua biểu đồ dưới đây.
+                        </p>
+                        <div
+                                id="chartContainer"
+                                style="height: 370px; width: 100%;"
+                        ></div>
+                        <p>
+                            Dự báo về nhân lực ngành Công nghệ thông tin được hệ thống CTSA đưa ra thông qua việc ứng
+                            dụng Time Series Analysis, cụ thể là phương pháp Holt’s Exponential Smoothing.
+                        </p>
+                    </div>
+                </div>
+                <div class="job-detail2 col-md-6">
+                    <div class="text-center">
+                        <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237111/demo-image/requirement.png"
+                             alt="" width="50"><br><br>
+                        <h2>Thông tin bổ sung</h2>
+                        <hr>
+                    </div>
+                    <div class="text-justify job-description">
+                        <p>
+                            Với dữ liệu thu thập được Sách trắng CNTT Việt Nam qua các năm 2010, 2012, 2013, thể hiện
+                            qua biểu đồ dưới đây.
+                        </p>
+                        <div
+                                id="chartContainer2"
+                                style="height: 370px; width: 100%;"
+                        ></div>
+                        <p>
+                            Dự báo về số lượng công việc được hệ thống CTSA đưa ra thông qua việc ứng dụng Time Series
+                            Analysis, cụ thể là phương pháp Holt’s Exponential Smoothing.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -247,6 +301,64 @@
 
         +]*/
         getMajorDescription(majorId)
+
+        generateCharts(majorId)
+
+        // Generate charts
+        CanvasJS.addColorSet("orangeShades", ["#FF7D1F"]);
+        let chart = new CanvasJS.Chart("chartContainer", {
+            colorSet: "orangeShades",
+            animationEnabled: true,
+            theme: "light2",
+            axisY: {
+                includeZero: false
+            },
+            data: [
+                {
+                    type: "line",
+                    dataPoints: [
+                        {y: 450},
+                        {y: 414},
+                        {y: 460},
+                        {y: 450},
+                        {y: 500},
+                        {y: 480},
+                        {y: 480},
+                        {y: 500},
+                        {y: 480},
+                        {y: 510}
+                    ]
+                }
+            ]
+        });
+        chart.render();
+
+        let chart2 = new CanvasJS.Chart("chartContainer2", {
+            colorSet: "orangeShades",
+            animationEnabled: true,
+            theme: "light2",
+            axisY: {
+                includeZero: false
+            },
+            data: [
+                {
+                    type: "line",
+                    dataPoints: [
+                        {y: 450},
+                        {y: 414},
+                        {y: 460},
+                        {y: 450},
+                        {y: 500},
+                        {y: 480},
+                        {y: 480},
+                        {y: 500},
+                        {y: 480},
+                        {y: 510}
+                    ]
+                }
+            ]
+        });
+        chart2.render();
     }
 
     async function getMajorDescription(majorId) {
@@ -255,6 +367,10 @@
         $('#major-image').attr("src", majorResponse.data.imageUrl)
         $('#major-title').html(majorResponse.data.vietnamese)
         $('#major-description').html(majorResponse.data.description)
+    }
+    
+    async function generateCharts(majorId) {
+        
     }
 </script>
 </body>

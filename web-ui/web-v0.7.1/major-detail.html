@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Thông tin tuyển dụng</title>
+    <title>Chi tiết nghề nghiệp</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -13,6 +13,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
+    <!-- CanvasJS -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
     <link rel="stylesheet" href=".\css\style.css" />
     <link rel="stylesheet" href=".\css\job-recruit-alternative.css" />
     <link rel="stylesheet" href="./css/listjob.css" />
@@ -20,7 +23,12 @@
     <style>
       .description > p {
         padding: 0.5% 2% 0 2%;
-        font-size: 1.5em;
+        font-size: 1.3em;
+      }
+
+      .job-description > p {
+        padding: 2% 1% 1% 1%;
+        font-size: 1.3em;
       }
     </style>
   </head>
@@ -137,6 +145,61 @@
                     </tbody>
                   </table>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="job-detail1 col-md-6">
+              <div class="text-center">
+                <img
+                  src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237108/demo-image/question.png"
+                  alt=""
+                  width="50"
+                /><br /><br />
+                <h2>Nhu cầu nhân lực</h2>
+                <hr />
+              </div>
+              <div class="text-justify job-description">
+                <p>
+                  Với dữ liệu thu thập được Sách trắng CNTT Việt Nam qua các năm
+                  2010, 2012, 2013, thể hiện qua biểu đồ dưới đây.
+                </p>
+                <div
+                  id="chartContainer"
+                  style="height: 370px; width: 100%;"
+                ></div>
+                <p>
+                  Dự báo về nhân lực ngành Công nghệ thông tin được hệ thống
+                  CTSA đưa ra thông qua việc ứng dụng Time Series Analysis, cụ
+                  thể là phương pháp Holt’s Exponential Smoothing.
+                </p>
+              </div>
+            </div>
+            <div class="job-detail2 col-md-6">
+              <div class="text-center">
+                <img
+                  src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237111/demo-image/requirement.png"
+                  alt=""
+                  width="50"
+                /><br /><br />
+                <h2>Thông tin bổ sung</h2>
+                <hr />
+              </div>
+              <div class="text-justify job-description">
+                <p>
+                  Với dữ liệu thu thập được Sách trắng CNTT Việt Nam qua các năm
+                  2010, 2012, 2013, thể hiện qua biểu đồ dưới đây.
+                </p>
+                <div
+                  id="chartContainer2"
+                  style="height: 370px; width: 100%;"
+                ></div>
+                <p>
+                  Dự báo về số lượng công việc được hệ thống CTSA đưa ra thông
+                  qua việc ứng dụng Time Series Analysis, cụ thể là phương pháp
+                  Holt’s Exponential Smoothing.
+                </p>
               </div>
             </div>
           </div>
@@ -284,6 +347,106 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 
     <script>
+      const numberWithCommas = x => {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      };
+
+      window.onload = function() {
+        let majorId = 1;
+
+        let hrApi =
+          "http://localhost:8080/career-trend-service/human-resources?majorId=" +
+          majorId;
+        generateChart(hrApi, "chartContainer", "Năm", "Tổng số nhân lực");
+
+        let spApi =
+          "http://localhost:8080/career-trend-service/supporting-information?majorId=" +
+          majorId;
+        generateChart(spApi, "chartContainer2", "Năm", "Tổng số công việc");
+      };
+
+      async function generateChart(api, chartId, xTitle, yTitle) {
+        let historyResponse = await axios.get(api);
+        let history = historyResponse.data;
+
+        let actualData = [];
+        let predictedData = [];
+        for (let data of history) {
+          let actual = {
+            x: data.year,
+            y: data.actual
+          };
+          actualData.push(actual);
+
+          let prediction = {
+            x: data.year,
+            y: Math.round(data.forecast)
+          };
+          predictedData.push(prediction);
+        }
+
+        let chart = new CanvasJS.Chart(chartId, {
+          animationEnabled: true,
+          theme: "light2",
+          axisX: {
+            title: xTitle,
+            valueFormatString: "####",
+            crosshair: {
+              enabled: true,
+              snapToDataPoint: true
+            }
+          },
+          axisY: {
+            title: yTitle,
+            crosshair: {
+              enabled: true
+            }
+          },
+          toolTip: {
+            shared: true
+          },
+          legend: {
+            cursor: "pointer",
+            verticalAlign: "bottom",
+            horizontalAlign: "left",
+            dockInsidePlotArea: true,
+            itemclick: toogleDataSeries
+          },
+          data: [
+            {
+              type: "line",
+              showInLegend: true,
+              name: "Số liệu thực tế",
+              markerType: "square",
+              xValueFormatString: "####",
+              color: "#FF7D1F",
+              dataPoints: actualData
+            },
+            {
+              type: "line",
+              showInLegend: true,
+              name: "Dự đoán",
+              color: "#2E8B57",
+              lineDashType: "dash",
+              dataPoints: predictedData
+            }
+          ]
+        });
+        chart.render();
+      }
+
+      function toogleDataSeries(e) {
+        if (
+          typeof e.dataSeries.visible === "undefined" ||
+          e.dataSeries.visible
+        ) {
+          e.dataSeries.visible = false;
+        } else {
+          e.dataSeries.visible = true;
+        }
+        chart.render();
+      }
+
       function getRecruitmentById(recruitmentId) {
         axios
           .get("http://localhost:8080/recruitment/" + recruitmentId)

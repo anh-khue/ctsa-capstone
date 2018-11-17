@@ -83,7 +83,7 @@ async function generatePredictionsUI(positionName, prediction) {
         })
         $('<img>', {
             src: skill.imageUrl,
-            style: 'max-height: 140px; width: 90%'
+            style: 'max-height: 120px; width: 80%'
         }).appendTo(imageVerticalAlign)
         imageVerticalAlign.appendTo(skillImage)
         skillImage.appendTo(skillRow)
