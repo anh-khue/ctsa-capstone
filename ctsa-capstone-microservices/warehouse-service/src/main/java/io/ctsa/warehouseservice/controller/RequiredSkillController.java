@@ -3,7 +3,6 @@ package io.ctsa.warehouseservice.controller;
 import io.ctsa.warehouseservice.model.RequiredSkill;
 import io.ctsa.warehouseservice.service.RequiredSkillService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -57,5 +56,19 @@ public class RequiredSkillController {
                                      Integer.parseInt(positionId),
                                      escapedSkillTypeId)
                              );
+    }
+
+    @GetMapping("/required_skills")
+    public ResponseEntity getTopSkillsByPosition(@RequestParam("positionId") Integer positionId,
+                                                 @RequestParam("top") Integer top) {
+        return ResponseEntity.status(OK)
+                             .body(requiredSkillService.findTopSkillsByPositionId(positionId, top));
+    }
+
+    @GetMapping("/required_skills/history")
+    public ResponseEntity getHistoricalData(@RequestParam("positionId") Integer positionId,
+                                            @RequestParam("skillId") Integer skillId) {
+        return ResponseEntity.status(OK)
+                             .body(requiredSkillService.findHistoricalDataByPositionIdAndSkillId(positionId, skillId));
     }
 }

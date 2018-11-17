@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public abstract class SmoothingParameterOptimization implements HillClimbingFunction<Double> {
 
-    private double step = 0.0001;
+    private double step = 0.001;
 
     @Override
     public Double getBestMove(Double currentState) {

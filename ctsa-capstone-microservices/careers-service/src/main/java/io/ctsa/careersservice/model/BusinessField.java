@@ -27,6 +27,9 @@ public class BusinessField {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "image_url")
+    private String imageUrl;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -35,11 +38,12 @@ public class BusinessField {
         return id == that.id &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(vietnamese, that.vietnamese) &&
-                Objects.equals(description, that.description);
+                Objects.equals(description, that.description) &&
+                Objects.equals(imageUrl, that.imageUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, vietnamese, description);
+        return Objects.hash(id, name, vietnamese, description, imageUrl);
     }
 }

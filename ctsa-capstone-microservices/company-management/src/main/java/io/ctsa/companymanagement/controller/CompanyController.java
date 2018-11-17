@@ -8,7 +8,6 @@ import io.ctsa.companymanagement.service.CompanyService;
 import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,8 +17,8 @@ import java.util.List;
 import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.ResponseEntity.status;
 
-@Controller
 @CrossOrigin(origins = "*")
+@RestController
 public class CompanyController {
 
     private static final int ITEMS_PER_PAGE = 5;
@@ -59,7 +58,8 @@ public class CompanyController {
     }
 
     @PostMapping(value = "/companies", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity create(@RequestParam("partner") String json, @RequestParam("file") MultipartFile file) throws IOException {
+    public ResponseEntity create(@RequestParam("partner") String json,
+                                 @RequestParam("file") MultipartFile file) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         Company partner = mapper.readValue(json, Company.class);
         partner.setLogo(companyService.generateLogoLink(file));

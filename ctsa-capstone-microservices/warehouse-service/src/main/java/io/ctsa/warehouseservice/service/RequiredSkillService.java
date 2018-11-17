@@ -1,9 +1,12 @@
 package io.ctsa.warehouseservice.service;
 
 import io.ctsa.warehouseservice.model.RequiredSkill;
+import io.ctsa.warehouseservice.model.SkillPredictionModel;
 import io.ctsa.warehouseservice.repository.RequiredSkillRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -52,5 +55,33 @@ public class RequiredSkillService {
             return requiredSkillRepository.findTopSkillTypesByPosition(positionId);
         }
         return requiredSkillRepository.findTopSkillTypesByPositionEscapeSkillType(positionId, exceptedSkillTypeId);
+    }
+
+    public List<SkillPredictionModel> findHistoricalDataByPositionIdAndSkillId(int positionId, int skillId) {
+        LocalDate currentDay = LocalDate.now();
+
+        List<SkillPredictionModel> historicalData = new ArrayList<>();
+
+        for (int i = 3; i >= 0; i--) {
+            int month = currentDay.minusMonths(i).getMonthValue();
+            int year = currentDay.minusMonths(i).getYear();
+
+            SkillPredictionModel predictionModel =
+                    findTotalRecruitmentByPositionIdAndSkillIdAndMonthYear(month, year, positionId, skillId);
+            historicalData.add(predictionModel);
+        }
+
+        return historicalData;
+    }
+
+    private SkillPredictionModel findTotalRecruitmentByPositionIdAndSkillIdAndMonthYear(int month, int year,
+                                                                                        int positionId, int skillId) {
+        Integer totalRecruitment = requiredSkillRepository
+                .findTotalRecruitmentByPositionIdAndSkillIdAndMonthYear(positionId, skillId, month, year);
+        return new SkillPredictionModel(month, totalRecruitment);
+    }
+
+    public List<Integer> findTopSkillsByPositionId(Integer positionId, Integer top) {
+        return requiredSkillRepository.findTopSkillsByPositionId(positionId, top);
     }
 }

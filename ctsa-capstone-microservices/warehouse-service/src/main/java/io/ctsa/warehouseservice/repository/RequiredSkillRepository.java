@@ -53,4 +53,30 @@ public interface RequiredSkillRepository extends JpaRepository<RequiredSkill, In
            nativeQuery = true)
     List<Integer> findTopSkillTypesByPositionEscapeSkillType(@Param("positionId") Integer positionId,
                                                              @Param("skillTypeId") Integer skillTypeId);
+
+    @Query(value = "select count(rs.skill_id)\n" +
+            "from recruitment r\n" +
+            "       join required_skill rs on r.id = rs.recruitment_id\n" +
+            "where r.position_id = :positionId\n" +
+            "   and rs.skill_id = :skillId\n" +
+            "   and rs.skill_type_id != 11" +
+            "   and (:inputMonth between month(start_date) and month(end_date))\n" +
+            "   and (:inputYear between year(start_date) and year(end_date))",
+           nativeQuery = true)
+    Integer findTotalRecruitmentByPositionIdAndSkillIdAndMonthYear(@Param("positionId") Integer positionId,
+                                                                   @Param("skillId") Integer skillId,
+                                                                   @Param("inputMonth") Integer month,
+                                                                   @Param("inputYear") Integer year);
+
+    @Query(value = "select rs.skill_id\n" +
+            "from recruitment r\n" +
+            "       join required_skill rs on r.id = rs.recruitment_id\n" +
+            "where r.position_id = :positionId" +
+            "   and rs.skill_type_id != 11\n" +
+            "group by rs.skill_id\n" +
+            "order by count(rs.skill_id) desc\n" +
+            "limit :top",
+           nativeQuery = true)
+    List<Integer> findTopSkillsByPositionId(@Param("positionId") Integer positionId,
+                                            @Param("top") Integer top);
 }
