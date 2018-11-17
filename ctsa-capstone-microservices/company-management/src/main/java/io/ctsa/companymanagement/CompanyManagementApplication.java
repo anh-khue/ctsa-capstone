@@ -6,6 +6,7 @@ import io.ctsa.companymanagement.stream.producer.ProducerChannels;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.context.annotation.Bean;
 
@@ -13,6 +14,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 @SpringBootApplication
+@EnableEurekaClient
 @EnableBinding(ProducerChannels.class)
 public class CompanyManagementApplication {
 

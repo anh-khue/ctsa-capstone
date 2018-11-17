@@ -6,17 +6,17 @@ import io.ctsa.companymanagement.service.RecruitmentService;
 import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.*;
-import static org.springframework.http.ResponseEntity.*;
+import static org.springframework.http.ResponseEntity.status;
 
-@Controller
 @CrossOrigin(origins = "*")
+@RestController
 public class RecruitmentController {
+
     private static final int ITEMS_PER_PAGE = 5;
 
     private final RecruitmentService recruitmentService;
@@ -29,29 +29,29 @@ public class RecruitmentController {
     public ResponseEntity getAll() {
         List<Recruitment> recruitment = recruitmentService.getAll();
         return !recruitment.isEmpty() ? status(OK).body(recruitment)
-                : status(NO_CONTENT).build();
+                                      : status(NO_CONTENT).build();
     }
 
     @GetMapping(value = "/recruitment/pages/{pageNumber}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getAllByPage(@PathVariable("pageNumber") int pageNumber) {
         Page<Recruitment> recruitment = recruitmentService.getAllByPage(pageNumber, ITEMS_PER_PAGE);
         return recruitment != null ? status(OK).body(recruitment)
-                : status(NO_CONTENT).build();
+                                   : status(NO_CONTENT).build();
     }
 
     @GetMapping(value = "/recruitment/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getById(@PathVariable("id") int recruitmentId) throws RecruitmentNotFoundException {
         recruitmentService.updateViewCount(recruitmentId);
         return recruitmentService.getById(recruitmentId)
-                .map(recruitment -> status(OK).body(recruitment))
-                .orElseGet(status(NO_CONTENT)::build);
+                                 .map(recruitment -> status(OK).body(recruitment))
+                                 .orElseGet(status(NO_CONTENT)::build);
     }
 
     @PostMapping(value = "/recruitment", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity create(@RequestBody Recruitment modifiedData) {
         Recruitment recruitment = recruitmentService.create(modifiedData);
         return recruitment != null ? status(CREATED).body(recruitment)
-                : status(CONFLICT).build();
+                                   : status(CONFLICT).build();
     }
 
     @PutMapping(value = "/recruitment/{id}", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)

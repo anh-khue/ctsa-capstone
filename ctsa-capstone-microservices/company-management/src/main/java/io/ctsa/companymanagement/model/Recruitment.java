@@ -78,7 +78,10 @@ public class Recruitment {
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(id, title, positionId, positionName, startDate, endDate, modifiedDate, number, jobDescription, jobRequirement, published, email, phone, address, additionalInformation, viewCount, image, companyId);
+        return Objects.hash(id, title, positionId, positionName,
+                            startDate, endDate, modifiedDate, number,
+                            jobDescription, jobRequirement, published,
+                            email, phone, address, additionalInformation,
+                            viewCount, image, companyId);
     }
 }

@@ -18,7 +18,6 @@ public class RecruitmentHasSkill {
     private int recruitmentId;
     private int skillId;
     private String skillName;
-    private int skillTypeId;
 
     @Override
     public boolean equals(Object o) {
