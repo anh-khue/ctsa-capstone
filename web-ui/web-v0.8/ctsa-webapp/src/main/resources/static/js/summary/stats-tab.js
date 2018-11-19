@@ -144,7 +144,7 @@ async function showSkillRank(positionId, skillTypeId, page, skillsPerPage) {
     }
 
     if (ids.length > 0) {
-        let skillsResponse = await axios.post('http://localhost:8001/skills/list', ids)
+        let skillsResponse = await axios.post(API_GATEWAY + CAREERS_SERVICES + '/skills/list', ids)
 
         let skillRank = $('#skillRank')
         skillRank.empty()
@@ -152,6 +152,10 @@ async function showSkillRank(positionId, skillTypeId, page, skillsPerPage) {
         let skillTypeName = $('#skillTypeName')
         skillTypeName.empty()
         skillTypeName.html(skillsResponse.data[0].skillType.vietnamese)
+
+        let skillTypeNameModal = $('#skillTypeNameModal')
+        skillTypeNameModal.empty()
+        skillTypeNameModal.html(skillsResponse.data[0].skillType.vietnamese)
 
         let count = (page - 1) * skillsPerPage
         for (let skill of skillsResponse.data) {

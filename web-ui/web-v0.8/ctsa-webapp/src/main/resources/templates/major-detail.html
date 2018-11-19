@@ -26,14 +26,26 @@
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
     <style>
+        .container-fluid {
+            margin-top: 0;
+        }
+
+        .tab-content {
+            margin-top: 1.5%;
+        }
+
         .description > p {
             padding: 0.5% 2% 0 2%;
+            font-size: 1.2em;
+        }
+
+        .detail-description > p {
+            padding: 2% 1% 1% 1%;
             font-size: 1.3em;
         }
 
-        .job-description > p {
-            padding: 2% 1% 1% 1%;
-            font-size: 1.3em;
+        .formula-description > p {
+            font-size: 1.2em;
         }
     </style>
 </head>
@@ -66,23 +78,94 @@
                              alt=""
                              src=""
                              style="margin: 15px"
-                             width="250"
-                             height="250"/>
+                             width="150"
+                             height="150"/>
                     </a>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row justify-content-center">
+                <table class="table text-center col-md-5 bg-white table-bordered"
+                       style="margin-bottom: 0;">
+                    <thead>
+                    <tr>
+                        <th class="bg-orange text-white">
+                            <h3 id="major-title">
+
+                            </h3>
+                        </th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="job-detail1 col-md-6">
+                    <div class="text-center">
+                        <h2>
+                            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1542446021/demo-image/human-resource.png"
+                                 width="50"/>
+                            Nhu cầu nhân lực
+                        </h2>
+                        <hr/>
+                    </div>
+                    <div class="text-justify detail-description">
+                        <p id="hrParagraph">
+                            Với dữ liệu thu thập được Sách trắng CNTT Việt Nam qua các năm
+                            2010, 2012, 2013, thể hiện qua biểu đồ dưới đây.
+                        </p>
+                        <div id="chartContainer"
+                             style="height: 370px; width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="job-detail2 col-md-6">
+                    <div class="text-center">
+                        <h2>
+                            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541477752/demo-image/info.png"
+                                 width="50"/>
+                            <span id="spTitle">Thông tin bổ sung</span>
+                        </h2>
+                        <hr/>
+                    </div>
+                    <div class="text-justify detail-description">
+                        <p id="spParagraph">
+                            Với dữ liệu thu thập được Sách trắng CNTT Việt Nam qua các năm
+                            2010, 2012, 2013, thể hiện qua biểu đồ dưới đây.
+                        </p>
+                        <div id="chartContainer2"
+                             style="height: 370px; width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-10 job-detail2">
+                    <div class="text-center">
+                        <h2>Phương pháp dự báo</h2>
+                        <hr/>
+                    </div>
+                    <div class="formula-description text-center">
+                        <p style="font-style: italic">
+                            Ứng dụng phương pháp Phân tích Chuỗi thời gian (Time Series
+                            Analysis)
+                        </p>
+                        <p style="font-style: italic">
+                            Hệ thống CTSA đưa ra dự đoán bằng cách áp dụng công thức
+                            Holt’s Exponential Smoothing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div>
                         <div class="row justify-content-center">
                             <table class="table text-center col-md-10 bg-white table-bordered">
-                                <thead>
+                                <thead style="font-size: 1.3em;">
                                 <tr>
                                     <th class="bg-orange text-white">
-                                        <h3 id="major-title">
-
-                                        </h3>
+                                        Giới thiệu
                                     </th>
                                 </tr>
                                 </thead>
@@ -102,67 +185,53 @@
                 </div>
             </div>
 
-            <div class="row justify-content-center">
-                <div class="job-detail1 col-md-6">
-                    <div class="text-center">
-                        <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237108/demo-image/question.png"
-                             alt="" width="50"><br><br>
-                        <h2>Nhu cầu nhân lực</h2>
-                        <hr>
-                    </div>
-                    <div class="text-justify job-description">
-                        <p>
-                            Với dữ liệu thu thập được Sách trắng CNTT Việt Nam qua các năm 2010, 2012, 2013, thể hiện
-                            qua biểu đồ dưới đây.
-                        </p>
-                        <div
-                                id="chartContainer"
-                                style="height: 370px; width: 100%;"
-                        ></div>
-                        <p>
-                            Dự báo về nhân lực ngành Công nghệ thông tin được hệ thống CTSA đưa ra thông qua việc ứng
-                            dụng Time Series Analysis, cụ thể là phương pháp Holt’s Exponential Smoothing.
-                        </p>
-                    </div>
-                </div>
-                <div class="job-detail2 col-md-6">
-                    <div class="text-center">
-                        <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237111/demo-image/requirement.png"
-                             alt="" width="50"><br><br>
-                        <h2>Thông tin bổ sung</h2>
-                        <hr>
-                    </div>
-                    <div class="text-justify job-description">
-                        <p>
-                            Với dữ liệu thu thập được Sách trắng CNTT Việt Nam qua các năm 2010, 2012, 2013, thể hiện
-                            qua biểu đồ dưới đây.
-                        </p>
-                        <div
-                                id="chartContainer2"
-                                style="height: 370px; width: 100%;"
-                        ></div>
-                        <p>
-                            Dự báo về số lượng công việc được hệ thống CTSA đưa ra thông qua việc ứng dụng Time Series
-                            Analysis, cụ thể là phương pháp Holt’s Exponential Smoothing.
-                        </p>
-                    </div>
-                </div>
-            </div>
 
             <!-- Additional Information -->
-            <div class="row">
+            <!--<div class="row">
                 <div class="job-detail1 col-md-12">
                     <div>
                         <h2 class="text-center">
-                            <img
-                                    src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541484328/contact.png"
-                                    alt=""
-                                    width="50"
-                            />
+                            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541484328/contact.png"
+                                 alt=""
+                                 width="50"/>
                             Tin tuyển dụng
                         </h2>
                         <hr/>
-                        <!-- Tin 1 -->
+                        &lt;!&ndash; Tin 1 &ndash;&gt;
+                        <div class="row justify-content-around stylish-panel">
+                            <div class="col-md-2 text-center my-auto">
+                                <a href="http://localhost:8007/recruitment/2"><img
+                                        src="https://cdn.itviec.com/employers/fpt-software/logo/social/3reFYvb7XKV1a8g4aKiDDke8/fpt-software-logo.png"
+                                        width="200"
+                                        height="200"/></a>
+                            </div>
+                            <div class="col-md-7">
+                                <a href="http://localhost:8007/recruitment/2"><h2>
+                                    20 junior/senior Developers – signing bonus up to 18M
+                                </h2></a>
+                                <p class="job-descript">
+                                    Work with project members, responsible for the code
+                                    review, development, and investigation of Java Web
+                                    technologies. Implement task lists, estimate deliver
+                                    assignments as functional specifications, quality
+                                    standards and project schedules. Consistently...
+                                </p>
+                                <div class="pt-5">
+                                    <a href="#" class="btn btn-outline-dark">Java</a>&nbsp;<a
+                                        href="#"
+                                        class="btn btn-outline-dark">Javascript</a
+                                >&nbsp;
+                                </div>
+                            </div>
+                            <div class="col-md-2 my-auto" style="text-align: right">
+                                <div class="btn bg-orange text-white my-2">Hot</div>
+                                &nbsp;
+                                <div class="btn btn-primary my-2">New</div>
+                                <div class="my-4"><span>12 ngày trước</span></div>
+                                <div class="my-4"><span>Hà Nội, Đà Nẵng, HCM</span></div>
+                            </div>
+                        </div>
+                        &lt;!&ndash; Tin 2 &ndash;&gt;
                         <div class="row justify-content-around stylish-panel">
                             <div class="col-md-2 text-center my-auto">
                                 <a href="http://localhost:8007/recruitment/2"
@@ -201,46 +270,7 @@
                                 <div class="my-4"><span>Hà Nội, Đà Nẵng, HCM</span></div>
                             </div>
                         </div>
-                        <!-- Tin 2 -->
-                        <div class="row justify-content-around stylish-panel">
-                            <div class="col-md-2 text-center my-auto">
-                                <a href="http://localhost:8007/recruitment/2"
-                                ><img
-                                        src="https://cdn.itviec.com/employers/fpt-software/logo/social/3reFYvb7XKV1a8g4aKiDDke8/fpt-software-logo.png"
-                                        width="200"
-                                        height="200"
-                                /></a>
-                            </div>
-                            <div class="col-md-7">
-                                <a href="http://localhost:8007/recruitment/2"
-                                ><h2>
-                                    20 junior/senior Developers – signing bonus up to 18M
-                                </h2></a
-                                >
-                                <p class="job-descript">
-                                    Work with project members, responsible for the code
-                                    review, development, and investigation of Java Web
-                                    technologies. Implement task lists, estimate deliver
-                                    assignments as functional specifications, quality
-                                    standards and project schedules. Consistently...
-                                </p>
-                                <div class="pt-5">
-                                    <a href="#" class="btn btn-outline-dark">Java</a>&nbsp;<a
-                                        href="#"
-                                        class="btn btn-outline-dark"
-                                >Javascript</a
-                                >&nbsp;
-                                </div>
-                            </div>
-                            <div class="col-md-2 my-auto" style="text-align: right">
-                                <div class="btn bg-orange text-white my-2">Hot</div>
-                                &nbsp;
-                                <div class="btn btn-primary my-2">New</div>
-                                <div class="my-4"><span>12 ngày trước</span></div>
-                                <div class="my-4"><span>Hà Nội, Đà Nẵng, HCM</span></div>
-                            </div>
-                        </div>
-                        <!-- Tin 3 -->
+                        &lt;!&ndash; Tin 3 &ndash;&gt;
                         <div class="row justify-content-around stylish-panel">
                             <div class="col-md-2 text-center my-auto">
                                 <a href="http://localhost:8007/recruitment/2"
@@ -284,7 +314,7 @@
                         <ul id="job-contact"></ul>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>
@@ -302,63 +332,141 @@
         +]*/
         getMajorDescription(majorId)
 
-        generateCharts(majorId)
+        let hrApi =
+            API_GATEWAY + CAREER_TREND_SERVICE + '/human-resources?majorId=' +
+            majorId;
+        generateChart(
+            hrApi,
+            "chartContainer",
+            "Năm",
+            "Tổng nhân lực",
+            "hrParagraph"
+        );
 
-        // Generate charts
-        CanvasJS.addColorSet("orangeShades", ["#FF7D1F"]);
-        let chart = new CanvasJS.Chart("chartContainer", {
-            colorSet: "orangeShades",
+        let spApi =
+            API_GATEWAY + CAREER_TREND_SERVICE + '/supporting-information?majorId=' +
+            majorId;
+        generateChart(spApi, "chartContainer2", "Năm", "Tổng", "spParagraph");
+    }
+
+    async function generateChart(api, chartId, xTitle, yTitle, paragraphId) {
+        let historyResponse = await axios.get(api);
+        let history = historyResponse.data;
+
+        let actualData = [];
+        let predictedData = [];
+        for (let data of history) {
+            let actual = {
+                x: data.year,
+                y: data.actual
+            };
+            actualData.push(actual);
+
+            let prediction = {
+                x: data.year,
+                y: Math.round(data.forecast)
+            };
+            predictedData.push(prediction);
+        }
+        predictedData.shift();
+
+        // Change yAxis title
+        if (history[0].unit) {
+            if (history[0].unit.includes("số")) {
+                yTitle += " " + history[0].unit;
+            } else {
+                yTitle += " số " + history[0].unit;
+            }
+            $("#spTitle").html(yTitle);
+        }
+
+        let chart = new CanvasJS.Chart(chartId, {
             animationEnabled: true,
             theme: "light2",
+            axisX: {
+                title: xTitle,
+                valueFormatString: "####",
+                crosshair: {
+                    enabled: true,
+                    snapToDataPoint: true
+                }
+            },
             axisY: {
-                includeZero: false
+                includeZero: false,
+                title: yTitle,
+                crosshair: {
+                    enabled: true
+                }
+            },
+            toolTip: {
+                shared: true
+            },
+            legend: {
+                cursor: "pointer",
+                verticalAlign: "bottom",
+                horizontalAlign: "center",
+                dockInsidePlotArea: false,
+                itemclick: toogleDataSeries
             },
             data: [
                 {
                     type: "line",
-                    dataPoints: [
-                        {y: 450},
-                        {y: 414},
-                        {y: 460},
-                        {y: 450},
-                        {y: 500},
-                        {y: 480},
-                        {y: 480},
-                        {y: 500},
-                        {y: 480},
-                        {y: 510}
-                    ]
+                    showInLegend: true,
+                    name: "Số liệu thực tế",
+                    markerType: "square",
+                    xValueFormatString: "####",
+                    color: "#FF7D1F",
+                    dataPoints: actualData
+                },
+                {
+                    type: "line",
+                    showInLegend: true,
+                    name: "Dự đoán từ CTSA",
+                    color: "#2E8B57",
+                    lineDashType: "dash",
+                    dataPoints: predictedData
                 }
             ]
         });
         chart.render();
 
-        let chart2 = new CanvasJS.Chart("chartContainer2", {
-            colorSet: "orangeShades",
-            animationEnabled: true,
-            theme: "light2",
-            axisY: {
-                includeZero: false
-            },
-            data: [
-                {
-                    type: "line",
-                    dataPoints: [
-                        {y: 450},
-                        {y: 414},
-                        {y: 460},
-                        {y: 450},
-                        {y: 500},
-                        {y: 480},
-                        {y: 480},
-                        {y: 500},
-                        {y: 480},
-                        {y: 510}
-                    ]
-                }
-            ]
-        });
-        chart2.render();
+        generateParagraph(paragraphId, history);
+
+        return history;
+    }
+
+    function toogleDataSeries(e) {
+        if (
+            typeof e.dataSeries.visible === "undefined" ||
+            e.dataSeries.visible
+        ) {
+            e.dataSeries.visible = false;
+        } else {
+            e.dataSeries.visible = true;
+        }
+        chart.render();
+    }
+
+    function generateParagraph(paragraphId, history) {
+        let paragraph =
+            "Dữ liệu được hệ thống CTSA thu thập từ " + history[0].sourceName;
+        if (history.length < 4) {
+            let years = [];
+            for (let data of history) {
+                years.push(data.year);
+            }
+            let joinedYears = years.join(", ");
+            paragraph += ", qua các năm " + joinedYears;
+        } else {
+            paragraph +=
+                ", từ năm " +
+                history[0].year +
+                " đến năm " +
+                history[history.length - 1].year;
+        }
+        paragraph += ", được thể hiện qua biểu đồ bên dưới.";
+
+        $("#" + paragraphId).html(paragraph);
     }
 
     async function getMajorDescription(majorId) {
@@ -367,10 +475,6 @@
         $('#major-image').attr("src", majorResponse.data.imageUrl)
         $('#major-title').html(majorResponse.data.vietnamese)
         $('#major-description').html(majorResponse.data.description)
-    }
-    
-    async function generateCharts(majorId) {
-        
     }
 </script>
 </body>
