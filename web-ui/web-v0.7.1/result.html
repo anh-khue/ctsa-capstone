@@ -167,20 +167,218 @@
                             class="close"
                             data-dismiss="modal"
                             aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div id="entranceExamInput"
                      class="row modal-body justify-content-between">
 
+                    <div class="col-md-6 pl-4">
+                        <div id="MathMark"
+                             class="college-score-input">
+                            <table>
+                                <tr>
+                                    <td width='80'>
+                                        <span>Toán học</span></td>
+                                    <td><input class="rangeValues text-right"></td>
+                                </tr>
+
+                            </table>
+                            <section style="padding-bottom:20px"
+                                     class="range-slider"><input value="5"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"><input value="10"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"></section>
+                        </div>
+                        <hr>
+                        <div id="LiteratureMark"
+                             class="college-score-input">
+                            <table>
+                                <tr>
+                                    <td width='80'>
+                                        <span>Ngữ văn</span></td>
+                                    <td><input class="rangeValues text-right"></td>
+                                </tr>
+
+                            </table>
+                            <section style="padding-bottom:20px"
+                                     class="range-slider"><input value="5"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"><input value="10"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"></section>
+                        </div>
+                        <hr>
+                        <div id="EnglishMark"
+                             class="college-score-input">
+                            <table>
+                                <tr>
+                                    <td width='80'>
+                                        <span>Tiếng Anh</span></td>
+                                    <td><input class="rangeValues text-right"></td>
+                                </tr>
+
+                            </table>
+                            <section style="padding-bottom:20px"
+                                     class="range-slider"><input value="5"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"><input value="10"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"></section>
+                        </div>
+                        <hr>
+                        <div id="PhysiscsMark"
+                             class="college-score-input">
+                            <table>
+                                <tr>
+                                    <td width='80'>
+                                        <span>Vật lý</span></td>
+                                    <td><input class="rangeValues text-right text-right"></td>
+                                    <label class="float-right">
+                                        <input type="checkbox"
+                                               value=""
+                                               onchange="disableScoreInput(this)"> Không thi</label>
+                                </tr>
+
+                            </table>
+                            <section style="padding-bottom:20px"
+                                     class="range-slider"><input value="5"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"><input value="10"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"></section>
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-4">
+                        <div id="ChemistryMark"
+                             class="college-score-input">
+                            <table>
+                                <tr>
+                                    <td width='80'>
+                                        <span>Hóa học</span></td>
+                                    <td><input class="rangeValues text-right"></td>
+                                    <label class="float-right">
+                                        <input type="checkbox"
+                                               value=""
+                                               onchange="disableScoreInput(this)"> Không thi</label>
+                                </tr>
+                            </table>
+                            <section style="padding-bottom:20px"
+                                     class="range-slider"><input value="5"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"><input value="10"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"></section>
+                        </div>
+                        <hr>
+                        <div id="BiologyMark"
+                             class="college-score-input">
+                            <table>
+                                <tr>
+                                    <td width='80'>
+                                        <span>Sinh học</span></td>
+                                    <td><input class="rangeValues text-right"></td>
+                                    <label class="float-right">
+                                        <input type="checkbox"
+                                               value=""
+                                               onchange="disableScoreInput(this)"> Không thi</label>
+                                </tr>
+
+                            </table>
+                            <section style="padding-bottom:20px"
+                                     class="range-slider"><input value="5"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"><input value="10"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"></section>
+                        </div>
+                        <hr>
+                        <div id="HistoryMark"
+                             class="college-score-input">
+                            <table>
+                                <tr>
+                                    <td width='80'>
+                                        <span>Lịch sử</span></td>
+                                    <td><input class="rangeValues text-right"></td>
+                                    <label class="float-right">
+                                        <input type="checkbox"
+                                               value=""
+                                               onchange="disableScoreInput(this)"> Không thi</label>
+                                </tr>
+                            </table>
+                            <section style="padding-bottom:20px"
+                                     class="range-slider"><input value="5"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"><input value="10"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"></section>
+                        </div>
+                        <hr>
+                        <div id="GeographyMark"
+                             class="college-score-input">
+                            <table>
+                                <tr>
+                                    <td width='80'>
+                                        <span>Địa lý</span></td>
+                                    <td><input class="rangeValues text-right"></td>
+                                    <label class="float-right">
+                                        <input type="checkbox"
+                                               value=""
+                                               onchange="disableScoreInput(this)"> Không thi</label>
+                                </tr>
+
+                            </table>
+                            <section style="padding-bottom:20px"
+                                     class="range-slider"><input value="5"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"><input value="10"
+                                       min="0"
+                                       max="10"
+                                       step="0.1"
+                                       type="range"></section>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button"
                             class="btn btn-secondary"
-                            data-dismiss="modal">Huỷ</button>
+                            data-dismiss="modal">Huỷ
+                    </button>
                     <button type="button"
                             class="btn selected"
-                            onclick='getSuggestions()'>Nhận thêm gợi ý</button>
+                            onclick="getSuggestions()">Nhận thêm gợi ý
+                    </button>
                 </div>
             </div>
         </div>

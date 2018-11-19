@@ -48,6 +48,7 @@ body{
     width: 80vw !important;
 }
 section.range-slider {
+    margin-top:20px;
     position: relative;
     width: 50%;
     height: 50px;
@@ -111,7 +112,7 @@ section.range-slider input:last-of-type::-moz-range-track {
     width:70px;
 }
 .rangeValues{
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
     width:70px;
 
 }
@@ -158,6 +159,9 @@ section.range-slider input:last-of-type::-moz-range-track {
     padding-left:20%;
     padding-right:20%;
     height:120px;
+  }
+  .college-subject-text{
+      width:100px;
   }
 .greyout{
     background-color: whitesmoke;
