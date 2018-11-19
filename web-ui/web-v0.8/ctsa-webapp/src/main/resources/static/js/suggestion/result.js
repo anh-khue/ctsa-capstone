@@ -41,25 +41,25 @@ async function showInfoModal(majorId) {
 
     /* Salary */
     // Latest
-    let latestSalary = $('#latestSalary')
-    let latestSalaryResponse = await axios.get(API_GATEWAY + CAREER_TREND_SERVICE + '/salaries/latest?majorId=' + majorId)
-
-    let latestSalaryYear = $('#latestSalaryYear')
-    latestSalaryYear.empty()
-    latestSalaryYear.html("Số liệu " + latestSalaryResponse.data.year)
-
-    latestSalary.empty()
-    latestSalary.html(numberWithCommas(latestSalaryResponse.data.actual) + '<br/>VNĐ')
-    // Prediction
-    let predictedSalary = $('#predictedSalary')
-    let predictedSalaryResponse = await axios.get(API_GATEWAY + CAREER_TREND_SERVICE + '/salaries/predictions?year=2021&majorId=' + majorId)
-
-    let predictedSalaryYear = $('#predictedSalaryYear')
-    predictedSalaryYear.empty()
-    predictedSalaryYear.html("Dự đoán " + predictedSalaryResponse.data.year)
-
-    predictedSalary.empty()
-    predictedSalary.html(numberWithCommas(predictedSalaryResponse.data.forecast) + '<br/>VNĐ')
+    // let latestSalary = $('#latestSalary')
+    // let latestSalaryResponse = await axios.get(API_GATEWAY + CAREER_TREND_SERVICE + '/salaries/latest?majorId=' + majorId)
+    //
+    // let latestSalaryYear = $('#latestSalaryYear')
+    // latestSalaryYear.empty()
+    // latestSalaryYear.html("Số liệu " + latestSalaryResponse.data.year)
+    //
+    // latestSalary.empty()
+    // latestSalary.html(numberWithCommas(latestSalaryResponse.data.actual) + '<br/>VNĐ')
+    // // Prediction
+    // let predictedSalary = $('#predictedSalary')
+    // let predictedSalaryResponse = await axios.get(API_GATEWAY + CAREER_TREND_SERVICE + '/salaries/predictions?year=2021&majorId=' + majorId)
+    //
+    // let predictedSalaryYear = $('#predictedSalaryYear')
+    // predictedSalaryYear.empty()
+    // predictedSalaryYear.html("Dự đoán " + predictedSalaryResponse.data.year)
+    //
+    // predictedSalary.empty()
+    // predictedSalary.html(numberWithCommas(predictedSalaryResponse.data.forecast) + '<br/>VNĐ')
 
     /* Human Resource */
     // Latest

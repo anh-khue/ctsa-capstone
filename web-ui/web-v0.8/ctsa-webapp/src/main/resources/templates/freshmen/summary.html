@@ -110,6 +110,7 @@
                  style="border-top-left-radius: 20px ;
         border-top-right-radius: 20px !important; ">
                 <h4>Chi tiết xếp hạng</h4>
+                <h3 id="skillTypeNameModal"></h3>
             </div>
             <div class="row modal-body justify-content-between">
                 <table class="table table-bordered">
@@ -159,7 +160,6 @@
         $("#stats-tab").removeClass("tab-active")
         $("#recruitment-tab").removeClass("tab-active")
         getPositionTrend()
-        // getSkillsTrends()
     })
     $("#recruitment-tab").click(function () {
         $(this).addClass("tab-active")

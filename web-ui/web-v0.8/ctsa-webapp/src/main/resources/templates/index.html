@@ -25,6 +25,20 @@
           th:href="@{/css/style.css}">
     <!-- Services Routes -->
     <script th:src="@{/js/services-routes.js}"></script>
+
+    <style>
+        .error-mark {
+            padding-left: 2%;
+            font-size: 1.2em;
+            color: orangered;
+        }
+
+        .error-amount {
+            padding-left: 2%;
+            font-size: 0.8em;
+            color: orangered;
+        }
+    </style>
 </head>
 
 <body id="homebody">
@@ -86,7 +100,7 @@
                                  width="180"
                                  height="180">
                             <br/>
-                            Tân sinh viên ngành IT
+                            Sinh viên ngành IT
                         </a>
                     </div>
                 </div>
@@ -102,17 +116,27 @@
                                   style="font-size: 20px;color:rgb(243, 243, 243);">
                                 1
                             </span>
-                        </span>- 3 môn bạn tự tin nhất là gì?
+                        </span>
+                        <span id="firstQuestion">- Bạn tự tin nhất ở bao nhiêu môn học?</span>
+                        <input type="number"
+                               id="noOfTopSubjects"
+                               min="1"
+                               max="3"
+                               class="text-right"
+                               onkeypress="getNoOfTopSubjects(this)">
                         <br/>
+                        <p class="error-amount" id="noOfTopSubjectsError">
+
+                        </p>
                         <span id="additional-questions"
                               style="display: none; padding-left: 5%; font-style: italic;">
-                            Điểm các môn học đó là...
+
                         </span>
                     </span>
                 <br>
                 <div class="role1 hideaway mx-4 pl-4 my-2"
                      style="border-left-style: dashed; border-width:3px;">
-                    <div id="chooseSubjects">
+                    <div id="chooseSubjects" class="hideaway">
 
                     </div>
                     <div id="subjectsMarks"
@@ -137,9 +161,11 @@
                            class="my-2 mx-1 text-right col-md-2"
                            id="highSchoolAverage"
                            onkeypress="retrieveAverage(this)"
-                           style="width: 300px"
+                           style="width: 300px; font-size: 24px"
+                           min="0"
+                           max="10"
                            step="0.1">
-
+                    <p class="error-mark" id="gpaError"></p>
                 </div>
                 <span style="font-size: 24px"
                       class="head3 form-question">
@@ -208,6 +234,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script>
+    let topSubjectsAmount = 3
+
     // Pupils clicked
     $("#student").on('click', () => {
         $("#choose").hide(600)
@@ -283,7 +311,12 @@
         subject.classList.add("selected")
         addToTopSubjects(subject, count)
         highSchoolTopInputNames.push(subject.textContent)
-        if (count > 2) {
+        if (count >= topSubjectsAmount) {
+            if (topSubjectsAmount > 1) {
+                $('#additional-questions').html('Điểm các môn học đó là...')
+            } else {
+                $('#additional-questions').html('Điểm môn học đó là...')
+            }
             $('#additional-questions').show()
             $("#chooseSubjects").slideUp(600)
 
@@ -292,6 +325,7 @@
             subjectsMarks.empty()
             for (let i = 0; i < pupilInput.highSchoolTopInputs.length; i++) {
                 subjectsMarks.append(createMarkInput(pupilInput.highSchoolTopInputs[i], highSchoolTopInputNames[i]))
+                subjectsMarks.append('<p class="error-mark" id="markError' + pupilInput.highSchoolTopInputs[i].weight + '"></p>')
             }
         }
     }
@@ -322,12 +356,14 @@
 
         $('<input>', {
             type: 'number',
+            min: '0',
+            max: '10',
             step: '0.1',
             id: 'mark' + subject.weight,
             value: '',
             class: 'my-2 mx-3 col-md-2 text-right',
             onkeypress: 'retrieveMark(this)',
-            style: 'width: 300px'
+            style: 'width: 300px; font-size: 24px'
         }).appendTo(subjectDiv)
 
         return subjectDiv
@@ -335,11 +371,8 @@
 
     function retrieveMark(inputField) {
         let mark = inputField.value
-        if (event.keyCode === 13 &&
-            document.getElementById("mark1").value !== "" &&
-            document.getElementById("mark2").value !== "" &&
-            document.getElementById("mark3").value !== ""
-        ) {
+        let markId = inputField.id.split('mark')[1]
+        if (event.keyCode === 13 && filledMarks() === true) {
             pupilInput.highSchoolTopInputs.forEach((subject) => {
                 subject.mark = $('#mark' + subject.weight).val()
             })
@@ -351,10 +384,25 @@
         }
     }
 
-    function retrieveAverage(inputAverage) {
-        if (event.keyCode === 13) {
-            pupilInput.highSchoolAverage = inputAverage.value
+    function filledMarks() {
+        for (let i = 0; i < pupilInput.highSchoolTopInputs.length; i++) {
+            let mark = $('#mark' + (i + 1)).val()
+            if (mark === "") {
+                $('#markError' + (i + 1)).html('Vui lòng nhập điểm của bạn.')
+                return false
+            } else if (mark < 0 || mark > 10) {
+                $('#markError' + (i + 1)).html('Điểm phải là 1 số trong khoảng từ 0 tới 10')
+                return false
+            } else {
+                $('#markError' + (i + 1)).empty()
+            }
+        }
+        return true
+    }
 
+    function retrieveAverage(inputAverage) {
+        if (event.keyCode === 13 && checkGPA()) {
+            pupilInput.highSchoolAverage = inputAverage.value
             $(".role1").slideUp(600)
             $(".role2").slideUp(600)
             $(".role3").slideDown(600)
@@ -420,6 +468,43 @@
 
     function mouseOut() {
         document.getElementById("description").innerHTML = ""
+    }
+
+    function getNoOfTopSubjects(inputField) {
+        if (event.keyCode === 13) {
+            topSubjectsAmount = inputField.value
+
+            if (topSubjectsAmount === '') {
+                $('#noOfTopSubjectsError').html('Vui lòng nhập số môn học bạn tự tin nhất (từ 1 đến 4).')
+            } else if (topSubjectsAmount < 1 || topSubjectsAmount > 4) {
+                $('#noOfTopSubjectsError').html('Vui lòng chỉ nhập từ 1 đến 4.')
+            } else {
+                $('#noOfTopSubjectsError').empty()
+                $('#noOfTopSubjects').toggle()
+                $('#chooseSubjects').toggle(600)
+                if (topSubjectsAmount > 1) {
+                    $('#firstQuestion').html(topSubjectsAmount + ' môn học đó là...')
+                } else {
+                    $('#firstQuestion').html('Môn học đó là...')
+                }
+            }
+        }
+    }
+
+    function checkGPA() {
+        let gpa = $('#highSchoolAverage').val()
+
+        if (gpa === '') {
+            $('#gpaError').html('Vui lòng nhập điểm trung bình lớp 12 của bạn.')
+            return false
+        } else if (gpa < 0 || gpa > 10) {
+            $('#gpaError').html('Điểm phải là 1 số trong khoảng từ 0 tới 10')
+            return false
+        } else {
+            $('#gpaError').empty()
+        }
+
+        return true
     }
 </script>
 </body>
