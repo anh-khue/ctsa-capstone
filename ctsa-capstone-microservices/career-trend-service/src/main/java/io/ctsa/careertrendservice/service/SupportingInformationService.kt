@@ -61,4 +61,8 @@ class SupportingInformationService(private val supportingInformationRepository: 
                                                           exponentialSmoothingFormula,
                                                           supportingInformationList)
     }
+
+    fun getAllByMajorId(majorId: Int): List<SupportingInformation> {
+        return supportingInformationRepository.findByMajorIdOrderByYearAsc(majorId)
+    }
 }

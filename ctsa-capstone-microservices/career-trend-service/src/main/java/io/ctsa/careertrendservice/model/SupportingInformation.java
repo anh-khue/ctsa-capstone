@@ -18,6 +18,7 @@ public class SupportingInformation extends PredictionModel {
     private int id;
     private int majorId;
     private String unit;
+    private String sourceName;
 
     public SupportingInformation() {
         super();

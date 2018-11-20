@@ -22,28 +22,28 @@ public class CompanyManagementApplication {
         SpringApplication.run(CompanyManagementApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner runner(RecruitmentService recruitmentService) {
-        return args -> {
-            Recruitment recruitment = Recruitment.builder()
-                                                 .title("Test new recruitment")
-                                                 .positionId(1)
-                                                 .startDate(new Timestamp(System.currentTimeMillis()))
-                                                 .endDate(new Timestamp(System.currentTimeMillis()))
-                                                 .number(3)
-                                                 .jobDescription("Test description")
-                                                 .jobRequirement("Test requirement")
-                                                 .published(1)
-                                                 .email("test@gmail.com")
-                                                 .phone("1234567890")
-                                                 .address("Test Address")
-                                                 .companyId(4)
-                                                 .build();
-
-            recruitmentService.create(recruitment);
+//    @Bean
+//    CommandLineRunner runner(RecruitmentService recruitmentService) {
+//        return args -> {
+//            Recruitment recruitment = Recruitment.builder()
+//                                                 .title("Test new recruitment")
+//                                                 .positionId(1)
+//                                                 .startDate(new Timestamp(System.currentTimeMillis()))
+//                                                 .endDate(new Timestamp(System.currentTimeMillis()))
+//                                                 .number(3)
+//                                                 .jobDescription("Test description")
+//                                                 .jobRequirement("Test requirement")
+//                                                 .published(1)
+//                                                 .email("test@gmail.com")
+//                                                 .phone("1234567890")
+//                                                 .address("Test Address")
+//                                                 .companyId(4)
+//                                                 .build();
+//
+//            recruitmentService.create(recruitment);
 //            recruitmentService.getById(1).ifPresent(recruitment -> {
 //                System.out.println(new Date(recruitment.getStartDate().geta));
 //            });
-        };
-    }
+//        };
+//    }
 }

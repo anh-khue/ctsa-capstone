@@ -56,4 +56,8 @@ class HumanResourcesService(private val humanResourcesRepository: HumanResources
                                                           exponentialSmoothingFormula,
                                                           humanResources)
     }
+
+    fun getAllByMajorId(majorId: Int): List<HumanResource> {
+        return humanResourcesRepository.findByMajorIdOrderByYearAsc(majorId)
+    }
 }

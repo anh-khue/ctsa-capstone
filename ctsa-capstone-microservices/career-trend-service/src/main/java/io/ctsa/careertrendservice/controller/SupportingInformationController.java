@@ -18,6 +18,12 @@ public class SupportingInformationController {
         this.supportingInformationService = supportingInformationService;
     }
 
+    @GetMapping("supporting-information")
+    public ResponseEntity getAllByMajorId(@RequestParam int majorId) {
+        return ResponseEntity.status(HttpStatus.OK)
+                             .body(supportingInformationService.getAllByMajorId(majorId));
+    }
+
     @GetMapping("supporting-information/latest")
     public ResponseEntity getLatest(@RequestParam int majorId) {
         return ResponseEntity.status(HttpStatus.OK)

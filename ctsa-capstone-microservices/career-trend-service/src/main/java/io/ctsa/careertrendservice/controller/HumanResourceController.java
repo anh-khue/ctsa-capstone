@@ -18,6 +18,12 @@ public class HumanResourceController {
         this.humanResourcesService = humanResourcesService;
     }
 
+    @GetMapping("human-resources")
+    public ResponseEntity getAllByMajorId(@RequestParam int majorId) {
+        return ResponseEntity.status(HttpStatus.OK)
+                             .body(humanResourcesService.getAllByMajorId(majorId));
+    }
+
     @GetMapping("human-resources/latest")
     public ResponseEntity getLatest(@RequestParam int majorId) {
         return ResponseEntity.status(HttpStatus.OK)

@@ -20,6 +20,7 @@ public class HumanResource extends PredictionModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int majorId;
+    private String sourceName;
 
     public HumanResource() {
         super();
