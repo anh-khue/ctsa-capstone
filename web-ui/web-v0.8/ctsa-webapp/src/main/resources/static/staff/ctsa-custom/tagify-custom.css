@@ -1,0 +1,20 @@
+.tagify tag>div:not([contenteditable]) {
+  background-color: #dddddd;
+  color: black;
+  font-size: 1.1em;
+}
+
+.tagify tag x {
+  color: black;
+}
+
+.tagify[readonly] tag>div {
+  background-color: #FF7D1F;
+  color: white;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.tagify[readonly] {
+  border: 0;
+}

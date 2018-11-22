@@ -1,0 +1,85 @@
+body, button, table, label {
+    font-size: 1.1em !important
+}
+
+select {
+    font-style: bold !important;
+    color: rgb(70, 70, 70) !important
+}
+
+.page-container {
+    background-color: #F2F3F5
+}
+
+.title-header {
+    margin-top: 0.8%;
+    font-size: 1.5em;
+    color: rgb(255, 140, 78);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: #fff !important;
+    background: #FF7D1F;
+}
+
+input, select {
+    border: 1px solid rgba(85, 85, 85, 0.829) !important;
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid rgba(85, 85, 85, 0.555) !important;
+}
+
+#alert {
+    color: red;
+}
+
+.nav-item:hover {
+    background-color: white;
+}
+
+.nav-item:hover i {
+    color: #FF7D1F;
+}
+
+.sidebar-menu > li > a:hover {
+    color: #FF7D1F !important;
+}
+
+.sidebar-menu > li > a, .sidebar-menu > li > ul > li > a {
+    color: rgb(235, 235, 235);
+    font-size: 1.1em;
+}
+
+.sidebar-menu > li > a > span > i {
+    font-size: 1.5em;
+}
+
+.dataTables_filter {
+    margin-right: 1%;
+}
+
+.pagination {
+    margin-right: 1%;
+}
+
+.page-item {
+    color: #000000;
+    border-color: #FF7D1F;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+    border: 1px solid #FF7D1F;
+    color: #000000;
+}
+
+.pagination > li.active > a {
+    background: #FF7D1F;
+    color: #fff;
+}
+
+.pagination > li:hover > a {
+    background: #FF7D1F;
+    color: #fff;
+}
