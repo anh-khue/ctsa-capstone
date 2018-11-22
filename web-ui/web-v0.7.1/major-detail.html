@@ -23,11 +23,16 @@
     <style>
       .description > p {
         padding: 0.5% 2% 0 2%;
+        font-size: 1.2em;
+      }
+
+      .detail-description > p {
+        padding: 2% 1% 1% 1%;
         font-size: 1.3em;
       }
 
-      .job-description > p {
-        padding: 2% 1% 1% 1%;
+      .formula-description > p {
+        /* padding: 0% 1% 1% 1%; */
         font-size: 1.3em;
       }
     </style>
@@ -150,18 +155,41 @@
           </div>
 
           <div class="row justify-content-center">
+            <div class="col-md-10 job-detail2">
+              <div class="text-center">
+                <img
+                  src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237111/demo-image/requirement.png"
+                  alt=""
+                  width="50"
+                /><br /><br />
+                <h2>Phương pháp dự báo</h2>
+                <hr />
+              </div>
+              <div class="formula-description text-center">
+                <p style="font-style: italic">
+                  Ứng dụng phương pháp Phân tích Chuỗi thời gian (Time Series
+                  Analysis)
+                </p>
+                <p style="font-style: italic">
+                  Hệ thống CTSA đưa ra dự đoán bằng cách áp dụng công thức
+                  Holt’s Exponential Smoothing.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
             <div class="job-detail1 col-md-6">
               <div class="text-center">
                 <img
-                  src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237108/demo-image/question.png"
-                  alt=""
+                  src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1542446021/demo-image/human-resource.png"
                   width="50"
                 /><br /><br />
                 <h2>Nhu cầu nhân lực</h2>
                 <hr />
               </div>
-              <div class="text-justify job-description">
-                <p>
+              <div class="text-justify detail-description">
+                <p id="hrParagraph">
                   Với dữ liệu thu thập được Sách trắng CNTT Việt Nam qua các năm
                   2010, 2012, 2013, thể hiện qua biểu đồ dưới đây.
                 </p>
@@ -169,25 +197,19 @@
                   id="chartContainer"
                   style="height: 370px; width: 100%;"
                 ></div>
-                <p>
-                  Dự báo về nhân lực ngành Công nghệ thông tin được hệ thống
-                  CTSA đưa ra thông qua việc ứng dụng Time Series Analysis, cụ
-                  thể là phương pháp Holt’s Exponential Smoothing.
-                </p>
               </div>
             </div>
             <div class="job-detail2 col-md-6">
               <div class="text-center">
                 <img
-                  src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237111/demo-image/requirement.png"
-                  alt=""
+                  src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1542446124/demo-image/information.png"
                   width="50"
                 /><br /><br />
-                <h2>Thông tin bổ sung</h2>
+                <h2 id="spTitle">Thông tin bổ sung</h2>
                 <hr />
               </div>
-              <div class="text-justify job-description">
-                <p>
+              <div class="text-justify detail-description">
+                <p id="spParagraph">
                   Với dữ liệu thu thập được Sách trắng CNTT Việt Nam qua các năm
                   2010, 2012, 2013, thể hiện qua biểu đồ dưới đây.
                 </p>
@@ -195,11 +217,6 @@
                   id="chartContainer2"
                   style="height: 370px; width: 100%;"
                 ></div>
-                <p>
-                  Dự báo về số lượng công việc được hệ thống CTSA đưa ra thông
-                  qua việc ứng dụng Time Series Analysis, cụ thể là phương pháp
-                  Holt’s Exponential Smoothing.
-                </p>
               </div>
             </div>
           </div>
@@ -347,25 +364,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 
     <script>
-      const numberWithCommas = x => {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      };
-
       window.onload = function() {
-        let majorId = 1;
+        let majorId = 4;
 
         let hrApi =
           "http://localhost:8080/career-trend-service/human-resources?majorId=" +
           majorId;
-        generateChart(hrApi, "chartContainer", "Năm", "Tổng số nhân lực");
+        generateChart(
+          hrApi,
+          "chartContainer",
+          "Năm",
+          "Tổng nhân lực",
+          "hrParagraph"
+        );
 
         let spApi =
           "http://localhost:8080/career-trend-service/supporting-information?majorId=" +
           majorId;
-        generateChart(spApi, "chartContainer2", "Năm", "Tổng số công việc");
+        generateChart(spApi, "chartContainer2", "Năm", "Tổng", "spParagraph");
       };
 
-      async function generateChart(api, chartId, xTitle, yTitle) {
+      async function generateChart(api, chartId, xTitle, yTitle, paragraphId) {
         let historyResponse = await axios.get(api);
         let history = historyResponse.data;
 
@@ -384,6 +403,17 @@
           };
           predictedData.push(prediction);
         }
+        predictedData.shift();
+
+        // Change yAxis title
+        if (history[0].unit) {
+          if (history[0].unit.includes("số")) {
+            yTitle += " " + history[0].unit;
+          } else {
+            yTitle += " số " + history[0].unit;
+          }
+        }
+        $("#spTitle").html(yTitle);
 
         let chart = new CanvasJS.Chart(chartId, {
           animationEnabled: true,
@@ -397,6 +427,7 @@
             }
           },
           axisY: {
+            includeZero: false,
             title: yTitle,
             crosshair: {
               enabled: true
@@ -408,8 +439,8 @@
           legend: {
             cursor: "pointer",
             verticalAlign: "bottom",
-            horizontalAlign: "left",
-            dockInsidePlotArea: true,
+            horizontalAlign: "center",
+            dockInsidePlotArea: false,
             itemclick: toogleDataSeries
           },
           data: [
@@ -425,7 +456,7 @@
             {
               type: "line",
               showInLegend: true,
-              name: "Dự đoán",
+              name: "Dự đoán từ CTSA",
               color: "#2E8B57",
               lineDashType: "dash",
               dataPoints: predictedData
@@ -433,6 +464,10 @@
           ]
         });
         chart.render();
+
+        generateParagraph(paragraphId, history);
+
+        return history;
       }
 
       function toogleDataSeries(e) {
@@ -445,6 +480,28 @@
           e.dataSeries.visible = true;
         }
         chart.render();
+      }
+
+      function generateParagraph(paragraphId, history) {
+        let paragraph =
+          "Dữ liệu được hệ thống CTSA thu thập từ " + history[0].sourceName;
+        if (history.length < 4) {
+          let years = [];
+          for (let data of history) {
+            years.push(data.year);
+          }
+          let joinedYears = years.join(", ");
+          paragraph += ", qua các năm " + joinedYears;
+        } else {
+          paragraph +=
+            ", từ năm " +
+            history[0].year +
+            " đến năm " +
+            history[history.length - 1].year;
+        }
+        paragraph += ", được thể hiện qua biểu đồ bên dưới.";
+
+        $("#" + paragraphId).html(paragraph);
       }
 
       function getRecruitmentById(recruitmentId) {

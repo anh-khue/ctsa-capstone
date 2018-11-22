@@ -175,13 +175,13 @@
             }
 
             function getListRecruitment() {
-                var url = 'http://localhost:8080/recruitment';
+                var url = 'http://localhost:8080/company-management/recruitment';
 
                 axios.get(url)
                     .then(response => {
-                        let list = response.data;
+                        let list = response.data
 
-                        var i;
+                        var i
                         for (i = 0; i < list.length; i++) {
                             var recruitment = '<div class="row justify-content-around stylish-panel">'
                                 + '<div class="col-md-2 text-center my-auto">'
@@ -190,11 +190,11 @@
                                 + '<div class="col-md-7">'
                                 + '<a href="' + (url + '/' + list[i].id) + '"><h2>' + list[i].title + '</h2></a>'
                                 + '<p class="job-descript">' + truncateText(list[i].jobDescription, 250) + '</p>'
-                                + '<div class="pt-5">';
+                                + '<div class="pt-5">'
 
-                            var j;
+                            var j
                             for (j = 0; j < list[i].skills.length; j++) {
-                                recruitment += '<a href="#" class="btn btn-outline-dark">' + list[i].skills[j].skillName + '</a>&nbsp;';
+                                recruitment += '<a href="#" class="btn btn-outline-dark">' + list[i].skills[j].skillName + '</a>&nbsp;'
                             }
 
                             recruitment += '</div>'
@@ -204,11 +204,11 @@
                                 + '<div class="my-4"><span>' + coundDays(list[i].startDate) + '</span></div>'
                                 + '<div class="my-4"><span>' + list[i].address + '</span></div>'
                                 + '</div>'
-                                + '</div>';
+                                + '</div>'
 
-                            $('.list-jobs').append(recruitment);
+                            $('.list-jobs').append(recruitment)
                         }
-                    });
+                    })
             }
         </script>
     </body>

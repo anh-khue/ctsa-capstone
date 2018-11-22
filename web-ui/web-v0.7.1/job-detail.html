@@ -184,7 +184,7 @@
 
     <script>
         function getRecruitmentById(recruitmentId) {
-            axios.get("http://localhost:8080/recruitment/" + recruitmentId)
+            axios.get("http://localhost:8080/company-management/recruitment/" + recruitmentId)
                 .then(response => {
                     let recruitment = response.data;
                     console.log(recruitment)

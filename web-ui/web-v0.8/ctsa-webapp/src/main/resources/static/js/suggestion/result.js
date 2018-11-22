@@ -188,18 +188,19 @@ async function getFinalPrediction(majorId, majorName, year, predictedHumanResour
     finalPrediction.html('' + finalResponse + '')
 }
 
-function disableScoreInput(obj) {
-    let parent = obj.parentNode.parentNode;
+function disableScoreInput(subjectDivId) {
+    let parent = subjectDivId.parentNode.parentNode;
     let section = parent.getElementsByTagName("section")
-    if ($(obj).is(":checked")) {
+    let rangeValues = parent.getElementsByClassName("rangeValues")[0]
+    if ($(subjectDivId).is(":checked")) {
         //disable range input
         $(section).children().prop('disabled', true)
         //disable text input
-        $(parent).children().prop('disabled', true)
+        rangeValues.disabled = true
         $(parent).addClass("grey-out")
     } else {
         $(parent).removeClass("grey-out")
-        $(parent).children().prop('disabled', false)
+        rangeValues.disabled = false
         $(parent).children().children().prop('disabled', false);
     }
 }

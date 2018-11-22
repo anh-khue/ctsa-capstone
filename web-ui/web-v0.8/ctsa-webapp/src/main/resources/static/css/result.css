@@ -117,9 +117,8 @@ section.range-slider input[type=range]::-moz-focus-outer {
 }
 
 .rangeValues {
-    margin-bottom: 25px;
+    /*margin-bottom: 25px;*/
     width: 70px;
-
 }
 
 .banner-description {

@@ -163,7 +163,7 @@
     });
 
     function getRecruitmentByCompanyIdAndPublished(companyId, published, pageNumber) {
-      var url = 'http://localhost:8080/companies/' + companyId + '/recruitment/pages/' + pageNumber;
+      var url = 'http://localhost:8080/company-management/companies/' + companyId + '/recruitment/pages/' + pageNumber;
       if (published == 0 || published == 1) {
         url += '?status=' + published;
 
@@ -196,7 +196,7 @@
     }
 
     function publishRecruitment(recruitmentId, published, rowId) {
-      axios.put("http://localhost:8080/recruitment/" + recruitmentId + "/publish?published=" + published, {}, {
+      axios.put("http://localhost:8080/company-management/recruitment/" + recruitmentId + "/publish?published=" + published, {}, {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         }

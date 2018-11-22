@@ -5,7 +5,7 @@ function getValues() {
 
     //value to show range later
     let divParent = this.parentNode.parentNode
-    let inputValue = divParent.getElementsByTagName("input")
+    let inputValue = divParent.getElementsByClassName("rangeValues")
 
     let slide1 = parseFloat(slides[0].value)
     let slide2 = parseFloat(slides[1].value)
@@ -16,7 +16,6 @@ function getValues() {
         slide2 = slide1
         slide1 = tmp
     }
-    let displayElement = document.getElementsByClassName("rangeValues")[2];
     inputValue[0].value = slide1 + " - " + slide2;
 }
 
@@ -66,6 +65,12 @@ function retrieveSubjects(modalId) {
                 }
             }
         })
+        .then(() => {
+            let checkboxes = $("input:checkbox")
+            for (let i = 0; i < checkboxes.length; i++) {
+                disableScoreInput(checkboxes[i])
+            }
+        })
 }
 
 function createSubjectInput(subject) {
@@ -74,14 +79,6 @@ function createSubjectInput(subject) {
         class: "college-score-input"
     })
 
-    $("<span>", {
-        text: subject.vietnamese + " "
-    }).appendTo(subjectDiv)
-
-    $("<input>", {
-        class: "rangeValues"
-    }).appendTo(subjectDiv)
-
     if (!subject.required) {
         let label = $("<label>", {
             class: "float-right"
@@ -89,6 +86,7 @@ function createSubjectInput(subject) {
 
         $("<input>", {
             type: "checkbox",
+            checked: "true",
             value: "",
             onchange: "disableScoreInput(this)"
         }).appendTo(label)
@@ -96,6 +94,26 @@ function createSubjectInput(subject) {
 
         label.appendTo(subjectDiv)
     }
+
+    let table = $('<table>')
+    let tableRow = $('<tr>')
+
+    let subjectNameCell = $('<td>', {
+        width: '80'
+    })
+    $("<span>", {
+        text: subject.vietnamese + " "
+    }).appendTo(subjectNameCell)
+    subjectNameCell.appendTo(tableRow)
+
+    let subjectMarkCell = $('<td>')
+    $("<input>", {
+        class: "rangeValues text-right"
+    }).appendTo(subjectMarkCell)
+    subjectMarkCell.appendTo(tableRow)
+
+    tableRow.appendTo(table)
+    table.appendTo(subjectDiv)
 
     let section = $("<section>", {
         style: "padding-bottom:20px",

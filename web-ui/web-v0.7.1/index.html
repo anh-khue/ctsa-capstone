@@ -136,7 +136,14 @@
                                   style="font-size: 20px;color:rgb(243, 243, 243);">
                                 1
                             </span>
-                        </span>- 3 môn bạn tự tin nhất là gì?
+                        </span>
+                        <span id="firstQuestion">- Bạn tự tin nhất bao nhiêu môn?</span>
+                        <input type="number" class="text-right " min="1" max="4">
+                        <br/>
+                        <span id="additional-questions"
+                              style="display: none; padding-left: 5%; font-style: italic;">
+                            Điểm các môn học đó là...
+                        </span>
                     </span>
                     <br>
                     <div class="role1 hideaway mx-4 pl-4 my-2"
@@ -172,8 +179,8 @@
                         </div>
                         <div id="subjectsMarks"
                              class="hideaway">
-
-                        </div>
+                            
+                        </div>      
                     </div>
                     <span style="font-size: 24px"
                           class="head2 form-question">
@@ -184,16 +191,16 @@
                                   style="font-size: 20px;color:rgb(243, 243, 243);">
                                 2
                             </span>
-                        </span>- Điểm trung bình tất cả các môn trong năm học lớp 12?</span><br>
+                        </span>- Điểm trung bình tất cả các môn trong năm học lớp 12?
+                    </span>
+                    <br/>
                     <div class="hideaway role2 mx-4 pl-4 my-2"
-                         style="border-left-style: dashed; border-width:3px">
-
+                         style="border-left-style: dashed; border-width:3px; font-size: 24px">
                         <input type="number"
-                               class="my-2 mx-1 text-right col-md-2"
+                               class="text-right col-md-2"
                                id="highSchoolAverage"
                                onkeypress="retrieveAverage(this)"
                                step="0.1">
-
                     </div>
                     <span style="font-size: 24px"
                           class="head3 form-question">
