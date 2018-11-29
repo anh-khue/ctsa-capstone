@@ -1,4 +1,4 @@
-# How to run configurations for ElasticSearch
+# How to run configurations for Elasticsearch
 
 _All of the following commands can be run through `curl` or `Postman` with default `url` started with `http://localhost:9200/`._
 
