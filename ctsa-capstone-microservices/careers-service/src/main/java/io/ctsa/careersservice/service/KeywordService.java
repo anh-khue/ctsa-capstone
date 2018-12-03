@@ -2,6 +2,9 @@ package io.ctsa.careersservice.service;
 
 import io.ctsa.careersservice.model.Keyword;
 import io.ctsa.careersservice.repository.KeywordRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +21,11 @@ public class KeywordService {
 
     public List<Keyword> getKeywords() {
         return keywordRepository.findByIsSynonym(false);
+    }
+
+    public Page<Keyword> getKeywordsByPage(int itemPerPage, int page) {
+        Pageable pageRequest = PageRequest.of(page - 1, itemPerPage);
+        return keywordRepository.findByIsSynonym(false, pageRequest);
     }
 
     public void insertSynonyms(List<String> words, Integer mainKeywordId)
@@ -58,7 +66,7 @@ public class KeywordService {
         return keywordRepository.findByPushedToElasticsearch(status);
     }
 
-    public void pushedToElasticsearch(String word) {
+    public void pushToElasticsearch(String word) {
         this.findByWord(word).ifPresent(keyword -> {
             keyword.setPushedToElasticsearch(true);
             keywordRepository.save(keyword);

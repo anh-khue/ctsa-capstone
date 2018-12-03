@@ -10,19 +10,21 @@
         <module name="api-gateway" />
         <module name="career-trend-service" />
         <module name="careers-service" />
+        <module name="careers-suggestions-service" />
         <module name="company-management" />
         <module name="config-service" />
         <module name="elasticsearch-service" />
         <module name="eureka-service" />
-        <module name="results-suggestions-service" />
         <module name="vietnamworks-scraper" />
         <module name="warehouse-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api-gateway" target="1.8" />
+      <module name="career-suggestions-service" target="1.8" />
       <module name="career-trend-service" target="1.8" />
       <module name="careers-service" target="1.8" />
+      <module name="careers-suggestions-service" target="1.8" />
       <module name="company-management" target="1.8" />
       <module name="config-service" target="1.8" />
       <module name="elasticsearch-service" target="1.8" />
@@ -33,5 +35,21 @@
       <module name="vietnamworks-scraper" target="1.8" />
       <module name="warehouse-service" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway" options="-parameters" />
+      <module name="career-suggestions-service" options="-parameters" />
+      <module name="career-trend-service" options="-parameters" />
+      <module name="careers-service" options="-parameters" />
+      <module name="careers-suggestions-service" options="-parameters" />
+      <module name="company-management" options="-parameters" />
+      <module name="config-service" options="-parameters" />
+      <module name="elasticsearch-service" options="-parameters" />
+      <module name="eureka-service" options="-parameters" />
+      <module name="results-suggestions-service" options="-parameters" />
+      <module name="vietnamworks-scraper" options="-parameters" />
+      <module name="warehouse-service" options="-parameters" />
+    </option>
   </component>
 </project>

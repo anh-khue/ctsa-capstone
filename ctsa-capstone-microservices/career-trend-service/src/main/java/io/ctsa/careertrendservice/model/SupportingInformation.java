@@ -9,8 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@Getter
-@Setter
 public class SupportingInformation extends PredictionModel {
 
     @Id
@@ -46,5 +44,13 @@ public class SupportingInformation extends PredictionModel {
 
     public void setUnit(String unit) {
         this.unit = unit;
+    }
+
+    public String getSourceName() {
+        return sourceName;
+    }
+
+    public void setSourceName(String sourceName) {
+        this.sourceName = sourceName;
     }
 }
