@@ -45,8 +45,10 @@ class PupilSuggestion(private val majorCentroidRepository: MajorCentroidReposito
                                + scoreTopSubjects(input.highSchoolResults, highSchoolTopCentroids))
 
         if (input.entranceExamResults != null) {
-            squaredDistance += scoreEntranceExam(input.entranceExamResults,
-                                                 centroid.entranceExamCentroidDetails)
+//            squaredDistance += scoreEntranceExam(input.entranceExamResults,
+//                                                 centroid.entranceExamCentroidDetails)
+            squaredDistance = scoreEntranceExam(input.entranceExamResults,
+                                                centroid.entranceExamCentroidDetails)
         }
 
         return sqrt(squaredDistance)
@@ -58,9 +60,10 @@ class PupilSuggestion(private val majorCentroidRepository: MajorCentroidReposito
         inputs.forEach { input ->
             centroids.forEach { centroid ->
                 squaredDistance += if (input.subjectId == centroid.subjectId) {
-                    pow(input.mark - centroid.mark * centroid.weight, 2.0)
+                    pow((input.mark - centroid.mark) * centroid.weight, 2.0)
                 } else {
 //                    pow(centroid.mark * centroid.weight, 2.0)
+//                    pow(10 * centroid.weight, 2.0)
                     0.0
                 }
             }
@@ -77,9 +80,10 @@ class PupilSuggestion(private val majorCentroidRepository: MajorCentroidReposito
         entranceExamResults.forEach { inputDetail ->
             entranceExamCentroidDetails.forEach { centroidDetail ->
                 squaredDistance += if (inputDetail.entranceExamSubjectId == centroidDetail.entranceExamSubjectId) {
-                    pow(inputDetail.mark - centroidDetail.mark * centroidDetail.weight, 2.0)
+                    pow((inputDetail.mark - centroidDetail.mark) * centroidDetail.weight, 2.0)
                 } else {
-                    pow(centroidDetail.mark * centroidDetail.weight, 2.0)
+//                    pow(centroidDetail.mark * centroidDetail.weight, 2.0)
+                    pow(10 * centroidDetail.weight, 2.0)
 //                    0.0
                 }
             }

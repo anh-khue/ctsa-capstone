@@ -9,6 +9,9 @@ import java.util.Optional
 
 import io.ctsa.careertrendservice.prediction.storage.SmoothingParamsConstants.*
 import org.slf4j.LoggerFactory
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.PageRequest
+import java.time.LocalDate
 
 @Service
 class SupportingInformationService(private val supportingInformationRepository: SupportingInformationRepository,
@@ -64,5 +67,35 @@ class SupportingInformationService(private val supportingInformationRepository: 
 
     fun getAllByMajorId(majorId: Int): List<SupportingInformation> {
         return supportingInformationRepository.findByMajorIdOrderByYearAsc(majorId)
+    }
+
+    fun predictSeries(endYear: Int, majorId: Int): List<SupportingInformation> {
+        val predictionSeries: MutableList<SupportingInformation> = mutableListOf()
+
+        val smoothingParams = smoothingParamsService.getSmoothingParams("$HUMAN_RESOURCES-$majorId")
+
+        val nearestPredictionModel = supportingInformationRepository
+                .findFirstByMajorIdOrderByYearDesc(majorId)
+
+        val currentYear = LocalDate.now().year
+
+        for (year in currentYear..endYear) {
+            var predictionModel = SupportingInformation()
+            predictionModel.majorId = majorId
+            predictionModel.year = year
+            predictionModel.unit = nearestPredictionModel.unit
+
+            predictionModel = exponentialSmoothingFormula.predict(nearestPredictionModel, predictionModel,
+                                                                  smoothingParams.alpha, smoothingParams.beta)
+
+            predictionSeries.add(predictionModel)
+        }
+
+        return predictionSeries
+    }
+
+    fun getAllByMajorIdByPage(majorId: Int, itemPerPage: Int, page: Int): Page<SupportingInformation> {
+        val pageRequest = PageRequest.of(page - 1, itemPerPage)
+        return supportingInformationRepository.findByMajorIdOrderByYearAsc(majorId, pageRequest)
     }
 }

@@ -19,4 +19,8 @@ public class MajorCentroidService {
         return majorCentroidRepository.findById(id)
                                       .orElseThrow(MajorCentroidNotFoundException::new);
     }
+
+    public MajorCentroid getByMajorId(int majorId) {
+        return majorCentroidRepository.findByMajorId(majorId);
+    }
 }

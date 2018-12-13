@@ -14,7 +14,7 @@ public class EntranceExamCentroidDetail {
     private int majorCentroidId;
     private int entranceExamSubjectId;
     private double mark;
-    private int weight;
+    private double weight;
     @JsonIgnore
     private MajorCentroid majorCentroid;
     private EntranceExamSubject entranceExamSubject;
@@ -62,11 +62,11 @@ public class EntranceExamCentroidDetail {
 
     @Basic
     @Column(name = "weight")
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
