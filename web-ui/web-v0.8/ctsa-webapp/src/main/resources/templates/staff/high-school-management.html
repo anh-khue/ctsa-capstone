@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>High School</title>
+
+    <link th:href="@{/staff/assets/css/style.css}"
+          rel="stylesheet">
+    <style th:replace="staff/web-admin.html :: web-admin-style"></style>
+
+    <link rel="stylesheet"
+          th:href="@{/staff/assets/css/tagify.css}">
+
+    <script type="text/javascript"
+            th:src="@{/staff/assets/js/vendor.js}"></script>
+    <script type="text/javascript"
+            th:src="@{/staff/assets/js/bundle.js}"></script>
+
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+          crossorigin="anonymous">
+</head>
+
+<body class="app">
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+
+<script>
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+            loader.classList.add('fadeOut');
+        }, 300);
+    });
+</script>
+
+<div>
+    <div th:replace="staff/web-admin.html :: web-admin-sidebar"></div>
+
+    <div class="page-container">
+
+        <div th:replace="staff/web-admin.html :: web-admin-header"></div>
+
+        <main class="main-content bgc-grey-200">
+            <div id="mainContent">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="bgc-white bd bdrs-3 p-20 mB-20">
+                                <h4 class="c-grey-900 mB-20">High School Subjects' Weights</h4>
+                                <div class="row">
+                                    <div class="dataTables_length">
+                                        <label>Major
+                                            <select id="dataTable_major" name="dataTable_length"
+                                                    aria-controls="dataTable"
+                                                    onchange="changeItemPerPage()">
+                                                <option value="1">Information Technology</option>
+                                                <option value="4">Medical</option>
+                                                <option value="5">Pedagogy</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div id="dataTable_filter" class="ml-auto dataTables_filter">
+                                        <label>
+                                            Search:
+                                            <input type="search"
+                                                   class=""
+                                                   placeholder=""
+                                                   aria-controls="dataTable">
+                                        </label>
+                                    </div>
+                                </div>
+                                <table class="table table-striped table-bordered "
+                                       cellspacing="0"
+                                       width="100%">
+                                    <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Major</th>
+                                        <th>Subject</th>
+                                        <th style="width: 10%">Weight</th>
+                                        <th>Update</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>IT</td>
+                                        <td>Math</td>
+                                        <td>
+                                            <input type="number" name="weight" class="text-right form-control"
+                                                   value="1">
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-orange btn-block"
+                                                    type="button">
+                                                Update
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="row">
+                                    <ul id="pagination"
+                                        class="pagination ml-auto">
+                                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript"
+        th:src="@{/staff/assets/js/vendor.js}"></script>
+<script type="text/javascript"
+        th:src="@{/staff/assets/js/bundle.js}"></script>
+<link th:href="@{/staff/assets/css/style.css}"
+      rel="stylesheet">
+<link rel="stylesheet"
+      th:href="@{/staff/ctsa-custom/ctsa.css}">
+<link rel="stylesheet"
+      th:href="@{/staff/ctsa-custom/tagify-custom.css}">
+
+<script th:src="@{/staff/assets/js/tagify.js}"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script>
+    let keywordIds = []
+    let totalPages = 0
+    let currentPage = 1
+    let itemPerPage = $('#dataTable_length').children("option:selected").val();
+
+    window.addEventListener('load', function () {
+        (function () {
+            getTotalPages(itemPerPage)
+            getKeywords(itemPerPage, currentPage)
+        })()
+    });
+
+    function changeItemPerPage() {
+        itemPerPage = $('#dataTable_length').children("option:selected").val();
+        getTotalPages(itemPerPage)
+        changePage(1)
+        getKeywords(itemPerPage, 1)
+    }
+
+    function getKeywords(itemPerPage, page) {
+        axios.get('http://localhost:8001/keywords?item-per-page=' + itemPerPage + '&page=' + page)
+            .then((response) => {
+                keywordIds = []
+                let synonymsTable = document.getElementById('synonymsTable');
+                synonymsTable.innerHTML = ''
+
+                let keywords = response.data;
+
+                for (keyword of keywords) {
+                    keywordIds.push(keyword.id)
+                    let row = retrieveSynonyms(keyword);
+                    synonymsTable.appendChild(row);
+                }
+            }).then(() => {
+            for (let i = 0; i < keywordIds.length; i++) {
+                let input = document.querySelector('input[name=read' + keywordIds[i] + ']'),
+                    tagify = new Tagify(input);
+            }
+
+            for (let i = 0; i < keywordIds.length; i++) {
+                let input = document.querySelector('input[name=tags' + keywordIds[i] + ']'),
+                    tagify = new Tagify(input, {});
+            }
+        });
+    }
+
+    function getTotalPages(itemPerPage) {
+        axios.get('http://localhost:8001/keywords/pages-count?item-per-page=' + itemPerPage)
+            .then((response) => {
+                totalPages = parseInt(response.data)
+
+                let pagination = $('#pagination')
+                pagination.empty()
+                for (let i = 0; i < totalPages; i++) {
+                    if (currentPage === (i + 1)) {
+                        pagination.append('<li class="page-item active"><a class="page-link" href="#" onclick="changePage(' + (i + 1) + ')">' + (i + 1) + '</a></li>')
+                    } else {
+                        pagination.append('<li class="page-item"><a class="page-link" href="#" onclick="changePage(' + (i + 1) + ')">' + (i + 1) + '</a></li>')
+                    }
+                }
+            })
+    }
+
+    function changePage(page) {
+        currentPage = page
+
+        let pagination = $('#pagination')
+        pagination.empty()
+        for (let i = 0; i < totalPages; i++) {
+            if (currentPage === (i + 1)) {
+                pagination.append('<li class="page-item active"><a class="page-link" href="#" onclick="changePage(' + (i + 1) + ')">' + (i + 1) + '</a></li>')
+            } else {
+                pagination.append('<li class="page-item"><a class="page-link" href="#" onclick="changePage(' + (i + 1) + ')">' + (i + 1) + '</a></li>')
+            }
+        }
+
+        getKeywords(itemPerPage, page)
+    }
+
+    function retrieveSynonyms(keyword) {
+        let row = document.createElement('tr')
+
+        let idCell = document.createElement('td')
+        idCell.innerHTML = keyword.id
+        row.appendChild(idCell)
+
+        let keywordCell = document.createElement('td')
+        keywordCell.innerHTML = keyword.word
+        row.appendChild(keywordCell)
+
+        let synonymsCell = document.createElement('td')
+        let synonymsForm = document.createElement('form')
+
+        let synonymsArray = []
+        for (let synonym of keyword.synonyms) {
+            synonymsArray.push(synonym.word)
+        }
+
+        let synonyms = synonymsArray.join(', ')
+        let existedSynonyms = document.createElement('input')
+        existedSynonyms.setAttribute('name', 'read' + keyword.id)
+        existedSynonyms.setAttribute('value', synonyms)
+        existedSynonyms.setAttribute('readonly', true)
+        synonymsForm.appendChild(existedSynonyms)
+        synonymsForm.appendChild(document.createElement('br'))
+        let inputSynonyms = document.createElement('input')
+        inputSynonyms.setAttribute('name', 'tags' + keyword.id)
+        inputSynonyms.setAttribute('value', '')
+        synonymsForm.appendChild(inputSynonyms)
+        synonymsCell.appendChild(synonymsForm)
+        row.appendChild(synonymsCell)
+
+        let buttonCell = document.createElement('td')
+        let buttonUpdate = document.createElement('button')
+        buttonUpdate.setAttribute('class', 'btn btn-orange btn-block')
+        buttonUpdate.setAttribute('type', 'submit')
+        buttonUpdate.innerHTML = 'Update'
+        buttonCell.appendChild(buttonUpdate)
+        row.appendChild(buttonCell)
+
+        return row;
+    }
+</script>
+
+</body>
+
+</html>

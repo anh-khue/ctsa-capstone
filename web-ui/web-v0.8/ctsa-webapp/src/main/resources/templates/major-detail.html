@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="vn">
+
+<head>
+    <title>Thông tin ngành nghề</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+
+    <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+    <!-- Custom -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/recruitment.css}">
+    <link rel="stylesheet" th:href="@{/css/job-list.css}">
+
+    <!-- CanvasJS -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <style>
+        .container-fluid {
+            margin-top: 0;
+        }
+
+        .tab-content {
+            margin-top: 1.5%;
+        }
+
+        .description > p {
+            padding: 0.5% 2% 0 2%;
+            font-size: 1.2em;
+        }
+
+        .detail-description > p {
+            padding: 2% 1% 1% 1%;
+            font-size: 1.3em;
+        }
+
+        .formula-description > p {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body onload="getRecruitmentById(5)">
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+
+<script>
+    window.addEventListener("load", () => {
+        const loader = document.getElementById("loader");
+        setTimeout(() => {
+            loader.classList.add("fadeOut");
+        }, 500);
+    });
+
+    function goBack() {
+        window.history.back()
+    }
+</script>
+
+<!-- Header -->
+<div th:replace="fragments/general.html :: header"></div>
+
+<div class="sidebar">
+    <button type="button" class="btn btn-dark btn-lg btn-block"
+            onclick="goBack()">
+        <i class="fas fa-angle-double-left"></i> Quay lại
+    </button>
+</div>
+
+<div class="container-fluid">
+    <div id="content" class="tab-content col-md-12 folder">
+        <div class="top-background">
+            <div class="row justify-content-center">
+                <div id="company-logo"
+                     style="background-color: white; margin-top:-50px; border-radius:20px">
+                    <a href="#">
+                        <img id="major-image"
+                             alt=""
+                             src=""
+                             style="margin: 15px"
+                             width="150"
+                             height="150"/>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <table class="table text-center col-md-5 bg-white table-bordered"
+                       style="margin-bottom: 0;">
+                    <thead>
+                    <tr>
+                        <th class="bg-orange text-white">
+                            <h3 id="major-title">
+
+                            </h3>
+                        </th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-10 job-detail2">
+                    <div class="text-center">
+                        <h2 id="predictionMajor">
+
+                        </h2>
+                        <hr/>
+                    </div>
+                    <div class="row justify-content-center text-center">
+                        <div class="col-md-10" style="font-size: 1.3em;">
+                            <label id="predictionYearLabel"
+                                   for="predictionYear">
+                                Năm
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center text-center">
+                        <div class="col-md-2" style="max-width: 10.5%">
+                            <div class="form-group">
+                                <select class="form-control"
+                                        id="predictionYear"
+                                        style="font-size: 1.3em;"
+                                        dir="rtl"
+                                        onchange="changePredictionChart()">
+                                    <option>2020</option>
+                                    <option>2021</option>
+                                    <option>2022</option>
+                                    <option>2023</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-10 detail-description">
+                            <div id="predictionChartContainer"
+                                 style="height: 370px; width: 100%;">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="job-detail1 col-md-6">
+                    <div class="text-center">
+                        <h2>
+                            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1542446021/demo-image/human-resource.png"
+                                 width="50" alt=""/>
+                            Nhu cầu nhân lực
+                        </h2>
+                        <hr/>
+                    </div>
+                    <div class="text-justify detail-description">
+                        <p id="hrParagraph">
+                            Với dữ liệu thu thập được Sách trắng CNTT Việt Nam qua các năm
+                            2010, 2012, 2013, thể hiện qua biểu đồ dưới đây.
+                        </p>
+                        <div id="chartContainer"
+                             style="height: 370px; width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="job-detail2 col-md-6">
+                    <div class="text-center">
+                        <h2>
+                            <img src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541477752/demo-image/info.png"
+                                 width="50" alt=""/>
+                            <span id="spTitle">Thông tin bổ sung</span>
+                        </h2>
+                        <hr/>
+                    </div>
+                    <div class="text-justify detail-description">
+                        <p id="spParagraph">
+                            Với dữ liệu thu thập được Sách trắng CNTT Việt Nam qua các năm
+                            2010, 2012, 2013, thể hiện qua biểu đồ dưới đây.
+                        </p>
+                        <div id="chartContainer2"
+                             style="height: 370px; width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-10 job-detail2">
+                    <div class="text-center">
+                        <h2>Phương pháp dự báo</h2>
+                        <hr/>
+                    </div>
+                    <div class="formula-description text-center">
+                        <p style="font-style: italic">
+                            Ứng dụng phương pháp Phân tích Chuỗi thời gian (Time Series
+                            Analysis)
+                        </p>
+                        <p style="font-style: italic">
+                            Hệ thống CTSA đưa ra dự đoán bằng cách áp dụng công thức
+                            Holt’s Exponential Smoothing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div>
+                        <div class="row justify-content-center">
+                            <table class="table text-center col-md-10 bg-white table-bordered">
+                                <thead style="font-size: 1.3em;">
+                                <tr>
+                                    <th class="bg-orange text-white">
+                                        Giới thiệu
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <div id="major-description"
+                                             class="row justify-content-around my-auto description">
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/js/scroll-animate.js}"></script>
+<script th:src="@{/js/services-routes.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+
+<script th:inline="javascript">
+    window.onload = function () {
+        /*[+
+
+            let majorId  = [[${majorId}]];
+
+        +]*/
+        getMajorDescription(majorId)
+
+        let currentYear = new Date().getUTCFullYear()
+        $('#predictionYearLabel').html('Dự đoán xu hướng tỉ lệ nhân lực từ năm ' + currentYear + ' tới năm:')
+        generatePredictionYears(currentYear)
+        generatePredictionChart(currentYear + 4, majorId)
+
+        // generateChart(hrApi, "predictionChartContainer", "", "", "");
+
+        let hrApi =
+            API_GATEWAY + CAREER_TREND_SERVICE + '/human-resources?majorId=' +
+            majorId;
+
+        generateChart(hrApi, "chartContainer", "Năm", "Tổng nhân lực", "hrParagraph");
+        let spApi =
+            API_GATEWAY + CAREER_TREND_SERVICE + '/supporting-information?majorId=' +
+            majorId;
+
+        generateChart(spApi, "chartContainer2", "Năm", "Tổng", "spParagraph");
+    }
+
+    async function generateChart(api, chartId, xTitle, yTitle, paragraphId) {
+        let historyResponse = await axios.get(api);
+        let history = historyResponse.data;
+
+        let actualData = [];
+        let predictedData = [];
+        for (let data of history) {
+            let actual = {
+                x: data.year,
+                y: data.actual
+            };
+            actualData.push(actual);
+
+            let prediction = {
+                x: data.year,
+                y: Math.round(data.forecast)
+            };
+            predictedData.push(prediction);
+        }
+        predictedData.shift();
+
+        // Change yAxis title
+        if (history[0].unit) {
+            if (history[0].unit.includes("số")) {
+                yTitle += " " + history[0].unit;
+            } else {
+                yTitle += " số " + history[0].unit;
+            }
+            $("#spTitle").html(yTitle);
+        }
+
+        let chart = new CanvasJS.Chart(chartId, {
+            animationEnabled: true,
+            theme: "light2",
+            axisX: {
+                title: xTitle,
+                valueFormatString: "####",
+                crosshair: {
+                    enabled: true,
+                    snapToDataPoint: true
+                }
+            },
+            axisY: {
+                includeZero: false,
+                title: yTitle,
+                crosshair: {
+                    enabled: true
+                }
+            },
+            toolTip: {
+                shared: true
+            },
+            legend: {
+                cursor: "pointer",
+                verticalAlign: "bottom",
+                horizontalAlign: "center",
+                dockInsidePlotArea: false,
+                itemclick: toggleDataSeries
+            },
+            data: [
+                {
+                    type: "line",
+                    showInLegend: true,
+                    name: "Số liệu thực tế",
+                    markerType: "square",
+                    xValueFormatString: "####",
+                    color: "#FF7D1F",
+                    dataPoints: actualData
+                },
+                {
+                    type: "line",
+                    showInLegend: true,
+                    name: "Dự đoán từ CTSA",
+                    color: "#2E8B57",
+                    lineDashType: "dash",
+                    dataPoints: predictedData
+                }
+            ]
+        });
+        chart.render();
+
+        generateParagraph(paragraphId, history);
+
+        return history;
+    }
+
+    function toggleDataSeries(e) {
+        e.dataSeries.visible = !(typeof e.dataSeries.visible === "undefined" ||
+            e.dataSeries.visible);
+        chart.render();
+    }
+
+    function generateParagraph(paragraphId, history) {
+        let paragraph =
+            "Dữ liệu được hệ thống CTSA thu thập từ " + history[0].sourceName;
+        if (history.length < 4) {
+            let years = [];
+            for (let data of history) {
+                years.push(data.year);
+            }
+            let joinedYears = years.join(", ");
+            paragraph += ", qua các năm " + joinedYears;
+        } else {
+            paragraph +=
+                ", từ năm " +
+                history[0].year +
+                " đến năm " +
+                history[history.length - 1].year;
+        }
+        paragraph += ", được thể hiện qua biểu đồ bên dưới.";
+
+        $("#" + paragraphId).html(paragraph);
+    }
+
+    async function getMajorDescription(majorId) {
+        let majorResponse = await axios.get(API_GATEWAY + CAREERS_SERVICES + '/majors/' + majorId)
+
+        $('#major-image').attr("src", majorResponse.data.imageUrl)
+        $('#major-title').html(majorResponse.data.vietnamese)
+        $('#major-description').html(majorResponse.data.description)
+        $('#predictionMajor').html('Dự đoán xu hướng tỉ lệ ngành ' + majorResponse.data.vietnamese)
+    }
+
+    function generatePredictionYears(currentYear) {
+        let predictionYear = $('#predictionYear')
+        predictionYear.empty()
+
+        for (let i = 1; i <= 5; i++) {
+            let year = currentYear + i
+
+            let yearOption = $('<option>', {
+                value: year,
+                html: year
+            })
+
+            if (i === 4) {
+                yearOption.attr('selected', 'selected')
+            }
+
+            yearOption.appendTo(predictionYear)
+        }
+    }
+
+    async function generatePredictionChart(endYear, majorId) {
+        let majorStandardResponse = await axios.get(API_GATEWAY + CAREER_TREND_SERVICE + '/major_standards?majorId=' + majorId)
+
+        let standard = majorStandardResponse.data.standard
+        console.log(standard)
+
+        let hrPredictionResponse = await axios
+            .get(API_GATEWAY + CAREER_TREND_SERVICE
+                + '/human-resources/predictions/series?endYear=' + endYear + '&majorId=' + majorId);
+        let hrPrediction = hrPredictionResponse.data;
+
+        let hrData = [];
+        for (let data of hrPrediction) {
+            let forecast = {
+                x: data.year,
+                y: Math.round(data.forecast)
+            };
+            hrData.push(forecast);
+        }
+
+        let spPredictionResponse = await axios
+            .get(API_GATEWAY + CAREER_TREND_SERVICE
+                + '/supporting-information/predictions/series?endYear=' + endYear + '&majorId=' + majorId);
+        let spPrediction = spPredictionResponse.data;
+
+        let spData = [];
+        for (let data of spPrediction) {
+            let forecast = {
+                x: data.year,
+                y: Math.round(data.forecast)
+            };
+            spData.push(forecast);
+        }
+
+        let predictionRatio = []
+        let standardRatio = []
+        for (let i = 0; i < hrData.length; i++) {
+            let data = 0
+            if (majorStandardResponse.data.unit.split("/")[1] === 'người') {
+                data = Math.round(spData[i].y / hrData[i].y)
+            } else {
+                data = Math.round(hrData[i].y / spData[i].y)
+            }
+            let forecast = {
+                x: hrData[i].x,
+                y: data
+            };
+
+            let standardPoint = {
+                x: hrData[i].x,
+                y: standard
+            };
+            predictionRatio.push(forecast)
+            standardRatio.push(standardPoint)
+        }
+
+        let yAxis = "Dự đoán tỉ lệ " + majorStandardResponse.data.unit
+
+        let chart = new CanvasJS.Chart('predictionChartContainer', {
+            animationEnabled: true,
+            theme: "light2",
+            axisX: {
+                title: "Năm",
+                valueFormatString: "####",
+                crosshair: {
+                    enabled: true,
+                    snapToDataPoint: true
+                },
+                interval: 1,
+                intervalType: "year",
+            },
+            axisY: {
+                includeZero: false,
+                title: yAxis,
+                crosshair: {
+                    enabled: true
+                }
+            },
+            toolTip: {
+                shared: true
+            },
+            legend: {
+                cursor: "pointer",
+                verticalAlign: "bottom",
+                horizontalAlign: "center",
+                dockInsidePlotArea: false,
+                itemclick: toggleDataSeries
+            },
+            data: [
+                {
+                    type: "line",
+                    showInLegend: true,
+                    name: "Tỉ lệ " + majorStandardResponse.data.unit,
+                    markerType: "square",
+                    xValueFormatString: "####",
+                    color: "#FF7D1F",
+                    dataPoints: predictionRatio
+                },
+                {
+                    type: "line",
+                    showInLegend: true,
+                    name: "Tỉ lệ tiêu chuẩn",
+                    color: "#2E8B57",
+                    dataPoints: standardRatio
+                }
+            ]
+        });
+        chart.render();
+
+        return hrPrediction;
+    }
+
+    function changePredictionChart() {
+        let endYear = $('#predictionYear').val()
+        /*[+
+
+            let majorId  = [[${majorId}]];
+
+        +]*/
+        generatePredictionChart(endYear, majorId)
+    }
+</script>
+</body>
+</html>
