@@ -27,7 +27,7 @@ function retrieveSubjects(modalId) {
     let entranceExamSubjects = []
 
     axios
-        .get(API_GATEWAY + RESULTS_SUGGESTIONS_SERVICE + "/entrance-exam-subjects")
+        .get(API_GATEWAY + CAREERS_SUGGESTIONS_SERVICE + "/entrance-exam-subjects")
         .then(response => {
             let subjects = response.data
             let subjectsPerCol = Math.ceil(subjects.length / 2)

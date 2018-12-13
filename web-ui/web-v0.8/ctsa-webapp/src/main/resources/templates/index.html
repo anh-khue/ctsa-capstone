@@ -250,21 +250,20 @@
 
     let count = 0;
 
-    let pupilInput = {
-        id: 0,
+    let academicResult = {
         characteristic: 0,
         highSchoolAverage: 0,
-        entranceExamInput: null,
-        highSchoolTopInputs: []
+        entranceExamResults: null,
+        highSchoolResults: []
     }
 
-    let highSchoolTopInputNames = []
+    let highSchoolTopResultsNames = []
 
     $(() => {
         let subjectsSelector = $('#chooseSubjects')
         subjectsSelector.empty()
 
-        axios.get(API_GATEWAY + RESULTS_SUGGESTIONS_SERVICE + '/high-school-subjects')
+        axios.get(API_GATEWAY + CAREERS_SUGGESTIONS_SERVICE + '/high-school-subjects')
             .then((response) => {
                 let subjects = response.data
                 subjects.forEach(subject => {
@@ -308,7 +307,7 @@
         count++
         subject.classList.add("selected")
         addToTopSubjects(subject, count)
-        highSchoolTopInputNames.push(subject.textContent)
+        highSchoolTopResultsNames.push(subject.textContent)
         if (count >= topSubjectsAmount) {
             if (topSubjectsAmount > 1) {
                 $('#additional-questions').html('Điểm các môn học đó là...')
@@ -321,9 +320,9 @@
             let subjectsMarks = $('#subjectsMarks')
             subjectsMarks.slideDown(600)
             subjectsMarks.empty()
-            for (let i = 0; i < pupilInput.highSchoolTopInputs.length; i++) {
-                subjectsMarks.append(createMarkInput(pupilInput.highSchoolTopInputs[i], highSchoolTopInputNames[i]))
-                subjectsMarks.append('<p class="error-mark" id="markError' + pupilInput.highSchoolTopInputs[i].weight + '"></p>')
+            for (let i = 0; i < academicResult.highSchoolResults.length; i++) {
+                subjectsMarks.append(createMarkInput(academicResult.highSchoolResults[i], highSchoolTopResultsNames[i]))
+                subjectsMarks.append('<p class="error-mark" id="markError' + academicResult.highSchoolResults[i].weight + '"></p>')
             }
         }
     }
@@ -337,7 +336,7 @@
             weight: weight
         }
 
-        pupilInput.highSchoolTopInputs.push(topSubject)
+        academicResult.highSchoolResults.push(topSubject)
     }
 
     function createMarkInput(subject, vietnamese) {
@@ -371,7 +370,7 @@
         let mark = inputField.value
         let markId = inputField.id.split('mark')[1]
         if (event.keyCode === 13 && filledMarks() === true) {
-            pupilInput.highSchoolTopInputs.forEach((subject) => {
+            academicResult.highSchoolResults.forEach((subject) => {
                 subject.mark = $('#mark' + subject.weight).val()
             })
 
@@ -383,7 +382,7 @@
     }
 
     function filledMarks() {
-        for (let i = 0; i < pupilInput.highSchoolTopInputs.length; i++) {
+        for (let i = 0; i < academicResult.highSchoolResults.length; i++) {
             let mark = $('#mark' + (i + 1)).val()
             if (mark === "") {
                 $('#markError' + (i + 1)).html('Vui lòng nhập điểm của bạn.')
@@ -400,7 +399,7 @@
 
     function retrieveAverage(inputAverage) {
         if (event.keyCode === 13 && checkGPA()) {
-            pupilInput.highSchoolAverage = inputAverage.value
+            academicResult.highSchoolAverage = inputAverage.value
             $(".role1").slideUp(600)
             $(".role2").slideUp(600)
             $(".role3").slideDown(600)
@@ -411,14 +410,14 @@
     function retrieveCharacteristic(characteristic) {
         $('.characteristic').removeClass('selected')
         characteristic.classList.add('selected')
-        pupilInput.characteristic = characteristic.value
+        academicResult.characteristic = characteristic.value
     }
 
     function sendInputForSuggestion() {
-        axios.post(API_GATEWAY + RESULTS_SUGGESTIONS_SERVICE + '/suggestions/pupils', pupilInput)
+        axios.post(API_GATEWAY + CAREERS_SUGGESTIONS_SERVICE + '/suggestions/pupils', academicResult)
             .then((response) => {
                 sessionStorage.setItem('suggestions', JSON.stringify(response.data))
-                sessionStorage.setItem('pupilInput', JSON.stringify(pupilInput))
+                sessionStorage.setItem('pupilInput', JSON.stringify(academicResult))
                 window.location = '/ket-qua'
             })
     }

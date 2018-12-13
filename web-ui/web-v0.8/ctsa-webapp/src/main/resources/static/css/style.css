@@ -243,3 +243,9 @@ input:checked + .slider:before {
 .btn-role {
     font-size: 1.4em;
 }
+
+.sidebar{
+    position: absolute;
+    margin-top:80px;
+    margin-left: 30px;
+}

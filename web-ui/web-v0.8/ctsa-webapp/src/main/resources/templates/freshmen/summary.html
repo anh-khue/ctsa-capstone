@@ -69,15 +69,15 @@
                    aria-controls="profile"
                    aria-selected="false">Dự đoán</a>
             </li>
-            <li class="nav-item tab"
-                id="recruitment-tab">
-                <a class="nav-link"
-                   data-toggle="tab"
-                   href="#recruitment"
-                   role="tab"
-                   aria-controls="contact"
-                   aria-selected="false">Tuyển dụng</a>
-            </li>
+            <!--<li class="nav-item tab"-->
+            <!--id="recruitment-tab">-->
+            <!--<a class="nav-link"-->
+            <!--data-toggle="tab"-->
+            <!--href="#recruitment"-->
+            <!--role="tab"-->
+            <!--aria-controls="contact"-->
+            <!--aria-selected="false">Tuyển dụng</a>-->
+            <!--</li>-->
         </ul>
     </div>
     <div class="row">
@@ -113,7 +113,7 @@
                 <h3 id="skillTypeNameModal"></h3>
             </div>
             <div class="row modal-body justify-content-between">
-                <table class="table table-bordered">
+                <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
                         <th scope="col"
@@ -183,9 +183,14 @@
         let response
         if (position.mainSkillTypeId !== null) {
             skillTypes.push(position.mainSkillTypeId)
-            response = await axios.get("http://localhost:8003/required_skills/position_id=" + position.id + "/top-skill-types?escape-skill-type-id=" + position.mainSkillTypeId)
+            response = await axios
+                .get(API_GATEWAY + WAREHOUSE_SERVICE + "/required_skills/position_id="
+                    + position.id + "/top-skill-types?escape-skill-type-id="
+                    + position.mainSkillTypeId)
         } else {
-            response = await axios.get("http://localhost:8003/required_skills/position_id=" + position.id + "/top-skill-types")
+            response = await axios
+                .get(API_GATEWAY + WAREHOUSE_SERVICE + "/required_skills/position_id="
+                    + position.id + "/top-skill-types")
         }
 
         let topSkills = []

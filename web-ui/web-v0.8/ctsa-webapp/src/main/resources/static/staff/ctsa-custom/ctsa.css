@@ -3,7 +3,7 @@ body, button, table, label {
 }
 
 select {
-    font-style: bold !important;
+    font-weight: bold !important;
     color: rgb(70, 70, 70) !important
 }
 
@@ -74,12 +74,19 @@ input, select {
     color: #000000;
 }
 
-.pagination > li.active > a {
-    background: #FF7D1F;
+.page-item.active .page-link {
+    z-index: 1;
     color: #fff;
+    background-color: #FF7D1F;
+    border-color: #FF7D1F;
 }
 
 .pagination > li:hover > a {
     background: #FF7D1F;
     color: #fff;
+}
+
+.sidebar-menu li.dropdown.open {
+    background-color: white;
+    color: #FF7D1F;
 }

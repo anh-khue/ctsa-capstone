@@ -19,8 +19,8 @@ public class MainRouter {
     }
 
     @GetMapping("/nghe-nghiep/{id}")
-    public String majorDetail(@PathVariable String id,
-                              Model model) {
+    public String majorDetailAlt(@PathVariable String id,
+                                 Model model) {
         model.addAttribute("majorId", id);
         return "major-detail";
     }

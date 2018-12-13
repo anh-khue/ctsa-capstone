@@ -23,33 +23,30 @@ function retrieveMark(fieldId) {
 }
 
 function getEntranceExamInput() {
-    let entranceExamInput = {
-        id: 0,
-        entranceExamInputDetails: []
-    }
+    let entranceExamResults = []
 
     let subjects = JSON.parse(sessionStorage.getItem("entranceExamSubjects"))
 
     subjects.forEach(subject => {
-        let entranceExamInputDetail = createEntranceExamInputDetail(
+        let entranceExamResult = createEntranceExamResult(
             subject.id,
             retrieveMark(subject.name + "Mark")
         )
-        if (entranceExamInputDetail.mark !== null) {
-            entranceExamInput.entranceExamInputDetails.push(entranceExamInputDetail)
+        if (entranceExamResult.mark !== null) {
+            entranceExamResults.push(entranceExamResult)
         }
     })
 
-    return entranceExamInput
+    return entranceExamResults
 }
 
 function getSuggestions() {
     let pupilInput = JSON.parse(sessionStorage.getItem("pupilInput"))
 
-    pupilInput.entranceExamInput = getEntranceExamInput()
+    pupilInput.entranceExamResults = getEntranceExamInput()
 
     axios
-        .post(API_GATEWAY + RESULTS_SUGGESTIONS_SERVICE + "/suggestions/pupils", pupilInput)
+        .post(API_GATEWAY + CAREERS_SUGGESTIONS_SERVICE + "/suggestions/pupils", pupilInput)
         .then(response => {
             let suggestions = response.data
             sessionStorage.setItem("suggestions", JSON.stringify(suggestions))
@@ -58,12 +55,9 @@ function getSuggestions() {
         })
 }
 
-function createEntranceExamInputDetail(subjectId, mark) {
+function createEntranceExamResult(subjectId, mark) {
     return {
-        id: 0,
-        entranceExamInputId: 0,
         entranceExamSubjectId: subjectId,
         mark: mark,
-        entranceExamSubject: null
     }
 }
