@@ -88,7 +88,7 @@
                                         <th>Update</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="tableData">
                                     <tr>
                                         <td>1</td>
                                         <td>IT</td>
@@ -140,6 +140,9 @@
 <link rel="stylesheet"
       th:href="@{/staff/ctsa-custom/tagify-custom.css}">
 
+<script type="text/javascript"
+        th:src="@{/js/services-routes.js}"></script>
+
 <script th:src="@{/staff/assets/js/tagify.js}"></script>
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
@@ -147,47 +150,67 @@
     let keywordIds = []
     let totalPages = 0
     let currentPage = 1
+    let currentMajorId = 1
     let itemPerPage = $('#dataTable_length').children("option:selected").val();
 
     window.addEventListener('load', function () {
         (function () {
-            getTotalPages(itemPerPage)
-            getKeywords(itemPerPage, currentPage)
+            getData()
         })()
     });
 
     function changeItemPerPage() {
-        itemPerPage = $('#dataTable_length').children("option:selected").val();
-        getTotalPages(itemPerPage)
-        changePage(1)
-        getKeywords(itemPerPage, 1)
+        getData()
     }
 
-    function getKeywords(itemPerPage, page) {
-        axios.get('http://localhost:8001/keywords?item-per-page=' + itemPerPage + '&page=' + page)
+    function getData() {
+        axios.get(API_GATEWAY + CAREERS_SUGGESTIONS_SERVICE + '/major-centroids/major-id/' + currentMajorId)
             .then((response) => {
-                keywordIds = []
-                let synonymsTable = document.getElementById('synonymsTable');
-                synonymsTable.innerHTML = ''
+                let centroid = response.data
 
-                let keywords = response.data;
+                let major = centroid.major
+                let highSchoolTopCentroids = centroid.highSchoolTopCentroids
+                let entranceExamCentroidDetails = centroid.entranceExamCentroidDetails
 
-                for (keyword of keywords) {
-                    keywordIds.push(keyword.id)
-                    let row = retrieveSynonyms(keyword);
-                    synonymsTable.appendChild(row);
+                let table = $('#tableData')
+                table.empty()
+
+                let number = 1
+                for (let subject of highSchoolTopCentroids) {
+                    let row = $('<tr>')
+
+                    $('<td>', {
+                        html: number
+                    }).appendTo(row)
+
+                    $('<td>', {
+                        html: major.name
+                    }).appendTo(row)
+
+                    $('<td>', {
+                        html: subject.highSchoolSubject.name
+                    }).appendTo(row)
+
+                    let weightCell = $('<td>')
+                    $('<input>', {
+                        type: 'number',
+                        class: 'text-right form-control',
+                        value: subject.weight
+                    }).appendTo(weightCell)
+                    weightCell.appendTo(row)
+
+                    let updateCell = $('<td>')
+                    $('<button>', {
+                        class: 'btn btn-orange btn-block',
+                        type: 'button',
+                        html: 'Update'
+                    }).appendTo(updateCell)
+                    updateCell.appendTo(row)
+
+                    row.appendTo(table)
+                    number++
                 }
-            }).then(() => {
-            for (let i = 0; i < keywordIds.length; i++) {
-                let input = document.querySelector('input[name=read' + keywordIds[i] + ']'),
-                    tagify = new Tagify(input);
-            }
-
-            for (let i = 0; i < keywordIds.length; i++) {
-                let input = document.querySelector('input[name=tags' + keywordIds[i] + ']'),
-                    tagify = new Tagify(input, {});
-            }
-        });
+            });
     }
 
     function getTotalPages(itemPerPage) {
@@ -220,7 +243,7 @@
             }
         }
 
-        getKeywords(itemPerPage, page)
+        getData(itemPerPage, page)
     }
 
     function retrieveSynonyms(keyword) {
