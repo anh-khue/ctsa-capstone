@@ -47,8 +47,7 @@ class PupilSuggestion(private val majorCentroidRepository: MajorCentroidReposito
         if (input.entranceExamResults != null) {
 //            squaredDistance += scoreEntranceExam(input.entranceExamResults,
 //                                                 centroid.entranceExamCentroidDetails)
-            squaredDistance = scoreEntranceExam(input.entranceExamResults,
-                                                centroid.entranceExamCentroidDetails)
+            squaredDistance = scoreEntranceExam(input.entranceExamResults, centroid.entranceExamCentroidDetails)
         }
 
         return sqrt(squaredDistance)
@@ -83,8 +82,8 @@ class PupilSuggestion(private val majorCentroidRepository: MajorCentroidReposito
                     pow((inputDetail.mark - centroidDetail.mark) * centroidDetail.weight, 2.0)
                 } else {
 //                    pow(centroidDetail.mark * centroidDetail.weight, 2.0)
-                    pow(10 * centroidDetail.weight, 2.0)
-//                    0.0
+//                    pow(10 * centroidDetail.weight, 2.0)
+                    0.0
                 }
             }
         }

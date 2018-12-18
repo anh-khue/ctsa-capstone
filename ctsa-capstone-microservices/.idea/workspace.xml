@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="99154fe8-6e12-4fb6-98b9-7e6c8e295d0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/controller/HumanResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/controller/HumanResourceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/controller/SupportingInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/controller/SupportingInformationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/repository/HumanResourcesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/repository/HumanResourcesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/repository/SupportingInformationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/repository/SupportingInformationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/service/HumanResourcesService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/service/HumanResourcesService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/service/SupportingInformationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/career-trend-service/src/main/java/io/ctsa/careertrendservice/service/SupportingInformationService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/model/centroid/EntranceExamCentroidDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/model/centroid/EntranceExamCentroidDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/repository/centroid/MajorCentroidRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/repository/centroid/MajorCentroidRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/service/centroid/MajorCentroidService.java" beforeDir="false" afterPath="$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/service/centroid/MajorCentroidService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/suggestion/recommendation/PupilSuggestion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/suggestion/recommendation/PupilSuggestion.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results-suggestions-service/src/test/java/io/ctsa/resultssuggestionsservice/ResultsSuggestionsServiceApplicationTests.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/eureka-service/target/" />
     <ignored path="$PROJECT_DIR$/config-service/target/" />
@@ -58,28 +48,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/repository/centroid/HighSchoolTopCentroidRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/repository/centroid/MajorCentroidRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/service/centroid/MajorCentroidService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            <state relative-caret-position="460">
+              <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
               <folding>
                 <element signature="e#909#910#0" expanded="true" />
                 <element signature="e#978#979#0" expanded="true" />
@@ -89,49 +61,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/model/centroid/MajorCentroid.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/model/centroid/HighSchoolTopCentroid.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/controller/centroid/MajorCentroidController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/suggestion/recommendation/MajorSuggestion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-32">
-              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/suggestion/recommendation/PupilSuggestion.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="67" column="17" lean-forward="true" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
+            <state relative-caret-position="285">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
               <folding>
                 <element signature="e#69#924#0" expanded="true" />
               </folding>
@@ -139,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/controller/input/AcademicResultController.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/controller/centroid/MajorCentroidController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="28" column="68" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="68" />
+            <state relative-caret-position="253">
+              <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -152,10 +85,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/model/centroid/EntranceExamCentroidDetail.java">
+        <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/model/centroid/MajorCentroid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-37">
-              <caret line="70" column="5" lean-forward="true" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+            <state relative-caret-position="299">
+              <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -232,8 +168,8 @@
         <option value="$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/repository/centroid/HighSchoolTopCentroidRepository.java" />
         <option value="$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/repository/centroid/MajorCentroidRepository.java" />
         <option value="$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/service/centroid/MajorCentroidService.java" />
-        <option value="$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/controller/centroid/MajorCentroidController.java" />
         <option value="$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/model/centroid/EntranceExamCentroidDetail.java" />
+        <option value="$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/controller/centroid/MajorCentroidController.java" />
         <option value="$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/suggestion/recommendation/PupilSuggestion.kt" />
       </list>
     </option>
@@ -320,7 +256,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -370,6 +305,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="careerssuggestionsservice" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="centroid" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ctsa-capstone-microservices" type="b2602c69:ProjectViewProjectNode" />
+              <item name="careers-suggestions-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="careerssuggestionsservice" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -438,22 +383,12 @@
               <item name="careerssuggestionsservice" type="462c0819:PsiDirectoryNode" />
               <item name="suggestion" type="462c0819:PsiDirectoryNode" />
               <item name="recommendation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ctsa-capstone-microservices" type="b2602c69:ProjectViewProjectNode" />
-              <item name="careers-suggestions-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="careerssuggestionsservice" type="462c0819:PsiDirectoryNode" />
-              <item name="suggestion" type="462c0819:PsiDirectoryNode" />
-              <item name="recommendation" type="462c0819:PsiDirectoryNode" />
-              <item name="input" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -468,7 +403,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/anh-khue/Documents/capstone-project/back-end/ctsa-capstone/ctsa-capstone-microservices/career-trend-service/src/main/java/io/ctsa/careertrendservice/service/SmoothingParamsService.kt" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544671389498" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544781989065" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/results-suggestions-service/src/main/java/io/ctsa" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/careers-suggestions-service/pom.xml" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -779,7 +714,13 @@
       <workItem from="1544660590197" duration="365000" />
       <workItem from="1544661041688" duration="1901000" />
       <workItem from="1544664676821" duration="6549000" />
-      <workItem from="1544671709426" duration="2588000" />
+      <workItem from="1544671709426" duration="4039000" />
+      <workItem from="1544676657156" duration="646000" />
+      <workItem from="1544679092464" duration="1439000" />
+      <workItem from="1544713532697" duration="1562000" />
+      <workItem from="1544745069736" duration="1137000" />
+      <workItem from="1544771535860" duration="1417000" />
+      <workItem from="1545102567368" duration="1311000" />
     </task>
     <task id="LOCAL-00001" summary="Remove unnecessary @NonNull annotations in models. Create results-suggestions-service in replacement for students-results-service.">
       <created>1539141464571</created>
@@ -872,7 +813,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543812509386</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Calibrate functions for suggesting.">
+      <created>1544674798351</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1544674798351</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -881,7 +829,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="471949000" />
+    <option name="totallyTimeSpent" value="480912000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -894,9 +842,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="34" width="1920" height="1046" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5594329" visible="true" weight="0.27510685" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5594329" visible="true" weight="0.2943376" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -919,7 +866,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="12" sideWeight="0.49946582" weight="0.32824427" />
       <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49946582" weight="0.32713348" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="14" visible="true" weight="0.5463468" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="14" visible="true" weight="0.3827699" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32899022" />
       <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -984,7 +931,8 @@
     <MESSAGE value="Add endpoints for finding majors and majors' standards." />
     <MESSAGE value="Hide languages from skills retrieved by client when finding trending skills for positions. Add endpoints for prediction number of recruitment by positions." />
     <MESSAGE value="Create CareersSuggestionsService in replacement for ResultsSuggestionsService. Refactor packages and data structures." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create CareersSuggestionsService in replacement for ResultsSuggestionsService. Refactor packages and data structures." />
+    <MESSAGE value="Calibrate functions for suggesting." />
+    <option name="LAST_COMMIT_MESSAGE" value="Calibrate functions for suggesting." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1362,44 +1310,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/service/centroid/MajorCentroidService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding>
-            <element signature="e#909#910#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/model/centroid/MajorCentroid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/model/centroid/HighSchoolTopCentroid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/controller/centroid/MajorCentroidController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/suggestion/recommendation/MajorSuggestion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
+        <state relative-caret-position="138">
           <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
         </state>
       </provider>
@@ -1421,12 +1334,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/model/centroid/HighSchoolTopCentroid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/service/centroid/MajorCentroidService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <folding>
+            <element signature="e#909#910#0" expanded="true" />
+            <element signature="e#978#979#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/model/centroid/MajorCentroid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/suggestion/recommendation/PupilSuggestion.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="67" column="17" lean-forward="true" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
+        <state relative-caret-position="285">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
           <folding>
             <element signature="e#69#924#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/careers-suggestions-service/src/main/java/io/ctsa/careerssuggestionsservice/controller/centroid/MajorCentroidController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
