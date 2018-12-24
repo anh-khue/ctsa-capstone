@@ -1,10 +1,12 @@
 package io.ctsa.careersservice.controller;
 
 import io.ctsa.careersservice.exception.NotFoundInDatasetException;
+import io.ctsa.careersservice.model.Keyword;
 import io.ctsa.careersservice.service.KeywordService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,9 +25,18 @@ public class KeywordController {
     }
 
     @GetMapping("/keywords")
-    public ResponseEntity getKeywordsMap() {
+    public ResponseEntity getKeywords(@RequestParam("item-per-page") int itemPerPage,
+                                      @RequestParam("page") int page) {
+        Page<Keyword> keywordsPage = keywordService.getKeywordsByPage(itemPerPage, page);
         return ResponseEntity.status(OK)
-                             .body(keywordService.getKeywords());
+                             .body(keywordsPage.getContent());
+    }
+
+    @GetMapping("/keywords/pages-count")
+    public ResponseEntity getTotalPage(@RequestParam("item-per-page") int itemPerPage) {
+        Page<Keyword> keywordsPage = keywordService.getKeywordsByPage(itemPerPage, 1);
+        return ResponseEntity.status(OK)
+                             .body(keywordsPage.getTotalPages());
     }
 
     @PostMapping("/keywords")
@@ -70,7 +81,7 @@ public class KeywordController {
 
     @PutMapping("/keywords/elasticsearch")
     public ResponseEntity pushToElasticsearch(@RequestBody List<String> words) {
-        words.forEach(keywordService::pushedToElasticsearch);
+        words.forEach(keywordService::pushToElasticsearch);
         return ResponseEntity.status(OK)
                              .build();
     }

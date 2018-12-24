@@ -32,6 +32,13 @@ public class RecruitmentController {
                                       : status(NO_CONTENT).build();
     }
 
+    @GetMapping(value = "/recruitment/position/{positionId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity getAll(@PathVariable String positionId) {
+        List<Recruitment> recruitment = recruitmentService.getAllByPosition(Integer.parseInt(positionId));
+        return !recruitment.isEmpty() ? status(OK).body(recruitment)
+                                      : status(NO_CONTENT).build();
+    }
+
     @GetMapping(value = "/recruitment/pages/{pageNumber}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getAllByPage(@PathVariable("pageNumber") int pageNumber) {
         Page<Recruitment> recruitment = recruitmentService.getAllByPage(pageNumber, ITEMS_PER_PAGE);

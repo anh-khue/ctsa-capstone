@@ -31,7 +31,7 @@ public class CareerTrendServiceApplication {
         SpringApplication.run(CareerTrendServiceApplication.class, args);
     }
 
-    /*@Bean
+    @Bean
     CommandLineRunner runner(ExponentialSmoothingFormula formula,
                              HumanResourcesRepository humanResourcesRepository,
                              SalaryRepository salaryRepository,
@@ -71,5 +71,5 @@ public class CareerTrendServiceApplication {
                                                                   supportingInformationSmoothingParams.getBeta());
             supportingInformationRepository.saveAll(supportingInformationList);
         });
-    }*/
+    }
 }

@@ -55,6 +55,14 @@ public class RecruitmentService {
         return list;
     }
 
+    public List<Recruitment> getAllByPosition(int positionId) {
+        List<Recruitment> recruitmentList = recruitmentRepository.findByPositionId(positionId);
+        for (Recruitment recruitment : recruitmentList) {
+            recruitment.setSkills(getRecruitmentSkills(recruitment.getId()));
+        }
+        return recruitmentList;
+    }
+
     private Map<String, String> convertJsonToMap(String json) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(json, new TypeReference<Map<String, String>>() {
@@ -93,10 +101,10 @@ public class RecruitmentService {
 
     public Recruitment updateStatus(int recruitmentId, int status) throws RecruitmentNotFoundException {
         return recruitmentRepository.findById(recruitmentId)
-                .map(recruitment -> {
-                    recruitment.setPublished(status);
-                    return recruitment;
-                }).orElseThrow(RecruitmentNotFoundException::new);
+                                    .map(recruitment -> {
+                                        recruitment.setPublished(status);
+                                        return recruitment;
+                                    }).orElseThrow(RecruitmentNotFoundException::new);
     }
 
     public Recruitment updateRecruitment(int recruitmentId, Recruitment modifiedData) throws RecruitmentNotFoundException {

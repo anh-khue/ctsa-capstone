@@ -6,7 +6,10 @@ import io.ctsa.careertrendservice.prediction.storage.SmoothingParamsConstants.HU
 import io.ctsa.careertrendservice.prediction.timeseries.ExponentialSmoothingFormula
 import io.ctsa.careertrendservice.repository.HumanResourcesRepository
 import org.slf4j.LoggerFactory
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.PageRequest
 import org.springframework.stereotype.Service
+import java.time.LocalDate
 import java.util.*
 
 @Service
@@ -55,5 +58,37 @@ class HumanResourcesService(private val humanResourcesRepository: HumanResources
         return smoothingParamsService.findSmoothingParams("$HUMAN_RESOURCES-$majorId",
                                                           exponentialSmoothingFormula,
                                                           humanResources)
+    }
+
+    fun getAllByMajorId(majorId: Int): List<HumanResource> {
+        return humanResourcesRepository.findByMajorIdOrderByYearAsc(majorId)
+    }
+
+    fun predictSeries(endYear: Int, majorId: Int): List<HumanResource> {
+        val predictionSeries: MutableList<HumanResource> = mutableListOf()
+
+        val smoothingParams = smoothingParamsService.getSmoothingParams("$HUMAN_RESOURCES-$majorId")
+
+        val nearestPredictionModel = humanResourcesRepository.findFirstByMajorIdOrderByYearDesc(majorId)
+
+        val currentYear = LocalDate.now().year
+
+        for (year in currentYear..endYear) {
+            var predictionModel = HumanResource()
+            predictionModel.majorId = majorId
+            predictionModel.year = year
+
+            predictionModel = exponentialSmoothingFormula.predict(nearestPredictionModel, predictionModel,
+                                                                  smoothingParams.alpha, smoothingParams.beta)
+
+            predictionSeries.add(predictionModel)
+        }
+
+        return predictionSeries
+    }
+
+    fun getAllByMajorIdByPage(majorId: Int, itemPerPage: Int, page: Int): Page<HumanResource> {
+        val pageRequest = PageRequest.of(page - 1, itemPerPage)
+        return humanResourcesRepository.findByMajorIdOrderByYearAsc(majorId, pageRequest)
     }
 }

@@ -1,0 +1,7 @@
+{
+  "timestamp": "2018-12-13T02:37:35.333+0000",
+  "status": 400,
+  "error": "Bad Request",
+  "message": "Required int parameter 'major-id' is not present",
+  "path": "/human-resources/for-staff/page-counts"
+}

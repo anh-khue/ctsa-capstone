@@ -81,26 +81,6 @@ public class ElasticsearchWebClient {
         }
     }
 
-//    public List<String> retrieveHitKeywords(String response) {
-//        try {
-//            JSONArray hitsArray = new JSONObject(response)
-//                    .getJSONObject("hits")
-//                    .getJSONArray("hits");
-//
-//            List<String> hitKeywords = new ArrayList<>();
-//
-//            for (int i = 0; i < hitsArray.length(); i++) {
-//                JSONObject hit = hitsArray.getJSONObject(i);
-//                hitKeywords.add(hit.getJSONObject("_source")
-//                                   .getString("keyword"));
-//            }
-//
-//            return hitKeywords;
-//        } catch (JSONException e) {
-//            throw new RuntimeException();
-//        }
-//    }
-
     private String cleanContent(String content) {
         return content.replaceAll("\\s", " ")
                       .replaceAll(",", " ")

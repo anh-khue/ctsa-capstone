@@ -5,11 +5,11 @@
       <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/career-trend-service/career-trend-service.iml" filepath="$PROJECT_DIR$/career-trend-service/career-trend-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/careers-service/careers-service.iml" filepath="$PROJECT_DIR$/careers-service/careers-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/careers-suggestions-service/careers-suggestions-service.iml" filepath="$PROJECT_DIR$/careers-suggestions-service/careers-suggestions-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/company-management/company-management.iml" filepath="$PROJECT_DIR$/company-management/company-management.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-service/config-service.iml" filepath="$PROJECT_DIR$/config-service/config-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/elasticsearch-service/elasticsearch-service.iml" filepath="$PROJECT_DIR$/elasticsearch-service/elasticsearch-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-service/eureka-service.iml" filepath="$PROJECT_DIR$/eureka-service/eureka-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/results-suggestions-service/results-suggestions-service.iml" filepath="$PROJECT_DIR$/results-suggestions-service/results-suggestions-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/vietnamworks-scraper/vietnamworks-scraper.iml" filepath="$PROJECT_DIR$/vietnamworks-scraper/vietnamworks-scraper.iml" />
       <module fileurl="file://$PROJECT_DIR$/warehouse-service/warehouse-service.iml" filepath="$PROJECT_DIR$/warehouse-service/warehouse-service.iml" />
     </modules>
