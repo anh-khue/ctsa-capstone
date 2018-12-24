@@ -9,64 +9,70 @@
 
     <style>
         #loader {
-            transition: all .3s ease-in-out;
-            opacity: 1;
-            visibility: visible;
-            position: fixed;
-            height: 100vh;
-            width: 100%;
-            background: #fff;
-            z-index: 90000
-        }
-
-        #loader.fadeOut {
-            opacity: 0;
-            visibility: hidden
-        }
-
-        .spinner {
-            width: 40px;
-            height: 40px;
-            position: absolute;
-            top: calc(50% - 20px);
-            left: calc(50% - 20px);
-            background-color: #333;
-            border-radius: 100%;
-            -webkit-animation: sk-scaleout 1s infinite ease-in-out;
-            animation: sk-scaleout 1s infinite ease-in-out
-        }
-
-        @-webkit-keyframes sk-scaleout {
-            0% {
-                -webkit-transform: scale(0)
+                transition: all .3s ease-in-out;
+                opacity: 1;
+                visibility: visible;
+                position: fixed;
+                height: 100vh;
+                width: 100%;
+                background: #fff;
+                z-index: 90000
             }
-            100% {
-                -webkit-transform: scale(1);
-                opacity: 0
+    
+            #loader.fadeOut {
+                opacity: 0;
+                visibility: hidden
             }
-        }
+    
+            .spinner {
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                top: calc(50% - 20px);
+                left: calc(50% - 20px);
+                background-color: #333;
+                border-radius: 100%;
+                -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+                animation: sk-scaleout 1s infinite ease-in-out
+            }
+    
+            @-webkit-keyframes sk-scaleout {
+                0% {
+                    -webkit-transform: scale(0)
+                }
+                100% {
+                    -webkit-transform: scale(1);
+                    opacity: 0
+                }
+            }
+    
+            @keyframes sk-scaleout {
+                0% {
+                    -webkit-transform: scale(0);
+                    transform: scale(0)
+                }
+                100% {
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                    opacity: 0
+                }
+            }
+    
+        </style>
 
-        @keyframes sk-scaleout {
-            0% {
-                -webkit-transform: scale(0);
-                transform: scale(0)
-            }
-            100% {
-                -webkit-transform: scale(1);
-                transform: scale(1);
-                opacity: 0
-            }
-        }
-    </style>
-
-    <link href="assets/css/style.css"
-          rel="stylesheet">
-    <link rel="stylesheet"
-          href="ctsa-custom/ctsa.css">
     <script type="text/javascript"
             src="assets/js/vendor.js"></script>
     <script type="text/javascript"
             src="assets/js/bundle.js"></script>
+
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+          crossorigin="anonymous">
+    <link href="assets/css/style.css"
+          rel="stylesheet">
+    <link rel="stylesheet"
+          href="ctsa-custom/ctsa.css">
 </head>
 
 <body class="app">
@@ -91,12 +97,9 @@
                         <div class="peer peer-greed"><a class="sidebar-link td-n"
                                href="index.html">
                                 <div class="peers ai-c fxw-nw">
-
                                     <div class="logo justify-content-center"><img class="img-logo "
                                              src="https://res.cloudinary.com/ctsa-capstone/image/upload/v1541237101/demo-image/logoctsa.png"
                                              alt=""></div>
-
-
                                 </div>
                             </a></div>
                         <div class="peer">
@@ -107,9 +110,15 @@
                     </div>
                 </div>
                 <ul class="sidebar-menu scrollable pos-r">
-                    <li class="mT-30 nav-item"><a class="sidebar-link"
-                           href="keyword.html"><span class="icon-holder"><i class="c-deep-purple-500 ti-comment-alt"></i>
-                            </span><span class="title">Keyword</span></a></li>
+                    <li class="mT-30 nav-item">
+                        <a class="sidebar-link"
+                           href="keyword.html">
+                           <span class="icon-holder" style="font-size: 1.1em"> 
+                               <i class="fas fa-book"></i>
+                            </span>
+                            <span class="title">Keyword</span>
+                        </a>
+                    </li>
                     <li class="nav-item"><a class="sidebar-link"
                            href="partner-registration.html"><span class="icon-holder"><i class="c-light-blue-500 ti-pencil"></i>
                             </span><span class="title">Partner Registration</span></a></li>
@@ -132,7 +141,7 @@
         <div class="page-container">
             <div class="header navbar">
                 <div class="header-container bg-dark">
-                    <div class="nav-left title-header" >
+                    <div class="nav-left title-header">
                         <span>Career Trending Suggestion</span>
                     </div>
                     <ul class="nav-right">

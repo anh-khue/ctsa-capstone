@@ -16,7 +16,7 @@ svg {
 }
 
 .sidebar-menu>li>a, .sidebar-menu>li>a>span>i, .sidebar-menu>li>ul>li>a {
-    color: rgb(235, 235, 235) !important;
+    color: rgb(235, 235, 235);
     font-size: 1.1em !important
 }
 

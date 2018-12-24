@@ -1,5 +1,5 @@
 body, button, table, label{
-    font-size: 1.2em !important
+    font-size: 1.1em !important
 }
 select{
     font-style:bold !important;
@@ -10,7 +10,7 @@ select{
 }
 .title-header{
     margin-top:10px;
-    font-size:1.4em;
+    font-size:1.3em;
     color:rgb(255, 140, 78)
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
@@ -26,4 +26,16 @@ input, select{
 }
 #alert{
     color:red;
+}
+
+.nav-item:hover {
+    background-color: white;
+}
+
+.nav-item:hover i{
+    color: #FF7D1F;
+}
+
+.sidebar-menu>li>a:hover {
+    color: #FF7D1F !important;
 }
