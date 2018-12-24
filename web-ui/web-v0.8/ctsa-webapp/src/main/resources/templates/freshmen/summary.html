@@ -69,15 +69,15 @@
                    aria-controls="profile"
                    aria-selected="false">Dự đoán</a>
             </li>
-            <!--<li class="nav-item tab"-->
-            <!--id="recruitment-tab">-->
-            <!--<a class="nav-link"-->
-            <!--data-toggle="tab"-->
-            <!--href="#recruitment"-->
-            <!--role="tab"-->
-            <!--aria-controls="contact"-->
-            <!--aria-selected="false">Tuyển dụng</a>-->
-            <!--</li>-->
+            <li class="nav-item tab"
+                id="recruitment-tab">
+                <a class="nav-link"
+                   data-toggle="tab"
+                   href="#recruitment"
+                   role="tab"
+                   aria-controls="contact"
+                   aria-selected="false">Tuyển dụng</a>
+            </li>
         </ul>
     </div>
     <div class="row">
@@ -165,6 +165,9 @@
         $(this).addClass("tab-active")
         $("#stats-tab").removeClass("tab-active")
         $("#predictions-tab").removeClass("tab-active")
+
+        let position = JSON.parse(sessionStorage.getItem('position'))
+        getListRecruitment(position.id)
     })
 
     window.onload = async function () {

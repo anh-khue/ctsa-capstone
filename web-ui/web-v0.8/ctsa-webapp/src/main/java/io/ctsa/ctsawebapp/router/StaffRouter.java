@@ -8,7 +8,7 @@ public class StaffRouter {
 
     @GetMapping("/admin")
     public String adminHome() {
-        return "staff/web-admin";
+        return "staff/major-management";
     }
 
     @GetMapping("/admin/major")

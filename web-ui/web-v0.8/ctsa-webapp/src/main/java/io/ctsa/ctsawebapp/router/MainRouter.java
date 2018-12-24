@@ -25,6 +25,13 @@ public class MainRouter {
         return "major-detail";
     }
 
+    @GetMapping("/tuyen-dung/{id}")
+    public String job(@PathVariable String id,
+                      Model model) {
+        model.addAttribute("recruitmentId", id);
+        return "recruitment-detail";
+    }
+
     @GetMapping("/thong-tin-tuyen-dung")
     public String jobDetail() {
         return "job-detail";
@@ -33,5 +40,10 @@ public class MainRouter {
     @GetMapping("/thong-tin")
     public String summary() {
         return "freshmen/summary";
+    }
+
+    @GetMapping("/sign-in")
+    public String signIn() {
+        return "sign-in";
     }
 }

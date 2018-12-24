@@ -73,6 +73,8 @@
         setTimeout(() => {
             loader.classList.add('fadeOut');
         }, 300);
+
+
     });
 </script>
 
@@ -160,8 +162,8 @@
                         <span class="title">Historical Data</span>
                     </a>
                     <ul class="dropdown-menu" style="display: none;">
-                        <li><a class="sidebar-link" href="/admin/hr">Human Resources</a></li>
-                        <li><a class="sidebar-link" href="/admin/spInfo">Supporting Information</a></li>
+                        <li><a class="sidebar-link" href="/admin/hr" style="color: black;">Human Resources</a></li>
+                        <li><a class="sidebar-link" href="/admin/spInfo" style="color: black;">Supporting Information</a></li>
                     </ul>
                 </li>
 
@@ -173,8 +175,8 @@
                         <span class="title">Subjects' Weights</span>
                     </a>
                     <ul class="dropdown-menu" style="display: none;">
-                        <li><a class="sidebar-link" href="/admin/high-school">High School</a></li>
-                        <li><a class="sidebar-link" href="/admin/entrance-exam">Entrance Exam</a></li>
+                        <li><a class="sidebar-link" href="/admin/high-school" style="color: black;">High School</a></li>
+                        <li><a class="sidebar-link" href="/admin/entrance-exam" style="color: black;">Entrance Exam</a></li>
                     </ul>
                 </li>
             </ul>
@@ -192,8 +194,9 @@
                            class="dropdown-toggle no-after peers fxw-nw ai-c lh-1"
                            data-toggle="dropdown">
                             <div class="peer">
-                                <span class="fsz-sm c-grey-900">
-                                    John Doe
+                                <span class="fsz-sm c-grey-900" id="current-user"
+                                      style="color: white !important;font-size: 1.2em !important;">
+
                                 </span>
                             </div>
                         </a>

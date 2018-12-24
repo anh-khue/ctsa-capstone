@@ -156,6 +156,9 @@
     window.addEventListener('load', function () {
         (function () {
             getData()
+
+            let currentUser = JSON.parse(sessionStorage.getItem('currentUser'))
+            $('#current-user').html(currentUser.fullname)
         })()
     });
 

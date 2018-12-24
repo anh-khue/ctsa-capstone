@@ -220,6 +220,9 @@
             }
             getTotalPages(itemPerPage)
             getData(itemPerPage, currentPage)
+
+            let currentUser = JSON.parse(sessionStorage.getItem('currentUser'))
+            $('#current-user').html(currentUser.fullname)
         })()
     })
 
