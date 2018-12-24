@@ -16,6 +16,8 @@ public interface RecruitmentRepository extends JpaRepository<Recruitment, Intege
 
     Page<Recruitment> findByCompanyIdAndPublished(Pageable pageable, int companyId, int published);
 
+    List<Recruitment> findByPositionId(int positionId);
+
 //    @Query("select r.published from Recruitment r where r.id = :id")
 //    boolean isPublished(@Param("id") int recruitmentId);
 }

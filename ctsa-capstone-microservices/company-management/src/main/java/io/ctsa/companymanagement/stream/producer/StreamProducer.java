@@ -2,15 +2,15 @@ package io.ctsa.companymanagement.stream.producer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.MessageChannel;
-import org.springframework.messaging.support.MessageBuilder;
+//import org.springframework.messaging.MessageChannel;
+//import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
 public class StreamProducer<T> {
 
-    private static final boolean SENT = true;
+   /* private static final boolean SENT = true;
     private static final boolean FAILED = false;
 
     private final MessageChannel createRecruitmentDirectChannel;
@@ -27,5 +27,5 @@ public class StreamProducer<T> {
         } catch (Exception e) {
             log.info("Failed to send direct message for creating recruitment.");
         }
-    }
+    }*/
 }

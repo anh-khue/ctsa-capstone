@@ -1,0 +1,12 @@
+GET http://localhost:8006/human-resources/for-staff/page-counts
+
+<> 2018-12-13T093944.400.json
+
+###
+
+GET http://localhost:8006/human-resources/for-staff/page-counts
+
+<> 2018-12-13T093735.400.json
+
+###
+
